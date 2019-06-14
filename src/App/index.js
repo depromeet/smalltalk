@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import {
   Home,
   Login
-} from 'pages';
+} from './pages';
 import './styles.scss';
 
 function App() {
