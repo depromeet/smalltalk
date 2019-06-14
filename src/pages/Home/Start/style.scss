@@ -1,0 +1,29 @@
+
+.backCircle{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+
+  .circle{
+    width: 286px;
+    height: 286px;
+    border-radius: 286px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .top-none-border{
+    border: 1px solid #fb3e1d;
+    top: -18vh;
+    left: 41vw;
+    z-index: 0;
+  }
+
+  .top-neon{
+    background-color: #e1ff01;
+    top: -18vh;
+    left: 51vw;
+  }
+
+}
