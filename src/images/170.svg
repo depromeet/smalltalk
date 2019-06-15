@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="712.53" height="337" viewBox="0 0 712.53 337">
+    <defs>
+        <style>
+            .cls-1,.cls-2,.cls-3{fill:none;stroke-width:2px}.cls-1{stroke:#ff3c00}.cls-1,.cls-3{stroke-dasharray:7}.cls-2,.cls-3{stroke:#fb3e1d}.cls-3{stroke-miterlimit:10}.cls-4{fill:#fb3e1d}
+        </style>
+    </defs>
+    <g id="그룹_170" data-name="그룹 170" transform="translate(-610.457 -219)">
+        <path id="패스_61" d="M312.595 0H0" class="cls-1" data-name="패스 61" transform="translate(779.405 220)"/>
+        <g id="line_mypage2" transform="rotate(180 971.467 466.5)">
+            <path id="패스_23" d="M0 0h270.564" class="cls-2" data-name="패스 23" transform="translate(822.96 386.578)"/>
+            <path id="선_31" d="M0 0h174.501" class="cls-3" data-name="선 31" transform="translate(628.959 386.578)"/>
+            <path id="패스_19" d="M610.265 391.094l12-10v20z" class="cls-4" data-name="패스 19" transform="translate(9.683 -4.094)"/>
+        </g>
+        <g id="line_mypage" transform="translate(634.457 -167.086)">
+            <path id="패스_15" d="M129.317 716.543c-89.47 0-162-72.753-162-162.5s72.53-162.5 162-162.5" class="cls-3" data-name="패스 15" transform="translate(9.683 -4.457)"/>
+        </g>
+    </g>
+</svg>

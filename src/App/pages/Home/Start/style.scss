@@ -1,29 +1,127 @@
 
-.backCircle{
+.backImage{
   width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: -2;
 
   .circle{
-    width: 286px;
-    height: 286px;
-    border-radius: 286px;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 50%;
     position: absolute;
     z-index: -1;
   }
 
   .top-none-border{
     border: 1px solid #fb3e1d;
-    top: -18vh;
+    top: -10vh;
     left: 41vw;
     z-index: 0;
   }
 
   .top-neon{
     background-color: #e1ff01;
-    top: -18vh;
-    left: 51vw;
+    top: -10vh;
+    left: 48vw;
+    z-index: -1;
+  }
+  .left-neon{
+    background-color: #e1ff01;
+    top: 25vh;
+    left: -6vw;
+    z-index: 0;
+  }
+  .line{
+    position: absolute;
+    width: 15vw;
+    height: 248.6px;
+    border-bottom: dashed 2px #ff3c00;
+    bottom: 13vh;
+    left: 25vw;
+  }
+  .bottom-image{
+    background-image: url(../../../../images/back1.png);
+    background-size: cover;
+    bottom:-11vh;
+    left:51vw;
+    z-index: 0;
+  }
+  .bottom-gra{
+    background-image: url(../../../../images/812.png);
+    background-size: cover;
+    bottom:-11vh;
+    left:65vw;
+    z-index: -1;
+  }
+  .curve-container{
+    height: 26vh;
+    position: absolute;
+    top: 20vh;
+    left:30vw;
+  }
+  .curve{
+    height: 100%;
+    position: relative;
+  }
+}
+
+.content{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 35vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  // max-width: 1034px;
+  .content-title{
+    margin: 0;
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .content-subtitle{
+    margin-top: 13px;
+    margin-bottom: 20px;
+    position: relative;
+    // margin-top:-8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .welcome-container{
+    font-size: 17px;
+    display: flex;
+    line-height: 23px;
+    .content-welcome-column{
+      font-weight: 500;
+      margin-right: 110px;
+    }
+  }
+
+  .content-column:nth-child(2){
+    a {
+      text-decoration: none;
+    }
+    div{
+      width: 117px;
+      height: 47px;
+      border-radius: 44px;
+      text-align: center;
+      padding: 6px;
+      font-weight: 500;
+      padding-top: 15px;
+    }
+    .button-login{
+      background-color: #fb3e1d;
+      color: white;
+    }
+    .button-register{
+      background-color: white;
+      border: solid 1px #707070;
+      color: black;
+      margin-top: 20px;
+    }
   }
 
 }
