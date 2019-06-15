@@ -1,3 +1,24 @@
+/* Colors */
 $neon: #e1ff01;
 $red: #fb3e1d;
-$border: 1px solid #fb3e1d;
+
+/* About Background*/
+%back-image-container{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+}
+
+/* About Circle */
+%circle-default{
+  width: 23vw;
+  height: 23vw;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+$red-border: 1px solid #fb3e1d;
+
+

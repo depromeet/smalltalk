@@ -1,0 +1,55 @@
+@import 'variables.scss';
+
+.backImage{
+  @extend %back-image-container;
+  display: flex;
+  justify-content: space-between;
+
+  .back-column{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5vw;
+    width: 22%;
+    height: 1080px;
+    max-width: 350px ;
+    .circle{
+      width: 100%;
+      max-width: 350px;
+      max-height: 350px;
+      img{
+        width: 100%;
+      }
+    }
+
+    .line-down{
+      height: 25%;
+      text-align: center;
+      img{
+        height:100%;
+      }
+    }
+
+    .left-friends{
+      top: 50vh;
+      z-index: 1;
+    }
+    .left-gradation{
+      top: 80vh;
+    }
+    .right-none{
+      border:$red-border;
+      top: -10vh;
+    }
+    .right-vene{
+      top: 20vh;
+      z-index: 1;
+    }
+    .right-gradation{
+      top: 33vh;
+      z-index: -1;
+      background-image: linear-gradient(309deg, #fb3e1d 30%, #ee931c 55%, #e1ff01);
+    }
+  }
+}
+// background-image: linear-gradient(309deg, #fb3e1d 30%, #ee931c 60%, #e1ff01);

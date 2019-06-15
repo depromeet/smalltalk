@@ -1,33 +1,27 @@
+@import 'variables.scss';
 
 .backImage{
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: -2;
-
+  @extend %back-image-container;
+  
   .circle{
-    width: 23vw;
-    height: 23vw;
-    border-radius: 50%;
-    position: absolute;
-    z-index: -1;
+    @extend %circle-default;
   }
 
   .top-none-border{
-    border: 1px solid #fb3e1d;
-    top: -10vh;
+    border: $red-border;
+    top: -10%;
     left: 41vw;
     z-index: 0;
   }
 
   .top-neon{
-    background-color: #e1ff01;
+    background-color: $neon;
     top: -10vh;
     left: 48vw;
     z-index: -1;
   }
   .left-neon{
-    background-color: #e1ff01;
+    background-color: $neon;
     top: 25vh;
     left: -6vw;
     z-index: 0;
