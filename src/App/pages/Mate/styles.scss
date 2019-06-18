@@ -1,0 +1,73 @@
+.mate_wrap{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fb3e1d;
+    background-image: url(../../../static/images/mate_back.png);
+    background-repeat: no-repeat;
+    background-size: 32vw 43vh;
+    background-position: -260px -60px;
+}
+
+.mate_title{
+    position: absolute;
+    top: 15vh;
+    left: 11vw;
+    width: 25vw;
+    color: #fff;
+}
+.mate_title h1{
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.29;
+    letter-spacing: -1.9px;
+}
+.mate_title p{
+    font-size: 16px;
+    line-height: 1.63;
+    letter-spacing: -0.6px;
+    margin-top: 25px;
+}
+
+.t_box{
+    position: absolute;
+    top: 50%;
+    left: 10vw;
+    width: 85vw;
+    height: 380px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+.call_t{
+    width: 3000px;
+    height: 380px;
+}
+.t_li{
+    float: left;
+}
+
+::-webkit-scrollbar{ width:9px; height:10px; }
+::-webkit-scrollbar-button:start:decrement, 
+::-webkit-scrollbar-button:end:increment{ 
+  display:block;
+  height:0;
+  background-color:transparent;
+}
+::-webkit-scrollbar-track-piece{
+  background-color:rgba(255,255,255,0.2);
+  -webkit-border-top-right-radius:8px;
+  -webkit-border-top-left-radius:8px;
+  -webkit-border-bottom-right-radius:8px;
+  -webkit-border-bottom-left-radius:8px;
+}
+::-webkit-scrollbar-thumb:vertical{
+  height:60px;
+  background-color:#fff;
+  -webkit-border-radius:8px;
+}
+::-webkit-scrollbar-thumb:horizontal{
+  width:60px;
+  background-color:#fff;
+  -webkit-border-radius:8px;
+}
