@@ -48,6 +48,10 @@ class MainHome extends Component{
           <div className="redLine"></div>
           <div className="whiteArrow"></div>
         </div>
+        <div className="buttons">
+          <div className="listButton"></div>
+          <div className="chatButton"></div>
+        </div>
       </div>
     )
   }
