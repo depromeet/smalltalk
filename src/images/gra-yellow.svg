@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="517.122" height="517.122" viewBox="0 0 517.122 517.122">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}
+        </style>
+        <linearGradient id="linear-gradient" x1=".877" x2="-.078" y1=".713" y2="-.05" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fb3e1d"/>
+            <stop offset=".702" stop-color="#e2fb02"/>
+            <stop offset="1" stop-color="#e1ff01"/>
+        </linearGradient>
+    </defs>
+    <circle id="타원_90" cx="218" cy="218" r="218" class="cls-1" data-name="타원 90" transform="rotate(12.04 45.586 430.99)"/>
+</svg>
