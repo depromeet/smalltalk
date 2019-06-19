@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import classnames from 'classnames/bind';
+import LoginForm from 'App/components/LoginForm';
 import './styles.scss';
 import lineDown from 'images/line-down.svg';
 import friends from 'images/friends.png';
@@ -26,7 +26,7 @@ class Login extends Component{
             <div className="circle right-gradation"></div>
           </div>
         </div>
-
+        <LoginForm />
       </Fragment>
     )
   }
