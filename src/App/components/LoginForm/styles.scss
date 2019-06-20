@@ -1,9 +1,42 @@
-// .login__container{
-//   .login__header{
-    
-//   }
+@import 'variables.scss';
 
-//   .login__form{
+.login__container{
+    margin-top: 11vh;
+    text-align: center;
+  .login__header{
+    margin: 20px;
+    .login__title{
+      margin: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .login__info{
+      font-size: 8px;
+      margin-bottom: 4px;
+     
+    }
+    .login__info:nth-child(3){
+      color: $red;
+    }
+  }
 
-//   }
-// }
+  .login__form{
+    height: 300px;
+    .login__input-container{
+      text-align: left;
+      margin-bottom: 24px;
+      
+      .login__input-label{
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .login__input{
+        width: 100%;
+        height: 35px;
+        // border: 0;
+        border-bottom: $red-border
+      }
+    }
+  }
+}

@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {
   Home,
-  Login
+  Login,
+  Register
 } from './pages';
 import './styles.scss';
 

@@ -25,26 +25,33 @@ class LoginForm extends Component{
     return(
       <div className="login__container">
         <div className="login__header">
-          <h1> Log in </h1>
-          <p>아직 스몰토크의 친구가 아니신가요?</p>
-          <p>세계인의 친구가 되어보세요!</p>
+          <h1 className="login__title"> Log in </h1>
+          <p className="login__info"> 아직 스몰토크의 친구가 아니신가요? </p>
+          <p className="login__info"> 세계인의 친구가 되어보세요! </p>
         </div>
         <form className="login__form">
-          <label> Email </label>
+          <div className="login__input-container">
+            <label className="login__input-label"> Email </label>
+            <input
+              className="login__input"
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div className="login__input-container">
+            <label className="login__input-label">Password</label>
+            <input
+              className="login__input"
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+            />
+          </div>
           <input
-            type="text"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleInputChange}
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-          <input
+            className="login__button"
             type="submit"
             value="로그인하기"
             onSubmit={this.handleSubmit}

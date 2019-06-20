@@ -19,7 +19,7 @@ class Start extends Component{
           <div className="circle bottom-gra"></div>
           <div className="curve-container"><img className="curve" src={startCurve} alt="curve"/></div>
         </div>
-
+      
         <div className="content">
           <div className="content-column">
             <p className="content-title">스몰토크 시작하기</p>
