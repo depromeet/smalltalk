@@ -12,7 +12,7 @@
     width: 22%;
     height: 1080px;
     max-width: 350px;
-    
+
     .line-down{
       height: 25%;
       text-align: center;
@@ -21,13 +21,10 @@
       }
     }
     .circle{
-      width: 100%;
-      position: absolute;
-      max-width: 350px;
-      max-height: 350px;
-
+      @extend %circle-default;
       img{
         width: 100%;
+        height: 100%;
       }
       &.left-friends{
         top: 50vh;
@@ -36,30 +33,25 @@
       &.left-gradation{
         top: 80vh;
       }
-      
-    }
-
-    
-
-    .right-none{
-      // border:$red-border;
-      top: -10vh;
-    }
-    .right-vene{
-      top: 20vh;
-      z-index: 1;
-    }
-    &.right-gradation{
-      top: 33vh;
-      z-index: -1;
-      background-image: linear-gradient(309deg, #fb3e1d 30%, #ee931c 55%, #e1ff01);
+      &.right-none{
+        border-radius: 50%;
+        border:$red-border;
+        top: -10vh;
+      }
+      &.right-vene{
+        top: 20vh;
+        z-index: 1;
+      }
+      &.right-gradation{
+        top: 33vh;
+        z-index: -1;
+        background-image: linear-gradient(309deg, #fb3e1d 30%, #ee931c 55%, #e1ff01);
+      }
     }
   }
-
   .back-column:nth-child(2){
     z-index: 10;
     width: 25%;
     max-width: 400px;
   }
 }
-//background-image: linear-gradient(309deg, #fb3e1d 30%, #ee931c 60%, #e1ff01);

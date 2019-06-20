@@ -27,9 +27,9 @@ class Login extends Component{
             <LoginForm />
           </div>
           <div className={cx('back-column')}>
-            <div className="circle right-none"></div>
-            <div className="circle right-vene"><img src={vene} alt="vene"/></div>
-            <div className="circle right-gradation"></div>
+            <div className={cx('circle', 'right-none')}></div>
+            <div className={cx('circle', 'right-vene')}><img src={vene} alt="vene"/></div>
+            <div className={cx('circle', 'right-gradation')}></div>
           </div>
         </div>
       </Fragment>
