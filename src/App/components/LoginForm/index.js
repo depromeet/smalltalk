@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import google from 'images/google.png';
 import classnames from 'classnames/bind';
 import styles from './LoginForm.module.scss'; 
 const cx = classnames.bind(styles);
@@ -23,6 +24,11 @@ class LoginForm extends Component{
     event.preventDefault();
   }
 
+  resetInputClick = (e) => {
+    const target = e.target.getAttribute('name');
+    this.setState({[target]:''})
+  }
+
   render(){
     return(
       <div className={cx('login__container')}>
@@ -41,6 +47,11 @@ class LoginForm extends Component{
               value={this.state.email}
               onChange={this.handleInputChange}
             />
+            <div 
+              className={cx('login__input-x')}
+              onClick={this.resetInputClick}
+              name="email"
+            >x</div>
           </div>
           <div className={cx('login__input-container')}>
             <label className={cx('login__input-label')}>Password</label>
@@ -51,13 +62,29 @@ class LoginForm extends Component{
               value={this.state.password}
               onChange={this.handleInputChange}
             />
+            <div
+             className={cx('login__input-x')}
+             onClick={this.resetInputClick}
+             name="password"
+             > x</div>
           </div>
           <input
-            className={cx('login__button')}
+            className={cx('login__button', 'normal')}
             type="submit"
             value="로그인하기"
             onSubmit={this.handleSubmit}
           />
+          <div className={cx('button__container')}>
+            <div className={cx('column')}>
+              <img className={cx('google-img')} src={google} alt="google"/>
+            </div>
+              <input
+                className={cx('login__button','google')}
+                type="submit"
+                value="구글로 시작하기"
+                onSubmit={this.handleSubmit}
+              />
+          </div>
         </form>
       </div>
     )
