@@ -15,7 +15,7 @@ class MyMate extends Component{
         </div>
         <div className="main-home__my-mate__list">
             <div className="main-home__my-mate__list__header">현재<br></br>내 메이트 {}2명</div>
-            <div className="main-home__my-mate__list__close-button" onClick={this.props.isClickedList}></div>
+            <div className="main-home__my-mate__list__close-button" onClick={this.props.handleCloseList}></div>
             <div className="main-home__my-mate__list__friends-list">
             <div className="main-home__my-mate__list__friends-list__profile-picture"></div>
             <div className="main-home__my-mate__list__friends-list__name">김이박</div>

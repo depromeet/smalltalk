@@ -18,9 +18,16 @@ class Chat extends Component{
                     <div className="chat__header__title__name">가나다</div>
                     <div className="chat__header__title__text">님</div>
                 </div>
-                <div className="chat__header__close-button" onClick={this.props.isClickedChat}></div>
+                <div className="chat__header__close-button" onClick={this.props.handleCloseChat}></div>
             </div>
-            <div className="chat__content"></div>
+            <div className="chat__content">
+                <div className="chat__content__opposite">
+                    <div className="chat__content__opposite__profile-picture"></div>
+                    <div className="chat__content__opposite__talk-list">
+                        <div className="chat__content__opposite__talk-list__sentence">가나다라마바사아자차카타파하</div>
+                    </div>
+                </div>
+            </div>
             <div className="chat__footer">
                 <textarea className="chat__footer__input"></textarea>
                 <div className="chat__footer__send-button"></div>

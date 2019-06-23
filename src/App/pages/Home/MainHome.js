@@ -1,7 +1,5 @@
 import React, { Component, Fragment} from 'react';
 import MainHomeBackground from '../../components/MainHomeBackground';
-import MyMate from '../../components/MyMate/index';
-import Chat from '../../components/Chat/index'
 
 class MainHome extends Component{
   constructor(props){
@@ -26,35 +24,24 @@ class MainHome extends Component{
 
   handleCloseList() {
     this.setState({isClickedList : false});
+    console.log("isClickedList : false");
   }
 
   handleCloseChat() {
     this.setState({isClickedChat : false});
+    console.log("isClickedChat : false");
   }
 
   render(){
-    const { isClickedList, isClickedChat } = this.state;
-    if(isClickedList) {
-      return(
-        <div>
-          <MainHomeBackground />
-          <MyMate isClickedList={this.handleCloseList} />
-        </div>
-      )
-    } if(isClickedChat) {
-      return(
-        <div>
-          <MainHomeBackground />
-          <Chat isClickedChat={this.handleCloseChat} />
-        </div>
-      )
-    } else {
-      return(
-        <MainHomeBackground 
-        isClickedList={this.handleListClick} 
-        isClickedChat={this.handleChatClick} />
-      )
-    }
+    return (
+      <MainHomeBackground 
+      isClickedChat={this.state.isClickedChat}
+      isClickedList={this.state.isClickedList}
+      handleListClick={this.handleListClick}
+      handleChatClick={this.handleChatClick}
+      handleCloseList={this.handleCloseList}
+      handleCloseChat={this.handleCloseChat} />
+    )
   }
 }
 

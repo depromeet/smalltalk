@@ -1,13 +1,10 @@
 import React, { Component, Fragment} from 'react';
 import './style.scss';
+import SideMenu from '../SideMenu/index';
 
 class MainHomeBackground extends Component{
   constructor(props){
     super(props);
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return false;
   }
 
   render(){
@@ -53,13 +50,20 @@ class MainHomeBackground extends Component{
           <div className="white-arrow"></div>
         </div>
         <div className="buttons">
-          <div className="list-button" onClick={this.props.isClickedList}></div>
-          <div className="chat-button" onClick={this.props.isClickedChat}></div>
+          <div className="list-button" onClick={this.props.handleListClick}></div>
+          <div className="chat-button" onClick={this.props.handleChatClick}></div>
         </div>
         <div className="main-home__phrases">
           <div>Let’s</div>
           <div id="main-home__phrases__second-line">small-talk</div>
         </div>
+        <SideMenu 
+        isClickedChat={this.props.isClickedChat}
+        isClickedList={this.props.isClickedList}
+        handleChatClick={this.props.handleChatClick}
+        handleListClick={this.props.handleListClick}
+        handleCloseChat={this.props.handleCloseChat}
+        handleCloseList={this.props.handleCloseList} />
     </div>
     )
   }
