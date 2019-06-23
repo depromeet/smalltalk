@@ -1,0 +1,104 @@
+.chat {
+    width: 23.69vw;
+    height: 100vh;
+    box-shadow: -6px 3px 11px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+
+    .chat__buttons {
+        position: absolute;
+        top: 40.92vh;
+        right: 24.27vw;
+        z-index: 4;
+
+        .chat__buttons__list {
+            width: 4.53vw;
+            height: 8.1vh;
+            background-image: url(../../../static/images/button_list_off.png);
+            background-size: cover;
+            margin-bottom: 2.08vh;
+            cursor: pointer;
+        }
+
+        .chat__buttons__chat {
+            width: 4.53vw;
+            height: 8.1vh;
+            background-image: url(../../../static/images/button_chat_on.png);
+            background-size: cover;
+            margin-bottom: 2.08vh;
+            cursor: pointer;
+        }
+    }
+
+    .chat__header {
+        height: 12.59vh;
+
+        .chat__header__title {
+            display: flex;
+            position: relative;
+            top: 5.18vh;
+            left: 1.25vw;
+
+            .chat__header__title__name {
+                width: 7.18vw;
+                height: 0.05vh;
+                font-family: NotoSansCJKkr;
+                font-size: 1.87vw;
+                font-weight: bold;
+                line-height: 1.39;
+                letter-spacing: -0.07vw;
+                position: relative;
+                top: 1vh;
+            }
+
+            .chat__header__title__text {
+                position: relative;
+                top: 2vh;
+                left: -2vw;
+            }
+        }
+
+        .chat__header__close-button {
+            width: 3.12vw;
+            height: 5.55vh;
+            background-image: url(../../../static/images/icon_x.png);
+            background-size: cover;
+            position: absolute;
+            top: 5.18vh;
+            right: 1.25vw;
+            cursor: pointer;
+        }
+    }
+
+    .chat__content {
+        height: 75vh;
+        background-color: #f4f4f4;
+        padding-top: 4.07vh;
+        padding-left: 1.14vw;
+        padding-right: 1.14vw;
+    }
+
+    .chat__footer {
+        height: 12.41vh;
+        padding: 1.09vw;
+        display: flex;
+
+        .chat__footer__input {
+            width: 14.27vw;
+            height: 8.51vh;
+            border: solid 1px transparent;
+            resize: none;
+        }
+
+        .chat__footer__send-button {
+            background-image: url(../../../static/images/icon_Send.png);
+            background-size: cover;
+            width: 6.56vw;
+            height: 5.55vh;
+            cursor: pointer;
+            margin-top: 1.11vh;
+        }
+    }
+}

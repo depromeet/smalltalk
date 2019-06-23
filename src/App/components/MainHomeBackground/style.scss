@@ -1,0 +1,299 @@
+// 로고
+.logo {
+    position: absolute;
+    top: 1.38vh;
+    left: 1vw;
+    width: 4.6vw;
+    height: 4.6vw;
+    background-image: url(../../../static/images/logo.png);
+    background-size: cover;    
+}
+
+// 배경 원들
+.background-circles{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    max-width: 100vw;
+
+    .circle {
+        width: 23vw;
+        height: 23vw;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    #red-circle-1 {
+        background-color: #fb3e1d;
+        top: -18.98vh;
+        left: -0.98vw;
+        animation: redCircle 3s infinite alternate ease-in-out;
+        z-index: -1;
+    }
+
+    #edge-circle-1 {
+        border: 2px solid #fb3e1d;
+        box-sizing: border-box;
+        top: -18vh;
+        left: 41.55vw;
+        animation: edgeCircle 7s infinite alternate ease-in-out;
+    }
+
+    #green-circle-1 {
+        background-color: #e1ff01;
+        top: -18vh;
+        left: 50.61vw;
+        z-index: -1;
+    }
+
+    #green-circle-2 {
+        background-color: #e1ff01;
+        top: 24.53vh;
+        left: -6.4vw;
+        opacity: 0.69;
+    }
+
+    #picture-circle-1 {
+        background-image: url(../../../static/images/oval_img1.png);
+        background-size: cover;
+        top: 24.53vh;
+        left: -6.4vw;
+        z-index: -1;
+    }
+
+    #picture-circle-2 {
+        background-image: url(../../../static/images/oval_img2.png);
+        background-size: cover;
+        top: 54.53vh;
+        left: 26.86vw;
+        animation: pictureCircle 3s infinite alternate ease-in-out;
+    }
+
+    #edge-circle-2 {
+        border: 2px solid #fb3e1d;
+        box-sizing: border-box;
+        top: 54.53vh;
+        left: 42.08vw;
+        z-index: -2;
+    }
+
+    #gradation-circle {
+        background: radial-gradient(at 75% 75%, #fb3e1d 20%, #e1ff01 75%);
+        top: 54.53vh;
+        left: 58.42vw;
+        z-index: 1;
+    }
+
+    #red-circle-2 {
+        background-color: #fb3e1d;
+        top: 54.53vh;
+        left: 65.1vw;
+        z-index: -2;
+        animation: redCircle2 10s infinite alternate ease-in-out;
+    }
+}
+
+// 메뉴
+.menu {
+    position: absolute;
+    width: 22.08vw;
+    height: 52.4vh;
+    left: 9.11vw;
+    top: 28.98vh;
+
+    .menu-list {
+        width: fit-content;
+        height: fit-content;
+        font-family: OpenSans;
+        font-size: 4.68vw;
+        font-weight: bold;
+        line-height: 1.22;
+        letter-spacing: -5.4px;
+        margin-bottom: 26px;
+        cursor: pointer;
+    }
+}
+
+// 화살표와 소개문구
+.lines-1 {
+    display: flex;
+    position: absolute;
+    left: 32.29vw;
+    top: 32.31vh;
+    width: fit-content;
+    height: fit-content;
+
+    .dashed-arrow {
+        width: 28.02vw;
+        height: 20px;
+        background-image: url(../../../static/images/line_mypage2.png);
+        background-size: cover;
+        margin-right: 22px;
+    }
+
+    .triangles {
+        display: flex;
+        margin-right: 19px;
+
+        #red-triangle-1 {
+            margin-right: 10px;
+        }
+    }
+
+    .red-triangle {
+        width: 20px;
+        height: 20px;
+        border-top: 10px solid transparent;
+        border-right: 10px solid red;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+    }
+
+    .introduction {
+        width: 167px;
+        height: 50px;
+        font-family: NotoSansCJKkr;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.63;
+        letter-spacing: -0.6px;
+        color: #161616;
+        position: relative;
+        bottom: 14px;
+    }
+
+    .line-arrow {
+        display: flex;
+
+        #red-triangle-3 {
+            margin-left: 6px;
+            margin-right: 16px;
+        }
+
+        .red-line {
+            width: 22.91vw;
+            height: 1px;
+            border: 1px solid red;
+            position: relative;
+            top: 9px;
+        }
+    }
+}
+
+.lines-2 {
+    position: absolute;
+    top: 87.91vh;
+    left: 20.78vw;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+
+    .dashed-line {
+        width: 13.48vw;
+        height: 1px;
+        border: 1px dashed red;
+        margin-right: 8.59vw;
+    }
+
+    .red-line {
+        width: 19.01vw;
+        height: 1px;
+        border: 1px solid red;
+        margin-right: 2.6vw;
+        z-index: 0;
+    }
+
+    .white-arrow {
+        width: 249.6px;
+        // width: 13.02vw;
+        height: 22px;
+        background-image: url(../../../static/images/white_arrow.png);
+        background-size: cover;
+        position: relative;
+        top: -11px;
+        z-index: 1;
+    }
+}
+
+.buttons {
+    position: absolute;
+    top: 40.92vh;
+    right: 0.57vw;
+
+    .list-button {
+        width: 4.53vw;
+        height: 8.1vh;
+        background-image: url(../../../static/images/button_list_off.png);
+        background-size: cover;
+        margin-bottom: 2.08vh;
+        cursor: pointer;
+    }
+    
+    .chat-button {
+        width: 4.53vw;
+        height: 8.1vh;
+        background-image: url(../../../static/images/button_chat_off.png);
+        background-size: cover;
+        cursor: pointer;
+    }
+}
+
+.main-home__phrases {
+    position: absolute;
+    top: 72.25vh;
+    left: 61vw;
+    -webkit-text-stroke: 2px #ffffff;
+    font-family: OpenSans;
+    font-size: 4.21vw;
+    font-weight: bold;
+    line-height: 0.76;
+    letter-spacing: -3.2px;
+    z-index: 3;
+
+    #main-home__phrases__second-line {
+        padding-left: 6vw;
+    }
+}
+
+// 애니메이션
+@keyframes edgeCircle {
+    0% {
+        transform: translateX(0px);
+    }
+    7% {
+        transform: translateX(-1px);
+    }
+    93% {
+        transform: translateX(-31vw);
+    }
+    100% {
+        transform: translateX(-31.25vw);
+    }
+}
+
+@keyframes redCircle {
+    to {
+        transform: translateX(-1.3vw);
+    }
+}
+
+@keyframes pictureCircle {
+    to {
+        transform: translateX(-2.55vw);
+    }
+}
+
+@keyframes redCircle2 {
+    0% {
+        transform: translateX(0px);
+    }
+    7% {
+        transform: translateX(1px);
+    }
+    93% {
+        transform: translateX(35.5vw);
+    }
+    100% {
+        transform: translateX(36vw);
+    }
+}
