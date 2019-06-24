@@ -1,21 +1,32 @@
 import React, {Component, Fragment} from 'react';
-import Ticket from '../../components/Ticket';
-import './styles.scss';
+import SmallTicket from '../../components/SmallTicket';
+
+import classnames from 'classnames/bind';
+import styles from './MateList.module.scss';
+const cx = classnames.bind(styles);
 
 class TicketList extends Component{
+
+  makeList = ( ticketList ) => { 
+    return ticketList.map( (ticket) => {
+      return <li><SmallTicket ticket={ticket}/></li>
+    })
+  }
+  
   render(){
+    const { ticketList } = this.props;
     return(
       <Fragment>
-        <div className="arrow_list">
-          <div className="t_box">
-            <ul className="call_t">
-              <li className="t_li"><Ticket/></li><li className="t_li"><Ticket/></li><li className="t_li"><Ticket/></li><li className="t_li"><Ticket/></li>
+        <div className={cx('arrow_list')}>
+          <div className={cx('t_box')}>
+            <ul className={cx('call_t')}>
+              {this.makeList(ticketList)}
             </ul>
           </div>
-          <div className="paddle-nav">
+          <div className={cx('paddle-nav')}>
             <ul>
-              <li className="arrow prev"><button>&lt;</button></li>
-              <li className="arrow next"><button>&gt;</button></li>
+              <li className={cx('arrow', 'prev')}><button>&lt;</button></li>
+              <li className={cx('arrow', 'next')}><button>&gt;</button></li>
             </ul>
           </div>
         </div>
@@ -61,14 +72,105 @@ class MateListTable extends Component{
 }
 
 class MateList extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      ticketList: [
+        {
+        ticketTitle: '도쿄',
+        ticketSubTitle: 'Tokyo',
+        startDate: '2019.06.08',
+        endDate: '2019.06.15',
+        ticketImage : '../../static/images/ticket_img.png'
+        },
+        {
+          ticketTitle: '파리',
+          ticketSubTitle: 'Paris',
+          startDate: '2019.06.08',
+          endDate: '2019.06.15',
+          ticketImage : '../../static/images/ticket_img.png'
+        },
+        {
+          ticketTitle: '로스엔젤리스',
+          ticketSubTitle: 'LA',
+          startDate: '2019.06.08',
+          endDate: '2019.06.15',
+          ticketImage : '../../static/images/ticket_img.png'
+        },
+        {
+          ticketTitle: '싱가포르',
+          ticketSubTitle: 'Singapore',
+          startDate: '2019.06.08',
+          endDate: '2019.06.15',
+          ticketImage : '../../static/images/ticket_img.png'
+        },
+        {
+          ticketTitle: '도쿄',
+          ticketSubTitle: 'Tokyo',
+          startDate: '2019.06.08',
+          endDate: '2019.06.15',
+          ticketImage : '../../static/images/ticket_img.png'
+          },
+          {
+            ticketTitle: '파리',
+            ticketSubTitle: 'Paris',
+            startDate: '2019.06.08',
+            endDate: '2019.06.15',
+            ticketImage : '../../static/images/ticket_img.png'
+          },
+          {
+            ticketTitle: '로스엔젤리스',
+            ticketSubTitle: 'LA',
+            startDate: '2019.06.08',
+            endDate: '2019.06.15',
+            ticketImage : '../../static/images/ticket_img.png'
+          },
+          {
+            ticketTitle: '싱가포르',
+            ticketSubTitle: 'Singapore',
+            startDate: '2019.06.08',
+            endDate: '2019.06.15',
+            ticketImage : '../../static/images/ticket_img.png'
+          },
+          {
+            ticketTitle: '도쿄',
+            ticketSubTitle: 'Tokyo',
+            startDate: '2019.06.08',
+            endDate: '2019.06.15',
+            ticketImage : '../../static/images/ticket_img.png'
+            },
+            {
+              ticketTitle: '파리',
+              ticketSubTitle: 'Paris',
+              startDate: '2019.06.08',
+              endDate: '2019.06.15',
+              ticketImage : '../../static/images/ticket_img.png'
+            },
+            {
+              ticketTitle: '로스엔젤리스',
+              ticketSubTitle: 'LA',
+              startDate: '2019.06.08',
+              endDate: '2019.06.15',
+              ticketImage : '../../static/images/ticket_img.png'
+            },
+            {
+              ticketTitle: '싱가포르',
+              ticketSubTitle: 'Singapore',
+              startDate: '2019.06.08',
+              endDate: '2019.06.15',
+              ticketImage : '../../static/images/ticket_img.png'
+            }
+      ]
+    }
+  }
   render(){
     return(
-        <div className="list_wrap">
-          <h1>친구 추천 리스트</h1>
-          <TicketList/>
-          <MateListTable matelist = {MATELIST}/>
-        </div>
-      )
+      <div className={cx('list_wrap')}>
+        <h1>친구 추천 리스트</h1>
+        <TicketList ticketList = {this.state.ticketList}/>
+        <MateListTable matelist = {MATELIST}/>
+      </div>
+    )
   }
 }
 

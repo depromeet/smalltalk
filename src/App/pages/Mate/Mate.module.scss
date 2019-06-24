@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .mate_wrap{
     position: relative;
     overflow: hidden;
@@ -6,36 +8,42 @@
     background-color: #fb3e1d;
     background-image: url(../../../static/images/mate_back.png);
     background-repeat: no-repeat;
-    background-size: 32vw 43vh;
+    background-size: 35vw 46vh;
     background-position: -260px -60px;
 }
 
 .mate_title{
     position: absolute;
     top: 15vh;
-    left: 11vw;
+    left: 15vw;
     width: 25vw;
     color: #fff;
 }
 .mate_title h1{
-    font-size: 48px;
+    font-size: 44px;
     font-weight: bold;
     line-height: 1.29;
     letter-spacing: -1.9px;
 }
 .mate_title p{
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.63;
     letter-spacing: -0.6px;
     margin-top: 25px;
 }
 
+.length_box{
+    position: absolute;
+    top: 38vh;
+    left: 16vw;
+}
+
 .t_box{
     position: absolute;
     top: 50%;
-    left: 10vw;
-    width: 85vw;
-    height: 380px;
+    left: 14vw;
+    width: 80vw;
+    height: 360px;
     overflow: hidden;
     overflow-x: scroll;
 }
@@ -43,7 +51,7 @@
     width: 3000px;
     height: 380px;
 }
-.t_li{
+.call_t li{
     float: left;
 }
 
