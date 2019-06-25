@@ -21,4 +21,20 @@ $red: #fb3e1d;
 
 $red-border: 1px solid #fb3e1d;
 
+/* Register Steps */
+%step-container{
+  width: 91vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+} 
+
+%bar{
+  width: 4.5vw;
+  height: 100vh;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-align: center;
+}
 

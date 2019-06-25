@@ -1,0 +1,12 @@
+@import 'variables.scss';
+
+.step-container{
+  @extend %step-container; 
+  z-index: -1;
+  position: absolute;
+  left: 4.5vw;
+  .bar{
+    @extend %bar; 
+    color: $red;
+  }
+}
