@@ -78,6 +78,63 @@
         padding-top: 4.07vh;
         padding-left: 1.14vw;
         padding-right: 1.14vw;
+
+        .chat__content__opposite {
+            display: flex;
+
+            .chat__content__opposite__profile-picture {
+                width: 3.12vw;
+                height: 5.55vh;
+                background-image: url(../../../static/images/user_none.png);
+                background-size: cover;
+            }
+
+            .chat__content__opposite__talk-list {
+                margin-left: 0.72vw;
+
+                .chat__content__opposite__talk-list__background {
+                    width: fit-content;
+                    height: 3.14vh;
+                    border-radius: 19px;
+                    background-color: #000000;
+                    margin-bottom: 1.29vh;
+                    padding: 0.46vh 0.98vw 0.46vh 0.98vw;
+                    
+                    .chat__content__opposite__talk-list__background__sentence {
+                        font-family: NotoSansCJKkr;
+                        font-size: 0.83vw;
+                        line-height: 1.63;
+                        letter-spacing: -0.64px;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        .chat__content__mine {
+            display: flex;
+            flex-direction: row-reverse;
+
+            .chat__content__mine__talk-list {
+
+                .chat__content__mine__talk-list__background {
+                    width: fit-content;
+                    height: 3.14vh;
+                    border-radius: 19px;
+                    background-color: #fb3e1d;
+                    margin-bottom: 1.29vh;
+                    padding: 0.46vh 0.98vw 0.46vh 0.98vw;
+                    
+                    .chat__content__mine__talk-list__background__sentence {
+                        font-family: NotoSansCJKkr;
+                        font-size: 0.83vw;
+                        line-height: 1.63;
+                        letter-spacing: -0.64px;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
     }
 
     .chat__footer {
