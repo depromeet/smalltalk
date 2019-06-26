@@ -1,7 +1,12 @@
 @import 'variables.scss';
 
+.move-left{
+  margin-left: -86.5vw;
+}
+
 .step-container{
   @extend %step-container; 
+  transition: margin 1s ease;
   z-index: -2;
   position: absolute;
   left: 9vw;

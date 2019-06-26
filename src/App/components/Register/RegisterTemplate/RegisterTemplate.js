@@ -14,9 +14,15 @@ const RegisterTemplate = ({ isMovedLeft, nextBtnClick }) => {
         isMovedLeft={isMovedLeft}
         nextBtnClick={nextBtnClick}
       />
-      <RegisterForm/>
-      <RegisterStyles/>
-      {/* <RegisterEnd currentSlide={currentSlide}/> */}
+      <RegisterForm
+        isMovedLeft={isMovedLeft}
+        nextBtnClick={nextBtnClick}
+      />
+      <RegisterStyles
+        isMovedLeft={isMovedLeft}
+        nextBtnClick={nextBtnClick}
+      />
+      <RegisterEnd/>
     </div>
   )
 }

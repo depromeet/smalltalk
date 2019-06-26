@@ -9,11 +9,11 @@ import styles from './RegisterStart.module.scss';
 const cx = classnames.bind(styles);
 
 const RegisterStart = ({ isMovedLeft, nextBtnClick }) => {
-  console.log(isMovedLeft[0]);
   let className = cx({
   'step-container': true,
   'move-left': isMovedLeft[0]
-  })
+  });
+
   return(
     <Fragment>
       <div className={className}> 
