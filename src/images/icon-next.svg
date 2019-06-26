@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="126" height="60" viewBox="0 0 126 60">
+    <defs>
+        <style>
+            .cls-1,.cls-4{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#161616;font-size:14px;font-family:NotoSansCJKkr-Medium,Noto Sans CJK KR;font-weight:500;letter-spacing:-.04em}.cls-4{stroke:#080808;stroke-width:3px}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h126v60H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="icon_next" class="cls-2">
+        <path id="사각형_10" d="M0 0h126v60H0z" class="cls-1" data-name="사각형 10"/>
+        <g id="다음페이지" transform="translate(-630 -152)">
+            <text id="다음_페이지" class="cls-3" data-name="다음 페이지" transform="translate(649 186.759)">
+                <tspan x="0" y="0">다음 페이지</tspan>
+            </text>
+            <path id="패스_2" d="M0 16.794V0h16.794" class="cls-4" data-name="패스 2" transform="rotate(135 330.944 243.782)"/>
+        </g>
+    </g>
+</svg>

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { RegisterStart } from '../RegisterStart';
 import { RegisterForm } from '../RegisterForm';
 import { RegisterStyles } from '../RegisterStyles';
+import { RegisterEnd } from '../RegisterEnd';
 import classnames from 'classnames/bind';
 import styles from './RegisterTemplate.module.scss';
 const cx = classnames.bind(styles);
@@ -14,27 +15,27 @@ class RegisterTemplate extends Component{
     }
   }
 
-  handleNextButton = () => {
+  handleNextButton = stepNum => {
     this.setState({
-      currentSlide : this.state.currentSlide+1 // 현재 state에서 +1
+      currentSlide : stepNum // 현재 state에서 +1
     })
   }
 
   render(){
     const { currentSlide } = this.state;
+    console.log(currentSlide);
     return(
       <div className={cx('carousel-container')}> 
-        
-        <RegisterStart/>
-        <RegisterForm/>
-        <RegisterStyles/>
-        {/* <div className={cx('slide-container')}>
-          <RegisterAnimationBars currentSlide={currentSlide}/>
-          <CarouselContainer 
-            currentSlide={currentSlide}
-            handleNextButton={this.handleNextButton}
-           />
-        </div> */}
+        <RegisterStart 
+          currentSlide={currentSlide}
+          handleNextButton={this.handleNextButton}
+        />
+        <RegisterForm 
+          currentSlide={currentSlide}
+          handleNextButton={this.handleNextButton}
+        />
+        <RegisterStyles currentSlide={currentSlide}/>
+        {/* <RegisterEnd currentSlide={currentSlide}/> */}
       </div>
     )
   }

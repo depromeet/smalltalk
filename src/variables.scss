@@ -32,6 +32,7 @@ $red-border: 1px solid #fb3e1d;
 
 %bar{
   width: 4.5vw;
+  min-width: 50px;
   height: 100vh;
   writing-mode: vertical-rl;
   text-orientation: mixed;
