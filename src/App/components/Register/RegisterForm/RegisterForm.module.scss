@@ -9,6 +9,40 @@
   z-index: -1;
   position: absolute;
   left: 4.5vw;
+
+  .contents{
+    display: flex;
+    align-items: center;
+    .form-contents{
+      width: 600px;
+      .title{
+        font-size: 30px;
+        font-weight: bold;
+        color: #161616;
+        line-height: 1.29;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+      }
+      .guide{
+        font-size: 10px;
+      }
+      input{
+        width: 100%;
+      }
+      .first-second-row{
+        display: flex;
+        margin-top: 60px;
+        .column{
+          width: 50%;
+          margin-right: 10px;
+          .half{
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
   .bar{
     @extend %bar; 
     color: $red;
