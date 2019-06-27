@@ -18,23 +18,31 @@ const RegisterStart = ({ isMovedLeft, nextBtnClick }) => {
     <Fragment>
       <div className={className}> 
         <div className={cx('contents')}>
-          <div className={cx('left')}>
+          <div className={cx('column', 'left')}>
             <p className={cx('left-title')}>간단한 개인정보를 </p>
             <p className={cx('left-title')}>입력하고 스몰토크를</p>
             <p className={cx('left-title')}>시작해보세요!</p>
+            <button className={cx('facebook')}> 
+              <img src={google} alt="google"/>
+              <div> 페이스북으로 회원가입  </div>
+            </button>
             <button className={cx('button')}> 
               <img src={google} alt="google"/>
               <div> 구글로 회원가입  </div>
             </button>
           </div>
-          <div className={cx('arrow')}>
+          <div className={cx('column', 'middle')}>
             <img src={lineRight} alt="lineToRight"/>
           </div>
-          <div className={cx('circle')}></div>
-          <div className={cx('letsgo-img')}>
-            <img src={letsgo} alt="letsgo"/>
+          <div className={cx('column', 'right')}>
+            <div className={cx('circle')}></div>
+            <div className={cx('letsgo-img')}>
+              <img src={letsgo} alt="letsgo"/>
+            </div>
+            <div className={cx('next-btn')} onClick={() => {nextBtnClick(0)}}> 
+              <img src={click} alt="click"/>
+            </div>
           </div>
-          <div onClick={() => {nextBtnClick(0)}}> <img src={click} alt="click"/></div>
         </div>
         <div className={cx('bar')}> STEP 1 </div>
       </div>
