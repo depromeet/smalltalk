@@ -1,4 +1,4 @@
-import React, { Component, Fragment} from 'react';
+import React, { Component } from 'react';
 import MainHomeBackground from '../../components/MainHomeBackground';
 
 class MainHome extends Component{
@@ -24,12 +24,10 @@ class MainHome extends Component{
 
   handleCloseList() {
     this.setState({isClickedList : false});
-    console.log("isClickedList : false");
   }
 
   handleCloseChat() {
     this.setState({isClickedChat : false});
-    console.log("isClickedChat : false");
   }
 
   render(){

@@ -1,16 +1,14 @@
-import React, { Component, Fragment} from 'react';
+import React, { Component } from 'react';
 import './style.scss';
-import SideMenu from '../SideMenu/index';
+import SideMenu from '../MainHomeBackground/SideMenu/index'
 
 class MainHomeBackground extends Component{
-  constructor(props){
-    super(props);
-  }
 
   render(){
     return(
     <div className="main-home-background">
         <div className="logo"></div>
+        {/* 뒤 배경 원들 */}
         <div className="background-circles">
           <div className="circle" id="red-circle-1"></div>
           <div className="circle" id="edge-circle-1"></div>
@@ -22,12 +20,14 @@ class MainHomeBackground extends Component{
           <div className="circle" id="gradation-circle"></div>
           <div className="circle" id="red-circle-2"></div>
         </div>
+        {/* 메뉴 */}
         <div className="menu">
-          <div className="menu-list">MYPAGE</div>
-          <div className="menu-list">SCHEDULE</div>
-          <div className="menu-list">MATE</div>
-          <div className="menu-list">BIGDATA</div>
+          <a href="/mypage"> <div className="menu-list">MYPAGE </div> </a>
+          <a href="/schedule"> <div className="menu-list">SCHEDULE </div> </a>
+          <a href="/mate"> <div className="menu-list">MATE </div> </a>
+          <a href="/bigdata"> <div className="menu-list">BIGDATA </div> </a>
         </div>
+        {/* 화살표 1 */}
         <div className="lines-1">
           <div className="dashed-arrow"></div>
           <div className="triangles">
@@ -44,15 +44,18 @@ class MainHomeBackground extends Component{
             <div className="red-line"></div>
           </div>
         </div>
+        {/* 화살표 2 */}
         <div className="lines-2">
           <div className="dashed-line"></div>
           <div className="red-line"></div>
           <div className="white-arrow"></div>
         </div>
+        {/* 친구 리스트, 채팅 버튼 */}
         <div className="buttons">
           <div className="list-button" onClick={this.props.handleListClick}></div>
           <div className="chat-button" onClick={this.props.handleChatClick}></div>
         </div>
+        {/* Let's small-talk 글귀 */}
         <div className="main-home__phrases">
           <div>Let’s</div>
           <div id="main-home__phrases__second-line">small-talk</div>
