@@ -6,9 +6,9 @@ import google from 'images/google.png';
 import click from 'images/click.svg';
 import classnames from 'classnames/bind';
 import styles from './RegisterStart.module.scss';
-const cx = classnames.bind(styles);
+const cx = classnames.bind(styles); 
 
-const RegisterStart = ({ isMovedLeft, nextBtnClick }) => {
+const RegisterStart = ({ isMovedLeft, handleNextBtn }) => {
   let className = cx({
   'step-container': true,
   'move-left': isMovedLeft[0]
@@ -44,7 +44,7 @@ const RegisterStart = ({ isMovedLeft, nextBtnClick }) => {
             <div className={cx('letsgo-img')}>
               <img src={letsgo} alt="letsgo"/>
             </div>
-            <div className={cx('next-btn')} onClick={() => {nextBtnClick(0)}}> 
+            <div className={cx('next-btn')} onClick={() => {handleNextBtn(0)}}> 
               <img src={click} alt="click"/>
             </div>
           </div>

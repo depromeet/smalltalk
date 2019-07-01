@@ -7,7 +7,7 @@ const LabelInput = ({ label, value, limit, required, disabled, ...rest }) => {
   return(
     <div className={cx('label-input', { disabled })}>
       <div className={cx('label')}>{label}</div>
-      <input className={cx('input')}value={value} {...rest} disabled={disabled} />
+      <input className={cx('input')} value={value} {...rest} disabled={disabled} />
       <div></div>
       {/* { disabled && (
           <div className={cx('lock-wrapper')}>

@@ -1,9 +1,9 @@
 import React from 'react';
-import RegisterContainer from 'App/containers/Register/RegisterContainer';
+import { RegisterTemplate } from 'App/components/Register/RegisterTemplate';
 
 const Register = () => {
   return (
-    <RegisterContainer/>
+    <RegisterTemplate/>
   );
 };
 
