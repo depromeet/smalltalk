@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { RegisterStart } from '../RegisterStart';
-import { RegisterForm } from '../RegisterForm';
+import  RegisterFormContainer  from 'App/containers/Register/RegisterFormContainer';
 import { RegisterStyles } from '../RegisterStyles';
 import { RegisterEnd } from '../RegisterEnd';
 import classnames from 'classnames/bind';
@@ -33,7 +33,7 @@ class RegisterTemplate extends Component {
         isMovedLeft={isMovedLeft}
         handleNextBtn={this.handleNextBtn}
       />
-      <RegisterForm
+      <RegisterFormContainer
         isMovedLeft={isMovedLeft}
         handleNextBtn={this.handleNextBtn}
       />
