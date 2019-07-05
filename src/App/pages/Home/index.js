@@ -16,7 +16,7 @@ class Home extends Component{
       <Fragment>
       {
         isLoggedIn ?
-        <MainHome/>
+        <MainHome/> 
         :
         <Start/>
       }

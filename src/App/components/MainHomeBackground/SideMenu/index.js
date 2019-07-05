@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import ChatRoom from '../../Chat/ChatRoom/index';
+import ChatRoom from '../../Chat/ChatRoom/index';
 import ChatMateList from '../../Chat/ChatMateList/index';
 
 class SideMenu extends Component{
@@ -30,27 +30,26 @@ class SideMenu extends Component{
   render(){
     const { isClickedList, isClickedChat } = this.props;
     let FriendsListDataLength = this.state.FriendsListData.length;
-
-    // if(isClickedChat) {
-    //     return(<ChatRoom 
-    //         handleChatClose={this.props.handleChatClose}
-    //         isClickedList={this.props.isClickedList}
-    //         name={this.state.FriendsListData.name} />)
-    // }
-    if(isClickedList) {
-        return(<ChatMateList 
+    
+    return(
+    <div>
+        {["asd", "fdfd", "asdf", "efef", "zcxv"].map((list, i) => {
+          return (<ChatRoom
+                      name={list}
+                      key={i}
+                  />);
+              })}
+      <ChatMateList 
             handleListClose={this.props.handleListClose} 
             handleChatClick={this.props.handleChatClick}
             isClickedList={this.props.isClickedList}
             ApplyListData={this.state.ApplyListData}
             FriendsListDataLength={FriendsListDataLength}
             FriendsListData={this.state.FriendsListData}
-             />)
-    }
-    else {
-        return <div></div>;
-    }
-  }
+             />
+  </div>  
+  )  
+}
 }
 
 export default SideMenu;

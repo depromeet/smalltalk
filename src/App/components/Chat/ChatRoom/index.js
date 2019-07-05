@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './style.module.scss';
 
-class Chat extends Component{
+class ChatRoom extends Component{
 
+    
   render(){
     const cx = classNames.bind(styles);
     return(
@@ -45,4 +46,4 @@ class Chat extends Component{
   }
 }
 
-export default Chat;
+export default ChatRoom;
