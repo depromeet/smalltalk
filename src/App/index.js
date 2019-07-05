@@ -4,7 +4,7 @@ import PrivateRoute from 'App/components/common/PrivateRoute';
 import {
   Home,
   Login,
-  Register
+  Register,
   Mate,
   MateList
 } from './pages';
