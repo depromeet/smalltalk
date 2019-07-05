@@ -41,7 +41,8 @@ th{
     position: absolute;
     top:0;
     width:100%;
-    height: 100%;
+    height: 250px;
+    z-index: -1;
 }
 .paddle-nav li{
     position: absolute; 
@@ -74,14 +75,18 @@ th{
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 81vw;
-    height: 250px;
+    width: 78vw;
+    height: 100%;
     overflow: hidden;
 }
 .list_wrap .call_t{
     width: 3000px;
     height: 250px;
+    position: absolute;
+    left: 0;
 }
 .call_t li{
     float: left;
+    cursor: pointer;
+    border: 1px solid #222;
 }

@@ -11,31 +11,40 @@ class TicketBox extends Component{
   constructor(){
     super();
     this.state = {
-      isToggleOn: null
+      isToggle: true,
+      clickedTicket: []
     }
-  }
+  };
 
-  myColor = (i) => {
-    if(this.state.isToggleOn === i){
-      console.log("click");
-      return "1";
+  handleClick = (ticket) => {
+    // if(this.state.isToggleOn === i){
+    //   this.setState({isTogleOn: null})
+    // } else {
+    //   this.setState({isToggleOn: i})
+    // }
+    // console.log("클릭" + i);
+    console.log(ticket);
+    // const tic = this.state.clickedTicket.indexOf(ticket);
+    const { isToggle } = this.state;
+    if(isToggle) {
+      this.setState({
+        isToggle: !isToggle,
+        clickedTicket: this.state.clickedTicket.concat(ticket)
+      })
+      console.log("push");
+    }else if(!isToggle){
+      this.setState({
+      isToggle: !isToggle,
+      clickedTicket: this.state.clickedTicket.filter(info => info.ticket !== ticket)
+      })
+      console.log("delete");
     }
-    return "0.6";
-  }
-
-  activeTicket = (i) => {
-    if(this.state.isToggleOn === i){
-      this.setState({isToggleOn: null})
-    } else {
-      this.setState({isToggleOn: i})
-    }
-    console.log("클릭" + i);
-  }
+  };
 
   makeList = ( ticketList ) => { 
-    // let bgColor = this.state.isToggleOn ? "1" : "0.6"
     return ticketList.map( (ticket, i) => {
-      return <li className="t_item" style={{opacity: this.myColor(i)}} onClick={() => this.activeTicket(i)}>
+      // console.log(ticket);
+      return <li className={cx("t_item", (this.state.isToggleOn === i? 'active' : 'none'))} onClick={() => this.handleClick(ticket)}>
       <BigTicket listLen={ticketList.length} ticket={ticket}/></li>
     })
   }
@@ -49,6 +58,7 @@ class TicketBox extends Component{
 
   render(){
     const { ticketList } = this.props;
+    console.log(this.state.clickedTicket);
     return(
       <ul className={cx('call_t')} style={this.resizeWidth(ticketList.length)}>
         {this.makeList(ticketList)}
@@ -63,13 +73,15 @@ class Mate extends Component{
     this.state = {
       ticketList: [
         {
-        ticketTitle: '도쿄',
-        ticketSubTitle: 'Tokyo',
-        startDate: '2019.06.08',
-        endDate: '2019.06.15',
-        ticketImage : '../../static/images/ticket_img.png'
+          id: "0",
+          ticketTitle: '도쿄',
+          ticketSubTitle: 'Tokyo',
+          startDate: '2019.06.08',
+          endDate: '2019.06.15',
+          ticketImage : '../../static/images/ticket_img.png'
         },
         {
+          id: "1",
           ticketTitle: '파리',
           ticketSubTitle: 'Paris',
           startDate: '2019.06.08',
@@ -77,6 +89,7 @@ class Mate extends Component{
           ticketImage : '../../static/images/ticket_img.png'
         },
         {
+          id: "2",
           ticketTitle: '로스엔젤리스',
           ticketSubTitle: 'LA',
           startDate: '2019.06.08',
@@ -84,6 +97,7 @@ class Mate extends Component{
           ticketImage : '../../static/images/ticket_img.png'
         },
         {
+          id: "3",
           ticketTitle: '싱가포르',
           ticketSubTitle: 'Singapore',
           startDate: '2019.06.08',
@@ -91,6 +105,7 @@ class Mate extends Component{
           ticketImage : '../../static/images/ticket_img.png'
         },
         {
+          id: "4",
           ticketTitle: '도쿄',
           ticketSubTitle: 'Tokyo',
           startDate: '2019.06.08',
@@ -98,6 +113,7 @@ class Mate extends Component{
           ticketImage : '../../static/images/ticket_img.png'
           },
           {
+            id: "5",
             ticketTitle: '파리',
             ticketSubTitle: 'Paris',
             startDate: '2019.06.08',
@@ -105,6 +121,7 @@ class Mate extends Component{
             ticketImage : '../../static/images/ticket_img.png'
           },
           {
+            id: "6",
             ticketTitle: '로스엔젤리스',
             ticketSubTitle: 'LA',
             startDate: '2019.06.08',
@@ -112,6 +129,7 @@ class Mate extends Component{
             ticketImage : '../../static/images/ticket_img.png'
           },
           {
+            id: "7",
             ticketTitle: '싱가포르',
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
@@ -119,6 +137,7 @@ class Mate extends Component{
             ticketImage : '../../static/images/ticket_img.png'
           },
           {
+            id: "8",
             ticketTitle: '도쿄',
             ticketSubTitle: 'Tokyo',
             startDate: '2019.06.08',
@@ -126,6 +145,7 @@ class Mate extends Component{
             ticketImage : '../../static/images/ticket_img.png'
             },
             {
+              id: "9",
               ticketTitle: '파리',
               ticketSubTitle: 'Paris',
               startDate: '2019.06.08',
@@ -133,6 +153,7 @@ class Mate extends Component{
               ticketImage : '../../static/images/ticket_img.png'
             },
             {
+              id: "10",
               ticketTitle: '로스엔젤리스',
               ticketSubTitle: 'LA',
               startDate: '2019.06.08',
@@ -140,6 +161,7 @@ class Mate extends Component{
               ticketImage : '../../static/images/ticket_img.png'
             },
             {
+              id: "11",
               ticketTitle: '싱가포르',
               ticketSubTitle: 'Singapore',
               startDate: '2019.06.08',
@@ -162,6 +184,9 @@ class Mate extends Component{
           <div className={cx('mate_title')}>
             <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
             <p>친구를 추천받고 싶으신 여행일정을 선택하고,<br/>당신만의 메이트를 찾아보세요 :)</p>
+          </div>
+          <div className={cx('mate_btn')}>
+            <button className={cx('matelink_btn')} onClick="callMatelist()">선택한 지역으로 친구 추천 ▶</button>
           </div>
           <div className={cx('length_box')}>
             <TicketLength ticketList = {ticketList}/>

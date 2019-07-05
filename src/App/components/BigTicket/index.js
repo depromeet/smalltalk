@@ -12,7 +12,7 @@ class BigTicket extends Component{
   render(){
     // console.log(this.props.ticket);
     const { ticket } =this.props;
-    console.log(this.props.listLen);
+    // console.log(this.props.listLen);
 
     return(
       <Fragment>

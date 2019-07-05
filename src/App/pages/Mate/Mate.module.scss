@@ -51,8 +51,9 @@
     width: 3000px;
     height: 380px;
 }
-.call_t li{
+.call_t > li{
     float: left;
+    opacity: 0.6;
 }
 
 ::-webkit-scrollbar{ width:9px; height:10px; }
@@ -78,4 +79,31 @@
   width:60px;
   background-color:#fff;
   -webkit-border-radius:8px;
+}
+
+.active{
+    opacity: 1 !important;
+}
+.none{
+    opacity: 0.6 !important;
+}
+
+/* btn */
+
+.mate_btn{
+    position: absolute;
+    top: 21vh;
+    right: 0;
+    width: 25vw;
+}
+.mate_btn .matelink_btn{
+    color: #fb3e1d;
+    background-color: #fff;
+    border-radius: 100px;
+    border: none;
+    padding: 13px 25px;
+    font-size: 14pt;
+    font-weight: 600;
+    letter-spacing: -0.96px;
+    cursor: pointer;
 }
