@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChatRoom from '../../Chat/ChatRoom/index';
+// import ChatRoom from '../../Chat/ChatRoom/index';
 import ChatMateList from '../../Chat/ChatMateList/index';
 
 class SideMenu extends Component{
@@ -31,13 +31,13 @@ class SideMenu extends Component{
     const { isClickedList, isClickedChat } = this.props;
     let FriendsListDataLength = this.state.FriendsListData.length;
 
-    if(isClickedChat) {
-        return(<ChatRoom 
-            handleChatClose={this.props.handleChatClose}
-            isClickedList={this.props.isClickedList}
-            name={this.state.FriendsListData.name} />)
-    }
-    else if(isClickedList) {
+    // if(isClickedChat) {
+    //     return(<ChatRoom 
+    //         handleChatClose={this.props.handleChatClose}
+    //         isClickedList={this.props.isClickedList}
+    //         name={this.state.FriendsListData.name} />)
+    // }
+    if(isClickedList) {
         return(<ChatMateList 
             handleListClose={this.props.handleListClose} 
             handleChatClick={this.props.handleChatClick}
