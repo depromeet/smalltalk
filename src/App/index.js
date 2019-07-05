@@ -5,6 +5,8 @@ import {
   Home,
   Login,
   Register
+  Mate,
+  MateList
 } from './pages';
 import './styles.scss';
 
@@ -16,6 +18,8 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/user" component={Home} />
+        <Route exact path="/mate" component={Mate} />
+        <Route exact path="/mateList" component={MateList} />
       </Switch>
     </Fragment>
   );
