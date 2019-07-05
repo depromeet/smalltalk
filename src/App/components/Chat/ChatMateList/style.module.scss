@@ -1,0 +1,93 @@
+.my-mate {
+    position: absolute;
+    right: 0;
+    width: 23.75vw;
+    height: 100vh;
+    box-shadow: -6px 3px 11px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    z-index: 3;
+
+    .buttons {
+        position: absolute;
+        top: 40.92vh;
+        right: 24.27vw;
+        z-index: 4;
+
+        .list-button {
+            width: 4.53vw;
+            height: 8.1vh;
+            background-image: url(../../../../static/images/button_list_on.png);
+            background-size: cover;
+            margin-bottom: 2.08vh;
+            cursor: pointer;
+        }
+
+        .chat-button {
+            width: 4.53vw;
+            height: 8.1vh;
+            background-image: url(../../../../static/images/button_chat_off.png);
+            background-size: cover;
+            margin-bottom: 2.08vh;
+            cursor: pointer;
+        }
+    }
+
+    .header {
+        width: 10.05vw;
+        height: 9.62vh;
+        font-family: NotoSansCJKkr;
+        font-size: 1.87vw;
+        font-weight: bold;
+        line-height: 1.39;
+        letter-spacing: -1.44px;
+        position: absolute;
+        top: 5.18vh;
+        right: 12.39vw;
+    }
+
+    .close-button {
+        width: 3.12vw;
+        height: 5.55vh;
+        background-image: url(../../../../static/images/icon_x.png);
+        background-size: cover;
+        position: absolute;
+        top: 5.18vh;
+        right: 1.25vw;
+        cursor: pointer;
+    }
+
+    .collection {
+        overflow: scroll;
+        position: relative;
+        top: 16.85vh;
+        height: 45.37vh;
+    }
+}
+
+.apply-friend {
+    width: 100%;
+    height: 37.77vh;
+    background-color: #f4f4f4;
+    position: absolute;
+    bottom: 0;
+    padding: 0.57vw;
+
+    .fold-button {
+        width: 20px;
+        border-top: 10px solid #b7b7b7;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        position: relative;
+        left: 20.5vw;
+        top: 2.22vh;
+        cursor: pointer;
+    }
+
+    .collection {
+        position: relative;
+        top: 3.98vh;
+        overflow: scroll;
+        height: 32.77vh;
+    }
+}
