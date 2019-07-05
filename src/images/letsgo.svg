@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264" height="331.445" viewBox="0 0 264 331.445">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:#fff}.cls-1{stroke:#ff3c00;stroke-miterlimit:10;stroke-width:2px;font-size:84px;font-family:NotoSans-Black,Noto Sans;font-weight:800}.cls-2{fill:#fb3e1d}
+        </style>
+    </defs>
+    <g id="그룹_126" data-name="그룹 126" transform="translate(-1365.27 -411.929)">
+        <g id="그룹_122" data-name="그룹 122" transform="translate(1036 93)">
+            <text id="Let_s_small_talk" class="cls-1" data-name="Let’s small talk" transform="translate(331.27 416.929)">
+                <tspan x="0" y="0">Let’s</tspan><tspan class="cls-2"><tspan x="0" y="101.66">small</tspan><tspan y="101.66" class="cls-3"> </tspan></tspan><tspan x="0" y="203.32">talk</tspan>
+            </text>
+            <text id="_" class="cls-1" data-name="!" transform="translate(519.887 623.374)">
+                <tspan x="0" y="0">!</tspan>
+            </text>
+        </g>
+        <g id="그룹_121" data-name="그룹 121" transform="translate(1040 87)">
+            <text id="Let_s_small_talk-2" class="cls-1" data-name="Let’s small talk" transform="translate(331.27 416.929)">
+                <tspan x="0" y="0">Let’s</tspan><tspan x="0" y="101.66">small </tspan><tspan x="0" y="203.32">talk</tspan>
+            </text>
+            <text id="_2" class="cls-1" data-name="!" transform="translate(519.887 623.374)">
+                <tspan x="0" y="0">!</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

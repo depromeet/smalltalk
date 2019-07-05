@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="line_mypage2" width="537.986" height="20" viewBox="0 0 537.986 20">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:none;stroke:#fb3e1d;stroke-width:2px}.cls-2{stroke-miterlimit:10;stroke-dasharray:7}.cls-3{fill:#fb3e1d}
+        </style>
+    </defs>
+    <path id="패스_23" d="M334.975 0H0" class="cls-1" data-name="패스 23" transform="translate(0 9.578)"/>
+    <path id="선_31" d="M174.501 0H0" class="cls-2" data-name="선 31" transform="translate(354.475 9.578)"/>
+    <path id="패스_19" d="M622.265 391.094l-12-10v20z" class="cls-3" data-name="패스 19" transform="translate(-84.279 -381.094)"/>
+</svg>

@@ -1,0 +1,92 @@
+@import 'variables.scss';
+
+.list_wrap{
+    width: 75vw;
+    height: 80vh;
+    position: absolute;
+    top: 10vh;
+    left: 12.5vw;
+}
+.list_wrap h1{
+    font-size: 28pt;
+    font-weight: bold;
+    letter-spacing: -2.3px;
+}
+
+table{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 30px;
+}
+th{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1.2px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.arrow_list{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84vw;
+    height: 250px;
+    position: relative;
+}
+.paddle-nav{
+    position: absolute;
+    top:0;
+    width:100%;
+    height: 250px;
+    z-index: -1;
+}
+.paddle-nav li{
+    position: absolute; 
+    top:0; 
+    width: 40px; 
+    height: 100%;
+}
+.paddle-nav li.arrow.prev{left:0;}
+.paddle-nav li.arrow.next{right:0;}
+.paddle-nav li.arrow button{
+    overflow:hidden; 
+    position: absolute; 
+    top:50%; 
+    left:50%; 
+    width: 40px; 
+    height: 40px; 
+    font-size: 20px;
+    transform: translateX(-50%) translateY(-50%);
+    padding:0; 
+    border: none; 
+    background-color: #fff; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ticket */
+
+.list_wrap .t_box{
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 78vw;
+    height: 100%;
+    overflow: hidden;
+}
+.list_wrap .call_t{
+    width: 3000px;
+    height: 250px;
+    position: absolute;
+    left: 0;
+}
+.call_t li{
+    float: left;
+    cursor: pointer;
+    border: 1px solid #222;
+}

@@ -1,0 +1,7 @@
+@import 'variables.scss'; 
+
+.carousel-container{
+    @extend %back-image-container;
+    display: flex;
+    min-width: 1330px;
+}

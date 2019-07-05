@@ -1,0 +1,133 @@
+@import 'variables.scss';
+
+.move-left{
+  margin-left: -86.5vw;
+  // display: none;
+}
+.step-container{
+  @extend %step-container;
+  transition: margin 1s ease;
+  
+  .contents{
+    display: flex;
+    min-width: 1140px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 55px;
+    .column{
+      &.left{
+        font-weight: bold;
+        font-size: 24px;
+        p { 
+          margin-bottom: 9px;
+          letter-spacing: -1.4px;
+         }
+        p:nth-child(3){
+          margin-bottom: 25px;
+        }
+        button{
+          width: 230px;
+          height: 36px;
+          padding: 3px;
+          border-radius: 29px;
+          font-weight: bold;
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 5px;
+
+          img{
+            height: 25px;
+            margin-right: 5px;
+          }
+        }
+        .facebook{
+          background-color:#4a6ef4;
+          color: white;
+          font-weight: 500;
+        }
+      }
+      &.middle{
+        width: 380px;
+        // width: 33%;
+        position: relative;
+        img{
+          width: 100%;
+          position: absolute;
+          // left: -125px;
+          top: -20px;
+        }
+      }
+      &.right{
+        position: relative;
+        left: -55px;
+        display: flex;
+        align-items: center;
+        .circle{
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          background-color: $neon;
+        }
+        .letsgo-img{
+          position: relative;
+          height: 200px;
+          img {
+            position: absolute;
+            left: -71px;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .next-btn{
+          position: relative;
+          left: 30px;
+        }
+      }
+    }
+  }
+  .bar{
+    @extend %bar;
+    background-color: $red; 
+    color: white;
+    
+  }
+
+
+//   .arrow{
+//     position: absolute;
+//     top: 45%;
+//     left: 20%;
+//     width: 380px;
+//     img{
+//       width: 100%;
+//     }
+//   }
+//   .circle{
+//     position: absolute;
+//     top: 28%;
+//     left: 56%;
+//     width: 280px;
+//     height: 280px;
+//     border-radius: 50%;
+//     background-color: $neon;
+//   }
+//   .letsgo-img{
+//     position: absolute;
+//     height: 200px;
+//     z-index: 2;
+//     top: 33%;
+//     left: 75%;
+//     img{
+//       height: 100%;
+//     }
+//   }
+  }
+
+
+    
+  
+

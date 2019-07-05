@@ -1,0 +1,16 @@
+@import 'variables.scss';
+
+
+.end-container{
+  @extend %step-container;
+  width: 86.5vw;
+  justify-content: center;
+  z-index: -3;
+  position: absolute;
+  left: 13.5vw;
+  background-color: $red;
+}
+
+.buttons{
+  background-color: antiquewhite;
+}
