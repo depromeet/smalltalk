@@ -1,4 +1,5 @@
 import React, { Component, Fragment} from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 import startCurve from 'images/170.svg';
 
@@ -42,8 +43,8 @@ class Start extends Component{
             </div>
           </div>
           <div className="content-column">
-              <a href="/login"> <div className="button-login"> 로그인 </div> </a>
-              <a href="/register"> <div className="button-register">회원가입 </div></a>
+              <div className="button-login"><Link to='/login'> 로그인 </Link></div> 
+              <div className="button-register"><Link to='/register'>회원가입 </Link></div>
           </div>
         </div>
       </Fragment>
