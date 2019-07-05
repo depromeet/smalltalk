@@ -4,10 +4,6 @@ import './style.scss';
 import startCurve from 'images/170.svg';
 
 class Start extends Component{
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return(
       <Fragment>

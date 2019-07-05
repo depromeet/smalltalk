@@ -69,17 +69,17 @@ export const loadUser = () => (dispatch, getState) =>{
     })
   })
   .catch(err => { 
-    // 에러 메세지 처리 action 
-    dispatch({ 
-      type : AUTH_ERROR
-    })
+    // dispatch({ 
+    //   type : AUTH_ERROR
+    // })
+    console.log(err);
   })
 }
 
 const initialState = {
   token: localStorage.getItem('token'),
-  isAuthenticated : null, 
-  isLoading: false, // login loading이라고 따로 객체를 만드는게 낫나? 
+  isAuthenticated : true, // true로 바꾸면 됨
+  isLoading: false,
   user: null,
   register : {
     status : 'INIT',
