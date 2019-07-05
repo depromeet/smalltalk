@@ -65,8 +65,8 @@ class MainHomeBackground extends Component{
         isClickedList={this.props.isClickedList}
         handleChatClick={this.props.handleChatClick}
         handleListClick={this.props.handleListClick}
-        handleCloseChat={this.props.handleCloseChat}
-        handleCloseList={this.props.handleCloseList} />
+        handleChatClose={this.props.handleChatClose}
+        handleListClose={this.props.handleListClose} />
     </div>
     )
   }

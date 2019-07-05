@@ -14,10 +14,10 @@ class Chat extends Component{
             </div>
             <div className={cx("header")}>
                 <div className={cx("title")}>
-                    <div className={cx("name")}>가나다</div>
+                    <div className={cx("name")}>{this.props.name}</div>
                     <div className={cx("text")}>님</div>
                 </div>
-                <div className={cx("close-button")} onClick={this.props.handleCloseChat}></div>
+                <div className={cx("close-button")} onClick={this.props.handleChatClose}></div>
             </div>
             <div className={cx("content")}>
                 <div className={cx("opposite")}>

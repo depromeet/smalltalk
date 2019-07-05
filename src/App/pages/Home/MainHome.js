@@ -6,8 +6,8 @@ class MainHome extends Component{
     super(props);
     this.handleListClick = this.handleListClick.bind(this);
     this.handleChatClick = this.handleChatClick.bind(this);
-    this.handleCloseList = this.handleCloseList.bind(this);
-    this.handleCloseChat = this.handleCloseChat.bind(this);
+    this.handleListClose = this.handleListClose.bind(this);
+    this.handleChatClose = this.handleChatClose.bind(this);
     this.state={
       isClickedList : false,
       isClickedChat : false
@@ -22,11 +22,11 @@ class MainHome extends Component{
     this.setState({isClickedChat : true});
   }
 
-  handleCloseList() {
+  handleListClose() {
     this.setState({isClickedList : false});
   }
 
-  handleCloseChat() {
+  handleChatClose() {
     this.setState({isClickedChat : false});
   }
 
@@ -37,8 +37,8 @@ class MainHome extends Component{
       isClickedList={this.state.isClickedList}
       handleListClick={this.handleListClick}
       handleChatClick={this.handleChatClick}
-      handleCloseList={this.handleCloseList}
-      handleCloseChat={this.handleCloseChat} />
+      handleListClose={this.handleListClose}
+      handleChatClose={this.handleChatClose} />
     )
   }
 }
