@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
 
-class MainBackground extends Component{
-  render(){
+const MainBackground = ({handleListClick}, {handleChatClick}) => {
     return(
     <div className="main-home-background">
         <div className="logo"></div>
@@ -50,8 +49,8 @@ class MainBackground extends Component{
         </div>
         {/* 친구 리스트, 채팅 버튼 */}
         <div className="buttons">
-          <div className="list-button" onClick={this.props.handleListClick}></div>
-          <div className="chat-button" onClick={this.props.handleChatClick}></div>
+          <div className="list-button" onClick={handleListClick}></div>
+          <div className="chat-button" onClick={handleChatClick}></div>
         </div>
         {/* Let's small-talk 글귀 */}
         <div className="main-home__phrases">
@@ -59,8 +58,7 @@ class MainBackground extends Component{
           <div id="main-home__phrases__second-line">small-talk</div>
         </div>
     </div>
-    )
-  }
+  )
 }
 
 export default MainBackground;

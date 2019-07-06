@@ -30,19 +30,21 @@ class SideMenu extends Component{
     const { isClickedList, isClickedChat } = this.props;
     let FriendsListDataLength = this.state.FriendsListData.length;
     
-    return(
-    <div>
-      <ChatMateList 
-            handleListClose={this.props.handleListClose} 
-            handleChatClick={this.props.handleChatClick}
-            isClickedList={this.props.isClickedList}
-            ApplyListData={this.state.ApplyListData}
-            FriendsListDataLength={FriendsListDataLength}
-            FriendsListData={this.state.FriendsListData}
-             />
-  </div>  
-  )  
-}
+    if(isClickedList){
+      return(
+        <ChatMateList 
+          handleListClose={this.props.handleListClose} 
+          handleChatClick={this.props.handleChatClick}
+          isClickedList={this.props.isClickedList}
+          ApplyListData={this.state.ApplyListData}
+          FriendsListDataLength={FriendsListDataLength}
+          FriendsListData={this.state.FriendsListData}
+          />
+        )
+      } else {
+        return <div></div>
+      }
+  }
 }
 
 export default SideMenu;
