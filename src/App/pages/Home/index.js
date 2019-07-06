@@ -4,7 +4,6 @@ import Start from 'App/components/Home/Start';
 import MainContainer from 'App/containers/Home/MainContainer';
 
 const Home = ({ isAuthenticated }) => {
-  console.log(isAuthenticated)
   return (
     isAuthenticated? 
     <MainContainer/>

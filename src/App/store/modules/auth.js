@@ -20,7 +20,8 @@ export const registerRequest = values => {
   return (dispatch) => {
     dispatch(register()); 
     return axios.post(`${API}/auth/register/`, {email, password,age,nickname})
-    .then(response => {
+    .then(res => { 
+      console.log(res);
       dispatch(registerSuccess());
     })
     .catch(error => { 
@@ -69,16 +70,16 @@ export const loadUser = () => (dispatch, getState) =>{
     })
   })
   .catch(err => { 
-    // dispatch({ 
-    //   type : AUTH_ERROR
-    // })
+    dispatch({ 
+      type : AUTH_ERROR
+    })
     console.log(err);
   })
 }
 
 const initialState = {
   token: localStorage.getItem('token'),
-  isAuthenticated : true, // true로 바꾸면 됨
+  isAuthenticated : null, // true로 바꾸면 됨
   isLoading: false,
   user: null,
   register : {
