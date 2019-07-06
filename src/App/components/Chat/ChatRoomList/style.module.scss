@@ -1,0 +1,46 @@
+// 채팅창
+.chat-list {
+    width: 23.69vw;
+    height: 100vh;
+    box-shadow: -6px 3px 11px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+
+    // 채팅창 상단
+    .header {
+        height: 12.59vh;
+
+        .title {
+            display: flex;
+            position: relative;
+            top: 5.18vh;
+            left: 1.25vw;
+            width: 7.18vw;
+            height: 0.05vh;
+            font-family: NotoSansCJKkr;
+            font-size: 1.87vw;
+            font-weight: bold;
+            line-height: 1.39;
+            letter-spacing: -0.07vw;
+        }
+
+        // 채팅창 닫는 버튼
+        .close-button {
+            width: 3.12vw;
+            height: 5.55vh;
+            background-image: url(../../../../static/images/icon_x.png);
+            background-size: cover;
+            position: absolute;
+            top: 5.18vh;
+            right: 1.25vw;
+            cursor: pointer;
+        }
+    }
+
+    .collection {
+        overflow: scroll;
+        height: 83.14vh;
+    }
+}

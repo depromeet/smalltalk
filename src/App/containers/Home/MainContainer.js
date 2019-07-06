@@ -11,7 +11,7 @@ class MainContainer extends Component{
     // this.handleChatClose = this.handleChatClose.bind(this);
     this.state={
       isClickedList : false,
-      isClickedChat : false
+      isClickedChat : true
     }
   }
 

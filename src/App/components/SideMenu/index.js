@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChatMateList from '../Chat/ChatMateList/index';
+import ChatRoomList from '../../components/Chat/ChatRoomList/index'
 
 class SideMenu extends Component{
 
@@ -15,7 +16,14 @@ class SideMenu extends Component{
             {picture: testIcon, name: "다라마", number: "2"},
             {picture: testIcon, name: "마바사", number: "3"},
             {picture: testIcon, name: "아자차", number: "0"},
-            {picture: testIcon, name: "카타파", number: "0"}
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"},
+            {picture: testIcon, name: "아자차", number: "0"}
         ],
         ApplyListData: [
             {name: "김군"},
@@ -41,7 +49,15 @@ class SideMenu extends Component{
           FriendsListData={this.state.FriendsListData}
           />
         )
-      } else {
+      }
+      else if(isClickedChat) {
+        return(
+          <ChatRoomList 
+            FriendsListData={this.state.FriendsListData} 
+          />
+        )
+      }
+      else {
         return <div></div>
       }
   }
