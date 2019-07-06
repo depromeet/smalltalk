@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
-import SideMenu from '../MainHomeBackground/SideMenu/index'
 
-class MainHomeBackground extends Component{
-
+class MainBackground extends Component{
   render(){
     return(
     <div className="main-home-background">
@@ -60,16 +58,9 @@ class MainHomeBackground extends Component{
           <div>Let’s</div>
           <div id="main-home__phrases__second-line">small-talk</div>
         </div>
-        <SideMenu 
-        isClickedChat={this.props.isClickedChat}
-        isClickedList={this.props.isClickedList}
-        handleChatClick={this.props.handleChatClick}
-        handleListClick={this.props.handleListClick}
-        handleChatClose={this.props.handleChatClose}
-        handleListClose={this.props.handleListClose} />
     </div>
     )
   }
 }
 
-export default MainHomeBackground;
+export default MainBackground;

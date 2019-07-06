@@ -3,34 +3,33 @@ import EachFriendsList from './EachFriendsList/index';
 import ChatMateRequest from '../ChatMateRequest/index';
 import classNames from 'classnames/bind';
 import styles from './style.module.scss';
-import ChatRoom from '../ChatRoom/index';
 
 class ChatMateList extends Component{
-  constructor(props){
-    super(props);
+  // constructor(props){
+  //   super(props);
 
-//     const testIcon = "http://chittagongit.com/images/60x60-icon/60x60-icon-9.jpg"
+  //   const testIcon = "http://chittagongit.com/images/60x60-icon/60x60-icon-9.jpg"
 
-//     this.props = {
-//         FriendsListData: [
-//             {picture: testIcon, name: "김이박", number: "0"},
-//             {picture: testIcon, name: "가나다", number: "1"},
-//             {picture: testIcon, name: "다라마", number: "2"},
-//             {picture: testIcon, name: "마바사", number: "3"},
-//             {picture: testIcon, name: "아자차", number: "0"},
-//             {picture: testIcon, name: "카타파", number: "0"}
-//         ],
-//         ApplyListData: [
-//             {name: "김군"},
-//             {name: "박군"},
-//             {name: "조군"},
-//             {name: "킴군"}
-//         ]
-//     };
-    this.state = {
-      charRoomList : true
-    }
-  }
+  //   this.props = {
+  //       FriendsListData: [
+  //           {picture: testIcon, name: "김이박", number: "0"},
+  //           {picture: testIcon, name: "가나다", number: "1"},
+  //           {picture: testIcon, name: "다라마", number: "2"},
+  //           {picture: testIcon, name: "마바사", number: "3"},
+  //           {picture: testIcon, name: "아자차", number: "0"},
+  //           {picture: testIcon, name: "카타파", number: "0"}
+  //       ],
+  //       ApplyListData: [
+  //           {name: "김군"},
+  //           {name: "박군"},
+  //           {name: "조군"},
+  //           {name: "킴군"}
+  //       ]
+  //   };
+  //   this.state = {
+  //     charRoomList : true
+  //   }
+  // }
 
   render(){
     const cx = classNames.bind(styles);

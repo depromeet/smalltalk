@@ -1,28 +1,22 @@
-import React, { Component, Fragment} from 'react';
-import MainHome from './MainHome';
-import Start from './Start';
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux'; 
+import Start from 'App/components/Home/Start';
+// import MainContainer from 'App/containers/Home/MainContainer';
+import MainContainer from '../../containers/Home/MainContainer'
 
-class Home extends Component{
-  constructor(props){
-    super(props);
-    this.state={
-      isLoggedIn : true // false
-    }
-  }
 
-  render(){
-    const { isLoggedIn } = this.state;
-    return(
-      <Fragment>
-      {
-        isLoggedIn ?
-        <MainHome/> 
-        :
-        <Start/>
-      }
-      </Fragment>
-    )
-  }
+const Home = ({ isAuthenticated }) => {
+  console.log(isAuthenticated)
+  return (
+    isAuthenticated? 
+    <MainContainer/>
+    :
+    <Start/>
+  )
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  isAuthenticated : state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps)(Home); 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ChatRoom from '../../Chat/ChatRoom/index';
-import ChatMateList from '../../Chat/ChatMateList/index';
+import ChatMateList from '../Chat/ChatMateList/index';
 
 class SideMenu extends Component{
 
@@ -33,12 +32,6 @@ class SideMenu extends Component{
     
     return(
     <div>
-        {["asd", "fdfd", "asdf", "efef", "zcxv"].map((list, i) => {
-          return (<ChatRoom
-                      name={list}
-                      key={i}
-                  />);
-              })}
       <ChatMateList 
             handleListClose={this.props.handleListClose} 
             handleChatClick={this.props.handleChatClick}
