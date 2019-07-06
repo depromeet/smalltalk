@@ -5,7 +5,7 @@
     left: 1vw;
     width: 4.6vw;
     height: 4.6vw;
-    background-image: url(../../../static/images/logo.png);
+    background-image: url(../../../../static/images/logo.png);
     background-size: cover;    
 }
 
@@ -54,7 +54,7 @@
     }
 
     #picture-circle-1 {
-        background-image: url(../../../static/images/oval_img1.png);
+        background-image: url(../../../../static/images/oval_img1.png);
         background-size: cover;
         top: 24.53vh;
         left: -6.4vw;
@@ -62,7 +62,7 @@
     }
 
     #picture-circle-2 {
-        background-image: url(../../../static/images/oval_img2.png);
+        background-image: url(../../../../static/images/oval_img2.png);
         background-size: cover;
         top: 54.53vh;
         left: 26.86vw;
@@ -131,7 +131,7 @@
     .dashed-arrow {
         width: 28.02vw;
         height: 20px;
-        background-image: url(../../../static/images/line_mypage2.png);
+        background-image: url(../../../../static/images/line_mypage2.png);
         background-size: cover;
         margin-right: 22px;
     }
@@ -212,7 +212,7 @@
         width: 249.6px;
         // width: 13.02vw;
         height: 22px;
-        background-image: url(../../../static/images/white_arrow.png);
+        background-image: url(../../../../static/images/white_arrow.png);
         background-size: cover;
         position: relative;
         top: -11px;
@@ -228,7 +228,7 @@
     .list-button {
         width: 4.53vw;
         height: 8.1vh;
-        background-image: url(../../../static/images/button_list_off.png);
+        background-image: url(../../../../static/images/button_list_off.png);
         background-size: cover;
         margin-bottom: 2.08vh;
         cursor: pointer;
@@ -237,7 +237,7 @@
     .chat-button {
         width: 4.53vw;
         height: 8.1vh;
-        background-image: url(../../../static/images/button_chat_off.png);
+        background-image: url(../../../../static/images/button_chat_off.png);
         background-size: cover;
         cursor: pointer;
     }

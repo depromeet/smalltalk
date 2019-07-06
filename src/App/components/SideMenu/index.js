@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ChatRoom from '../../Chat/ChatRoom/index';
-import ChatMateList from '../../Chat/ChatMateList/index';
+import ChatRoom from '../Chat/ChatRoom/index';
+import ChatMateList from '../Chat/ChatMateList/index';
 
 class SideMenu extends Component{
 
