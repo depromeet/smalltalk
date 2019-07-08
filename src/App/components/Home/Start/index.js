@@ -55,8 +55,8 @@ class Start extends Component{
           this.props.token ? 
           <h1> Loading...</h1>
           :
-                <div>
-    <div className="backImage">
+           <div>
+      <div className="backImage">
           <div className="circle top-none-border"></div>
           <div className="circle top-neon"></div>
           <div className="circle left-neon"></div>

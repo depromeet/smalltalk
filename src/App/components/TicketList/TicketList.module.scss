@@ -1,0 +1,75 @@
+/* ticket box */
+
+.arrow_list{
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 280px;
+    background-color: #efefef;
+}
+.paddle-nav{
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width:88%;
+    height: 280px;
+    z-index: -1;
+}
+.paddle-nav li{
+    position: absolute; 
+    top:0; 
+    width: 40px; 
+    height: 100%;
+}
+.paddle-nav li.arrow.prev{left:0;}
+.paddle-nav li.arrow.next{right:0;}
+.paddle-nav li.arrow button{
+    overflow:hidden; 
+    position: absolute; 
+    top:50%; 
+    left:50%; 
+    width: 40px; 
+    height: 40px; 
+    font-size: 20px;
+    transform: translateX(-50%) translateY(-50%);
+    padding:0; 
+    border: none; 
+    background-color: #fff; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ticket */
+
+.t_box{
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 81vw;
+    height: 100%;
+    overflow: hidden;
+}
+.call_t{
+    width: 3000px;
+    height: 250px;
+    position: absolute;
+    left: 0;
+}
+.call_t > li{
+    float: left;
+    cursor: pointer;
+    // border: 1px solid #222;
+}
+
+.active{
+    opacity: 1 !important;
+    transition-duration: 0.5s;
+}
+.none{
+    opacity: 0.6 !important;
+    transition-duration: 0.5s;
+}

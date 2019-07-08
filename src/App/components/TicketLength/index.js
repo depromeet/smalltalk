@@ -2,6 +2,7 @@ import React, { Component, Fragment} from 'react';
 
 import classnames from 'classnames/bind';
 import styles from './TicketLength.module.scss';
+
 const cx = classnames.bind(styles);
 
 class TicketLength extends Component{

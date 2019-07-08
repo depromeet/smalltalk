@@ -1,4 +1,9 @@
-@import 'variables.scss';
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #fb3e1d;
+}
 
 .mate_wrap{
     position: relative;
@@ -42,18 +47,10 @@
     position: absolute;
     top: 50%;
     left: 14vw;
-    width: 80vw;
+    width: 86vw;
     height: 360px;
     overflow: hidden;
     overflow-x: scroll;
-}
-.call_t{
-    width: 3000px;
-    height: 380px;
-}
-.call_t > li{
-    float: left;
-    opacity: 0.6;
 }
 
 ::-webkit-scrollbar{ width:9px; height:10px; }
@@ -81,13 +78,6 @@
   -webkit-border-radius:8px;
 }
 
-.active{
-    opacity: 1 !important;
-}
-.none{
-    opacity: 0.6 !important;
-}
-
 /* btn */
 
 .mate_btn{
@@ -98,7 +88,7 @@
 }
 .mate_btn .matelink_btn{
     color: #fb3e1d;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.8);
     border-radius: 100px;
     border: none;
     padding: 13px 25px;
@@ -106,4 +96,9 @@
     font-weight: 600;
     letter-spacing: -0.96px;
     cursor: pointer;
+    transition-duration: 0.5s;
+}
+.mate_btn .matelink_btn:hover{
+    background-color: rgba(255,255,255,1);
+    transition-duration: 0.5s;
 }

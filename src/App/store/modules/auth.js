@@ -111,7 +111,7 @@ export const loginRequest = (values) => (dispatch) => {
 
 const initialState = {
   token: localStorage.getItem('token'),
-  isAuthenticated : null, // true로 바꾸면 됨
+  isAuthenticated : localStorage.getItem('token') ? true : false, // true로 바꾸면 됨
   // isLoading: false,
   user: null,
   register : {
