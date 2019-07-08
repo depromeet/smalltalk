@@ -1,7 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import google from 'images/google.png';
 import classnames from 'classnames/bind';
 import styles from './LoginForm.module.scss'; 
+import * as authAction from 'App/store/modules/auth';
 const cx = classnames.bind(styles);
 
 class LoginForm extends Component{
@@ -21,7 +24,22 @@ class LoginForm extends Component{
   }
 
   handleSubmit = event => {
-    event.preventDefault();
+    console.log('clicked');
+    event.preventDefault(); 
+    const { loginRequest } = this.props; 
+    const { email, password } = this.state; 
+    loginRequest({email, password})
+    .then(
+      () => {
+        if(this.props.status === 'SUCCESS'){
+          console.log('successfully logged in'); 
+          // this.props.history.push('/')
+          // 메인페이지로 이동
+        }else if(this.props.status === 'FAILURE'){
+          console.log('log in fail');
+        }
+      }
+    )
   }
 
   resetInputClick = (e) => {
@@ -30,6 +48,9 @@ class LoginForm extends Component{
   }
 
   render(){
+    if (this.props.isAuthenticated) {
+      return <Redirect to="/" />;
+    }
     return(
       <div className={cx('login__container')}>
         <div className={cx('login__header')}>
@@ -68,11 +89,11 @@ class LoginForm extends Component{
              name="password"
              > x</div>
           </div>
-          <input
+          <div
             className={cx('login__button', 'normal')}
             type="submit"
             value="로그인하기"
-            onSubmit={this.handleSubmit}
+            onClick={this.handleSubmit}
           />
           <div className={cx('button__container')}>
             <div className={cx('column')}>
@@ -91,4 +112,16 @@ class LoginForm extends Component{
   }
 }
 
-export default LoginForm;
+const mapStateToProps = state => ({
+  status : state.auth.login.status,
+  isAuthenticated : state.auth.isAuthenticated
+})
+
+const mapDispatchToProps = dispatch => ({
+  loginRequest : ( value ) => dispatch(authAction.loginRequest(value))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);

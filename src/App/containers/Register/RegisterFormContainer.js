@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { RegisterForm } from 'App/components/Register/RegisterForm';
 // import * as registerActions from 'App/store/modules/register';
 import * as authAction from 'App/store/modules/auth';
@@ -117,7 +116,6 @@ class RegisterFormContainer extends Component{
 }
 
 const mapStateToProps = state => ({
-  // isMovedLeft : state.register.isMovedLeft
   status : state.auth.register.status
 }); 
 // // 액션함수를 정의할 땐

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
-import SideMenu from '../../MainHomeBackground/SideMenu/index'
+import SideMenu from 'App/components/SideMenu';
 
 class MainBackground extends Component{
   render(){

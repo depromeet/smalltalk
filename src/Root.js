@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
@@ -27,5 +28,5 @@ const Root = () => {
   </Provider>
  )
 }
-
-export default Root;
+// export default Root;
+export default hot(module)(Root);
