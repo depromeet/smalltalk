@@ -38,6 +38,9 @@ class ChatMateList extends Component{
                 return (<ChatMateRequest 
                             name={list.name}
                             key={i}
+                            id={i}
+                            addMateList={this.props.addMateList}
+                            denyMateRequest={this.props.denyMateRequest}
                         />);
                     })}
               </div>
