@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
 
-const MainBackground = ({handleListClick}, {handleChatClick}) => {
+const MainBackground = ({handleListClick, handleChatClick}) => {
     return(
     <div className="main-home-background">
         <div className="logo"></div>

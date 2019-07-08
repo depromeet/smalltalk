@@ -37,7 +37,7 @@ class ChatMateList extends Component{
         <div className={cx("my-mate")}>
           <div className={cx("buttons")}>
             <div className={cx("list-button")}></div>
-            <div className={cx("chat-button")}></div>
+            <div className={cx("chat-button")} onClick={() => { this.props.handleListClose(); this.props.handleChatClick(); }}></div>
           </div>
             <div className={cx("list")}>
               <div className={cx("header")}>현재<br></br>내 메이트 {this.props.FriendsListDataLength}명</div>

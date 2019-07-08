@@ -7,7 +7,7 @@ class SideMenu extends Component{
   constructor(props){
     super(props);
 
-    const testIcon = "http://chittagongit.com/images/60x60-icon/60x60-icon-9.jpg"
+    const testIcon = "https://cdn2.iconfinder.com/data/icons/lightly-icons/30/user-480.png"
 
     this.state = {
         FriendsListData: [
@@ -43,7 +43,6 @@ class SideMenu extends Component{
         <ChatMateList 
           handleListClose={this.props.handleListClose} 
           handleChatClick={this.props.handleChatClick}
-          isClickedList={this.props.isClickedList}
           ApplyListData={this.state.ApplyListData}
           FriendsListDataLength={FriendsListDataLength}
           FriendsListData={this.state.FriendsListData}
@@ -53,7 +52,12 @@ class SideMenu extends Component{
       else if(isClickedChat) {
         return(
           <ChatRoomList 
-            FriendsListData={this.state.FriendsListData} 
+            isClickedChat={this.state.isClickedChat}
+            FriendsListData={this.state.FriendsListData}
+            handleListClick={this.props.handleListClick}
+            handleChatClick={this.props.handleChatClick}
+            handleListClose={this.props.handleListClose}
+            handleChatClose={this.props.handleChatClose}
           />
         )
       }

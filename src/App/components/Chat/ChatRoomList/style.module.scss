@@ -8,6 +8,31 @@
     position: absolute;
     right: 0;
 
+    .buttons {
+        position: absolute;
+        top: 40.92vh;
+        right: 24.27vw;
+        z-index: 4;
+
+        .list-button {
+            width: 4.53vw;
+            height: 8.1vh;
+            background-image: url(../../../../static/images/button_list_off.png);
+            background-size: cover;
+            margin-bottom: 2.08vh;
+            cursor: pointer;
+        }
+
+        .chat-button {
+            width: 4.53vw;
+            height: 8.1vh;
+            background-image: url(../../../../static/images/button_chat_on.png);
+            background-size: cover;
+            margin-bottom: 2.08vh;
+            cursor: pointer;
+        }
+    }
+
     // 채팅창 상단
     .header {
         height: 12.59vh;
@@ -41,6 +66,6 @@
 
     .collection {
         overflow: scroll;
-        height: 83.14vh;
+        height: 87.41vh;
     }
 }
