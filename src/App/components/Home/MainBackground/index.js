@@ -53,10 +53,7 @@ const MainBackground = ({handleListClick, handleChatClick}) => {
           <div className="chat-button" onClick={handleChatClick}></div>
         </div>
         {/* Let's small-talk 글귀 */}
-        <div className="main-home__phrases">
-          <div>Let’s</div>
-          <div id="main-home__phrases__second-line">small-talk</div>
-        </div>
+        <div className="main-home__phrases"></div>
     </div>
   )
 }

@@ -9,12 +9,12 @@ class ChatRoomList extends Component {
   return(
     <div className={cx("chat-list")}>
       <div className={cx("buttons")}>
-        <div className={cx("list-button")} onClick={() => { this.props.handleChatClose(); this.props.handleListClick(); }}></div>
+        <div className={cx("list-button")} onClick={this.props.handleListClick}></div>
         <div className={cx("chat-button")}></div>
       </div>
       <div className={cx("header")}>
         <div className={cx("title")}>채팅방</div>
-        <div className={cx("close-button")} onClick={this.props.handleChatClose}></div>
+        <div className={cx("close-button")} onClick={this.props.handleAllClose}></div>
       </div>
       <div className={cx("collection")}>
         {this.props.FriendsListData.map((list, i) => {
@@ -23,8 +23,9 @@ class ChatRoomList extends Component {
                   name={list.name}
                   number={list.number}
                   key={i}
-                  handleListClose={this.props.handleListClose}
-                  handleChatClick={this.props.handleChatClick}
+                  showRedCircle={true}
+                  handleChatRoomClick={this.props.handleChatRoomClick}
+                  handleName={this.props.handleName}
               />);
           })}
       </div>

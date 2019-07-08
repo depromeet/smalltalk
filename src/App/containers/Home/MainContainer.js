@@ -10,49 +10,50 @@ class MainContainer extends Component{
     // this.handleListClose = this.handleListClose.bind(this);
     // this.handleChatClose = this.handleChatClose.bind(this);
     this.state={
-      isClickedList : false,
-      isClickedChat : false
+      currentState : "",
+      name : ""
     }
   }
 
   handleListClick = () => {
-    this.setState({isClickedList : true});
-    console.log("isClickedList: true");
+    this.setState({currentState : "ChatMateList"});
+    console.log("currentState : ChatMateList");
   }
 
   handleChatClick = () => {
-    this.setState({isClickedChat : true});
-    console.log("isClickedChat: true");
+    this.setState({currentState : "ChatRoomList"});
+    console.log("currentState : ChatRoomList");
   }
 
-  handleListClose = () => {
-    this.setState({isClickedList : false});
-    console.log("isClickedList: false");
+  handleChatRoomClick = () => {
+    this.setState({currentState : "ChatRoom"});
+    console.log("currentState : ChatRoom");
   }
 
-  handleChatClose = () => {
-    this.setState({isClickedChat : false});
-    console.log("isClickedChat: false");
+  handleAllClose = () => {
+    this.setState({currentState : ""});
+    console.log("currentState : none");
+  }
+
+  handleName = (mateName) => {
+    this.setState({name : mateName})
   }
 
   render(){
     return (
       <Fragment>
         <MainHomeBackground 
-          // isClickedChat={this.state.isClickedChat}
-          // isClickedList={this.state.isClickedList}
           handleListClick={this.handleListClick}
           handleChatClick={this.handleChatClick}
-          // handleListClose={this.handleListClose}
-          // handleChatClose={this.handleChatClose} 
         />
         <SideMenu
-          isClickedChat={this.state.isClickedChat}
-          isClickedList={this.state.isClickedList}
-          handleChatClick={this.handleChatClick}
-          handleChatClose={this.handleChatClose}
           handleListClick={this.handleListClick}
-          handleListClose={this.handleListClose}
+          handleChatClick={this.handleChatClick}
+          handleAllClose={this.handleAllClose}
+          currentState={this.state.currentState}
+          handleChatRoomClick={this.handleChatRoomClick}
+          handleName={this.handleName}
+          name={this.state.name}
         />
       </Fragment>
     )

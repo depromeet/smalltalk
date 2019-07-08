@@ -196,7 +196,7 @@
     .dashed-line {
         width: 13.48vw;
         height: 1px;
-        border: 1px dashed red;
+        background-image: url(../../../../images/Red-dotted-line.png);
         margin-right: 8.59vw;
     }
 
@@ -245,19 +245,13 @@
 
 .main-home__phrases {
     position: absolute;
-    top: 72.25vh;
-    left: 61vw;
-    -webkit-text-stroke: 2px #ffffff;
-    font-family: OpenSans;
-    font-size: 4.21vw;
-    font-weight: bold;
-    line-height: 0.76;
-    letter-spacing: -3.2px;
+    top: 70vh;
+    left: 60vw;
+    width: 26vw;
+    height: 16vh;
     z-index: 3;
-
-    #main-home__phrases__second-line {
-        padding-left: 6vw;
-    }
+    background-image: url(../../../../images/small-talk.png);
+    background-size: cover;
 }
 
 // 애니메이션

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatMateList from '../Chat/ChatMateList/index';
 import ChatRoomList from '../../components/Chat/ChatRoomList/index'
+import ChatRoom from '../Chat/ChatRoom'
 
 class SideMenu extends Component{
 
@@ -35,36 +36,47 @@ class SideMenu extends Component{
   }
 
   render(){
-    const { isClickedList, isClickedChat } = this.props;
+    // const { isClickedList, isClickedChat } = this.props;
     let FriendsListDataLength = this.state.FriendsListData.length;
     
-    if(isClickedList){
-      return(
-        <ChatMateList 
-          handleListClose={this.props.handleListClose} 
-          handleChatClick={this.props.handleChatClick}
-          ApplyListData={this.state.ApplyListData}
-          FriendsListDataLength={FriendsListDataLength}
-          FriendsListData={this.state.FriendsListData}
-          />
-        )
-      }
-      else if(isClickedChat) {
+    switch (this.props.currentState) {
+      case "ChatMateList":
+        return(
+          <ChatMateList 
+            handleChatClick={this.props.handleChatClick}
+            ApplyListData={this.state.ApplyListData}
+            FriendsListDataLength={FriendsListDataLength}
+            FriendsListData={this.state.FriendsListData}
+            handleAllClose={this.props.handleAllClose}
+            handleChatRoomClick={this.props.handleChatRoomClick}
+            handleName={this.props.handleName}
+            />
+          )
+      case "ChatRoomList":
         return(
           <ChatRoomList 
-            isClickedChat={this.state.isClickedChat}
             FriendsListData={this.state.FriendsListData}
             handleListClick={this.props.handleListClick}
             handleChatClick={this.props.handleChatClick}
-            handleListClose={this.props.handleListClose}
-            handleChatClose={this.props.handleChatClose}
+            handleAllClose={this.props.handleAllClose}
+            handleChatRoomClick={this.props.handleChatRoomClick}
+            handleName={this.props.handleName}
           />
         )
-      }
-      else {
+      case "ChatRoom":
+        return(
+          <ChatRoom 
+            handleAllClose={this.props.handleAllClose}
+            handleListClick={this.props.handleListClick}
+            name={this.props.name}
+            />
+          )
+      default:
         return <div></div>
-      }
+    }
   }
 }
+    
+  
 
 export default SideMenu;
