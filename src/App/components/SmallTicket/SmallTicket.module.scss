@@ -13,8 +13,10 @@
     position: relative;
     width: 390px;
     height: 243px;
-    background-image: url(../../../static/images/s_ticket.png);
-    background-size: cover;
+    background-image: url(../../../static/images/ticket.png);
+    background-size: 98%;
+    background-position: 1%;
+    background-repeat: no-repeat;
   }
   
   .wrap_box .s_logo{
@@ -31,7 +33,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -47%);
+    transform: translate(-51%, -50%);
     width: 292px;
     height: 159px;
     border: 1px solid #000;
