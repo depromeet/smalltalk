@@ -51,6 +51,14 @@ class LoginForm extends Component{
     if (this.props.isAuthenticated) {
       return <Redirect to="/" />;
     }
+    if(typeof(this.props.error) === 'object'){ 
+      if(this.props.error.email){
+        console.log(this.props.error.email[0]);
+      }
+      if(this.props.error["non_field_errors"]){
+        console.log(this.props.error["non_field_errors"][0])
+      }
+    }
     return(
       <div className={cx('login__container')}>
         <div className={cx('login__header')}>
@@ -61,6 +69,9 @@ class LoginForm extends Component{
         <form className={cx('login__form')}>
           <div className={cx('login__input-container')}>
             <label className={cx('login__input-label')}> Email </label>
+            <div> 
+              {typeof(this.props.error) === 'object' && this.props.error.email ? `${this.props.error.email[0]}` : ""} 
+            </div>
             <input
               className={cx('login__input')}
               type="text"
@@ -76,6 +87,18 @@ class LoginForm extends Component{
           </div>
           <div className={cx('login__input-container')}>
             <label className={cx('login__input-label')}>Password</label>
+            <div> 
+              {
+                typeof(this.props.error) === 'object' && this.props.error["non_field_errors"] ?
+                `${this.props.error["non_field_errors"][0]}` 
+                : ""
+              } 
+              {
+                typeof(this.props.error) === 'object' && this.props.error.password ?
+                `${this.props.error.password[0]}` 
+                : ""
+              } 
+            </div>
             <input
               className={cx('login__input')}
               type="password"
@@ -114,6 +137,7 @@ class LoginForm extends Component{
 
 const mapStateToProps = state => ({
   status : state.auth.login.status,
+  error : state.auth.login.error,
   isAuthenticated : state.auth.isAuthenticated
 })
 

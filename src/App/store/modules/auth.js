@@ -51,10 +51,7 @@ export function registerFailure(error){
   }
 }
 // 제일 처음 토큰을 보내고, login되어 있으면 메인, 아니면 start 페이지 보여주게 확인 
-// 제일 처음 들어왔을 떄 에러를 어떻게 처리해야하지? 
 export const loadUser = () => (dispatch, getState) =>{
-  dispatch({ type: USER_LOADING });
-  // 위의 requestRegister엔 왜 return 을 썼을까 
   const token = getState().auth.token;
   const config = {
     headers: {
@@ -63,50 +60,39 @@ export const loadUser = () => (dispatch, getState) =>{
   }
   if(token){
     config.headers["Authorization"]= `Token ${token}`
-  }
-  console.log(config);
-  axios.get(`${API}/auth/1/`, config)
-  .then(res => {
-    dispatch({ 
-      type: USER_LOADED,
-      payload : res.data
+    axios.get(`${API}/auth/1/`, config)
+    .then(res => {
+      dispatch({ 
+        type: USER_LOADED,
+        payload : res.data
+      })
     })
-  })
-  .catch(err => { 
-    dispatch({ 
-      type : AUTH_ERROR
+    .catch(err => { 
+      // 토큰 있어서 요청했지만 오류난 상태
+      localStorage.removeItem('token');
+      dispatch({ 
+        type : AUTH_ERROR
+      })
+      console.log(err);
     })
-    console.log(err);
-  })
+    }
+    console.log(config); 
 } 
 
 export const loginRequest = (values) => (dispatch) => { 
   const { email, password } = values; 
-  /*
-   1. AUTH_LOGIN 
-   login : { status : 'INIT' } -> { status : 'WAITING }
-   axios.post('API', {email, password})
-   2. AUTH_SUCCESS 
-   login : { status : 'WAITING" } => {status : 'SUCCESS'}
-   localStorage.setItem('token', res.data.token)
-   자동으로 넘어가나
-   3. AUTH_FAILURE 
-   login : { status : 'WAITING' } -> {status : 'FAILURE'}
-   error 메세지 출력.
-   */
-  // 이메일, 비밀번호 보내기 (1) AUTH_LOGIN 
-  // 보내고 localStorage에 저장하기 (2)
-  dispatch({ type: AUTH_LOGIN }); 
   return axios.post(`${API}/auth/login/`, {email, password})
-  .then((res) => {
-    // console.log(res.data.token); 
-    localStorage.setItem('token', res.data.token); 
-    dispatch({ type: AUTH_LOGIN_SUCCESS })
-  }).catch( err => {
-    dispatch({type: AUTH_LOGIN_FAILURE});
-    console.log(err);
-  })
-  
+    .then((res) => {
+      // console.log(res.data.token); 
+      localStorage.setItem('token', res.data.token); 
+      dispatch({ type: AUTH_LOGIN_SUCCESS })
+    }).catch( err => { 
+      if(err.response.data){
+        dispatch({type: AUTH_LOGIN_FAILURE, payload : err.response.data});
+        console.log(err.response.data);
+      }
+      
+    })
 }
 
 const initialState = {
@@ -170,7 +156,7 @@ export default function authentication(state = initialState, action){
           user: action.payload
         }
       case AUTH_ERROR: 
-        localStorage.removeItem('token')
+        // localStorage.removeItem('token')
         return {
           ...state,
           login: {
@@ -204,7 +190,8 @@ export default function authentication(state = initialState, action){
         return {
           ...state,
           login : {
-            status : "FAILURE"
+            status : "FAILURE",
+            error : action.payload
           }
         }
     default: 

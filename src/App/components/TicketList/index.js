@@ -31,19 +31,19 @@ class TicketList extends Component{
   
     resizeWidth = (length) => {
       /* resize */
-      const _vWidth = 390;
-      let resetWidth = (_vWidth * length) + 'px';
+      const _vWidth = 20;
+      let resetWidth = (_vWidth * length) + '%';
       return { "width" : resetWidth}
     }
   
     prevEnt = () => {
-      const movePos = 390;
-      let resetPos = movePos + "px";
+      const movePos = 39;
+      let resetPos = movePos + "%";
       return { "left" : resetPos }
     }
     nextEnt = () => {
-      const movePos = 390;
-      let resetPos = (movePos - (movePos * 2)) + "px";
+      const movePos = 39;
+      let resetPos = (movePos - (movePos * 2)) + "%";
       console.log(resetPos);
       return { "left" : resetPos }
     }

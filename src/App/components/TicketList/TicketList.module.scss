@@ -6,7 +6,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 280px;
+    height: 30%;
     background-color: #efefef;
 }
 .paddle-nav{
@@ -15,7 +15,7 @@
     left: 50%;
     transform: translateX(-50%);
     width:88%;
-    height: 280px;
+    height: 100%;
     z-index: -1;
 }
 .paddle-nav li{
@@ -46,7 +46,7 @@
 
 .t_box{
     position: relative;
-    top: 20px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 81vw;
@@ -55,7 +55,7 @@
 }
 .call_t{
     width: 3000px;
-    height: 250px;
+    height: 100%;
     position: absolute;
     left: 0;
 }
