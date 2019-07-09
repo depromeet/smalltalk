@@ -100,6 +100,8 @@
     height: 52.4vh;
     left: 9.11vw;
     top: 28.98vh;
+    display: flex;
+    flex-direction: column;
 
     a {
         text-decoration: none;

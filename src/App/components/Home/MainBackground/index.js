@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 const MainBackground = ({handleListClick, handleChatClick}) => {
     return(
@@ -19,10 +20,10 @@ const MainBackground = ({handleListClick, handleChatClick}) => {
         </div>
         {/* 메뉴 */}
         <div className="menu">
-          <a href="/mypage"> <div className="menu-list">MYPAGE </div> </a>
-          <a href="/schedule"> <div className="menu-list">SCHEDULE </div> </a>
-          <a href="/mate"> <div className="menu-list">MATE </div> </a>
-          <a href="/bigdata"> <div className="menu-list">BIGDATA </div> </a>
+          <Link to="/mypage" className="menu-list">MYPAGE</Link>
+          <Link to="/schedule" className="menu-list">SCHEDULE</Link>
+          <Link to="/mate" className="menu-list">MATE</Link>
+          <Link to="/bigdata" className="menu-list">BIGDATA</Link>
         </div>
         {/* 화살표 1 */}
         <div className="lines-1">
