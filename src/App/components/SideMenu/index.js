@@ -8,7 +8,7 @@ class SideMenu extends Component{
   constructor(props){
     super(props);
 
-    const testIcon = "https://cdn2.iconfinder.com/data/icons/lightly-icons/30/user-480.png"
+    const testIcon = "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg"
 
     this.state = {
         FriendsListData: [
@@ -35,15 +35,16 @@ class SideMenu extends Component{
     };
   }
 
+  // 친구 수락
   addMateList = (key, obj) => {
-    //console.log(e.parentElement.parentElement)
-    const newState = this.state.FriendsListData.concat({picture: "https://cdn2.iconfinder.com/data/icons/lightly-icons/30/user-480.png", name: obj, number: "0"});
+    const newState = this.state.FriendsListData.concat({picture: "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", name: obj, number: "0"});
     this.setState({FriendsListData: newState});
     this.setState({ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] })
     })
   }
+
+  // 친구 거절
   denyMateRequest = (key) => {
-    //console.log(e.parentElement.parentElement)
     this.setState({ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] })
     })
   }
