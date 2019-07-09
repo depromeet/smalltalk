@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './style.module.scss';
+import ChatContent from '../ChatContent';
 
 class ChatRoom extends Component{
+    constructor(props){
+        super(props);
+    
+        this.state = [
+            {type: "opposite", text: "안녕하세요."},
+            {type: "mine", text: "네 반가워요."},
+            {type: "mine", text: "우와"},
+            {type: "opposite", text: "ㅎㅎㅎ"},
+            {type: "opposite", text: "ㅎㅎㅎ"}
+        ];
+    }
     
   render(){
     const cx = classNames.bind(styles);
@@ -20,28 +32,24 @@ class ChatRoom extends Component{
                 <div className={cx("close-button")} onClick={this.props.handleAllClose}></div>
             </div>
             <div className={cx("content")}>
-                <div className={cx("opposite")}>
-                    <div className={cx("profile-picture")}></div>
-                    <div className={cx("talk-list")}>
-                        <div className={cx("background")}>
-                            <div className={cx("sentence")}>안녕하세요.</div>
-                        </div>
-                    </div>
-                </div>
-                <div className={cx("mine")}>
-                    <div className={cx("talk-list")}>
-                        <div className={cx("background")}>
-                            <div className={cx("sentence")}>네 반가워요.</div>
-                        </div>
-                    </div>
-                </div>
+                {this.state.map((list, i, arr) => {
+                    return(
+                        <ChatContent 
+                            type={list.type} 
+                            text={list.text} 
+                            key={i}
+                            id={i}
+                            lastType={arr[i-1]}
+                            />
+                    )
+                })}
             </div>
             <div className={cx("footer")}>
                 <textarea className={cx("input")}></textarea>
                 <div className={cx("send-button")}></div>
             </div>
         </div>
-    )
+        )
   }
 }
 
