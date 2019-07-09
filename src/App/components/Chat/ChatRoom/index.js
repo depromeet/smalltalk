@@ -7,17 +7,30 @@ class ChatRoom extends Component{
     constructor(props){
         super(props);
     
-        this.state = [
-            {type: "opposite", text: "안녕하세요."},
-            {type: "mine", text: "네 반가워요."},
-            {type: "mine", text: "우와"},
-            {type: "opposite", text: "ㅎㅎㅎ"},
-            {type: "opposite", text: "ㅎㅎㅎ"}
-        ];
+        this.state = {
+            inputValue : "",
+            chatData : [
+                {type: "opposite", text: "안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. "},
+                {type: "mine", text: "네 반가워요."},
+                {type: "mine", text: "우와"},
+                {type: "opposite", text: "ㅎㅎㅎ"},
+                {type: "opposite", text: "ㅎㅎㅎ"}
+            ]
+        };
     }
     
+    handleChange = (e) => {
+        this.setState({inputValue: e.target.value});
+    }
+
   render(){
     const cx = classNames.bind(styles);
+    const blah = () => {
+        const newState = this.state.chatData.concat({type: "mine", text: this.state.inputValue});
+        this.setState({chatData : newState})
+        this.setState({inputValue : ""})
+        console.log(newState)
+    }
     return(
         <div className={cx("chat")}>
             <div className={cx("buttons")}>
@@ -32,7 +45,7 @@ class ChatRoom extends Component{
                 <div className={cx("close-button")} onClick={this.props.handleAllClose}></div>
             </div>
             <div className={cx("content")}>
-                {this.state.map((list, i, arr) => {
+                {this.state.chatData.map((list, i, arr) => {
                     return(
                         <ChatContent 
                             type={list.type} 
@@ -45,8 +58,8 @@ class ChatRoom extends Component{
                 })}
             </div>
             <div className={cx("footer")}>
-                <textarea className={cx("input")}></textarea>
-                <div className={cx("send-button")}></div>
+                <textarea value={this.state.inputValue} onChange={this.handleChange} className={cx("input")}></textarea>
+                <div className={cx("send-button")} onClick={blah}></div>
             </div>
         </div>
         )
