@@ -32,11 +32,14 @@ class LoginForm extends Component{
     .then(
       () => {
         if(this.props.status === 'SUCCESS'){
-          console.log('successfully logged in'); 
+          console.log('successfully logged in');
           // this.props.history.push('/')
           // 메인페이지로 이동
         }else if(this.props.status === 'FAILURE'){
           console.log('log in fail');
+           this.setState({
+            password : ''
+          })
         }
       }
     )
@@ -46,19 +49,17 @@ class LoginForm extends Component{
     const target = e.target.getAttribute('name');
     this.setState({[target]:''})
   }
+  makeErrMsg = (name) => ({
+      0: `${name}은 필수항목입니다.`,
+      2: `${name}을(를) 다시 확인하세요!`
+    })
 
   render(){
     if (this.props.isAuthenticated) {
       return <Redirect to="/" />;
     }
-    if(typeof(this.props.error) === 'object'){ 
-      if(this.props.error.email){
-        console.log(this.props.error.email[0]);
-      }
-      if(this.props.error["non_field_errors"]){
-        console.log(this.props.error["non_field_errors"][0])
-      }
-    }
+    console.log(this.props.error);
+    
     return(
       <div className={cx('login__container')}>
         <div className={cx('login__header')}>
@@ -71,6 +72,7 @@ class LoginForm extends Component{
             <label className={cx('login__input-label')}> Email </label>
             <div> 
               {typeof(this.props.error) === 'object' && this.props.error.email ? `${this.props.error.email[0]}` : ""} 
+              {this.makeErrMsg('이메일')[this.props.error]}
             </div>
             <input
               className={cx('login__input')}
@@ -93,11 +95,7 @@ class LoginForm extends Component{
                 `${this.props.error["non_field_errors"][0]}` 
                 : ""
               } 
-              {
-                typeof(this.props.error) === 'object' && this.props.error.password ?
-                `${this.props.error.password[0]}` 
-                : ""
-              } 
+              {this.makeErrMsg('비밀번호')[this.props.error]}
             </div>
             <input
               className={cx('login__input')}

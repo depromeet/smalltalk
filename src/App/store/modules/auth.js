@@ -87,11 +87,17 @@ export const loginRequest = (values) => (dispatch) => {
       localStorage.setItem('token', res.data.token); 
       dispatch({ type: AUTH_LOGIN_SUCCESS })
     }).catch( err => { 
-      if(err.response.data){
-        dispatch({type: AUTH_LOGIN_FAILURE, payload : err.response.data});
+      const err_msg = err.response.data;
+      if(err_msg){
+        if(err_msg["non_field_errors"]){
+          dispatch({ type: AUTH_LOGIN_FAILURE, payload : 2 });
+        }else if(err_msg['password'] && err_msg['email']){
+          dispatch({type: AUTH_LOGIN_FAILURE, payload : 0})
+        }else{
+          dispatch({type: AUTH_LOGIN_FAILURE, payload: 1})
+        }
         console.log(err.response.data);
       }
-      
     })
 }
 
