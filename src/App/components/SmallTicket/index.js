@@ -1,4 +1,5 @@
 import React, { Component, Fragment} from 'react';
+import TicketImg from '../TicketImg';
 
 import classnames from 'classnames/bind';
 import styles from './SmallTicket.module.scss';
@@ -14,6 +15,7 @@ class SmallTicket extends Component{
     return(
       <Fragment>
         <div className={cx('wrap_box')}>
+          <TicketImg backColor={this.props.backColor} cirColor={this.props.cirColor}/>
           <div className={cx('info_box')}>
             <div className={cx('info_t')}>
               <div className={cx('t_left')}>
