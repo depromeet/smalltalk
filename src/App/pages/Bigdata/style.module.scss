@@ -10,12 +10,13 @@
 
         .input {
             width: 37vw;
-            height: 6vh;
+            height: 5.8vh;
             font-family: NotoSansCJKkr;
-            font-size: 36px;
+            font-size: 3.33vh;
             font-weight: bold;
             line-height: 1.39;
             letter-spacing: -1.44px;
+            border: 0;
         }
 
         .input::placeholder {
@@ -43,7 +44,7 @@
             width: 19.7vw;
             height: 18.9vh;
             font-family: NotoSansCJKkr;
-            font-size: 71px;
+            font-size: 6.5vh;
             font-weight: bold;
             line-height: 1.39;
             letter-spacing: -2.84px;
@@ -59,7 +60,7 @@
             width: 158px;
             height: 69px;
             font-family: NotoSansCJKkr;
-            font-size: 24px;
+            font-size: 2.2vh;
             font-weight: 500;
             font-style: normal;
             font-stretch: normal;
@@ -85,6 +86,88 @@
             position: relative;
             top: 13.8vh;
             left: 5.5vw;
+        }
+    }
+
+    .country-list {
+        width: fit-content;
+        height: 68vh;
+        position: absolute;
+        top: 24.8vh;
+        right: 8.75vw;
+        overflow: scroll;
+
+        .box {
+            width: 26.3vw;
+            height: 10.5vh;
+            background-image: url(../../../static/images/bigdata-list-background.png);
+            background-size: cover;
+            // box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+            margin-bottom: 0.9vh;
+            display: flex;
+            padding: 22px 32px 22px 24px;
+
+            .picture {
+                width: 3.64vw;
+                height: 3.64vw;
+            }
+
+            .left-row {
+                margin-left: 1vw;
+                margin-top: 0.5vw;
+
+                .country-name {
+                    font-family: NotoSansCJKkr;
+                    font-size: 2.22vh;
+                    font-weight: 500;
+                    line-height: 1.38;
+                    letter-spacing: -0.96px;
+                }
+
+                .content {
+                    display: flex;
+
+                    .phrases {
+                        font-family: NotoSansCJKkr;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1.63;
+                        letter-spacing: -0.64px;
+                    }
+
+                    .number {
+                        font-family: NotoSansCJKkr;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1.63;
+                        letter-spacing: -0.64px;
+                        font-weight: bold;
+                        margin-left: 0.2vw;
+                    }
+                }
+            }
+        
+            .right-row {
+                position: relative;
+                left: 6vw;
+                width: 121px;
+                height: 114px;
+                justify-content: center;
+                align-self: center;
+                display: flex;
+                cursor: pointer;
+
+                .text {
+                    align-self: center;
+                    display: flex;
+                    width: 57px;
+                    font-family: NotoSansCJKkr;
+                    font-size: 1.5vh;
+                    line-height: 1.63;
+                    letter-spacing: -0.64px;
+                    color: #747474;
+                }
+            }
         }
     }
 }
