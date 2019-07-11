@@ -45,7 +45,7 @@ class TicketBox extends Component{
   
     resizeWidth = (length) => {
       /* resize */
-      const _vWidth = 514;
+      const _vWidth = 436;
       let resetWidth = (_vWidth * length) + 'px';
       return { "width" : resetWidth}
     }

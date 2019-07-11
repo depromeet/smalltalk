@@ -1,3 +1,11 @@
+.talker_info a{
+    color: #000;
+    text-decoration: none;
+}
+.talker_info a:visited{
+    color: #000;
+}
+
 .list_mymate{
     width: 100%;
     height: 80px;
@@ -7,7 +15,7 @@
 .list_mymate > li{
     width: 30%;
     height: 100%;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 16px;
     font-weight: bold;
@@ -27,7 +35,7 @@
 }
 .talker_info > li{
     display: inline-block;
-    margin: 0 6px;
+    margin: 0 4px;
 }
 .talker_info > li:nth-child(2){
     width: 50px;
@@ -63,5 +71,5 @@
     height: 100%;
 }
 .list_tag > li{
-    padding: 0 10px;
+    padding: 0 8px;
 }

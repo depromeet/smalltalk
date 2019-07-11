@@ -26,7 +26,7 @@ class TicketLength extends Component{
 
   resizeWidth = (length) => {
     /* resize */
-    const _vWidth = 175;
+    const _vWidth = 150;
     let resetWidth = (_vWidth * length) + 'px';
     const lmtWidth = (_vWidth * 8) + 'px';
 

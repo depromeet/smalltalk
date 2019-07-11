@@ -1,12 +1,12 @@
 .length_box{
   width: 175px;
-  height: 80px;
+  height: 76px;
   position: relative;
   // background-color: gray;
 }
 .length_box li{
-  width: 175px;
-  height: 80px;
+  width: 150px;
+  height: 76px;
   position: relative;
 }
 .length_box li:nth-child(8) hr, .length_box li:last-child hr{
@@ -48,5 +48,5 @@ hr{
   right: 0;
   border: none;
   border-top: 2px dashed #e1ff01;
-  width: 135px;
+  width: 110px;
 }

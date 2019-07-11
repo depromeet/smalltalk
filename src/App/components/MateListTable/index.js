@@ -14,8 +14,8 @@ class MateListTable extends Component{
     }
   
     makeList = ( ticketList ) => { 
-        console.log(ticketList[0].friends); 
-        return ticketList[0].friends.map(friend => {
+        console.log(ticketList.friends); 
+        return ticketList.friends.map(friend => {
             return (
                 <Friend id={friend.id} src={friend.src} talker={friend.talker} info={friend.info} tag={friend.tag} />
             )
@@ -24,7 +24,10 @@ class MateListTable extends Component{
   
     render(){
       const { ticketList } = this.props;
+      const { ticketIndex } = this.props;
       console.log(ticketList);
+      console.log(ticketIndex);
+
       return (
         <ul className={cx('list_table')}>
           <li>
@@ -37,7 +40,7 @@ class MateListTable extends Component{
           <li><hr/></li>
           <li>
             <div className={cx("talker_deco")}>최고의 친구!</div>
-            {this.makeList(ticketList)}   
+            {this.makeList(ticketList[ticketIndex])}   
           </li>
         </ul>
       );

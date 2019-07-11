@@ -1,0 +1,147 @@
+body{
+  overflow-y: auto;  
+}
+.back_circle{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+}
+.back_circle .cir{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 300px;
+}
+.back_circle .cir1{
+    top: 60vh;
+    left: -3vw;
+    border: 1px solid #e1ff01;
+}
+.back_circle .cir2{
+    top: 30vh;
+    left: 40vw;
+    background-color: #e1ff01;
+}
+.back_circle .cir3{
+    top: 80vh;
+    right: -8vw;
+    background: radial-gradient(at 75% 75%, #fb3e1d 20%, #e1ff01 75%);
+}
+
+.big_title{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.title_left{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.title_left span{
+    position: absolute;
+    top: 0;
+    left: 11vw;
+    display: inline;
+    font-size: 80px;
+    font-weight: bold;
+    color: #161616;
+}
+.title_left button{
+    position: absolute;
+    top: 25vh;
+    left: 8vw;
+    display: inline;
+    padding: 10px 30px;
+    border: 2px solid #fb3e1d;
+    border-radius: 100px;
+    color: #fb3e1d;
+    background-color: transparent;
+}
+.title_right{
+    position: absolute;
+    right: 0;
+}
+.title_right span{
+    position: relative;
+    top: 46vh;
+    width: 100%;
+    transform: rotate(90deg);
+    font-size: 60px;
+    font-weight: bold;
+    color: #161616;
+}
+
+.user_wrap{
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    // background-color: rgb(145, 145, 145);
+}
+
+.user_info{
+    position: relative;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.user_profile{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+}
+.profile_img{
+    position: absolute;
+    left: 5vw;
+    width: 300px;
+    height: 300px;
+    background-color: #eee;
+}
+.profile_info{
+    position: absolute;
+    right: 8vw;
+    width: 35%;
+    height: 100%;
+}
+.profile_info h2{
+    font-size: 38px;
+    font-weight: bold;
+    color: #fb3e1d;
+    padding-bottom: 2.5vh;
+}
+.profile_info h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+.profile_info p{
+    font-size: 13px;
+    line-height: 18px;
+    padding: 1.8vh 0;
+    padding-bottom: 10vh;
+}
+
+.user_style{
+    position: relative;
+    top: 5vh;
+    width: 100%;
+    height: 40vh;
+}
+
+.user_schedule{
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 40vh;
+    background-color: rgb(145, 145, 145);
+}

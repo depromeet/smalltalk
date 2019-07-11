@@ -10,43 +10,45 @@ class TicketList extends Component{
     constructor(){
       super();
       this.state = {
-        isToggleOn: null
+        isToggleOn: 0,
+        backColor: "#fff",
+        cirColor: "#fb3e1d"
       }
     }
-  
+
     activeTicket = (i) => {
-      if(this.state.isToggleOn === i){
-        this.setState({isToggleOn: null})
-      } else {
-        this.setState({isToggleOn: i})
-      }
+      this.setState({isToggleOn: i});
       console.log("클릭" + i);
+
+      this.props.callIndexParent(i);
     }
   
     makeList = ( ticketList ) => { 
       return ticketList.map( (ticket, i) => {
-        return <li className={cx(this.state.isToggleOn === i? 'active':'none')} onClick={() => this.activeTicket(i)}><SmallTicket listLen={ticketList.length} ticket={ticket}/></li>
+        if(this.state.isToggleOn === i) return <li onClick={() => this.activeTicket(i)}><SmallTicket listLen={ticketList.length} ticket={ticket} backColor={this.state.cirColor} cirColor={this.state.backColor}/></li>
+        else return <li onClick={() => this.activeTicket(i)}><SmallTicket listLen={ticketList.length} ticket={ticket} backColor={this.state.backColor} cirColor={this.state.cirColor}/></li>
       })
     }
   
     resizeWidth = (length) => {
       /* resize */
-      const _vWidth = 20;
-      let resetWidth = (_vWidth * length) + '%';
+      const _vWidth = 293;
+      let resetWidth = (_vWidth * length) + 'px';
       return { "width" : resetWidth}
     }
   
-    prevEnt = () => {
-      const movePos = 39;
-      let resetPos = movePos + "%";
-      return { "left" : resetPos }
-    }
-    nextEnt = () => {
-      const movePos = 39;
-      let resetPos = (movePos - (movePos * 2)) + "%";
-      console.log(resetPos);
-      return { "left" : resetPos }
-    }
+    // prevEnt = (index) => {
+    //   console.log("클릭" + index);
+    //   const movePos = 293;
+    //   let resetPos = movePos + "px";
+    //   if(index == index) return { "left" : resetPos }
+    // }
+    // nextEnt = (index) => {
+    //   const movePos = 293;
+    //   let resetPos = (movePos - (movePos * 2)) + "px";
+    //   console.log(resetPos);
+    //   return { "left" : resetPos }
+    // }
     
     render(){
       const { ticketList } = this.props;
@@ -61,8 +63,8 @@ class TicketList extends Component{
             </div>
             <div className={cx('paddle-nav')}>
               <ul>
-                <li className={cx('arrow', 'prev')} onClick={() => this.prevEnt()}><button>&lt;</button></li>
-                <li className={cx('arrow', 'next')} onClick={() => this.nextEnt()}><button>&gt;</button></li>
+                <li className={cx('arrow', 'prev')} onClick={() => this.prevEnt(ticketList.length)}><button>&lt;</button></li>
+                <li className={cx('arrow', 'next')} onClick={() => this.nextEnt(ticketList.length)}><button>&gt;</button></li>
               </ul>
             </div>
           </div>

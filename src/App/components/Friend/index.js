@@ -11,7 +11,7 @@ class Friend extends Component{
     //   console.log(taglist);
       return taglist.map((tag, i) => {
         // console.log(tag.length);
-        return (
+        if(i < 5) return (
         <li>{tag}</li>
         );
       })

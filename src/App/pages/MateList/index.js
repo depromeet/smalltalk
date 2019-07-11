@@ -23,7 +23,7 @@ class MateList extends Component{
             { 
               id: 0,
               src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이',
+              talker: 'ㄱi염둥이0',
               info: '20대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
@@ -82,9 +82,9 @@ class MateList extends Component{
             { 
               id: 0,
               src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이',
+              talker: 'ㄱi염둥이1',
               info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
             { 
               id: 1,
@@ -141,9 +141,9 @@ class MateList extends Component{
             { 
               id: 0,
               src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이',
+              talker: 'ㄱi염둥이2',
               info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
             { 
               id: 1,
@@ -200,16 +200,16 @@ class MateList extends Component{
             { 
               id: 0,
               src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이',
+              talker: 'ㄱi염둥이3',
               info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
+              tag: ['#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
             { 
               id: 1,
               src: '../../static/images/talker.png',
               talker: '같이 여행해용',
               info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
             },
             { 
               id: 2,
@@ -720,18 +720,26 @@ class MateList extends Component{
                 }
               ]
             }
-      ]
+      ],
+      callToIndex: 0
     }
   };
 
+  myCallIndex = (callFromIndex) => {
+    this.setState({
+      callToIndex: callFromIndex
+    })
+  }
+
   render(){
     const { ticketList } = this.state;
+    console.log(this.state.callToIndex);
 
     return(
       <div className={cx('list_wrap')}>
         <h1>친구 추천 리스트</h1>
-        <TicketList ticketList = {ticketList}/>
-        <MateListTable ticketList = {ticketList}/>
+        <TicketList ticketList = {ticketList} callIndexParent={this.myCallIndex}/>
+        <MateListTable ticketList = {ticketList} ticketIndex = {this.state.callToIndex}/>
       </div>
     )
   }

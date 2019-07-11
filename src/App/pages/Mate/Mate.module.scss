@@ -21,12 +21,12 @@
 .mate_title{
     position: absolute;
     top: 15vh;
-    left: 15vw;
+    left: 10vw;
     width: 25vw;
     color: #fff;
 }
 .mate_title h1{
-    font-size: 44px;
+    font-size: 38px;
     font-weight: bold;
     line-height: 1.29;
     letter-spacing: -1.9px;
@@ -40,16 +40,16 @@
 
 .length_box{
     position: absolute;
-    top: 38vh;
-    left: 16vw;
+    top: 36vh;
+    left: 11vw;
 }
 
 .t_box{
     position: absolute;
     top: 50%;
-    left: 14vw;
-    width: 86vw;
-    height: 360px;
+    left: 9vw;
+    width: 91vw;
+    height: 300px;
     overflow: hidden;
     overflow-x: scroll;
 }
@@ -84,7 +84,7 @@
 .mate_btn{
     position: absolute;
     top: 21vh;
-    right: 0;
+    right: 2vw;
     width: 25vw;
 }
 .mate_btn .matelink_btn{
