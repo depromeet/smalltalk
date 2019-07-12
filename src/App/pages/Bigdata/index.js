@@ -1,12 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import classnames from 'classnames/bind';
 import styles from './style.module.scss';
+import CountryList from '../../components/Bigdata/CountryList/index';
 const cx = classnames.bind(styles);
 
 class Bigdata extends Component{
-//   constructor(props){
-//     super(props);
-//   }
+  constructor(props){
+    super(props);
+
+    this.state = [
+        {name : "리스본", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/90CD9AE9-4B90-4787-89C4-0629DDE52E9F.png", number : "50"}, 
+        {name : "파리", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/8444F46F-F2CD-495C-8DCB-516568EB0188.png", number : "40"}, 
+        {name : "베니스", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/06E7EF4E-1633-484D-846B-19838F216869.png", number : "38"}, 
+        {name : "바르셀로나", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8BDA0FD-70F2-4262-8EB1-E4FCDA933F72.png", number : "16"}, 
+        {name : "도쿄", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/4E8FC029-FF06-455F-8C24-B069DDFFDF62.png", number : "13"}, 
+        {name : "뉴욕", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/58B7BA7B-1D57-45BC-85B4-0DA5543742AE.png", number : "11"}, 
+        {name : "카이로", picture : "http://cdn.onlinewebfonts.com/svg/img_169110.png", number : "10"}, 
+        {name : "이스탄불", picture : "http://cdn.onlinewebfonts.com/svg/img_169110.png", number : "8"}, 
+        {name : "상파울루", picture : "http://cdn.onlinewebfonts.com/svg/img_169110.png", number : "5"}
+    ]
+  }
 
   render(){
     return(
@@ -30,20 +43,16 @@ class Bigdata extends Component{
             </div>
             {/* 나라 리스트 */}
             <div className={cx("country-list")}>
-                <div className={cx("box")}>
-                    <img src="https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/90CD9AE9-4B90-4787-89C4-0629DDE52E9F.png" className={cx("picture")} alt="country"></img>
-                    <div className={cx("left-row")}>
-                        <div className={cx("country-name")}>리스본</div>
-                        <div className={cx("content")}>
-                            <div className={cx("phrases")}>현재</div>
-                            <div className={cx("number")}>50명</div>
-                            <div className={cx("phrases")}>이 여행중입니다</div>
-                        </div>
-                    </div>
-                    <div className={cx("right-row")}>
-                        <div className={cx("text")}>바로보기</div>
-                    </div>
-                </div>
+                {this.state.map((x, i) => {
+                    return (
+                        <CountryList 
+                            name={x.name}
+                            picture={x.picture}
+                            number={x.number}
+                            key={i} 
+                        />        
+                    )
+                })}
             </div>
             {/* 친구 리스트, 채팅 버튼 */}
             <div className="buttons">
