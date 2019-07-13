@@ -1,0 +1,18 @@
+.call_t{
+    width: 3000px;
+    height: 380px;
+}
+.call_t > li{
+    float: left;
+    opacity: 0.6;
+    transition-duration: 0.5s;
+}
+
+.active{
+    opacity: 1 !important;
+    transition-duration: 0.5s;
+}
+.none{
+    opacity: 0.6 !important;
+    transition-duration: 0.5s;
+}

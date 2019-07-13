@@ -11,8 +11,8 @@ li{
 
 .wrap_box{
     position: relative;
-    width: 506px;
-    height: 299px;
+    width: 428px;
+    height: 258px;
     background-image: url(../../../static/images/ticket.png);
     background-size: cover;
     margin: 0 4px;
@@ -22,10 +22,10 @@ li{
 
 .wrap_box .s_logo{
     position: absolute;
-    bottom: 12px;
+    bottom: 8px;
     left: 50%;
     transform: translate(-50%);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: #161616;
 }
@@ -35,8 +35,8 @@ li{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 397px;
-    height: 214px;
+    width: 358px;
+    height: 194px;
     border: 1px solid #000;
 }
 
@@ -90,27 +90,28 @@ li{
 .t_left .t_date li:first-child, .t_left .t_date li:nth-child(3){
   background-color: #000;
   border-radius: 100px;
-  padding: 2.5px 13px;
+  padding: 3.5px 12px;
 }
 .t_left .t_date .t_arrow{
-    width: 38px;
+    width: 31px;
     height: 7.4px;
     overflow: hidden;
     background-image: url(../../../static/images/arrow.png);
     background-size: 93.3px 7.4px;
-    background-position-x: -62px;
+    background-position-x: -67px;
     background-repeat: no-repeat;
     margin-top: 7px;
 }
 
 .info_t .t_right{
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 103px;
+    top: 12px;
+    right: 12px;
+    width: 88px;
     height: 85px;
     background-image: url(../../../static/images/ticket_logo.png);
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .wrap_box .info_box .info_b{

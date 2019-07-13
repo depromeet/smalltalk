@@ -1,71 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import BigTicket from '../../components/BigTicket';
+import { Link } from 'react-router-dom';
 import TicketLength from '../../components/TicketLength';
+import TicketBox from '../../components/TicketBox';
 
 import classnames from 'classnames/bind';
 import styles from './Mate.module.scss';
 
 const cx = classnames.bind(styles);
-
-class TicketBox extends Component{
-  constructor(){
-    super();
-    this.state = {
-      isToggle: true,
-      clickedTicket: []
-    }
-  };
-
-  handleClick = (ticket) => {
-    // if(this.state.isToggleOn === i){
-    //   this.setState({isTogleOn: null})
-    // } else {
-    //   this.setState({isToggleOn: i})
-    // }
-    // console.log("클릭" + i);
-    console.log(ticket);
-    // const tic = this.state.clickedTicket.indexOf(ticket);
-    const { isToggle } = this.state;
-    if(isToggle) {
-      this.setState({
-        isToggle: !isToggle,
-        clickedTicket: this.state.clickedTicket.concat(ticket)
-      })
-      console.log("push");
-    }else if(!isToggle){
-      this.setState({
-      isToggle: !isToggle,
-      clickedTicket: this.state.clickedTicket.filter(info => info.ticket !== ticket)
-      })
-      console.log("delete");
-    }
-  };
-
-  makeList = ( ticketList ) => { 
-    return ticketList.map( (ticket, i) => {
-      // console.log(ticket);
-      return <li className={cx("t_item", (this.state.isToggleOn === i? 'active' : 'none'))} onClick={() => this.handleClick(ticket)}>
-      <BigTicket listLen={ticketList.length} ticket={ticket}/></li>
-    })
-  }
-
-  resizeWidth = (length) => {
-    /* resize */
-    const _vWidth = 514;
-    let resetWidth = (_vWidth * length) + 'px';
-    return { "width" : resetWidth}
-  }
-
-  render(){
-    const { ticketList } = this.props;
-    console.log(this.state.clickedTicket);
-    return(
-      <ul className={cx('call_t')} style={this.resizeWidth(ticketList.length)}>
-        {this.makeList(ticketList)}
-      </ul>
-    )
-  }
-}
 
 class Mate extends Component{
   constructor(props){
@@ -176,6 +117,10 @@ class Mate extends Component{
     if(length > 8) return { "top": "57%"};
   }
 
+  MatelistLink = () => {
+    console.log("link");
+  }
+
   render(){
     const { ticketList } = this.state;
     return(
@@ -186,7 +131,7 @@ class Mate extends Component{
             <p>친구를 추천받고 싶으신 여행일정을 선택하고,<br/>당신만의 메이트를 찾아보세요 :)</p>
           </div>
           <div className={cx('mate_btn')}>
-            <button className={cx('matelink_btn')} onClick="callMatelist()">선택한 지역으로 친구 추천 ▶</button>
+            <button className={cx('matelink_btn')} onClick={this.MatelistLink}><Link to='/mateList'>선택한 지역으로 친구 추천 ▶</Link></button>
           </div>
           <div className={cx('length_box')}>
             <TicketLength ticketList = {ticketList}/>
