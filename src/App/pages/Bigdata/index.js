@@ -3,6 +3,7 @@ import classnames from 'classnames/bind';
 import styles from './style.module.scss';
 import CountryList from '../../components/Bigdata/CountryList/index';
 import BeSearchedCityList from '../../components/Bigdata/BeSearchedCityList/index'
+import ListOfPeopleInTheCity from '../../components/Bigdata/ListOfPeopleInTheCity';
 const cx = classnames.bind(styles);
 
 class Bigdata extends Component{
@@ -21,7 +22,6 @@ class Bigdata extends Component{
             {name : "이스탄불", picture : "http://cdn.onlinewebfonts.com/svg/img_169110.png", number : "8"}, 
             {name : "상파울루", picture : "http://cdn.onlinewebfonts.com/svg/img_169110.png", number : "5"}
         ],
-        inputValue : "",
         allCountryName : [
             {name : "리스본"},
             {name : "리마"}, 
@@ -39,7 +39,23 @@ class Bigdata extends Component{
             {name : "베이징"},
             {name : "상파울루"}
         ],
-        isClickedInputButton: false
+        listOfPeopleInTheCity : [
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "우와아", age : "20대", gender : "남성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "여행가고싶다", age : "30대", gender : "여성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "어디로갈까", age : "40대", gender : "남성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "닉네임", age : "30대", gender : "여성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "핸드폰", age : "20대", gender : "남성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "우와아", age : "20대", gender : "남성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "여행가고싶다", age : "30대", gender : "여성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "어디로갈까", age : "40대", gender : "남성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "닉네임", age : "30대", gender : "여성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "핸드폰", age : "20대", gender : "남성"}, 
+            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "빈츠", age : "10대", gender : "여성"}, 
+        ],
+        inputValue : "",
+        name : "",
+        isClickedInputButton: false,
+        isClickedCity: false
     }
   }
     handleChange = (e) => {
@@ -50,6 +66,12 @@ class Bigdata extends Component{
     }
     offInputBox = () => {
         this.setState({isClickedInputButton: false});
+    }
+    showListOfPeopleInTheCity = () => {
+        this.setState({isClickedCity: true})
+    }
+    handleName = (cityName) => {
+    this.setState({name : cityName})
     }
 
   render(){
@@ -62,9 +84,6 @@ class Bigdata extends Component{
                 <input className={cx("input")} onChange={this.handleChange} value={this.state.input} placeholder="나라 / 도시 검색"></input>
                 {this.state.isClickedInputButton ? <div className={cx("drop-up-button")} onClick={this.offInputBox}></div> : <div className={cx("drop-down-button")} onClick={this.onInputBox}></div>}
                 <div className={cx("input-box")}>
-                    {/* <div className={cx("city-name")}>가</div>
-                    <div className={cx("city-name")}>가나</div>
-                    <div className={cx("city-name")}>가나다</div> */} 
                     {this.state.allCountryName.map((x, i) => {
                         return (
                             <BeSearchedCityList
@@ -77,6 +96,13 @@ class Bigdata extends Component{
                     })}
                 </div>
             </div>
+            {this.state.isClickedCity ?
+            <div className={cx("country-name")}>
+                <div className={cx("country-name")}></div>
+                <div className={cx("number-of-people")}></div>
+                <div className={cx("text")}>의 스몰토커가<br></br>현재 리스본에 있어요!</div>
+            </div>
+            : 
             <div className={cx("default-value")}>
                 <div className={cx("phrases-1")}>나라/도시를<br></br>검색해주세요</div>
                 <div className={cx("phrases-2")}>
@@ -86,9 +112,23 @@ class Bigdata extends Component{
                     </div>
                 </div>
                 <div className={cx("arrow")}></div>
-            </div>
+            </div>}
             {/* 나라 리스트 */}
-            <div className={cx("country-list")}>
+            {this.state.isClickedCity ?
+             <div className={cx("country-list")}>
+                {this.state.listOfPeopleInTheCity.map((x, i) => {
+                    return (
+                        <ListOfPeopleInTheCity 
+                            key={i}
+                            nickname={x.nickname}
+                            age={x.age}
+                            gender={x.gender}
+                            picture={x.picture}
+                        />
+                    )
+                })}
+             </div> 
+            : <div className={cx("country-list")}>
                 {this.state.countryData.map((x, i) => {
                     return (
                         <CountryList 
@@ -97,10 +137,12 @@ class Bigdata extends Component{
                             number={x.number}
                             key={i}
                             input={this.state.inputValue}
+                            handleName={this.handleName}
+                            showListOfPeopleInTheCity={this.showListOfPeopleInTheCity}
                         />        
                     )
                 })}
-            </div>
+            </div>}
             {/* 친구 리스트, 채팅 버튼 */}
             <div className="buttons">
                 <div className="list-button" 
