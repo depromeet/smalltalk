@@ -9,7 +9,11 @@ class CountryList extends Component{
 //   }
 
   render(){
-    return(
+    if(this.props.name.indexOf(this.props.input) === -1){
+        return <div></div>;
+    }
+    else{
+        return(
             <div className={cx("box")}>
                 <img src={this.props.picture} className={cx("picture")} alt="country"></img>
                 <div className={cx("left-row")}>
@@ -24,7 +28,8 @@ class CountryList extends Component{
                     <div className={cx("text")}>바로보기</div>
                 </div>
             </div>
-        )
+            )
+        }
     }
 }
 

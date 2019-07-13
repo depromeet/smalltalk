@@ -31,6 +31,26 @@
             position: absolute;
             top: 3vh;
             left: 38vw;
+            cursor: pointer;
+        }
+        
+        .drop-up-button {
+            background-image: url(../../../static/images/drop-down-button.png);
+            background-size: cover;
+            width: 1.04vw;
+            height: 1.11vh;
+            position: absolute;
+            top: 3vh;
+            left: 38vw;
+            transform: rotate(0.5turn);
+            cursor: pointer;
+        }
+
+        .input-box {
+            position: relative;
+            top: 5px;
+            background-color: white;
+            z-index: 1;
         }
     }
 
