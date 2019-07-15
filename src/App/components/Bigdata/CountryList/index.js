@@ -10,6 +10,7 @@ class CountryList extends Component{
   a = (e) => {
     console.log(e.target);
     this.props.handleName(this.props.name);
+    this.props.handlePeopleCount(this.props.number);
     this.props.showListOfPeopleInTheCity();
   }
   render(){
@@ -26,8 +27,8 @@ class CountryList extends Component{
               <div className={cx("phrases")}>이 여행중입니다</div>
             </div>
           </div>
-          <div className={cx("right-row")}>
-            <div className={cx("text")} onClick={this.a}>바로보기</div>
+          <div className={cx("right-row")} onClick={this.a}>
+            <div className={cx("text")}>바로보기</div>
           </div>
         </div>
       )

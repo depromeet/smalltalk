@@ -29,14 +29,14 @@ class MainContainer extends Component{
     this.setState({currentState : "ChatRoom"});
     console.log("currentState : ChatRoom");
   }
+  
+  handleName = (mateName) => {
+    this.setState({name : mateName})
+  }
 
   handleAllClose = () => {
     this.setState({currentState : ""});
     console.log("currentState : none");
-  }
-
-  handleName = (mateName) => {
-    this.setState({name : mateName})
   }
 
   render(){

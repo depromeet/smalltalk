@@ -31,7 +31,7 @@
 
             .age {
                 font-family: NotoSansCJKkr;
-                font-size: 16px;
+                font-size: 0.83vh;
                 font-weight: 500;
                 line-height: 1.63;
                 letter-spacing: -0.64px;
@@ -39,7 +39,7 @@
 
             .gender {
                 font-family: NotoSansCJKkr;
-                font-size: 16px;
+                font-size: 0.83vh;
                 font-weight: 500;
                 line-height: 1.63;
                 letter-spacing: -0.64px;
@@ -67,6 +67,29 @@
             line-height: 1.63;
             letter-spacing: -0.64px;
             color: #747474;
+        }
+    }
+
+    .right-row-2 {
+        position: absolute;
+        right: 0;
+        width: 6.3vw;
+        height: 10.5vh;
+        justify-content: center;
+        align-self: center;
+        display: flex;
+        cursor: pointer;
+        background-color: #fb3e1d;
+
+        .text-2 {
+            align-self: center;
+            display: flex;
+            width: 4.8vw;
+            font-family: NotoSansCJKkr;
+            font-size: 1.5vh;
+            line-height: 1.63;
+            letter-spacing: -0.64px;
+            color: #ffffff;
         }
     }
 }

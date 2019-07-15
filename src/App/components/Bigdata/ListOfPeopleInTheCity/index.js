@@ -7,6 +7,10 @@ class ListOfPeopleInTheCity extends Component{
 //   constructor(props){
 //     super(props);
 //   }
+friendRequest = () => {
+    this.props.handleFriendRequest(this.props.id);
+    
+}
 
   render(){
         return(
@@ -19,9 +23,15 @@ class ListOfPeopleInTheCity extends Component{
                         <div className={cx("gender")}>{this.props.gender}</div>
                     </div>
                 </div>
-                <div className={cx("right-row")}>
+                {this.props.isClickedFriendRequest ?
+                <div className={cx("right-row-2")}>
+                    <div className={cx("text-2")}>친구 신청 완료</div>
+                </div>
+                :
+                <div className={cx("right-row")} onClick={this.friendRequest}>
                     <div className={cx("text")}>친구신청</div>
                 </div>
+                }
             </div>
         )
     }

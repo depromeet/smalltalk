@@ -40,22 +40,23 @@ class Bigdata extends Component{
             {name : "상파울루"}
         ],
         listOfPeopleInTheCity : [
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "우와아", age : "20대", gender : "남성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "여행가고싶다", age : "30대", gender : "여성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "어디로갈까", age : "40대", gender : "남성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "닉네임", age : "30대", gender : "여성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "핸드폰", age : "20대", gender : "남성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "우와아", age : "20대", gender : "남성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "여행가고싶다", age : "30대", gender : "여성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "어디로갈까", age : "40대", gender : "남성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "닉네임", age : "30대", gender : "여성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "핸드폰", age : "20대", gender : "남성"}, 
-            {picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", nickname : "빈츠", age : "10대", gender : "여성"}, 
+            {nickname : "우와아", age : "20대", gender : "남성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "여행가고싶다", age : "30대", gender : "여성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "어디로갈까", age : "40대", gender : "남성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "닉네임", age : "30대", gender : "여성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "핸드폰", age : "20대", gender : "남성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "우와아", age : "20대", gender : "남성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "여행가고싶다", age : "30대", gender : "여성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "어디로갈까", age : "40대", gender : "남성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "닉네임", age : "30대", gender : "여성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "핸드폰", age : "20대", gender : "남성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
+            {nickname : "빈츠", age : "10대", gender : "여성", picture : "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg", isClickedFriendRequest: false}, 
         ],
         inputValue : "",
         name : "",
+        peopleCount : 0,
         isClickedInputButton: false,
-        isClickedCity: false
+        isClickedCity: false,
     }
   }
     handleChange = (e) => {
@@ -71,7 +72,15 @@ class Bigdata extends Component{
         this.setState({isClickedCity: true})
     }
     handleName = (cityName) => {
-    this.setState({name : cityName})
+        this.setState({name : cityName})
+    }
+    handlePeopleCount = (newCount) => {
+        this.setState({peopleCount : newCount})
+    }
+    handleFriendRequest = (i) => {
+        const newState = this.state.listOfPeopleInTheCity
+        newState[i].isClickedFriendRequest = true;
+        this.setState({listOfPeopleInTheCity : newState});
     }
 
   render(){
@@ -97,10 +106,18 @@ class Bigdata extends Component{
                 </div>
             </div>
             {this.state.isClickedCity ?
-            <div className={cx("country-name")}>
-                <div className={cx("country-name")}></div>
-                <div className={cx("number-of-people")}></div>
-                <div className={cx("text")}>의 스몰토커가<br></br>현재 리스본에 있어요!</div>
+            <div className={cx("country")}>
+                <div className={cx("country-name")}>{this.state.name}</div>
+                <div className={cx("second-line")}>
+                    <div className={cx("number-of-people")}>{this.state.peopleCount}명</div>
+                    <div className={cx("text")}>의 스몰토커가</div>
+                </div>
+                <div className={cx("text-2")}>현재 {this.state.name}에 있어요!</div>
+                <div className={cx("background")}>
+                    <div className={cx("circle")}></div>
+                    <div className={cx("country-picture")}></div>
+                    <div className={cx("edge-circle")}></div>
+                </div>
             </div>
             : 
             <div className={cx("default-value")}>
@@ -119,11 +136,14 @@ class Bigdata extends Component{
                 {this.state.listOfPeopleInTheCity.map((x, i) => {
                     return (
                         <ListOfPeopleInTheCity 
+                            id={i}
                             key={i}
                             nickname={x.nickname}
                             age={x.age}
                             gender={x.gender}
                             picture={x.picture}
+                            isClickedFriendRequest={x.isClickedFriendRequest}
+                            handleFriendRequest={this.handleFriendRequest}
                         />
                     )
                 })}
@@ -138,6 +158,7 @@ class Bigdata extends Component{
                             key={i}
                             input={this.state.inputValue}
                             handleName={this.handleName}
+                            handlePeopleCount={this.handlePeopleCount}
                             showListOfPeopleInTheCity={this.showListOfPeopleInTheCity}
                         />        
                     )
