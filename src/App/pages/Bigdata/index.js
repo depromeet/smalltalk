@@ -91,7 +91,10 @@ class Bigdata extends Component{
             {/* 검색 바 */}
             <div className={cx("search-bar")}>
                 <input className={cx("input")} onChange={this.handleChange} value={this.state.input} placeholder="나라 / 도시 검색"></input>
-                {this.state.isClickedInputButton ? <div className={cx("drop-up-button")} onClick={this.offInputBox}></div> : <div className={cx("drop-down-button")} onClick={this.onInputBox}></div>}
+                {this.state.isClickedInputButton ? 
+                <div className={cx("drop-up-button")} onClick={this.offInputBox}></div> 
+                : 
+                <div className={cx("drop-down-button")} onClick={this.onInputBox}></div>}
                 <div className={cx("input-box")}>
                     {this.state.allCountryName.map((x, i) => {
                         return (
@@ -148,7 +151,8 @@ class Bigdata extends Component{
                     )
                 })}
              </div> 
-            : <div className={cx("country-list")}>
+            : 
+            <div className={cx("country-list")}>
                 {this.state.countryData.map((x, i) => {
                     return (
                         <CountryList 

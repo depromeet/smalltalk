@@ -14,22 +14,34 @@ friendRequest = () => {
 
   render(){
         return(
-            <div className={cx("box")}>
-                <img src={this.props.picture} className={cx("picture")} alt="profile"></img>
-                <div className={cx("left-row")}>
-                    <div className={cx("nickname")}>{this.props.nickname}</div>
-                    <div className={cx("content")}>
-                        <div className={cx("age")}>{this.props.age}</div>
-                        <div className={cx("gender")}>{this.props.gender}</div>
+            <div>
+                {this.props.isClickedFriendRequest ? 
+                <div className={cx("box-2")}>
+                    <img src={this.props.picture} className={cx("picture")} alt="profile"></img>
+                    <div className={cx("left-row")}>
+                        <div className={cx("nickname")}>{this.props.nickname}</div>
+                        <div className={cx("content")}>
+                            <div className={cx("age")}>{this.props.age}</div>
+                            <div className={cx("gender")}>{this.props.gender}</div>
+                        </div>
+                    </div>
+                    <div className={cx("right-row")}>
+                        <div className={cx("text-2")}>친구 신청 완료</div>
                     </div>
                 </div>
-                {this.props.isClickedFriendRequest ?
-                <div className={cx("right-row-2")}>
-                    <div className={cx("text-2")}>친구 신청 완료</div>
-                </div>
                 :
-                <div className={cx("right-row")} onClick={this.friendRequest}>
-                    <div className={cx("text")}>친구신청</div>
+                <div className={cx("box")}>
+                    <img src={this.props.picture} className={cx("picture")} alt="profile"></img>
+                    <div className={cx("left-row")}>
+                        <div className={cx("nickname")}>{this.props.nickname}</div>
+                        <div className={cx("content")}>
+                            <div className={cx("age")}>{this.props.age}</div>
+                            <div className={cx("gender")}>{this.props.gender}</div>
+                        </div>
+                    </div>
+                    <div className={cx("right-row")} onClick={this.friendRequest}>
+                        <div className={cx("text")}>친구신청</div>
+                    </div>
                 </div>
                 }
             </div>
