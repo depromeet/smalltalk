@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const MOVE_TO_NEXT = 'auth/MOVE_TO_NEXT';
+
 const AUTH_REGISTER = 'auth/AUTH_REGISTER';
 const AUTH_REGISTER_SUCCESS = 'auth/AUTH_REGISTER_SUCCESS';
 const AUTH_REGISTER_FAILURE = 'auth/AUTH_REGISTER_FAILURE';  
@@ -12,24 +14,16 @@ const USER_LOADING = 'auth/USER_LOADING';
 const USER_LOADED = 'auth/USER_LOAED'; 
 const AUTH_ERROR = 'auth/AUTH_ERROR'; 
 
-// const MESSAGE
+const TAGS_REQUEST_SUCCESS = 'user/TAGS_REQUEST_SUCCESS'; 
+const TAGS_REQUEST_FAILURE = 'user/TAGS_REQUEST_FAILURE'; 
 
 const API = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com'
 
-export const registerRequest = values => {
-  // console.log(values);
-  return (dispatch) => {
-    dispatch(register()); 
-    return axios.post(`${API}/auth/register/`, values)
-    .then(res => { 
-      console.log(res);
-      dispatch(registerSuccess());
-    })
-    .catch(error => { 
-      console.error(error);
-      // dispatch(registerFailure(error.response.data.code));
-    })
-  };
+export function moveToNext(nextNum){
+  return {
+    type: MOVE_TO_NEXT,
+    payload : nextNum
+  }
 }
 
 export function register(){
@@ -49,8 +43,40 @@ export function registerFailure(error){
     type : AUTH_REGISTER_FAILURE,
     error
   }
+} 
+
+export function tagsSuccess(){
+  return {
+    type : TAGS_REQUEST_SUCCESS
+  }
 }
-// 제일 처음 토큰을 보내고, login되어 있으면 메인, 아니면 start 페이지 보여주게 확인 
+
+export function tagsFailure(){
+  return {
+    type: TAGS_REQUEST_FAILURE
+  }
+}
+
+export const registerRequest = values => {
+  return (dispatch) => {
+    dispatch(register()); 
+    return axios.post(`${API}/auth/register/`, values)
+    .then(res => { 
+      console.log(res);
+      dispatch(registerSuccess());
+    })
+    .catch(error => { 
+      if(error.response.data.email){
+        console.log('이미 존재하는 이메일');
+        dispatch(registerFailure(1));
+      }
+      // 비밀번호가 너무 일상적인 단어면 non_fields_error가 나옴 
+      // dispatch(registerFailure(error.response.data));
+    })
+  };
+}
+
+
 export const loadUser = () => (dispatch, getState) =>{
   const token = getState().auth.token;
   const config = {
@@ -76,14 +102,12 @@ export const loadUser = () => (dispatch, getState) =>{
       console.log(err);
     })
     }
-    console.log(config); 
 } 
 
 export const loginRequest = (values) => (dispatch) => { 
   const { email, password } = values; 
   return axios.post(`${API}/auth/login/`, {email, password})
     .then((res) => {
-      // console.log(res.data.token); 
       localStorage.setItem('token', res.data.token); 
       dispatch({ type: AUTH_LOGIN_SUCCESS })
     }).catch( err => { 
@@ -101,12 +125,25 @@ export const loginRequest = (values) => (dispatch) => {
     })
 }
 
+export const tagsSetRequset = tags => dispatch => {
+  return axios.post(`${API}/`, tags) 
+  .then( res => {
+    // 여행 스타일 태그 요청 성공했을 때 isTagsSet : false -> true
+    dispatch(tagsSuccess());
+  })
+  .catch(error => {
+    // 실패했을 때. 
+    dispatch(tagsFailure());
+  })
+}
+
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated : localStorage.getItem('token') ? true : false, // true로 바꾸면 됨
-  // isLoading: false,
+  isTagsSet : false,
   user: null,
   register : {
+    step: 0,
     status : 'INIT',
     error : -1
   },
@@ -118,6 +155,14 @@ const initialState = {
 
 export default function authentication(state = initialState, action){
   switch (action.type) {
+    case MOVE_TO_NEXT: 
+      return {
+        ...state,
+        register : {
+          ...state.register,
+          step: action.payload
+        }
+      }
     case AUTH_REGISTER:
       return {
         ...state, 
@@ -199,6 +244,16 @@ export default function authentication(state = initialState, action){
             status : "FAILURE",
             error : action.payload
           }
+        }
+      case TAGS_REQUEST_SUCCESS: 
+        return {
+          ...state,
+          isTagsSet: true
+        }
+      case TAGS_REQUEST_FAILURE: 
+        return {
+          ...state,
+          isTagsSet: false
         }
     default: 
       return state;

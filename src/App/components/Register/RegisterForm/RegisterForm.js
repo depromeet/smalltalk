@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { LabelInput } from 'App/components/LabelInput';
 import iconNext from 'images/icon-next.svg';
 import classnames from 'classnames/bind';
@@ -17,7 +17,8 @@ const RegisterForm = ({
   gender,
   age,
   shortBio,
-  // validation : {email,}
+  validation,
+  registerError
   }) => {
 
  let className = cx({
@@ -28,6 +29,7 @@ const RegisterForm = ({
 
   return(
     <div className={className}> 
+    <div>{registerError === 1? '이미 존재하는 메일입니다': ''}</div>
       <div className={cx('contents')}>
         <div className={cx('form-contents')}>
           <h1 className={cx('title')}>개인정보입력</h1>
@@ -41,7 +43,7 @@ const RegisterForm = ({
                 required
                 label="Email"
                 onChange={onChange}
-                error={email.message}
+                error={validation.email.message}
                 // disabled={!emailEditable}
               />
               <LabelInput
@@ -50,6 +52,7 @@ const RegisterForm = ({
                 required
                 label="닉네임"
                 onChange={onChange}
+                error={validation.nickname.message}
               />
             </div>
             <div className={cx('column')}>
@@ -60,6 +63,7 @@ const RegisterForm = ({
                 required
                 label="Password"
                 onChange={onChange}
+                error={validation.password.message}
               />
               <div className={cx('half')}>
                 <LabelInput
@@ -68,6 +72,7 @@ const RegisterForm = ({
                   required
                   label="성별"
                   onChange={onChange}
+                  error={validation.gender.message}
                 />
                 <LabelInput
                   value={age}
@@ -75,6 +80,7 @@ const RegisterForm = ({
                   required
                   label="나이"
                   onChange={onChange}
+                  error={validation.age.message}
                 />
               </div>
             </div>
@@ -86,6 +92,7 @@ const RegisterForm = ({
               required
               label="자기소개(최대50자)"
               onChange={onChange}
+              // error={validation.shortBio.message}
             />
           </div>
         </div>
