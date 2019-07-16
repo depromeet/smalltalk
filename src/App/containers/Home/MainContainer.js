@@ -1,48 +1,45 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { Component, Fragment } from 'react';
 import MainHomeBackground from '../../components/Home/MainBackground';
 import SideMenu from '../../components/SideMenu/index';
 
-class MainContainer extends Component{
-  constructor(props){
+class MainContainer extends Component {
+  constructor(props) {
     super(props);
-    // this.handleListClick = this.handleListClick.bind(this);
-    // this.handleChatClick = this.handleChatClick.bind(this);
-    // this.handleListClose = this.handleListClose.bind(this);
-    // this.handleChatClose = this.handleChatClose.bind(this);
-    this.state={
-      currentState : "",
-      name : ""
-    }
+    this.state = {
+      currentState: '',
+      name: '',
+    };
   }
 
   handleListClick = () => {
-    this.setState({currentState : "ChatMateList"});
-    console.log("currentState : ChatMateList");
+    this.setState({ currentState: 'ChatMateList' });
+    console.log('currentState : ChatMateList');
   }
 
   handleChatClick = () => {
-    this.setState({currentState : "ChatRoomList"});
-    console.log("currentState : ChatRoomList");
+    this.setState({ currentState: 'ChatRoomList' });
+    console.log('currentState : ChatRoomList');
   }
 
   handleChatRoomClick = () => {
-    this.setState({currentState : "ChatRoom"});
-    console.log("currentState : ChatRoom");
+    this.setState({ currentState: 'ChatRoom' });
+    console.log('currentState : ChatRoom');
   }
-  
+
   handleName = (mateName) => {
-    this.setState({name : mateName})
+    this.setState({ name: mateName });
   }
 
   handleAllClose = () => {
-    this.setState({currentState : ""});
-    console.log("currentState : none");
+    this.setState({ currentState: '' });
+    console.log('currentState : none');
   }
 
-  render(){
+  render() {
     return (
       <Fragment>
-        <MainHomeBackground 
+        <MainHomeBackground
           handleListClick={this.handleListClick}
           handleChatClick={this.handleChatClick}
         />
@@ -56,7 +53,7 @@ class MainContainer extends Component{
           name={this.state.name}
         />
       </Fragment>
-    )
+    );
   }
 }
 
