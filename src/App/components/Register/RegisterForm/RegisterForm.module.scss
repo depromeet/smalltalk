@@ -8,7 +8,10 @@
   transition: margin 1s ease;
   z-index: -1;
   position: absolute;
-  left: 120px;
+  // left: 60px;
+  width: -webkit-calc(100% - 60px);
+  width:     -moz-calc(100% - 60px);
+  width:         calc(100% - 60px);
   .exist-email-error{
     position: absolute;
   }

@@ -23,9 +23,9 @@ $red-border: 1px solid #fb3e1d;
 
 /* Register Steps */
 %step-container{
-  width: -webkit-calc(100% - 180px);
-  width:     -moz-calc(100% - 180px);
-  width:         calc(100% - 180px);
+  width: -webkit-calc(100% - 120px);
+  width:     -moz-calc(100% - 120px);
+  width:         calc(100% - 120px);
   height: 100vh;
   display: flex;
   justify-content: space-between;

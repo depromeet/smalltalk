@@ -9,8 +9,12 @@
   transition: margin 1s ease;
   z-index: -2;
   position: absolute;
-  left: 180px;
-  padding-left: 30px;
+  width: 100%;
+  // left: 120px;
+  // width: -webkit-calc(100% - 60px);
+  // width:     -moz-calc(100% - 60px);
+  // width:         calc(100% - 60px);
+  padding-left: 140px;
   .contents { 
     display : flex;
     justify-content: space-between;

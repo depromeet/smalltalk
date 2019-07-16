@@ -112,6 +112,8 @@ class RegisterStyles extends Component {
   }
 
   handleNextBtnClick = () => {
+    const { handleNextBtn } = this.props;
+    handleNextBtn(2);
     // 로그인에 성공하면 다음으로 넘김 (state가 redux store에 있음) 
     // tagsSetRequset(현재 tags)
   }
