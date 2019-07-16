@@ -14,10 +14,10 @@ const RegisterStart = ({ isMovedLeft, handleNextBtn }) => {
   'move-left': isMovedLeft[0]
   });
 
-  let styles = cx({
-    'bar': true,
-    'bar-left': isMovedLeft[0]
-  })
+  // let styles = cx({
+  //   'bar': true,
+  //   'bar-left': isMovedLeft[0]
+  // })
 
   return(
     <Fragment>
@@ -49,7 +49,7 @@ const RegisterStart = ({ isMovedLeft, handleNextBtn }) => {
             </div>
           </div>
         </div>
-        <div className={styles}> STEP 1 </div>
+        <div className={cx('bar')}> STEP 1 </div>
       </div>
     </Fragment>
   )

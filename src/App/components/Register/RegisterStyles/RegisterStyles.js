@@ -127,40 +127,41 @@ class RegisterStyles extends Component {
     return(
     <div className={className}>
       <div className={cx('contents')}>
-        <h1 className={cx('title')}> 내 여행 스타일 선택</h1>
-        <div className={cx('guide')}>
-          <p>나와 취향이 맞는 친구들을 찾기 위해</p>
-          <p>당신의 여행 스타일을 선택해주세요 :)</p>
-        </div>
-        <div className={cx('style-container')}>
-          <div className={cx('style-column')}>
-            {
-              pairs.slice(0,3).map(pair => {
-                return <StylePair pair={pair} key={pair.id} handleStyleCircle={this.handleStyleCircle}/>
-              })
-            }
+        <div>
+          <h1 className={cx('title')}> 내 여행 스타일 선택</h1>
+          <div className={cx('guide')}>
+            <p>나와 취향이 맞는 친구들을 찾기 위해</p>
+            <p>당신의 여행 스타일을 선택해주세요 :)</p>
           </div>
-          <div className={cx('line-container')}></div>
-          <div className={cx('style-column')}>
-            {
-              pairs.slice(3,6).map(pair => {
-                return <StylePair pair={pair} key={pair.id} handleStyleCircle={this.handleStyleCircle}/>
-              })
-            }
-          </div>
-          <div className={cx('line-container')}></div>
+          <div className={cx('style-container')}>
             <div className={cx('style-column')}>
-            {
-              pairs.slice(6,9).map(pair => {
-                return <StylePair pair={pair} key={pair.id} handleStyleCircle={this.handleStyleCircle}/>
-              })
-            }
-          </div>
-          <div className={cx('next-btn')} onClick={this.handleNextBtnClick}>
-            <img src={iconNext} alt="next"/>
+              {
+                pairs.slice(0,3).map(pair => {
+                  return <StylePair pair={pair} key={pair.id} handleStyleCircle={this.handleStyleCircle}/>
+                })
+              }
+            </div>
+            <div className={cx('line-container')}></div>
+            <div className={cx('style-column')}>
+              {
+                pairs.slice(3,6).map(pair => {
+                  return <StylePair pair={pair} key={pair.id} handleStyleCircle={this.handleStyleCircle}/>
+                })
+              }
+            </div>
+            <div className={cx('line-container')}></div>
+              <div className={cx('style-column')}>
+              {
+                pairs.slice(6,9).map(pair => {
+                  return <StylePair pair={pair} key={pair.id} handleStyleCircle={this.handleStyleCircle}/>
+                })
+              }
+            </div>
           </div>
         </div>
-        
+        <div className={cx('next-btn')} onClick={this.handleNextBtnClick}>
+          <img src={iconNext} alt="next"/>
+        </div>
       </div>
       <div className={cx('bar')}>FIN</div>
     </div>

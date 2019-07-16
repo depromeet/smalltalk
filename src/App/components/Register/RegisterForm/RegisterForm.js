@@ -29,7 +29,7 @@ const RegisterForm = ({
 
   return(
     <div className={className}> 
-    <div>{registerError === 1? '이미 존재하는 메일입니다': ''}</div>
+    
       <div className={cx('contents')}>
         <div className={cx('form-contents')}>
           <h1 className={cx('title')}>개인정보입력</h1>
@@ -96,8 +96,9 @@ const RegisterForm = ({
             />
           </div>
         </div>
-        <div onClick={onFormSubmit}><img src={iconNext} alt="next"/></div>
+        <div className={cx('nextBtn')} onClick={onFormSubmit}><img src={iconNext} alt="next"/></div>
       </div>
+      <div className={cx('exist-email-error')}>{registerError === 1? '이미 존재하는 메일입니다': ''}</div>
       <div className={cx('bar')}> STEP 2 </div>
     </div>
   )

@@ -1,6 +1,5 @@
 @import 'variables.scss';
 
-
 .step-container{
   @extend %step-container; 
   z-index: 1;
@@ -95,13 +94,6 @@
 
 .bar{
   @extend %bar;
-  transition: all 4s ease ;
-  -webkit-transition: all 4s ease;
-  position: absolute;
-  width: 60px;
-  height: 100vh;
-  right: 0px;
-  white-space: nowrap;
   background-color: $red; 
   color: white;
 }
@@ -110,10 +102,7 @@
     margin-left: -100%;
     // display: none;
   }
-  
-  .bar-left{
-    left: 0;
-  }
+
     
   
 

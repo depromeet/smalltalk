@@ -83,25 +83,25 @@ class RegisterFormContainer extends Component{
 
   onFormSubmit = () => {
     const { handleNextBtn, registerRequest, status }= this.props;
-  
-    const validation = this.validator.validate(this.state);
-    this.setState({validation});
+    handleNextBtn(1);
+    // const validation = this.validator.validate(this.state);
+    // this.setState({validation});
     
-    if(validation.isValid){
-      const { email, password, nickname, age, gender, shortBio } = this.state;
-      if(status === 'INIT'){
-        return registerRequest({email, password, nickname, age, gender, shortBio})
-        .then(() => {
-          if(this.props.status === 'SUCCESS'){
-            console.log('success');
-            handleNextBtn(1)
-            } else if(this.props.status === "FAILURE"){
-            console.log('fail')
-            }
-          }
-        )
-      }
-    }
+    // if(validation.isValid){
+    //   const { email, password, nickname, age, gender, shortBio } = this.state;
+    //   if(status === 'INIT'){
+    //     return registerRequest({email, password, nickname, age, gender, shortBio})
+    //     .then(() => {
+    //       if(this.props.status === 'SUCCESS'){
+    //         console.log('success');
+    //         handleNextBtn(1)
+    //         } else if(this.props.status === "FAILURE"){
+    //         console.log('fail')
+    //         }
+    //       }
+    //     )
+    //   }
+    // }
   }
 
   render(){
