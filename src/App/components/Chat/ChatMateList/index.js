@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
-import EachFriendsList from './EachFriendsList/index';
-import ChatMateRequest from '../ChatMateRequest/index';
+import EachFriendsList from '../EachFriendsList';
+import ChatMateRequest from '../ChatMateRequest';
 import styles from './style.module.scss';
 
 const cx = classNames.bind(styles);

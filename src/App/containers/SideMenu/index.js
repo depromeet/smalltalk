@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import ChatMateList from '../Chat/ChatMateList/index';
-import ChatRoomList from '../Chat/ChatRoomList/index';
-import ChatRoom from '../Chat/ChatRoom';
+import ChatMateList from '../../components/Chat/ChatMateList';
+import ChatRoomList from '../../components/Chat/ChatRoomList';
+import ChatRoom from '../../components/Chat/ChatRoom';
 
 class SideMenu extends Component {
   constructor(props) {

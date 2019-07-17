@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component, Fragment } from 'react';
 import MainHomeBackground from '../../components/Home/MainBackground';
-import SideMenu from '../../components/SideMenu/index';
+import SideMenu from '../SideMenu';
 
 class MainContainer extends Component {
   constructor(props) {

@@ -1,11 +1,42 @@
 import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './style.module.scss';
-import EachFriendsList from '../ChatMateList/EachFriendsList/index';
+import EachFriendsList from '../EachFriendsList';
+import axios from 'axios';
 
 const cx = classNames.bind(styles);
 
+const getAPOD = () => {
+  console.log('GET 메세지 List');
+  return axios.get(`http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/`, { headers: { 'Authorization': `Token 320e05edcaf069d234458007c87d028f9c6e195a`, 'Content-Type': `application/json`} });
+};
+
+// const postAPOD = () => {
+//   console.log('POST 메세지');
+//   return axios.get(`http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/send`, { headers: { 'Authorization': `Token 320e05edcaf069d234458007c87d028f9c6e195a`, 'Content-Type': `application/json`}, form: {'description': 'fdfdf', 'to_user': 3} });
+// };
+
+const getAPOD2 = () => {
+  getAPOD().then((response) => {
+    console.log(response);
+  }).catch((e) => {
+    console.log(e)
+  });
+};
+
+// const postAPOD2 = () => {
+//   postAPOD().then((response) => {
+//     console.log(response);
+//   }).catch((e) => {
+//     console.log(e)
+//   });
+// };
+
 class ChatRoomList extends Component {
+  componentDidMount() {
+    getAPOD2();
+    // postAPOD2();
+  }
   render() {
     return (
       <div className={cx('chat-list')}>
