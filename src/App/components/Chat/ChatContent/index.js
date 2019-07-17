@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import classNames from 'classnames/bind';
 import styles from './style.module.scss';
 
+const cx = classNames.bind(styles);
+
 class ChatContent extends Component {
   render() {
-    const cx = classNames.bind(styles);
 
     // lastType을 정의하는데 TypeError가 떠서 임시로 try문 선언합니다. 수정해야합니다.
     try {

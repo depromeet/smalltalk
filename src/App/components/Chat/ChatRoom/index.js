@@ -3,6 +3,8 @@ import classNames from 'classnames/bind';
 import styles from './style.module.scss';
 import ChatContent from '../ChatContent';
 
+const cx = classNames.bind(styles);
+
 class ChatRoom extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,6 @@ class ChatRoom extends Component {
     }
 
     render() {
-      const cx = classNames.bind(styles);
       const blah = () => {
         const newState = this.state.chatData.concat({ type: 'mine', text: this.state.inputValue });
         this.setState({ chatData: newState });

@@ -141,17 +141,11 @@ class Bigdata extends Component {
               <div className={cx('country-name')}>{this.state.name}</div>
               <div className={cx('second-line')}>
                 <div className={cx('number-of-people')}>
-                  {this.state.peopleCount}
-명
+                  {this.state.peopleCount}명
                 </div>
                 <div className={cx('text')}>의 스몰토커가</div>
               </div>
-              <div className={cx('text-2')}>
-현재
-                {' '}
-                {this.state.name}
-에 있어요!
-              </div>
+              <div className={cx('text-2')}>현재{' '}{this.state.name}에 있어요!</div>
               <div className={cx('background')}>
                 <div className={cx('circle')} />
                 <div className={cx('country-picture')} />
@@ -161,11 +155,7 @@ class Bigdata extends Component {
           )
           : (
             <div className={cx('default-value')}>
-              <div className={cx('phrases-1')}>
-나라/도시를
-                <br />
-검색해주세요
-              </div>
+              <div className={cx('phrases-1')}>나라/도시를<br />검색해주세요</div>
               <div className={cx('phrases-2')}>
                 <div className={cx('phrases-black')}>현재 가장 많은</div>
                 <div className={cx('phrases-2-2')}>
@@ -190,7 +180,7 @@ class Bigdata extends Component {
                   picture={x.picture}
                   isClickedFriendRequest={x.isClickedFriendRequest}
                   handleFriendRequest={this.handleFriendRequest}
-    />
+                />
               ))}
             </div>
           )

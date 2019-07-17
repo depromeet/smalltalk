@@ -3,9 +3,10 @@ import classNames from 'classnames/bind';
 import styles from './style.module.scss';
 import EachFriendsList from '../ChatMateList/EachFriendsList/index';
 
+const cx = classNames.bind(styles);
+
 class ChatRoomList extends Component {
   render() {
-    const cx = classNames.bind(styles);
     return (
       <div className={cx('chat-list')}>
         <div className={cx('buttons')}>
