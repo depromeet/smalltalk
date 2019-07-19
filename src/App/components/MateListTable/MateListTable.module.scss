@@ -1,57 +1,62 @@
-
-/* mate list */
-
 .list_table{
-    position: relative;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
+  position: relative;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  > li{
     width: 100%;
     height: 100%;
-    text-align: center;
-}
-.list_table > li{
-    width: 100%;
-    height: 100%;
-}
-.list_table > li:first-child{
-    width: 100%;
-    height: 65px;
-}
-.list_table > li:nth-child(2){
-    width: 100%;
-    height: 35px;
-    padding: 10px 0;
-    position: relative;
-}
-.list_table > li:nth-child(2) hr{
-    width: 100%;
-    border: 1px solid #dddddd;
-    top: 0;
-}
-.list_table > li:nth-child(3){
-    width: 100%;
-    max-height: 34vh;
-    overflow: scroll !important;
-    position: relative;
-}
 
-.list_title > li:first-child{
-    padding-left: 60px;
-}
-.list_title > li{
-    width: 30%;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: -1.2px;
-    padding: 20px 0;
-}
-.list_title > li:nth-child(2){
-    width: 40%;
-    padding-left: 60px;
-}
+    &:nth-child(2){
+      width: 100%;
+      height: 35px;
+      padding: 10px 0;
+      position: relative;
 
-.talker_deco{
+      hr{
+        width: 100%;
+        border: 1px solid #dddddd;
+        top: 0;
+      }
+    }
+    &:nth-child(3){
+      width: 100%;
+      max-height: 34vh;
+      overflow: scroll !important;
+      position: relative;
+    }
+  } 
+  .fnd_info{
+    width: 100%;
+    height: 55px;
+
+    .list_title{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      
+      > li{
+        width: 30%;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: -1.2px;
+        padding: 20px 0;
+
+        &:first-child{
+          padding-left: 60px;
+        }
+        &:nth-child(2){
+          width: 40%;
+          padding-left: 60px;
+        }
+      }
+    }
+  }
+  @at-root .talker_deco{
     position: absolute;
     top: 0;
     left: 170px;
@@ -62,8 +67,14 @@
     padding: 7px;
     border-radius: 100px;
     border-bottom-left-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:vertical{
+    background-color:#f8f8f8;
+  }
 }
 
-::-webkit-scrollbar-thumb:vertical{
-  background-color:#f8f8f8;
-}
+
+
+
+

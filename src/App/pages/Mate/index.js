@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import TicketLength from '../../components/TicketLength';
 import TicketBox from '../../components/TicketBox';
@@ -124,23 +124,21 @@ class Mate extends Component{
   render(){
     const { ticketList } = this.state;
     return(
-      <Fragment>
-        <div className={cx('mate_wrap')}>
-          <div className={cx('mate_title')}>
-            <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
-            <p>친구를 추천받고 싶으신 여행일정을 선택하고,<br/>당신만의 메이트를 찾아보세요 :)</p>
-          </div>
-          <div className={cx('mate_btn')}>
-            <button className={cx('matelink_btn')} onClick={this.MatelistLink}><Link to='/mateList'>선택한 지역으로 친구 추천 ▶</Link></button>
-          </div>
-          <div className={cx('length_box')}>
-            <TicketLength ticketList = {ticketList}/>
-          </div>
-          <div className={cx('t_box')} style={this.resizeHeight(ticketList.length)}>
-            <TicketBox ticketList = {ticketList}/>
-          </div>
+      <div className={cx('mate_wrap')}>
+        <div className={cx('mate_title')}>
+          <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
+          <p>친구를 추천받고 싶으신 여행일정을 선택하고,<br/>당신만의 메이트를 찾아보세요 :)</p>
         </div>
-      </Fragment>
+        <div className={cx('mate_btn')}>
+          <button className={cx('matelink_btn')} onClick={this.MatelistLink}><Link to='/mateList'>선택한 지역으로 친구 추천 ▶</Link></button>
+        </div>
+        <div className={cx('length_box')}>
+          <TicketLength ticketList = {ticketList}/>
+        </div>
+        <div className={cx('t_box')} style={this.resizeHeight(ticketList.length)}>
+          <TicketBox ticketList = {ticketList}/>
+        </div>
+      </div>
     )
   }
 }
