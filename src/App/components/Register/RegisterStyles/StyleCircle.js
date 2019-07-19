@@ -14,12 +14,7 @@ const Circle = styled.div`
   background-color: #fd9e8d;
   color: white;
  }
-
 `
-const Text = styled.span`
- margin-top: 30px;
-`
-
 const StyleCircle = ({
   pair,
   state,

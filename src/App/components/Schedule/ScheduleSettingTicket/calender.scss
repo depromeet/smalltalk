@@ -1,0 +1,13 @@
+@import 'variables.scss';
+.DateRangePicker__CalendarSelection{
+    background-color: $neon;
+    border: none;
+    
+}
+.DateRangePicker__DateLabel{
+    color: black;
+}
+
+.DateRangePicker__WeekdayHeading{
+    font-weight: normal;
+}

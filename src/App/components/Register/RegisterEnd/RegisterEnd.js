@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames/bind';
 import styles from './RegisterEnd.module.scss';
 const cx = classnames.bind(styles);
@@ -14,15 +15,22 @@ const RegisterEnd = () => {
       </div>
       <div className={cx('buttons')}>
         <div className={cx('button-container')}>
+        {/* home으로 이동 */}
+        <Link to='/'>
           <button> 
-            <div className={cx('button-word')}>저장하고 시작하기 </div>
+            <div className={cx('button-word')}>저장하고 시작하기 </div> 
             <div className={cx('button-tri')}> ► </div> 
+            
           </button>
+          </Link>
         </div>
-        <button> 
+        {/* /schedule로 이동 */}
+        <Link to='/schedule'>
+          <button> 
             <div className={cx('button-word')}> 지금 바로 일정 등록하기 </div>
             <div className={cx('button-tri')}> ► </div> 
           </button>
+        </Link>
       </div>
     </div>
   )

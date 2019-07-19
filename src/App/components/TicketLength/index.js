@@ -1,8 +1,6 @@
 import React, { Component, Fragment} from 'react';
-
 import classnames from 'classnames/bind';
 import styles from './TicketLength.module.scss';
-
 const cx = classnames.bind(styles);
 
 class TicketLength extends Component{
@@ -20,7 +18,7 @@ class TicketLength extends Component{
           else return (<p>{ index }</p>);
         })()
       }</div>
-      <hr/><span>{ ticklen.ticketTitle }</span></li>
+      <hr/><span className={cx('title')}>{ ticklen.ticketTitle }</span></li>
     })
   }
 
@@ -37,9 +35,11 @@ class TicketLength extends Component{
   render(){
     const { ticketList } = this.props;
     return(
-      <ul className={cx('length_box')} style={this.resizeWidth(ticketList.length)}>
-        {this.makeList(ticketList)}
-      </ul>
+      <Fragment>
+        <ul className={cx('length_box')} style={this.resizeWidth(ticketList.length)}>
+          {this.makeList(ticketList)}
+        </ul>
+      </Fragment>
     )
   }
 }

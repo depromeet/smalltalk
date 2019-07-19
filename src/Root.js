@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './App/store/modules'; 
 import { loadUser } from './App/store/modules/auth';
+import ScheduleSettingTicket from 'App/components/Schedule/ScheduleSettingTicket';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(
