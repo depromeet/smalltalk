@@ -6,10 +6,12 @@ class MainBackground extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // 메뉴 뒤에 위치하는 박스 위치
       left1: -30+'vw',
       left2: -30+'vw',
       left3: -30+'vw',
       left4: -30+'vw',
+      // 박스 투명도
       opacitiy1: 0,
       opacitiy2: 0,
       opacitiy3: 0,

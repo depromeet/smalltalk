@@ -25,6 +25,11 @@ class Bigdata extends Component {
       ],
       allCountryName: [
         { name: '리스본' },
+        { name: '리스본' },
+        { name: '리스본' },
+        { name: '리스본' },
+        { name: '리스본' },
+        { name: '리스본' },
         { name: '리마' },
         { name: '파리' },
         { name: '파이리' },

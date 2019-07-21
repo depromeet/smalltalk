@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 // 로고
 .logo {
     position: absolute;
@@ -105,11 +107,11 @@
 
     .menu-box {
         width: 100%;
-        height: 3.9vh;
+        height: 3vh;
         background-color: red;
         z-index: -1;
         position: relative;
-        bottom: 8.2vh;
+        bottom: 6.5vh;
         right: 30vw;
         opacity: 0.5;
         transition: 1s;
@@ -124,11 +126,11 @@
         width: fit-content;
         height: fit-content;
         max-height: 11vh;
-        font-family: OpenSans;
+        font-family: 'Open Sans', sans-serif;
         font-size: 4.68vw;
-        font-weight: bold;
+        font-weight: 900;
         line-height: 1.22;
-        letter-spacing: -5.4px;
+        letter-spacing: -0.5vh;
         margin-bottom: 2.4vh;
         cursor: pointer;
         z-index: 1;

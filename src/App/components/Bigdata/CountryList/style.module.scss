@@ -58,6 +58,27 @@
         align-self: center;
         display: flex;
         cursor: pointer;
+        transition: 0.5s;
+
+        .circle-1 {
+            border-radius: 50%;
+            width: 0.93vw;
+            height: 0.93vw;
+            background-color: white;
+            position: absolute;
+            right: -0.36vw;
+            top: -0.83vh;
+        }
+
+        .circle-2 {
+            border-radius: 50%;
+            width: 0.93vw;
+            height: 0.93vw;
+            background-color: white;
+            position: absolute;
+            right: -0.36vw;
+            bottom: -0.83vh;
+        }
 
         .text {
             align-self: center;
@@ -68,6 +89,7 @@
             line-height: 1.63;
             letter-spacing: -0.64px;
             color: #747474;
+            transition: 0.5s;
         }
     }
 }

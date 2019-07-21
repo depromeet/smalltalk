@@ -51,6 +51,8 @@
             top: 5px;
             background-color: white;
             z-index: 1;
+            max-height: 35.6vh;
+            overflow: scroll;
         }
     }
 
@@ -122,7 +124,7 @@
                 background-size: cover;
                 position: absolute;
                 left: 11.1vw;
-                animation: country-picture 5s infinite alternate ease-in-out;
+                animation: country-picture 2.5s infinite alternate ease-in-out;
             }
 
             .edge-circle {
@@ -195,11 +197,12 @@
 
     .country-list {
         width: fit-content;
-        height: 75.1vh;
+        height: 100vh;
         position: absolute;
-        top: 24.8vh;
+        // top: 24.8vh;
         right: 8.75vw;
         overflow: scroll;
+        padding-top: 24.8vh;
     }
 }
 

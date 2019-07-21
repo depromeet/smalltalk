@@ -45,8 +45,8 @@ class ChatMateList extends Component {
                 {this.props.FriendsListData.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
-                    name={list.name}
-                    number={list.number}
+                    name={list.nickname}
+                    number={list.messages_cnt}
                     key={i}
                     handleChatClick={this.props.handleChatClick}
                     showRedCircle={false}
@@ -62,8 +62,8 @@ class ChatMateList extends Component {
                 {this.props.FriendsListData.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
-                    name={list.name}
-                    number={list.number}
+                    name={list.nickname}
+                    number={list.messages_cnt}
                     key={i}
                     handleChatClick={this.props.handleChatClick}
                     showRedCircle={false}

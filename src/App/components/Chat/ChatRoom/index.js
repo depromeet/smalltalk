@@ -21,17 +21,17 @@ class ChatRoom extends Component {
     };
   }
 
-    handleChange = (e) => {
+    handleInputValueChange = (e) => {
       this.setState({ inputValue: e.target.value });
     }
 
+    AddChatOfMine = () => {
+      const newState = this.state.chatData.concat({ type: 'mine', text: this.state.inputValue });
+      this.setState({ chatData: newState });
+      this.setState({ inputValue: '' });
+    };
+
     render() {
-      const blah = () => {
-        const newState = this.state.chatData.concat({ type: 'mine', text: this.state.inputValue });
-        this.setState({ chatData: newState });
-        this.setState({ inputValue: '' });
-        console.log(newState);
-      };
       return (
         <div className={cx('chat')}>
           <div className={cx('buttons')}>
@@ -51,14 +51,13 @@ class ChatRoom extends Component {
                 type={list.type}
                 text={list.text}
                 key={i}
-                id={i}
                 lastType={arr[i - 1]}
               />
             ))}
           </div>
           <div className={cx('footer')}>
-            <textarea value={this.state.inputValue} onChange={this.handleChange} className={cx('input')} />
-            <div className={cx('send-button')} onClick={blah} />
+            <textarea value={this.state.inputValue} onChange={this.handleInputValueChange} className={cx('input')} />
+            <div className={cx('send-button')} onClick={this.AddChatOfMine} />
           </div>
         </div>
       );
