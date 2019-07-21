@@ -5,14 +5,14 @@ import styles from './style.module.scss';
 const cx = classnames.bind(styles);
 
 class CountryList extends Component {
-    constructor(props){
-      super(props);
+  constructor(props){
+    super(props);
 
-      this.state = {
-        fontColor: '#747474',
-        backColor: '#e6e6e6',
-      }
+    this.state = {
+      fontColor: '#747474',
+      backColor: '#e6e6e6',
     }
+  }
 
   handleMouseOver = () => {
     this.setState({ fontColor: '#ffffff', backColor: '#fb3e1d' });
