@@ -92,6 +92,10 @@ class Bigdata extends Component {
     this.setState({ inputValue: e.target.value });
   }
 
+  handleClickInput = (value) => {
+    this.setState({ inputValue: value })
+  }
+
   onInputBox = () => {
     this.setState({ isClickedInputButton: true });
   }
@@ -125,7 +129,7 @@ class Bigdata extends Component {
         <div className="logo" />
         {/* 검색 바 */}
         <div className={cx('search-bar')}>
-          <input className={cx('input')} onChange={this.handleChange} value={this.state.input} placeholder="나라 / 도시 검색" />
+          <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />
           {this.state.isClickedInputButton
             ? <div className={cx('drop-up-button')} onClick={this.offInputBox} />
             : <div className={cx('drop-down-button')} onClick={this.onInputBox} />}
@@ -136,6 +140,8 @@ class Bigdata extends Component {
                 key={i}
                 input={this.state.inputValue}
                 isClickedInputButton={this.state.isClickedInputButton}
+                offInputBox={this.offInputBox}
+                handleClickInput={this.handleClickInput}
               />
             ))}
           </div>

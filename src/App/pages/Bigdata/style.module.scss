@@ -48,11 +48,15 @@
 
         .input-box {
             position: relative;
-            top: 5px;
+            top: 0.46vh;
             background-color: white;
             z-index: 1;
             max-height: 35.6vh;
             overflow: scroll;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar { 
+            display: none !important;
+            }
         }
     }
 
@@ -199,10 +203,14 @@
         width: fit-content;
         height: 100vh;
         position: absolute;
-        // top: 24.8vh;
+        overflow-x: hidden;
         right: 8.75vw;
         overflow: scroll;
         padding-top: 24.8vh;
+        // -ms-overflow-style: none;
+        // &::-webkit-scrollbar { 
+        // display: none !important;
+        // }
     }
 }
 

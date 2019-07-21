@@ -1,9 +1,9 @@
 .box {
     width: 26.3vw;
-    height: 10.5vh;
+    height: 11.5vh;
     background-image: url(../../../../static/images/bigdata-list-background.png);
     background-size: cover;
-    background-position: right;
+    background-position: left;
     margin-bottom: 0.9vh;
     display: flex;
     padding: 2vh 1.6vw 2vh 1.25vw;
@@ -52,7 +52,7 @@
         position: absolute;
         right: 0;
         width: 6.3vw;
-        height: 10.5vh;
+        height: 11.5vh;
         justify-content: center;
         align-self: center;
         display: flex;

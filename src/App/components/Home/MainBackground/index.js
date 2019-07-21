@@ -71,16 +71,16 @@ class MainBackground extends Component {
         {/* 메뉴 */}
         <div className="menu">
           <Link to="/mypage" className="menu-list" onMouseOver={this.handleMouseOver1} onMouseOut={this.handleMouseOut1}>
-          MYPAGE<div id="box1" className="menu-box" style={{left: this.state.left1, opacity: this.state.opacitiy1}}></div>
+          MYPAGE<div className="menu-box" style={{left: this.state.left1, opacity: this.state.opacitiy1}}></div>
           </Link>
           <Link to="/schedule" className="menu-list" onMouseOver={this.handleMouseOver2} onMouseOut={this.handleMouseOut2}>
-          SCHEDULE<div id="box2" className="menu-box" style={{left: this.state.left2, opacity: this.state.opacitiy2}}></div>
+          SCHEDULE<div className="menu-box" style={{left: this.state.left2, opacity: this.state.opacitiy2}}></div>
           </Link>
           <Link to="/mate" className="menu-list" onMouseOver={this.handleMouseOver3} onMouseOut={this.handleMouseOut3}>
-            MATE<div id="box3" className="menu-box" style={{left: this.state.left3, opacity: this.state.opacitiy3}}></div>
+            MATE<div className="menu-box" style={{left: this.state.left3, opacity: this.state.opacitiy3}}></div>
           </Link>
           <Link to="/bigdata" className="menu-list" onMouseOver={this.handleMouseOver4} onMouseOut={this.handleMouseOut4}>
-          BIGDATA<div id="box4" className="menu-box" style={{left: this.state.left4, opacity: this.state.opacitiy4}}></div>
+          BIGDATA<div className="menu-box" style={{left: this.state.left4, opacity: this.state.opacitiy4}}></div>
           </Link>
           <div className="menu-box"></div>
         </div>
