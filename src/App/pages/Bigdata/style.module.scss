@@ -207,6 +207,7 @@
         right: 8.75vw;
         overflow: scroll;
         padding-top: 24.8vh;
+        // 스크롤바 삭제
         // -ms-overflow-style: none;
         // &::-webkit-scrollbar { 
         // display: none !important;
@@ -218,11 +219,11 @@
     0% {
         transform: translateX(0vw);
     }
-    7% {
-        transform: translateX(0.1vw);
+    3% {
+        transform: translateX(0vw);
     }
-    93% {
-        transform: translateX(4.9vw);
+    97% {
+        transform: translateX(5vw);
     }
     100% {
         transform: translateX(5vw);

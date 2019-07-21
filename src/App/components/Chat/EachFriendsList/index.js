@@ -7,7 +7,6 @@ const cx = classNames.bind(styles);
 class EachFriendsList extends Component {
   render() {
     const enterChatRoom = (e) => {
-      // console.log(e.target.outerText)
       this.props.handleName(e.target.outerText);
       this.props.handleChatRoomClick();
     };
@@ -16,11 +15,18 @@ class EachFriendsList extends Component {
         <div className={cx('friends-list')}>
           <img src={this.props.picture} alt="profile" className={cx('profile-picture')} />
           <div className={cx('name')} onClick={enterChatRoom}>{this.props.name}</div>
-          {this.props.number !== '0' && this.props.showRedCircle
+          {this.props.number !== 0 && this.props.number < 100 && this.props.showRedCircle
           && (
           <div className={cx('unchecked-messages')}>
             <div className={cx('circle')} />
             <div className={cx('number')}>{this.props.number}</div>
+          </div>
+          )}
+          {this.props.number >= 100 && this.props.showRedCircle
+          && (
+          <div className={cx('unchecked-messages-2')}>
+            <div className={cx('circle-2')} />
+            <div className={cx('number')}>100+</div>
           </div>
           )}
         </div>
