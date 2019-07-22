@@ -7,7 +7,8 @@ import {
   Register,
   Mate,
   MateList,
-  MateInfo
+  MateInfo,
+  Schedule
 } from './pages';
 import './styles.scss';
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/mate" component={Mate} />
         <Route exact path="/mateList" component={MateList} />
         <Route exact path="/mateInfo" component={MateInfo} />
+        <Route exact path="/schedule" component={Schedule} />
       </Switch>
     </Fragment>
   );

@@ -1,0 +1,153 @@
+.logo {
+  position: absolute;
+  top: 1.38vh;
+  left: 1vw;
+  width: 4.6vw;
+  height: 4.6vw;
+  background-image: url(../../../static/images/logo.png);
+  background-size: cover;    
+  z-index: 999;
+}
+.show_box{
+
+  .navi_box{
+    position: absolute;
+    top: 0;
+    left: -60vw;
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    z-index: 998;
+    transition: 1s ease-in-out;
+
+    .navi_btn{
+      width: 42px;
+      height: 40px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%);
+      left: 63vw;
+      z-index: 999;
+      border: none;
+      background: transparent;
+      padding: 0;
+
+      .m_close{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        transition: 0.1s ease-in-out;
+
+        .m_bar{
+          width: 100%;
+          height: 3px;
+          background: #fff;
+          margin-bottom: 8.5px;
+        }
+      }
+      .m_open{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        transition: 0.1s ease-in-out;
+
+        .mx_bar{
+          width: 50px;
+          height: 3px;
+          position: absolute;
+          top: 46%;
+          left: -10%;
+          background: #fff;
+        }
+        .bar1{
+          transform: rotate(45deg)
+        }
+        .bar2{
+          transform: rotate(-45deg)
+        }
+      }
+    }
+    .random_img{
+      position: relative;
+      left: 0;
+      width: 27vw;
+      height: 100%;
+      background-color: skyblue;
+    }
+    .menu_box{
+      position: relative;
+      left: 0;
+      width: 33vw;
+      height: 100%;
+      background-color: #fff;
+
+      span{
+        display: inline-block;
+        transform: rotate(90deg);
+        font-size: 26px;
+        font-weight: bold;
+        margin-top: 9vh;
+        margin-left: 1vw;
+      }
+      // 메뉴
+      .menu {
+        position: absolute;
+        width: 22.08vw;
+        height: 52.4vh;
+        left: 3vw;
+        bottom: 13vh;
+        display: flex;
+        flex-direction: column;
+
+        .menu-box {
+            width: 100%;
+            height: 3.9vh;
+            background-color: red;
+            z-index: -1;
+            position: relative;
+            bottom: 8.2vh;
+            left: 60vw;
+            opacity: 0.5;
+            transition: 1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu-list {
+            width: fit-content;
+            height: fit-content;
+            max-height: 11vh;
+            font-family: OpenSans;
+            font-size: 4.68vw;
+            font-weight: bold;
+            line-height: 1.22;
+            letter-spacing: -5.4px;
+            margin-bottom: 2.4vh;
+            cursor: pointer;
+            z-index: 1;
+        }
+      }
+    }
+  }
+  .backCover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    display: none;
+    opacity: 0;
+    z-index: 997;
+    transition: 0.5s;
+  }
+}

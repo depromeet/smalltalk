@@ -34,11 +34,11 @@ class TicketList extends Component{
   resizeWidth = (length) => {
     const _vWidth = 293;
     let resetWidth = (_vWidth * length) + 'px';
-    let resetLeft = (_vWidth * this.state.btnIndex) + 'px';
+    let resetLeft = (_vWidth * - this.state.btnIndex) + 'px';
     return { "width" : resetWidth, "left" : resetLeft}
   }
 
-  prevEnt = (length) => {
+  prevEnt = () => {
     if(this.state.btnIndex <= 0){
       this.setState({
         btnIndex: 0
@@ -50,14 +50,24 @@ class TicketList extends Component{
     }
   }
   nextEnt = (length) => {
-    if(this.state.btnIndex >= length){
+    if(this.state.btnIndex >= length - 4){
       this.setState({
-        btnIndex: length
+        btnIndex: length - 4
       });
     }else{
       this.setState({
         btnIndex: this.state.btnIndex + 1
       });
+    }
+  }
+  prevEntHidden = () => {
+    if(this.state.btnIndex == 0){
+      return {"display" : "none"};
+    }
+  }
+  nextEntHidden = (length) => {
+    if(this.state.btnIndex == length - 4){
+      return {"display" : "none"};
     }
   }
   
@@ -74,8 +84,8 @@ class TicketList extends Component{
         </div>
         <div className={cx('paddle-nav')}>
           <ul>
-            <li className={cx('arrow', 'prev')} onClick={() => this.prevEnt(ticketList.length)}><button>&lt;</button></li>
-            <li className={cx('arrow', 'next')} onClick={() => this.nextEnt(ticketList.length)}><button>&gt;</button></li>
+            <li className={cx('arrow', 'prev')} onClick={() => this.prevEnt(ticketList.length)} style={this.prevEntHidden()}><button>&lt;</button></li>
+            <li className={cx('arrow', 'next')} onClick={() => this.nextEnt(ticketList.length)} style={this.nextEntHidden(ticketList.length)}><button>&gt;</button></li>
           </ul>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import TicketLength from '../../components/TicketLength';
 import BigTicket from '../../components/BigTicket';
+import MenuBtn from '../../components/MenuBtn';
+
+import * as UserInfo from '../../containers/UserInfo/UserTicketInfo';
 
 import classnames from 'classnames/bind';
 import styles from './MateInfo.module.scss';
@@ -175,45 +178,88 @@ class MateInfo extends Component{
             ticketImage : '../../static/images/ticket_img.png'
           }
         ]
-      }
+      },
+      barColor: "#000"
     }
+  }
+
+  state = {
+    loading: false,
+    coutry: null
+  }
+
+  getAPOD = async (date) => {
+    if (this.state.loading) return; // 이미 요청중이라면 무시
+
+    // 로딩 상태 시작
+    this.setState({
+      loading: true
+    });
+
+    try {
+      const response = await UserInfo.getAPOD(date);
+      // 비구조화 할당 + 새로운 이름 
+      const { country: city } = response.data[1];
+      console.log(city.name);
+
+      if(!this.state.maxDate) {
+        // 만약에 coutry 가 없으면 지금 받은 date 로 지정
+        this.setState({
+          coutry: city.name
+        })
+      }
+    } catch (e) {
+      // 오류가 났을 경우
+      console.log(e);
+    }
+
+    // 로딩 상태 종료
+    this.setState({
+      loading: false
+    });
+  }
+  componentDidMount() {
+    this.getAPOD();
   }
 
   render(){
     const { friend } = this.state;
-
+    console.log(window.scrollY);
     return (
       <Fragment>
-      <div className={cx("back_circle")}>
-        <div className={cx("cir", "cir1")}></div>
-        <div className={cx("cir", "cir2")}></div>
-        <div className={cx("cir", "cir3")}></div>
-      </div>
-      <div className={cx("user_wrap")}>
-        <div className={cx("big_title")}>
-          <div className={cx("title_left")}>
-            <span>USER<br/>PROFILE</span>
+        <MenuBtn barColor = { this.state.barColor }/>
+        <div className={cx("back_circle")}>
+          <div className={cx("cir", "cir1")}></div>
+          <div className={cx("cir", "cir2")}></div>
+          <div className={cx("cir", "cir3")}></div>
+        </div>
+        <div className={cx("user_wrap")}>
+          <div className={cx("btn_box")}>
             <button>친구 추가</button>
             <div className={cx("arrow_line")}></div>
           </div>
-          <div className={cx("title_right")}>
-            <span>Mate with me:3</span>
+          <div className={cx("big_title")}>
+            <div className={cx("title_left")}>
+              <span>USER<br/>PROFILE</span>
+            </div>
+            <div className={cx("title_right")}>
+              <span>Mate with me:3</span>
+            </div>
           </div>
-        </div>
-        <div className={cx("user_profile")}>
-          <div class={cx("profile_img")}>
-          <img src={friend.profileImg}/></div>
-          <div class={cx("profile_info")}>
-            <h2>USER NAME</h2>
-            <h3>{friend.talker}</h3>
-            <p>{friend.introduction}</p>
-            <h2>AGE / GENDER</h2>
-            <h3>{friend.age}/{friend.gender}</h3>
+          <div className={cx("user_profile")}>
+            <div class={cx("profile_img")}>
+            <img src={friend.profileImg}/></div>
+            <div class={cx("profile_info")}>
+              <h2>USER NAME</h2>
+              <h3>{friend.talker}</h3>
+              <p>{friend.introduction}</p>
+              <h2>AGE / GENDER</h2>
+              <h3>{friend.age}/{friend.gender}</h3>
+            </div>
           </div>
+          <StyleInfo friend = {friend}/>
+          <ScheduleInfo friend = {friend}/>
         </div>
-        <StyleInfo friend = {friend}/>
-        <ScheduleInfo friend = {friend}/>
-      </div>
       </Fragment>
     );
   }

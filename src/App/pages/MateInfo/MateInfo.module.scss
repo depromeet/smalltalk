@@ -14,16 +14,72 @@
     top: 60vh;
     left: -3vw;
     border: 1px solid #e1ff01;
+    animation: CircleAni 2s infinite alternate ease-in-out;
   }
   .cir2{
     top: 30vh;
     left: 40vw;
     background-color: #e1ff01;
+    animation: CircleAni 4s infinite alternate ease-in-out;
   }
   .cir3{
     top: 80vh;
     right: -8vw;
     background: radial-gradient(at 75% 75%, #fb3e1d 20%, #e1ff01 75%);
+    animation: CircleAni 3s infinite alternate ease-in-out;
+  }
+}
+@keyframes CircleAni {
+  0% {
+    transform: translateX(0px);
+  }
+  7% {
+    transform: translateX(-1px);
+  }
+  93% {
+    transform: translateX(-6vw);
+  }
+  100% {
+    transform: translateX(-6.25vw);
+  }
+}
+
+.btn_box{
+  width: 150px;
+  height: 100%;
+  position: sticky;
+  top: 46vh;
+  left: 14vw;
+  margin-top: -100vh;
+
+  button{
+    position: absolute;
+    display: inline-block;
+    padding: 10px 36px;
+    border: 2px solid #fb3e1d;
+    border-radius: 100px;
+    color: #fb3e1d;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: 0.5s;
+  }
+  button:hover{
+    background-color: #fb3e1d;
+    color: #fff;
+    transition-duration: 0.5s;
+  }
+  .arrow_line{
+    position: absolute;
+    top: 27%;
+    left: -53%;
+    width: 302px;
+    height: 20px;
+    background-image: url(../../../static/images/line_mypage2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
   }
 }
 
@@ -50,37 +106,6 @@
       font-weight: bold;
       color: #fff;
       text-shadow: -1px 0 #161616, 0 1px #161616, 1px 0 #161616, 0 -1px #161616;
-    }
-    button{
-      position: absolute;
-      top: 30vh;
-      left: 11.5vw;
-      display: inline;
-      padding: 10px 36px;
-      border: 2px solid #fb3e1d;
-      border-radius: 100px;
-      color: #fb3e1d;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: transparent;
-      cursor: pointer;
-      transition-duration: 0.5s;
-    }
-    button:hover{
-      background-color: #fb3e1d;
-      color: #fff;
-      transition-duration: 0.5s;
-    }
-    .arrow_line{
-      position: absolute;
-      top: 57vh;
-      left: 6vw;
-      width: 302px;
-      height: 20px;
-      background-image: url(../../../static/images/line_mypage2.png);
-      background-size: 100%;
-      background-repeat: no-repeat;
-      transform: rotate(-90deg);
     }
   }
   .title_right{
@@ -207,7 +232,7 @@
       top: 3vh;
       padding-top: 3vh;
       padding-left: 10vw;
-      background-color: #efefef;
+      background-color: #b1b1b1;
       z-index: -1;
 
       span{

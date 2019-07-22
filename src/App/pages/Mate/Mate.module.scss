@@ -6,8 +6,8 @@
   background-color: #fb3e1d;
   background-image: url(../../../static/images/mate_back.png);
   background-repeat: no-repeat;
-  background-size: 35vw 46vh;
-  background-position: -260px -60px;
+  background-size: 30vw 36vh;
+  background-position: -180px -50px;
   
   a{
     text-decoration: none;
@@ -15,7 +15,7 @@
   a:visited{
     color: #fb3e1d;
   }
-  ::-webkit-scrollbar{ width:9px; height:10px; }
+  ::-webkit-scrollbar{ width:9px; height:5px; }
   ::-webkit-scrollbar-button:start:decrement, 
   ::-webkit-scrollbar-button:end:increment{ 
     display:block;
@@ -57,7 +57,7 @@
       font-size: 14px;
       line-height: 1.63;
       letter-spacing: -0.6px;
-      margin-top: 25px;
+      margin-top: 18px;
     }
   }
   .length_box{
@@ -68,7 +68,7 @@
   .t_box{
     position: absolute;
     top: 50%;
-    left: 9vw;
+    left: 10vw;
     width: 91vw;
     height: 300px;
     overflow: hidden;
@@ -79,7 +79,7 @@
   .mate_btn{
     position: absolute;
     top: 21vh;
-    right: 2vw;
+    right: -2vw;
     width: 25vw;
 
     .matelink_btn{
@@ -87,9 +87,9 @@
       background-color: rgba(255,255,255,0.8);
       border-radius: 100px;
       border: none;
-      padding: 13px 25px;
-      font-size: 14pt;
-      font-weight: 600;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: bold;
       letter-spacing: -0.96px;
       cursor: pointer;
       transition-duration: 0.5s;
