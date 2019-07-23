@@ -8,7 +8,7 @@ import {
   Mate,
   MateList,
   MateInfo,
-  Schedule
+  Schedule,
   Bigdata
 } from './pages';
 import './styles.scss';
