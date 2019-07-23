@@ -1,6 +1,11 @@
 /* Colors */
 $neon: #e1ff01;
 $red: #fb3e1d;
+$grey : #161616;
+
+*:focus {
+  outline: none;
+}
 
 /* About Background*/
 %back-image-container{
