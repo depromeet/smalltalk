@@ -31,18 +31,14 @@ class ChatMateList extends Component {
         </div>
         <div className={cx('list')}>
           <div className={cx('header')}>
-현재
-            <br />
-내 메이트
-            {' '}
-            {this.props.FriendsListDataLength}
-명
+            현재<br />내 메이트{' '}
+            {this.props.FriendsListDataLength}명
           </div>
           <div className={cx('close-button')} onClick={this.props.handleAllClose} />
           {this.state.isClickedFoldButton
             ? (
               <div className={cx('collection-2')}>
-                {this.props.FriendsListData.map((list, i) => (
+                {this.props.friendsListWithChat.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
                     name={list.nickname}
@@ -52,6 +48,7 @@ class ChatMateList extends Component {
                     showRedCircle={false}
                     handleChatRoomClick={this.props.handleChatRoomClick}
                     handleName={this.props.handleName}
+                    addFriendsListWithChat={this.props.addFriendsListWithChat}
                   />
                 ))
             }
@@ -69,6 +66,7 @@ class ChatMateList extends Component {
                     showRedCircle={false}
                     handleChatRoomClick={this.props.handleChatRoomClick}
                     handleName={this.props.handleName}
+                    addFriendsListWithChat={this.props.addFriendsListWithChat}
                   />
                 ))}
               </div>

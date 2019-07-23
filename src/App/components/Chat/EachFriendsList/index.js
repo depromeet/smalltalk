@@ -9,6 +9,7 @@ class EachFriendsList extends Component {
     const enterChatRoom = (e) => {
       this.props.handleName(e.target.outerText);
       this.props.handleChatRoomClick();
+      this.props.addFriendsListWithChat === undefined ? console.log(this.props.addFriendsListWithChat) : this.props.addFriendsListWithChat(this.props.picture, this.props.name, this.props.number)
     };
     return (
       <div>
@@ -22,6 +23,7 @@ class EachFriendsList extends Component {
             <div className={cx('number')}>{this.props.number}</div>
           </div>
           )}
+          {/* 읽지 않은 메세지 수가 100개 이상이면 100+로 표시합니다. */}
           {this.props.number >= 100 && this.props.showRedCircle
           && (
           <div className={cx('unchecked-messages-2')}>

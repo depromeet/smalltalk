@@ -46,7 +46,12 @@
             cursor: pointer;
         }
 
+
+        
         .input-box {
+            // backdrop-filter: blur(30px);
+            // -webkit-backdrop-filter: blur(30px);
+            opacity: 0.9;
             position: relative;
             top: 0.46vh;
             background-color: white;
@@ -55,9 +60,20 @@
             overflow: scroll;
             -ms-overflow-style: none;
             &::-webkit-scrollbar { 
-            display: none !important;
+            display: none !important; 
             }
         }
+
+        // .input-box::after {
+        //     content: '';
+        //     background: url('../../../static/images/backdrop-filter.png') 0 / cover;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     filter: blur(30px);
+        // }
     }
 
     .country {
