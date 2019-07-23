@@ -138,7 +138,7 @@ class SideMenu extends Component {
           <ChatRoom
             handleAllClose={this.handleAllClose}
             handleListClick={this.handleListClick}
-            name={this.props.name}
+            name={this.state.name}
             id={this.state.FriendsListData.id}
           />
         );

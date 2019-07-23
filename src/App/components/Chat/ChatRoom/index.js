@@ -40,7 +40,7 @@ class ChatRoom extends Component {
   componentDidMount() {
     // 채팅방이 열린 유저의 id를 oppositeID에 연결해야 함.
     console.log(this.props.id)
-    const oppositeID = this.props.id;
+    const oppositeID = 6;
 
     const token = 'Token ' + localStorage.getItem('token');
 
