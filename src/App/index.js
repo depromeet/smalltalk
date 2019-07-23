@@ -23,7 +23,8 @@ function App() {
         <Route exact path="/mate" component={Mate} />
         <Route exact path="/mateList" component={MateList} />
         <Route exact path="/mateInfo" component={MateInfo} />
-        <Route path="/schedule" component={Schedule} /> 
+        
+        <Route path="/schedule1" component={Schedule} /> 
       </Switch>
     </Fragment>
   );
