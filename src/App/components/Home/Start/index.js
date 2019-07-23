@@ -60,7 +60,7 @@ class Start extends Component{
           <div className="circle top-none-border"></div>
           <div className="circle top-neon"></div>
           <div className="circle left-neon"></div>
-          <div className="line"></div>
+          {/* <div className="line"></div> */}
           <div className="circle bottom-image"></div>
           <div className="circle bottom-gra"></div>
           <div className="curve-container"><img className="curve" src={startCurve} alt="curve"/></div>

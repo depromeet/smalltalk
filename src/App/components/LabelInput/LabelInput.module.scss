@@ -1,6 +1,19 @@
+@import 'variables.scss';
+
 .label-input{
+  position: relative;
   margin-bottom: 30px;
   margin-right: 7px;
+  .error{
+    position: absolute;
+    right: 10px;
+    border : 1px solid $red;
+    border-radius: 16px;
+    padding : 3px 7px;
+    
+    color : $red;
+    font-size: 8px;
+  }
   .label{
     font-weight: bold;
     letter-spacing: -0.5px;

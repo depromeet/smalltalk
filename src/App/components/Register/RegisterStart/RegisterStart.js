@@ -31,7 +31,7 @@ const RegisterStart = ({ isMovedLeft, handleNextBtn }) => {
               <img src={google} alt="google"/>
               <div> 페이스북으로 회원가입  </div>
             </button>
-            <button className={cx('button')}> 
+            <button className={cx('google')}> 
               <img src={google} alt="google"/>
               <div> 구글로 회원가입  </div>
             </button>

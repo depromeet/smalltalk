@@ -42,7 +42,7 @@
     z-index: 0;
   }
   .bottom-gra{
-    background-image: url(../../../../images/812.png);
+    background-image: url(../../../../static/images/gra-circle-2.jpg);
     background-size: cover;
     bottom:-11vh;
     left:65vw;
@@ -71,7 +71,7 @@
   // max-width: 1034px;
   .content-title{
     margin: 0;
-    font-size: 45px;
+    font-size: 55px;
     font-weight: bold;
   }
   .content-subtitle{
@@ -98,7 +98,7 @@
       text-decoration: none;
     }
     div{
-      width: 117px;
+      width: 120px;
       height: 47px;
       border-radius: 44px;
       text-align: center;
@@ -108,13 +108,18 @@
     }
     .button-login{
       background-color: #fb3e1d;
-      color: white;
+      a, a:visited {
+        color: white;
+      }
     }
     .button-register{
       background-color: white;
       border: solid 1px #707070;
       color: black;
       margin-top: 20px;
+      a, a:visited {
+        color: black;
+      }
     }
   }
 

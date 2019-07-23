@@ -4,7 +4,6 @@ import iconNext from 'images/icon-next.svg';
 import classnames from 'classnames/bind';
 import styles from './RegisterForm.module.scss';
 const cx = classnames.bind(styles);
-
 // state : email, password, nickname, gender, age, shortBio 
 
 const RegisterForm = ({ 
@@ -29,7 +28,6 @@ const RegisterForm = ({
 
   return(
     <div className={className}> 
-    
       <div className={cx('contents')}>
         <div className={cx('form-contents')}>
           <h1 className={cx('title')}>개인정보입력</h1>
@@ -92,7 +90,7 @@ const RegisterForm = ({
               required
               label="자기소개(최대50자)"
               onChange={onChange}
-              // error={validation.shortBio.message}
+              error=''
             />
           </div>
         </div>

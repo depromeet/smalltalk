@@ -48,7 +48,7 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
             <button
               className={cx('login__input-x')}
               onClick={resetClick}
-              name="email"> x
+              name="email">x
             </button>
           </div>
           <div className={cx('login__input-container')}>
@@ -76,17 +76,18 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
             value="로그인하기"
             // onSubmit={handleSubmit}
           />
-          <div className={cx('button__container')}>
+          <button className={cx('button__container')}>
             <div className={cx('column')}>
               <img className={cx('google-img')} src={google} alt="google"/>
             </div>
-              <input
+            <div> 구글로 시작하기</div>
+              {/* <input
                 className={cx('login__button','google')}
                 type="submit"
                 value="구글로 시작하기"
                 // onSubmit={this.handleSubmit}
-              />
-          </div>
+              /> */}
+          </button>
         </form>
       </div>
   )

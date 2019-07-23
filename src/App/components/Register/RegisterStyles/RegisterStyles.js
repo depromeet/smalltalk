@@ -124,9 +124,8 @@ class RegisterStyles extends Component {
     let className= cx({
     'step-container': true,
     'move-left': isMovedLeft[2]
-  })
-
-    return(
+    });
+    return (
     <div className={className}>
       <div className={cx('contents')}>
         <div>
@@ -167,7 +166,7 @@ class RegisterStyles extends Component {
       </div>
       <div className={cx('bar')}>FIN</div>
     </div>
-  )
+    )
   }
 }
 

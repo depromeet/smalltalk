@@ -58,6 +58,7 @@
         text-align: center;
         color: white;
         font-size: 10px;
+        padding: 0;
       }
     }
   .login__button{
@@ -83,9 +84,13 @@
   }
   .button__container{
     width: 100%;
-    position: relative;
+    border-radius: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
     .column{
-      position: absolute;
       height: 28px;
       top: 3px;
       left: 30%;
