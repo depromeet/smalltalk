@@ -65,7 +65,7 @@ class ScheduleInfo extends Component{
       <div className={cx("user_schedule")} style={this.resizeHeight(friend.ticketList.length)}>
         <h2>SCHEDULE</h2>
         <div className={cx("length_box")}>
-          <TicketLength ticketList = {friend.ticketList}/>
+          <TicketLength ticketList = {friend.ticketList} vWidth = { 150 }/>
         </div>
         <div className={cx('t_box')} style={this.resetHeight(friend.ticketList.length)}>
           <ul className={cx('call_t')} style={this.resetWidth(friend.ticketList.length)}>

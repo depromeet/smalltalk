@@ -47,10 +47,10 @@
 .btn_box{
   width: 150px;
   height: 100%;
-  position: sticky;
+  position: absolute;
   top: 46vh;
   left: 14vw;
-  margin-top: -100vh;
+  // margin-top: -100vh;
 
   button{
     position: absolute;
@@ -235,6 +235,9 @@
       background-color: #b1b1b1;
       z-index: -1;
 
+      li{
+        display: inline-block;
+      }
       span{
         color: #000;
       }
