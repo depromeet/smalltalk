@@ -27,7 +27,7 @@ class SmallTicket extends Component{
               <div className={cx('t_right')}></div>
             </div>
             <div className={cx('info_b')}>
-              <img src={ticket.ticketImage}/>
+              <img src={ticket.ticketImage} alt="티켓 이미지"/>
             </div>
           </div>
           <div className={cx('s_logo')}>smalltalk</div>

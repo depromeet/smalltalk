@@ -3,7 +3,7 @@ import TicketLength from '../../components/TicketLength';
 import BigTicket from '../../components/BigTicket';
 import MenuBtn from '../../components/MenuBtn';
 
-import * as UserInfo from '../../containers/UserInfo/UserTicketInfo';
+import * as UserInfo from '../../containers/UserInfo/FriendInfo';
 
 import classnames from 'classnames/bind';
 import styles from './MateInfo.module.scss';
@@ -178,8 +178,7 @@ class MateInfo extends Component{
             ticketImage : '../../static/images/ticket_img.png'
           }
         ]
-      },
-      barColor: "#000"
+      }
     }
   }
 
@@ -227,7 +226,7 @@ class MateInfo extends Component{
     console.log(window.scrollY);
     return (
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <div className={cx("back_circle")}>
           <div className={cx("cir", "cir1")}></div>
           <div className={cx("cir", "cir2")}></div>
@@ -248,7 +247,7 @@ class MateInfo extends Component{
           </div>
           <div className={cx("user_profile")}>
             <div class={cx("profile_img")}>
-            <img src={friend.profileImg}/></div>
+            <img src={friend.profileImg} alt=""/></div>
             <div class={cx("profile_info")}>
               <h2>USER NAME</h2>
               <h3>{friend.talker}</h3>

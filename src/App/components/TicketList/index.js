@@ -1,5 +1,4 @@
-import React, {Component, Fragment} from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import SmallTicket from '../SmallTicket';
 
 import classnames from 'classnames/bind';
@@ -61,12 +60,12 @@ class TicketList extends Component{
     }
   }
   prevEntHidden = () => {
-    if(this.state.btnIndex == 0){
+    if(this.state.btnIndex === 0){
       return {"display" : "none"};
     }
   }
   nextEntHidden = (length) => {
-    if(this.state.btnIndex == length - 4){
+    if(this.state.btnIndex === length - 4){
       return {"display" : "none"};
     }
   }

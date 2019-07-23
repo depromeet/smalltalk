@@ -25,7 +25,7 @@ class BigTicket extends Component{
             <div className={cx('t_right')}></div>
           </div>
           <div className={cx('info_b')}>
-            <img src={ticket.ticketImage}/>
+            <img src={ticket.ticketImage} alt=""/>
           </div>
         </div>
         <div className={cx('s_logo')}>smalltalk</div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import startCurve from 'images/170.svg';
+import MenuBtn from '../../MenuBtn';
 
 class Start extends Component{ 
 
@@ -51,6 +52,7 @@ class Start extends Component{
   render(){
     return(
       <Fragment>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "none" }/>
         {
           this.props.token ? 
           <h1> Loading...</h1>

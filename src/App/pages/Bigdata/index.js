@@ -4,6 +4,7 @@ import styles from './style.module.scss';
 import CountryList from '../../components/Bigdata/CountryList';
 import BeSearchedCityList from '../../components/Bigdata/BeSearchedCityList';
 import ListOfPeopleInTheCity from '../../components/Bigdata/ListOfPeopleInTheCity';
+import MenuBtn from '../../components/MenuBtn';
 
 const cx = classnames.bind(styles);
 
@@ -125,8 +126,7 @@ class Bigdata extends Component {
   render() {
     return (
       <div className={cx('bigdata')}>
-        {/* 스몰토크 로고 */}
-        <div className="logo" />
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         {/* 검색 바 */}
         <div className={cx('search-bar')}>
           <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />

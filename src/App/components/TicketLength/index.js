@@ -1,4 +1,4 @@
-import React, { Component, Fragment} from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames/bind';
 import styles from './TicketLength.module.scss';
 const cx = classnames.bind(styles);
@@ -10,8 +10,8 @@ class TicketLength extends Component{
       return <li><div className={cx('num_box')}>
       {
         (function() {
-          if (index == 0) return (<p>in</p>);
-          if (index + 1 == ticketList.length) return (<p>out</p>);
+          if (index === 0) return (<p>in</p>);
+          if (index + 1 === ticketList.length) return (<p>out</p>);
           else return (<p>{ index }</p>);
         })()
       }</div>

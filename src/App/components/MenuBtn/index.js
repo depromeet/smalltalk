@@ -88,11 +88,11 @@ class MenuBtn extends Component{
     console.log(this.state.isToggleOn);
     return(
       <Fragment>
-        <div className={cx("logo")}></div>
-        <div className={cx("show_box")}>
+        <Link to="/"><div className={cx("logo")}></div></Link>
+        <div className={cx("show_box")} style={{display: this.props.boxHidden}}>
           <div className={cx("navi_box")} style={this.toggleMenu(this.state.isToggleOn)}>
             <div className={cx("random_img")}>
-              <img src=""/>
+              <img src="/" alt=""/>
             </div>
             <div className={cx("menu_box")}>
               <span>Talk<br/>Anywhere</span>
