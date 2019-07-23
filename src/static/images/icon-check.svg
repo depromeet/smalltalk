@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="44" viewBox="0 0 92 44">
+    <defs>
+        <style>
+            .cls-1,.cls-4{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#161616;font-size:16px;font-family:NotoSansCJKkr-Medium,Noto Sans CJK KR;font-weight:500;letter-spacing:-.04em}.cls-4{stroke:#fb3e1d;stroke-width:3px}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h92v44H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="icon_check" class="cls-2">
+        <path id="사각형_8" d="M0 0h92v44H0z" class="cls-1" data-name="사각형 8"/>
+        <g id="이전페이지" transform="translate(11.516 5.581)">
+            <text id="완료_" class="cls-3" data-name="완료!" transform="translate(33.42 23.838)">
+                <tspan x="0" y="0">완료!</tspan>
+            </text>
+            <path id="패스_1" d="M0 0v13.814s20.472-1.066 23.925-1.066" class="cls-4" data-name="패스 1" transform="rotate(-45 20.42 8.459)"/>
+        </g>
+    </g>
+</svg>

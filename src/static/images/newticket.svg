@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="429" height="259" viewBox="0 0 429 259">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2,.cls-4{fill:#dbdbdb}.cls-2{font-size:10px;font-family:NotoSansCJKkr-Medium,Noto Sans CJK KR;font-weight:500;letter-spacing:-.04em}.cls-3,.cls-5,.cls-7{fill:none}.cls-3,.cls-5{stroke:#dbdbdb}.cls-3{stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;stroke-dasharray:2 4}.cls-6{stroke:none}
+        </style>
+    </defs>
+    <g id="ticket" transform="translate(-303 -232)">
+        <path id="빼기_5" d="M391.7 259H38.151a27.339 27.339 0 0 0-3.08-12.233 32.064 32.064 0 0 0-8.108-9.977 38.727 38.727 0 0 0-11.945-6.721 43.694 43.694 0 0 0-14.594-2.462H0V32.106h.424a43.666 43.666 0 0 0 14.685-2.5 38.651 38.651 0 0 0 11.993-6.8 31.967 31.967 0 0 0 8.086-10.093A27.3 27.3 0 0 0 38.153.358V0H391.7v.358a27.294 27.294 0 0 0 2.926 12.281 31.892 31.892 0 0 0 7.986 10.052 38.545 38.545 0 0 0 11.855 6.823A43.585 43.585 0 0 0 429 32.106v195.5a43.585 43.585 0 0 0-14.445 2.559 38.641 38.641 0 0 0-11.809 6.739 32.006 32.006 0 0 0-8.007 9.938A27.342 27.342 0 0 0 391.7 259z" class="cls-1" data-name="빼기 5" transform="translate(303 232)"/>
+        <text id="smalltalk" class="cls-2" transform="translate(512.254 476.724)">
+            <tspan x="-20.465" y="0">smalltalk</tspan>
+        </text>
+        <path id="선_59" d="M0 0h73.696" class="cls-3" data-name="선 59" transform="translate(487.514 250.04)"/>
+        <ellipse id="타원_60" cx="3.071" cy="3.071" class="cls-4" data-name="타원 60" rx="3.071" ry="3.071" transform="translate(557.936 246.586)"/>
+        <ellipse id="타원_59" cx="3.071" cy="3.071" class="cls-4" data-name="타원 59" rx="3.071" ry="3.071" transform="translate(483.951 246.586)"/>
+        <g id="사각형_798" class="cls-5" data-name="사각형 798">
+            <path d="M0 0h361.445v192.212H0z" class="cls-6" transform="translate(336.777 265.778)"/>
+            <path d="M.5.5h360.445v191.212H.5z" class="cls-7" transform="translate(336.777 265.778)"/>
+        </g>
+    </g>
+</svg>

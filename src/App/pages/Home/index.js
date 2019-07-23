@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'; 
 import Start from 'App/components/Home/Start';
 // import MainContainer from 'App/containers/Home/MainContainer';
@@ -6,7 +6,6 @@ import MainContainer from '../../containers/Home/MainContainer'
 
 
 const Home = ({ isAuthenticated }) => {
-  console.log(isAuthenticated)
   return (
     isAuthenticated? 
     <MainContainer/>

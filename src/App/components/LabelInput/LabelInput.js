@@ -3,12 +3,12 @@ import classnames from 'classnames/bind';
 import styles from './LabelInput.module.scss';
 const cx = classnames.bind(styles); 
 
-const LabelInput = ({ label, value, limit, required, disabled, ...rest }) => { 
+const LabelInput = ({ label, value, limit, required, disabled, error, ...rest }) => { 
   return(
     <div className={cx('label-input', { disabled })}>
       <div className={cx('label')}>{label}</div>
       <input className={cx('input')} value={value} {...rest} disabled={disabled} />
-      <div></div>
+      <div>{error}</div>
       {/* { disabled && (
           <div className={cx('lock-wrapper')}>
             <div className={cx('lock')}>

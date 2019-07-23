@@ -144,10 +144,8 @@ class Mate extends Component{
           </div>
         </div>
       </Fragment>
-    )
+      )
   }
 }
-
-
 
 export default Mate;

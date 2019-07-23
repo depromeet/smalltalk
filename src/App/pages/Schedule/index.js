@@ -325,5 +325,4 @@ class Schedule extends Component{
     )
   }
 }
-
 export default Schedule;

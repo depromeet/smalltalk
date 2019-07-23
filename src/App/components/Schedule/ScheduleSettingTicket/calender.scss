@@ -1,0 +1,28 @@
+@import 'variables.scss';
+.DateRangePicker{
+    position: absolute;
+    width: 30%;
+    // 원래는 36% 정도
+    left: 5%;
+    top: 33px;
+ }
+.DateRangePicker__CalendarSelection{
+    background-color: $neon;
+    border: none;
+    
+}
+.DateRangePicker__DateLabel{
+    color: black;
+}
+
+.DateRangePicker__WeekdayHeading{
+    font-weight: normal;
+}
+
+.DateRangePicker__Date--weekend{
+    background-color: white;
+}
+
+.DateRangePicker__Date{
+    border: none;
+}

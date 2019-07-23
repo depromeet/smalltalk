@@ -1,6 +1,11 @@
 /* Colors */
 $neon: #e1ff01;
 $red: #fb3e1d;
+$grey : #161616;
+
+*:focus {
+  outline: none;
+}
 
 /* About Background*/
 %back-image-container{
@@ -23,7 +28,9 @@ $red-border: 1px solid #fb3e1d;
 
 /* Register Steps */
 %step-container{
-  width: 91vw;
+  width: -webkit-calc(100% - 120px);
+  width:     -moz-calc(100% - 120px);
+  width:         calc(100% - 120px);
   height: 100vh;
   display: flex;
   justify-content: space-between;
@@ -31,12 +38,10 @@ $red-border: 1px solid #fb3e1d;
 } 
 
 %bar{
-  width: 4.5vw;
-  min-width: 50px;
+  width: 60px;
   height: 100vh;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   text-align: center;
-  
+  padding-right: 20px;
 }
-

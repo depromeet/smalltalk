@@ -1,18 +1,26 @@
 @import 'variables.scss';
 
 .move-left{
-  margin-left: -86.5vw;
+  margin-left: -100%;
 }
 .step-container{
   @extend %step-container; 
   transition: margin 1s ease;
   z-index: -1;
   position: absolute;
-  left: 4.5vw;
-
+  // left: 60px;
+  width: -webkit-calc(100% - 60px);
+  width:     -moz-calc(100% - 60px);
+  width:         calc(100% - 60px);
+  .exist-email-error{
+    position: absolute;
+  }
   .contents{
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding-left: 150px;
+    width: 1090px;
     .form-contents{
       width: 600px;
       .title{
@@ -42,6 +50,7 @@
         }
       }
     }
+
   }
   .bar{
     @extend %bar; 

@@ -9,7 +9,8 @@ import {
   MateList,
   MateInfo,
   Schedule,
-  Bigdata
+  Bigdata,
+  Schedule2
 } from './pages';
 import './styles.scss';
 
@@ -20,12 +21,13 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <PrivateRoute exact path="/user" component={Home} />
+        <PrivateRoute path="/user" component={Home} />
         <Route exact path="/mate" component={Mate} />
         <Route exact path="/mateList" component={MateList} />
         <Route exact path="/bigdata" component={Bigdata} />
         <Route exact path="/mateInfo" component={MateInfo} />
         <Route exact path="/schedule" component={Schedule} />
+        <Route path="/schedule1" component={Schedule2} /> 
       </Switch>
     </Fragment>
   );

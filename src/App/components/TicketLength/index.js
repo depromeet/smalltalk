@@ -1,5 +1,4 @@
 import React, { Component, Fragment} from 'react';
-
 import classnames from 'classnames/bind';
 import styles from './TicketLength.module.scss';
 const cx = classnames.bind(styles);
@@ -16,7 +15,7 @@ class TicketLength extends Component{
           else return (<p>{ index }</p>);
         })()
       }</div>
-      <hr/><span>{ ticklen.ticketTitle }</span></li>
+      <hr/><span className={cx('title')}>{ ticklen.ticketTitle }</span></li>
     })
   }
 
