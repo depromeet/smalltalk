@@ -1,0 +1,84 @@
+@import 'variables.scss';
+
+.container{
+  @extend %back-image-container;
+  .header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    padding-top: 30px;
+    margin-left: 13%;
+    input {
+      font-size: 30px;
+      height: 40px;
+      border: none;
+    }
+    input:focus{
+      outline: none;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-weight: bold;
+    color: #161616;
+    opacity: 0.5;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-weight: bold;
+    color: #161616;
+    opacity: 0.5;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    font-weight: bold;
+    color: #161616;
+    opacity: 0.5;
+  }
+    button {
+      font-size: 14px;
+      width: 130px;
+      padding: 5px 0px;
+      height: 35px;
+      position: relative;
+      right: 60px;
+      border-radius: 29px;
+      background-color: #fb3e1d;
+      color: white;
+      border: none;
+    }
+  }
+  .route-container{
+    height: 31%;
+    background-color: #efefef;
+    padding-left: 13%;
+    .new-ticket{
+      position: relative;
+      width: 380px; 
+      padding: 13px;
+      cursor: pointer;
+      .guide{
+        position: absolute; 
+        text-align: center;
+        top: 95px;
+        left: 135px;
+        .plus {
+          font-size: 30px;
+        }
+        p {
+          color: #c4c4c4;
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .ticket-container{
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    // padding-left: 5%;
+    height: 54%;
+  }
+}

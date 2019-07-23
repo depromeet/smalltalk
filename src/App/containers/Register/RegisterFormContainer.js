@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { RegisterForm } from 'App/components/Register/RegisterForm';
 // import * as registerActions from 'App/store/modules/register';
 import * as authAction from 'App/store/modules/auth';
@@ -58,7 +57,13 @@ class RegisterFormContainer extends Component{
         method: 'isEmpty',
         validWhen : false,
         message : '성별은 필수항목 입니다.'
-      }
+      },
+      // {
+      //   field : 'gender',
+      //   method: 'isLength_50',
+      //   validWhen : true,
+      //   message : '자기소개는 50자 이내'
+      // }
     ])
     this.state = {
       email : '',
@@ -77,27 +82,30 @@ class RegisterFormContainer extends Component{
   } 
 
   onFormSubmit = () => {
-    const { handleNextBtn, registerRequest }= this.props;
-    const validation = this.validator.validate(this.state);
-    this.setState({validation});
-    if(validation.isValid){
-      const { email, password, nickname, age, gender, shortBio } = this.state;
-      return registerRequest({email, password, nickname, age, gender, shortBio})
-      .then(
-      () => {
-        if(this.props.status === 'SUCCESS'){
-          console.log('success');
-          handleNextBtn(1)
-        }else if(this.props.status === "FAILURE"){
-          console.log('fail')
-        }
-      }
-    )
-    }
+    const { handleNextBtn, registerRequest, status }= this.props;
+    handleNextBtn(1);
+    // const validation = this.validator.validate(this.state);
+    // this.setState({validation});
+    
+    // if(validation.isValid){
+    //   const { email, password, nickname, age, gender, shortBio } = this.state;
+    //   if(status === 'INIT'){
+    //     return registerRequest({email, password, nickname, age, gender, shortBio})
+    //     .then(() => {
+    //       if(this.props.status === 'SUCCESS'){
+    //         console.log('success');
+    //         handleNextBtn(1)
+    //         } else if(this.props.status === "FAILURE"){
+    //         console.log('fail')
+    //         }
+    //       }
+    //     )
+    //   }
+    // }
   }
 
   render(){
-    const { isMovedLeft } = this.props; 
+    const { isMovedLeft, registerError } = this.props; 
     const { email, password, nickname, gender, age, shortBio, validation } = this.state;
     return (
     <RegisterForm
@@ -111,19 +119,18 @@ class RegisterFormContainer extends Component{
       onChange={this.onChange}
       onFormSubmit={this.onFormSubmit}
       validation={validation}
+      registerError={registerError}
     />
     )
   }
 }
 
 const mapStateToProps = state => ({
-  // isMovedLeft : state.register.isMovedLeft
-  status : state.auth.register.status
+  status : state.auth.register.status,
+  registerError : state.auth.register.error
 }); 
-// // 액션함수를 정의할 땐
+
 const mapDispatchToProps = dispatch => ({
-  // goToNext: currentStep => dispatch(goToNext(currentStep)), // props로 사용할 함수
-  // changeRegisterForm: (name, value) => dispatch(changeRegisterForm(name,value)),
   registerRequest: ({ email, password, nickname, gender, age, shortBio }) => 
   dispatch(authAction.registerRequest({ email, password, nickname, gender, age, shortBio })),
 })

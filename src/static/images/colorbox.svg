@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="375" viewBox="0 0 200 375">
+    <defs>
+        <style>
+            .cls-1{fill:#fd3c00;opacity:.5}
+        </style>
+    </defs>
+    <path id="colorbox" d="M0 0h200v375H0z" class="cls-1"/>
+</svg>

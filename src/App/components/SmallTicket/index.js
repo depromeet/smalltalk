@@ -6,9 +6,7 @@ import styles from './SmallTicket.module.scss';
 const cx = classnames.bind(styles);
 
 class SmallTicket extends Component{
-  constructor(props){
-    super(props);
-  }
+
   render(){
     const { ticket } =this.props;
 
@@ -35,7 +33,7 @@ class SmallTicket extends Component{
           <div className={cx('s_logo')}>smalltalk</div>
         </div>
       </Fragment>
-    )
+    );
   }
 }
 

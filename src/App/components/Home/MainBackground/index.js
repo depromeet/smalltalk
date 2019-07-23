@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style.scss';
 import { Link } from 'react-router-dom';
+// import SideMenu from 'App/components/SideMenu';
 
 class MainBackground extends Component {
   constructor(props) {

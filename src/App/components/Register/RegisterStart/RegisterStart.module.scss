@@ -1,14 +1,14 @@
 @import 'variables.scss';
 
-.move-left{
-  margin-left: -86.5vw;
-  // display: none;
-}
 .step-container{
-  @extend %step-container;
-  transition: margin 1s ease;
-  
+  @extend %step-container; 
+  z-index: 1;
+  position: absolute;
+  // left: 60px;
+  transition: all 1s ease;
   .contents{
+    // transition: all 1s ease;
+    // margin-left : 0;
     display: flex;
     min-width: 1140px;
     justify-content: space-between;
@@ -89,44 +89,19 @@
       }
     }
   }
-  .bar{
-    @extend %bar;
-    background-color: $red; 
-    color: white;
-    
+
+}
+
+.bar{
+  @extend %bar;
+  background-color: $red; 
+  color: white;
+}
+
+  .move-left{
+    margin-left: -100%;
+    // display: none;
   }
-
-
-//   .arrow{
-//     position: absolute;
-//     top: 45%;
-//     left: 20%;
-//     width: 380px;
-//     img{
-//       width: 100%;
-//     }
-//   }
-//   .circle{
-//     position: absolute;
-//     top: 28%;
-//     left: 56%;
-//     width: 280px;
-//     height: 280px;
-//     border-radius: 50%;
-//     background-color: $neon;
-//   }
-//   .letsgo-img{
-//     position: absolute;
-//     height: 200px;
-//     z-index: 2;
-//     top: 33%;
-//     left: 75%;
-//     img{
-//       height: 100%;
-//     }
-//   }
-  }
-
 
     
   

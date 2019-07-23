@@ -1,14 +1,13 @@
-
 .list_wrap{
-    width: 75vw;
-    height: 80vh;
-    position: absolute;
-    top: 10vh;
-    left: 12.5vw;
-}
-.list_wrap > h1{
+  width: 75vw;
+  height: 80vh;
+  position: absolute;
+  top: 10vh;
+  left: 12.5vw;
+
+  > h1{
     font-size: 28pt;
     font-weight: bold;
     letter-spacing: -2.3px;
+  }
 }
-

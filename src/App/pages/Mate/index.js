@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import TicketLength from '../../components/TicketLength';
 import TicketBox from '../../components/TicketBox';
+import MenuBtn from '../../components/MenuBtn';
 
 import classnames from 'classnames/bind';
 import styles from './Mate.module.scss';
@@ -109,7 +110,8 @@ class Mate extends Component{
               endDate: '2019.06.15',
               ticketImage : '../../static/images/ticket_img.png'
             }
-      ]
+      ],
+      vWidth: 150
     }
   }
 
@@ -125,6 +127,7 @@ class Mate extends Component{
     const { ticketList } = this.state;
     return(
       <Fragment>
+        <MenuBtn/>
         <div className={cx('mate_wrap')}>
           <div className={cx('mate_title')}>
             <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
@@ -134,17 +137,15 @@ class Mate extends Component{
             <button className={cx('matelink_btn')} onClick={this.MatelistLink}><Link to='/mateList'>선택한 지역으로 친구 추천 ▶</Link></button>
           </div>
           <div className={cx('length_box')}>
-            <TicketLength ticketList = {ticketList}/>
+            <TicketLength ticketList = {ticketList} vWidth = { this.state.vWidth }/>
           </div>
           <div className={cx('t_box')} style={this.resizeHeight(ticketList.length)}>
             <TicketBox ticketList = {ticketList}/>
           </div>
         </div>
       </Fragment>
-    )
+      )
   }
 }
-
-
 
 export default Mate;

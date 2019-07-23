@@ -29,20 +29,20 @@ class RegisterTemplate extends Component {
     const { isMovedLeft } = this.state;
     return(
       <div className={cx('carousel-container')}> 
-      <RegisterStart
-        isMovedLeft={isMovedLeft}
-        handleNextBtn={this.handleNextBtn}
-      />
-      <RegisterFormContainer
-        isMovedLeft={isMovedLeft}
-        handleNextBtn={this.handleNextBtn}
-      />
-      <RegisterStyles
-        isMovedLeft={isMovedLeft}
-        handleNextBtn={this.handleNextBtn}
-      />
-      <RegisterEnd/>
-    </div>
+          <RegisterStart
+            isMovedLeft={isMovedLeft}
+            handleNextBtn={this.handleNextBtn}
+          />
+          <RegisterFormContainer
+            isMovedLeft={isMovedLeft}
+            handleNextBtn={this.handleNextBtn}
+          />
+          <RegisterStyles
+            isMovedLeft={isMovedLeft}
+            handleNextBtn={this.handleNextBtn}
+          />
+          <RegisterEnd/>
+      </div>
     )
   }
 }

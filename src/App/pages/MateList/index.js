@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import TicketList from '../../components/TicketList';
 import MateListTable from '../../components/MateListTable';
+import MenuBtn from '../../components/MenuBtn';
 
 import classnames from 'classnames/bind';
 import styles from './MateList.module.scss';
@@ -663,7 +664,7 @@ class MateList extends Component{
             },
             {
               id: "11",
-              ticketTitle: '싱가포르',
+              ticketTitle: '싱가포르 끝!',
               ticketSubTitle: 'Singapore',
               startDate: '2019.06.08',
               endDate: '2019.06.15',
@@ -721,7 +722,8 @@ class MateList extends Component{
               ]
             }
       ],
-      callToIndex: 0
+      callToIndex: 0,
+      barColor: "#000"
     }
   };
 
@@ -736,11 +738,14 @@ class MateList extends Component{
     console.log(this.state.callToIndex);
 
     return(
-      <div className={cx('list_wrap')}>
-        <h1>친구 추천 리스트</h1>
-        <TicketList ticketList = {ticketList} callIndexParent={this.myCallIndex}/>
-        <MateListTable ticketList = {ticketList} ticketIndex = {this.state.callToIndex}/>
-      </div>
+      <Fragment>
+        <MenuBtn barColor = { this.state.barColor }/>
+        <div className={cx('list_wrap')}>
+          <h1>친구 추천 리스트</h1>
+          <TicketList ticketList = {ticketList} callIndexParent={this.myCallIndex}/>
+          <MateListTable ticketList = {ticketList} ticketIndex = {this.state.callToIndex}/>
+        </div>
+      </Fragment>
     )
   }
 }

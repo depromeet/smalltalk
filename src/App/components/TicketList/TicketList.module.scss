@@ -1,15 +1,15 @@
 /* ticket box */
 
 .arrow_list{
-    position: relative;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 30%;
-    background-color: #efefef;
-}
-.paddle-nav{
+  position: relative;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 26vh;
+  background-color: #efefef;
+
+  .paddle-nav{
     position: absolute;
     top:0;
     left: 50%;
@@ -17,59 +17,69 @@
     width:88%;
     height: 100%;
     z-index: -1;
-}
-.paddle-nav li{
-    position: absolute; 
-    top:0; 
-    width: 40px; 
-    height: 100%;
-}
-.paddle-nav li.arrow.prev{left:0;}
-.paddle-nav li.arrow.next{right:0;}
-.paddle-nav li.arrow button{
-    overflow:hidden; 
-    position: absolute; 
-    top:50%; 
-    left:50%; 
-    width: 40px; 
-    height: 40px; 
-    font-size: 20px;
-    transform: translateX(-50%) translateY(-50%);
-    padding:0; 
-    border: none; 
-    background-color: #fff; 
-    border-radius: 50%;
-    cursor: pointer;
+
+    > li{
+      position: absolute; 
+      top:0; 
+      width: 40px; 
+      height: 100%;
+    }
+    > ul{
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .arrow{position: absolute;}
+      .arrow.prev{top: 50%; left:0;}
+      .arrow.next{top: 50%; right:0;}
+      .arrow button{
+        overflow:hidden; 
+        position: absolute; 
+        top:50%; 
+        left:50%; 
+        width: 40px; 
+        height: 40px; 
+        font-size: 30px;
+        transform: translateX(-50%) translateY(-50%);
+        padding:0; 
+        border: none; 
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 /* ticket */
 
 .t_box{
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 81vw;
-    height: 100%;
-    overflow: hidden;
-}
-.call_t{
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 81vw;
+  height: 100%;
+  overflow: hidden;
+
+  .call_t{
     width: 3000px;
     height: 100%;
     position: absolute;
     left: 0;
-}
-.call_t > li{
-    float: left;
-    cursor: pointer;
-    // border: 1px solid #222;
-}
 
-.active{
+    > li{
+      float: left;
+      cursor: pointer;
+      // border: 1px solid #222;
+    }
+  }
+  .active{
     opacity: 1 !important;
     transition-duration: 0.5s;
-}
-.none{
+  }
+  .none{
     opacity: 0.6 !important;
     transition-duration: 0.5s;
+  }
 }
+

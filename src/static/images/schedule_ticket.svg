@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1419" height="411" viewBox="0 0 1419 411">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{fill:url(#linear-gradient)}.cls-3,.cls-4,.cls-5{fill:none}.cls-3{stroke:#fd3c00}.cls-3,.cls-5{stroke-miterlimit:10}.cls-3,.cls-4{stroke-width:2px}.cls-4,.cls-5{stroke:#000}.cls-4{stroke-linecap:round;stroke-linejoin:round}.cls-5{stroke-width:3px;stroke-dasharray:7}.cls-6{filter:url(#패스_70)}.cls-7{filter:url(#패스_69)}
+        </style>
+        <filter id="패스_69" width="926.62" height="411" x="492.38" y="0" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur" stdDeviation="6"/>
+            <feFlood flood-opacity=".102"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="패스_70" width="523.492" height="411" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur-2" stdDeviation="6"/>
+            <feFlood flood-opacity=".102"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <linearGradient id="linear-gradient" x2="1" y1=".5" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e0ff00"/>
+            <stop offset="1" stop-color="#fd3c00"/>
+        </linearGradient>
+    </defs>
+    <g id="ticket" transform="translate(-333 -593)">
+        <g class="cls-7" transform="translate(333 593)">
+            <path id="패스_69-2" d="M937.681 593.2c0 22.751-19.885 41.194-44.414 41.194V927c24.529 0 44.414 18.442 44.414 41.193h846.206v-375z" class="cls-1" data-name="패스 69" transform="translate(-382.89 -575.2)"/>
+        </g>
+        <g class="cls-6" transform="translate(333 593)">
+            <path id="패스_70-2" d="M888.423 927V634.391a41.2 41.2 0 0 1-41.2-41.194H400.931v375h446.294A41.2 41.2 0 0 1 888.423 927z" class="cls-1" data-name="패스 70" transform="translate(-382.93 -575.2)"/>
+        </g>
+        <circle id="타원_114" cx="60.51" cy="60.51" r="60.51" class="cls-2" data-name="타원 114" transform="translate(1360.853 632.902)"/>
+        <circle id="타원_115" cx="60.51" cy="60.51" r="60.51" class="cls-3" data-name="타원 115" transform="translate(1328.196 632.902)"/>
+        <g id="그룹_147" data-name="그룹 147" transform="translate(-49.931 7.803)">
+            <g id="그룹_144" data-name="그룹 144">
+                <path id="패스_71" d="M1391 675.716c6.511 0 6.511 6.251 13.023 6.251s6.509-6.251 13.018-6.251 6.513 6.251 13.026 6.251 6.514-6.251 13.027-6.251" class="cls-4" data-name="패스 71"/>
+            </g>
+            <g id="그룹_145" data-name="그룹 145">
+                <path id="패스_72" d="M1391 684.833c6.511 0 6.511 6.251 13.023 6.251s6.509-6.251 13.018-6.251 6.513 6.251 13.026 6.251 6.514-6.251 13.027-6.251" class="cls-4" data-name="패스 72"/>
+            </g>
+            <g id="그룹_146" data-name="그룹 146">
+                <path id="패스_73" d="M1391 695.251c6.511 0 6.511 6.252 13.023 6.252s6.509-6.252 13.018-6.252 6.513 6.252 13.026 6.252 6.514-6.252 13.027-6.252" class="cls-4" data-name="패스 73"/>
+            </g>
+        </g>
+        <path id="선_75" d="M0 0v290.5" class="cls-5" data-name="선 75" transform="translate(841 654)"/>
+        <path id="사각형_844" d="M0 0h18v375H0z" data-name="사각형 844" transform="translate(351 611)"/>
+    </g>
+</svg>
