@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import StylePair from './StylePair';
 import iconNext from 'images/icon-next.svg';
-import line from 'static/images/linedown-dot.svg';
 import classnames from 'classnames/bind';
 import styles from './RegisterStyles.module.scss';
 const cx = classnames.bind(styles); 

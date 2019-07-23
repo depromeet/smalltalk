@@ -1,5 +1,4 @@
-import React, { Fragment, PureComponent } from 'react'; 
-import { CSSTransitionGroup } from 'react-transition-group'
+import React, { Fragment } from 'react'; 
 import letsgo from 'images/letsgo.svg';
 import lineRight from 'images/line-right.svg';
 import google from 'images/google.png';

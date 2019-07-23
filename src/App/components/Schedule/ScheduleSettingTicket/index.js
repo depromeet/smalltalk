@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 import * as scheduleAction from 'App/store/modules/schedule';
-import originalMoment from "moment";
-import { extendMoment } from "moment-range";
+// import originalMoment from "moment";
+// import { extendMoment } from "moment-range";
 import DateRangePicker from "react-daterange-picker";
 import styles from './ScheduleSettingTicket.module.scss';
 import classnames from 'classnames/bind';
@@ -12,12 +12,11 @@ import './calender.scss';
 import arrow from '../../../../static/images/half-arrow-right.png';
 import check from '../../../../static/images/icon-check.svg';
 const cx = classnames.bind(styles);
-const moment = extendMoment(originalMoment);
+// const moment = extendMoment(originalMoment);
 
 class ScheduleSettingTicket extends Component {
   constructor(props, context){
     super(props, context);
-    const today = moment();
 
     this.state = {
       value: null,
@@ -59,10 +58,7 @@ class ScheduleSettingTicket extends Component {
   }
   
   render() {
-    const { value, diffDays, startDate, endDate, country } = this.state;
-    // const daterange = this.state.value.toString().split('/');
-    // let startDate = this.changeToString(daterange[0])
-    // let endDate = this.changeToString(daterange[1])
+    const { value, diffDays, startDate, endDate } = this.state;
     return (
       <Fragment>
         <div className={cx('ticket-wrapper')}> 
@@ -85,7 +81,7 @@ class ScheduleSettingTicket extends Component {
               <div className={cx('date')}>{startDate}</div>
             </div>
             <div className={cx('right-arrow')}>
-              <img src={arrow}/>
+              <img src={arrow} alt='arrow'/>
             </div>
             <div className={cx('date-con')}>
               <label className={cx('date-label')}> 마무리 날짜 </label>
@@ -102,7 +98,7 @@ class ScheduleSettingTicket extends Component {
         <div className={cx('ticket-side-img')}></div>
         <div className={cx('ticket-side-img-red')}></div>
         <button onClick={this.setSpots} className={cx('complete-btn')}> 
-          <img src={check} />
+          <img src={check} alt='complete'/>
         </button>
       </div>
       </Fragment>

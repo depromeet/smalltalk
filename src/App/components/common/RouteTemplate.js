@@ -1,4 +1,4 @@
-import React, { Component, Fragment }  from 'react';  
+import React, { Fragment }  from 'react';  
 import { connect } from 'react-redux';
 import ScheduleSettingTicket from 'App/components/Schedule/ScheduleSettingTicket';
 import styles from './RouteTemplate.module.scss';
@@ -32,7 +32,7 @@ const RouteTemplate = ({travelList}) => {
               <p className={cx('plus')}>+</p>
               <p>여행지 추가하기</p>
             </div>
-            <img src={newTicket}/>
+            <img src={newTicket} alt='newTicket'/>
           </div>
         </div>
         <div className={cx('ticket-container')}> 

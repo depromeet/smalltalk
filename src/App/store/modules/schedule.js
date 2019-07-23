@@ -25,7 +25,6 @@ export default function schedule(state= initialState, action){
         ...state,
         travelList : [...state.travelList, action.payload]
       }
-      break;
   
     default:
       return state;
