@@ -247,17 +247,17 @@ class Schedule extends Component{
           }
         ]
       },
-      barColor: "#000",
       vWidth: 130,
       isOn: 0,
-      listIndex: 0
+      listIndex: 0,
+      dropR: "rotate(0deg)"
     }
   }
 
   makeList = ( boxList ) => { 
     return boxList.map( (bTitle, i) => {
       // console.log(ticket);
-      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0})}>
+      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)"})}>
       {bTitle.title}</li>
     })
   }
@@ -283,10 +283,10 @@ class Schedule extends Component{
   }
   
   toggleDrop = () => {
-    if(this.state.isOn == 1){
-      this.setState({isOn: 0})
+    if(this.state.isOn === 1){
+      this.setState({isOn: 0, dropR: "rotate(0deg)"})
     }else{
-      this.setState({isOn: 1})
+      this.setState({isOn: 1, dropR: "rotate(180deg)"})
     }
   }
 
@@ -296,11 +296,11 @@ class Schedule extends Component{
 
     return(
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <div className={cx("schedule_top")} style={this.resizeHeight(talker.boxList[listIndex].ticketList.length)}>
           <div className={cx("s_left")}>
             <div className={cx("s_titlebox")}>
-              <h2>{this.state.talker.boxList[listIndex].title}<span onClick={this.toggleDrop}>▼</span></h2>
+              <h2>{this.state.talker.boxList[listIndex].title}<span onClick={this.toggleDrop} style={{transform: this.state.dropR}}>▼</span></h2>
               <ul className={cx("title_drop")} style={{opacity: this.state.isOn}}>
                 {this.makeList(talker.boxList)}
               </ul>
@@ -310,8 +310,8 @@ class Schedule extends Component{
             </div>
           </div>
           <div className={cx("s_right")}>
-            <button><Link to='/mateList'>새 루트 만들기</Link></button>
-            <button><Link to='/mateList'>루트 수정하기</Link></button>
+            <button><Link to='/schedule1'>새 루트 만들기</Link></button>
+            <button><Link to='/schedule1'>루트 수정하기</Link></button>
           </div>
         </div>
         <div className={cx("schedule_bottom")}>

@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from 'react';
-import { Link } from 'react-router-dom';
 import TicketList from '../../components/TicketList';
 import MateListTable from '../../components/MateListTable';
 import MenuBtn from '../../components/MenuBtn';
@@ -722,8 +721,7 @@ class MateList extends Component{
               ]
             }
       ],
-      callToIndex: 0,
-      barColor: "#000"
+      callToIndex: 0
     }
   };
 
@@ -739,7 +737,7 @@ class MateList extends Component{
 
     return(
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <div className={cx('list_wrap')}>
           <h1>친구 추천 리스트</h1>
           <TicketList ticketList = {ticketList} callIndexParent={this.myCallIndex}/>
