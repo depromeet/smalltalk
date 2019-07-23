@@ -43,7 +43,7 @@ class CountryList extends Component {
             <div className={cx('phrases')}>이 여행중입니다</div>
           </div>
         </div>
-        <div className={cx('right-row')} style={{'background-color': this.state.backColor}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} onClick={this.showUserList}>
+        <div className={cx('right-row')} style={{'backgroundColor': this.state.backColor}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} onClick={this.showUserList}>
           <div className={cx('circle-1')}></div>
           <div className={cx('circle-2')}></div>
           <div className={cx('text')} style={{'color': this.state.fontColor}}>바로보기</div>

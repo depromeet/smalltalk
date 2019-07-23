@@ -108,12 +108,6 @@ class MainBackground extends Component {
           <div className="red-line"></div>
           <div className="white-arrow"></div>
         </div>
-        {/* 친구 리스트, 채팅 버튼 */}
-        <div className="buttons">
-          <div className="list-button" onClick={this.props.handleListClick}></div>
-          <div className="chat-button" onClick={this.props.handleChatClick}></div>
-        </div>
-        {/* Let's small-talk 글귀 */}
         <div className="main-home__phrases"></div>
       </div>
       )  

@@ -6,24 +6,13 @@ import axios from 'axios';
 
 const cx = classNames.bind(styles);
 
-// 나와 메세지를 주고받은 유저의 id를 oppositeID에 연결해야 함.
-const oppositeID = 6;
-  
-// 유저에 따라 토큰 달라져야 함. 로그인한 유저의 토큰
-// keodae's token : Token 007ba26f860473fec7c35fd730901d78baafac3e, keodae2's token : Token 070b55126ff9c2f69cf2e04f6d63306aeddf9fe7
-const token = 'Token 007ba26f860473fec7c35fd730901d78baafac3e';
-
-const messageListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/?from_user='+oppositeID;
-const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-const loadMessageList = axios.get(messageListURL, config);
-
-const axiosFunc = () => {
-  loadMessageList.then( ( response ) => {
-  this.setState({ 
-    chatData: response.data.map( x => x.to_user === oppositeID ? { type: 'mine', description: x.description } : { type: 'opposite', description: x.description } )
-  });
-  }).catch(err => console.log(err));
-}
+// const axiosFunc = () => {
+//   loadMessageList.then( ( response ) => {
+//   this.setState({ 
+//     chatData: response.data.map( x => x.to_user === oppositeID ? { type: 'mine', description: x.description } : { type: 'opposite', description: x.description } )
+//   });
+//   }).catch(err => console.log(err));
+// }
 
 class ChatRoom extends Component {
   constructor(props) {
@@ -44,19 +33,28 @@ class ChatRoom extends Component {
     };
   }
   componentWillMount() {
-    axiosFunc();
-    this.interval = setInterval( axiosFunc, 5000);
+    // axiosFunc();
+    // this.interval = setInterval( axiosFunc, 5000);
   }
 
-  componentDidMount() {    
+  componentDidMount() {
+    // 채팅방이 열린 유저의 id를 oppositeID에 연결해야 함.
+    console.log(this.props.id)
+    const oppositeID = this.props.id;
+
+    const token = 'Token ' + localStorage.getItem('token');
+
+    const messageListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/?from_user='+oppositeID;
+    const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+    const loadMessageList = axios.get(messageListURL, config);
     loadMessageList.then( response => {
       this.setState({ chatData: response.data.map( x => x.to_user === oppositeID ? { type: 'mine', description: x.description } : { type: 'opposite', description: x.description } )} );
     });
   }
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.interval);
+  // }
 
   handleInputValueChange = (e) => {
     this.setState({ inputValue: e.target.value });
@@ -65,6 +63,9 @@ class ChatRoom extends Component {
   AddChatOfMine = () => {
     // 메세지에 내용이 있으면
     if(this.state.inputValue) {
+      const token = 'Token ' + localStorage.getItem('token');
+      const oppositeID = 6;
+      const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
       const sendMessageURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/send/`;
       const messagesContent = { description: this.state.inputValue, to_user: oppositeID };
       
