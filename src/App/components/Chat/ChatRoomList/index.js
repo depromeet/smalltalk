@@ -49,7 +49,7 @@ class ChatRoomList extends Component {
           <div className={cx('close-button')} onClick={this.props.handleAllClose} />
         </div>
         <div className={cx('collection')}>
-          {this.props.FriendsListData.map((list, i) => (
+          {this.props.friendsListWithChat.map((list, i) => (
             <EachFriendsList
               picture={list.picture}
               name={list.nickname}

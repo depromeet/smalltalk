@@ -3,7 +3,7 @@ import update from 'react-addons-update';
 import ChatMateList from '../../components/Chat/ChatMateList';
 import ChatRoomList from '../../components/Chat/ChatRoomList';
 import ChatRoom from '../../components/Chat/ChatRoom';
-import axios from 'axios';
+// import axios from 'axios';
 
 class SideMenu extends Component {
   // callAPI = () => {
@@ -49,8 +49,17 @@ class SideMenu extends Component {
         { name: '필통' },
         { name: '머그컵' },
       ],
+      friendsListWithChat: [
+        { picture: 'http://mblogthumb3.phinf.naver.net/20160722_90/cool911016_1469169937457pEG2Q_JPEG/150519_%C7%C7%C4%AB%C3%F2%C6%E4%C0%CC%C6%DB%C5%E4%C0%CC_%B5%B5%BE%C8_004.jpg?type=w800', nickname: '피카츄', messages_cnt: 0 },
+      ],
     };
   }
+
+  addFriendsListWithChat = (propsPicture, propsNickname, propsMessages_cnt) => {
+    this.setState({
+      friendsListWithChat: this.state.friendsListWithChat.concat( {picture: propsPicture, nickname: propsNickname, messages_cnt: propsMessages_cnt} )
+    })
+  };
 
   // 친구 수락
   addMateList = (key, obj) => {
@@ -80,6 +89,7 @@ class SideMenu extends Component {
             handleName={this.props.handleName}
             addMateList={this.addMateList}
             denyMateRequest={this.denyMateRequest}
+            addFriendsListWithChat={this.addFriendsListWithChat}
           />
         );
       case 'ChatRoomList':
@@ -91,6 +101,7 @@ class SideMenu extends Component {
             handleAllClose={this.props.handleAllClose}
             handleChatRoomClick={this.props.handleChatRoomClick}
             handleName={this.props.handleName}
+            friendsListWithChat={this.state.friendsListWithChat}
           />
         );
       case 'ChatRoom':
