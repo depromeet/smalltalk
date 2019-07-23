@@ -36,7 +36,7 @@
         width: 10.05vw;
         height: 9.62vh;
         font-family: NotoSansCJKkr;
-        font-size: 1.87vw;
+        font-size: 1.8vw;
         font-weight: bold;
         line-height: 1.39;
         letter-spacing: -1.44px;
@@ -62,6 +62,13 @@
         top: 16.85vh;
         height: 45.37vh;
     }
+
+    .collection-2 {
+        overflow: scroll;
+        position: relative;
+        top: 16.85vh;
+        height: 80vh;
+    }
 }
 
 .apply-friend {
@@ -80,14 +87,37 @@
         border-left: 10px solid transparent;
         position: relative;
         left: 20.5vw;
-        top: 2.22vh;
+        top: 1vh;
         cursor: pointer;
     }
 
     .collection {
         position: relative;
-        top: 3.98vh;
-        overflow: scroll;
+        top: 1vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
         height: 32.77vh;
+    }
+}
+
+.apply-friend-2 {
+    width: 100%;
+    height: 5vh;
+    background-color: #f4f4f4;
+    position: absolute;
+    bottom: 0;
+    padding: 0.57vw;
+
+    .rotated-fold-button {
+        width: 20px;
+        border-top: 10px solid #b7b7b7;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        position: relative;
+        left: 20.5vw;
+        bottom: 0.7vh;
+        cursor: pointer;
+        transform: rotate(180deg);
     }
 }

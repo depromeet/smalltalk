@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 // 로고
 .logo {
     position: absolute;
@@ -5,7 +7,7 @@
     left: 1vw;
     width: 4.6vw;
     height: 4.6vw;
-    background-image: url(../../../static/images/logo.png);
+    background-image: url(../../../../static/images/logo.png);
     background-size: cover;    
 }
 
@@ -54,7 +56,7 @@
     }
 
     #picture-circle-1 {
-        background-image: url(../../../static/images/oval_img1.png);
+        background-image: url(../../../../static/images/oval_img1.png);
         background-size: cover;
         top: 24.53vh;
         left: -6.4vw;
@@ -62,7 +64,7 @@
     }
 
     #picture-circle-2 {
-        background-image: url(../../../static/images/oval_img2.png);
+        background-image: url(../../../../static/images/oval_img2.png);
         background-size: cover;
         top: 54.53vh;
         left: 26.86vw;
@@ -100,6 +102,20 @@
     height: 52.4vh;
     left: 9.11vw;
     top: 28.98vh;
+    display: flex;
+    flex-direction: column;
+
+    .menu-box {
+        width: 100%;
+        height: 3vh;
+        background-color: red;
+        z-index: -1;
+        position: relative;
+        bottom: 6.5vh;
+        right: 30vw;
+        opacity: 0.5;
+        transition: 1s;
+    }
 
     a {
         text-decoration: none;
@@ -109,13 +125,15 @@
     .menu-list {
         width: fit-content;
         height: fit-content;
-        font-family: OpenSans;
+        max-height: 11vh;
+        font-family: 'Open Sans', sans-serif;
         font-size: 4.68vw;
-        font-weight: bold;
+        font-weight: 900;
         line-height: 1.22;
-        letter-spacing: -5.4px;
-        margin-bottom: 26px;
+        letter-spacing: -0.5vh;
+        margin-bottom: 2.4vh;
         cursor: pointer;
+        z-index: 1;
     }
 }
 
@@ -131,7 +149,7 @@
     .dashed-arrow {
         width: 28.02vw;
         height: 20px;
-        background-image: url(../../../static/images/line_mypage2.png);
+        background-image: url(../../../../static/images/line_mypage2.png);
         background-size: cover;
         margin-right: 22px;
     }
@@ -195,8 +213,8 @@
 
     .dashed-line {
         width: 13.48vw;
-        height: 1px;
-        border: 1px dashed red;
+        height: 2px;
+        background-image: url(../../../../images/Red-dotted-line.png);
         margin-right: 8.59vw;
     }
 
@@ -212,7 +230,7 @@
         width: 249.6px;
         // width: 13.02vw;
         height: 22px;
-        background-image: url(../../../static/images/white_arrow.png);
+        background-image: url(../../../../static/images/white_arrow.png);
         background-size: cover;
         position: relative;
         top: -11px;
@@ -228,7 +246,7 @@
     .list-button {
         width: 4.53vw;
         height: 8.1vh;
-        background-image: url(../../../static/images/button_list_off.png);
+        background-image: url(../../../../static/images/button_list_off.png);
         background-size: cover;
         margin-bottom: 2.08vh;
         cursor: pointer;
@@ -237,7 +255,7 @@
     .chat-button {
         width: 4.53vw;
         height: 8.1vh;
-        background-image: url(../../../static/images/button_chat_off.png);
+        background-image: url(../../../../static/images/button_chat_off.png);
         background-size: cover;
         cursor: pointer;
     }
@@ -245,19 +263,13 @@
 
 .main-home__phrases {
     position: absolute;
-    top: 72.25vh;
-    left: 61vw;
-    -webkit-text-stroke: 2px #ffffff;
-    font-family: OpenSans;
-    font-size: 4.21vw;
-    font-weight: bold;
-    line-height: 0.76;
-    letter-spacing: -3.2px;
+    top: 70vh;
+    left: 60vw;
+    width: 26vw;
+    height: 16vh;
     z-index: 3;
-
-    #main-home__phrases__second-line {
-        padding-left: 6vw;
-    }
+    background-image: url(../../../../images/small-talk.png);
+    background-size: cover;
 }
 
 // 애니메이션

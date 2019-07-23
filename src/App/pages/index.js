@@ -3,5 +3,10 @@ export { default as Login} from './Login';
 export { default as Register} from './Register';
 export { default as Mate} from './Mate';
 export { default as MateList} from './MateList';
+<<<<<<< HEAD
 export { default as MateInfo} from './MateInfo';
 export { default as Schedule} from './Schedule';
+=======
+export { default as Bigdata} from './Bigdata';
+export { default as MateInfo} from './MateInfo';
+>>>>>>> yongseong

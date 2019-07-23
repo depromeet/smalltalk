@@ -26,20 +26,35 @@
     cursor: pointer;
 }
 
+.unchecked-messages {
+    position: relative;
+    left: 10.5vw;
+    top: 3.4vh;
+}
+
+.unchecked-messages-2 {
+    position: relative;
+    left: 10vw;
+    top: 3.4vh;
+}
+
 .circle {
     width: 1.3vw;
-    height: 2.31vh;
+    height: 1.3vw;
     background-color: #fb3e1d;
     border-radius: 50%;
-    position: relative;
-    top: 3.24vh;
-    left: 11.09vw;
+}
+
+.circle-2 {
+    width: 2vw;
+    height: 1.3vw;
+    background-color: #fb3e1d;
+    border-radius: 100px;
 }
 
 .number {
     position: relative;
-    top: 1.26vh;
-    left: 11.535vw;
+    bottom: 1.9vh;
     height: 18px;
     font-family: NotoSansCJKkr;
     font-size: 0.62vw;
@@ -47,4 +62,5 @@
     line-height: 1.5;
     letter-spacing: -0.48px;
     color: #ffffff;
+    text-align: center;
 }

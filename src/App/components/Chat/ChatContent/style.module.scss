@@ -1,0 +1,70 @@
+// 상대방 채팅
+.opposite {
+    display: flex;
+    // height: 4.4vh;
+
+    .profile-picture {
+        width: 3.12vw;
+        height: 5.55vh;
+        background-image: url(../../../../static/images/user_none.png);
+        background-size: cover;
+    }
+
+    .space {
+        width: 3.12vw;
+    }
+
+    .talk-list {
+        margin-left: 0.72vw;
+
+        .background {
+            word-break: break-all;
+            //max-width: 21.4vw;
+            max-width: 19vw;
+            width: fit-content;
+            min-height: 3.14vh;
+            height: fit-content;
+            border-radius: 19px;
+            background-color: #000000;
+            margin-bottom: 1.29vh;
+            padding: 0.46vh 0.98vw 0.46vh 0.98vw;
+            
+            .sentence {
+                font-family: NotoSansCJKkr;
+                font-size: 0.83vw;
+                line-height: 1.63;
+                letter-spacing: -0.64px;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+// 내 채팅
+.mine {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .talk-list {
+
+        .background {
+            word-break: break-all;
+            max-width: 21.4vw;
+            width: fit-content;
+            min-height: 3.14vh;
+            height: fit-content;
+            border-radius: 19px;
+            background-color: #fb3e1d;
+            margin-bottom: 1.29vh;
+            padding: 0.46vh 0.98vw 0.46vh 0.98vw;
+            
+            .sentence {
+                font-family: NotoSansCJKkr;
+                font-size: 0.83vw;
+                line-height: 1.63;
+                letter-spacing: -0.64px;
+                color: #ffffff;
+            }
+        }
+    }
+}

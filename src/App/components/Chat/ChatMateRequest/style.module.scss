@@ -5,36 +5,41 @@
     background-color: #ffffff;
     margin-bottom: 0.55vh;
 
-    .name {
-        width: 2.23vw;
-        height: 3.33vh;
-        font-family: NotoSansCJKkr;
-        font-size: 1.25vw;
-        font-weight: bold;
-        line-height: 1.38;
-        letter-spacing: -0.05vw;
-        position: relative;
-        top: 3vh;
-        left: 1.35vw;
-    }
-
-    .phrases {
-        font-family: NotoSansCJKkr;
-        font-size: 1.04vw;
-        font-weight: 500;
-        line-height: 1.3;
-        letter-spacing: -0.8px;
-        position: relative;
-        left: 4vw;
+    .text {
+        display: flex;
+        
+        .name {
+            width: fit-content;
+            height: 3.33vh;
+            font-family: NotoSansCJKkr;
+            font-size: 1.25vw;
+            font-weight: bold;
+            line-height: 1.38;
+            letter-spacing: -0.05vw;
+            position: relative;
+            top: 3vh;
+            left: 1.35vw;
+        }
+    
+        .phrases {
+            font-family: NotoSansCJKkr;
+            font-size: 1.04vw;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.8px;
+            position: relative;
+            left: 1.9vw;
+            top: 3.4vh;
+        }
     }
 
     .buttons {
         position: relative;
-        bottom: 3.6vh;
+        bottom: 1.1vh;
         left: 16.56vw;
 
         .accept {
-            width: 3.95vw;
+            width: 4.05vw;
             height: 2.31vh;            
             background-image: url(../../../../static/images/add_friend.png);
             background-size: cover;
@@ -44,7 +49,7 @@
         }
 
         .refuse {
-            width: 3.95vw;
+            width: 4.05vw;
             height: 2.31vh;            
             background-image: url(../../../../static/images/refuse_friend.png);
             background-size: cover;

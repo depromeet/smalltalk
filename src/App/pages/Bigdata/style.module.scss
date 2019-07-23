@@ -1,0 +1,231 @@
+.bigdata {
+
+    .search-bar {
+        width: 39.8vw;
+        height: 6.3vh;
+        position: absolute;
+        top: 13.3vh;
+        left: 13.6vw;
+        border-bottom: solid 3px black;
+
+        .input {
+            width: 37vw;
+            height: 5.8vh;
+            font-family: NotoSansCJKkr;
+            font-size: 3.33vh;
+            font-weight: bold;
+            line-height: 1.39;
+            letter-spacing: -1.44px;
+            border: 0;
+        }
+
+        .input::placeholder {
+            opacity: 0.4;
+        }
+    
+        .drop-down-button {
+            background-image: url(../../../static/images/drop-down-button.png);
+            background-size: cover;
+            width: 1.04vw;
+            height: 1.11vh;
+            position: absolute;
+            top: 3vh;
+            left: 38vw;
+            cursor: pointer;
+        }
+        
+        .drop-up-button {
+            background-image: url(../../../static/images/drop-down-button.png);
+            background-size: cover;
+            width: 1.04vw;
+            height: 1.11vh;
+            position: absolute;
+            top: 3vh;
+            left: 38vw;
+            transform: rotate(0.5turn);
+            cursor: pointer;
+        }
+
+        .input-box {
+            position: relative;
+            top: 0.46vh;
+            background-color: white;
+            z-index: 1;
+            max-height: 35.6vh;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar { 
+            display: none !important;
+            }
+        }
+    }
+
+    .country {
+
+        position: absolute;
+        top: 25vh;
+        left: 13.6vw;
+
+        .country-name {
+            font-family: NotoSansCJKkr;
+            font-size: 6.5vh;
+            font-weight: bold;
+            line-height: 1.39;
+            letter-spacing: -2.84px;
+        }
+
+        .second-line {
+            display: flex;
+
+            .number-of-people {
+                font-family: NotoSansCJKkr;
+                font-size: 3.33vh;
+                font-weight: bold;
+                line-height: 1.39;
+                letter-spacing: -1.44px;
+            }
+
+            .text {
+                font-family: NotoSansCJKkr;
+                font-size: 2.22vh;
+                font-weight: 500;
+                line-height: 1.38;
+                letter-spacing: -0.96px;
+                position: relative;
+                top: 0.5vh;
+                left: 0.3vw;
+            }
+        }
+
+        .text-2 {
+            font-family: NotoSansCJKkr;
+            font-size: 2.12vh;
+            font-weight: 500;
+            line-height: 1.39;
+            letter-spacing: -0.92px;
+        }
+
+        .background {
+            display: flex;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+
+            .circle {
+                width: 40.3vh;
+                height: 40.3vh;
+                border-radius: 50%;
+                background-color: #e1ff01;
+                position: relative;
+                right: 16.2vw;
+            }
+
+            .country-picture {
+                width: 40.3vh;
+                height: 40.3vh;
+                border-radius: 50%;
+                background-image: url("https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/F5101CA8-4DD6-44C1-AE9C-CDDCCC1B8BBE.png");
+                background-size: cover;
+                position: absolute;
+                left: 11.1vw;
+                animation: country-picture 2.5s infinite alternate ease-in-out;
+            }
+
+            .edge-circle {
+                width: 59.4vh;
+                // height: 40.3vh;
+                height: 40.3vh;
+                background-image: url("../../../static/images/edge-circle-and-pointer.png");
+                background-size: cover;
+                position: relative;
+                right: 9vw;
+                z-index: -2;
+            }
+        }
+    }
+
+    .default-value {
+        position: absolute;
+        top: 25vh;
+        left: 13.6vw;
+        display: flex;
+
+        .phrases-1 {
+            width: 19.7vw;
+            height: 18.9vh;
+            font-family: NotoSansCJKkr;
+            font-size: 6.5vh;
+            font-weight: bold;
+            line-height: 1.39;
+            letter-spacing: -2.84px;
+        }
+
+        .phrases-2 {
+            position: absolute;
+            top: 5.5vh;
+            left: 40.2vw;
+            width: fit-content;
+            height: fit-content;
+
+            width: 158px;
+            height: 69px;
+            font-family: NotoSansCJKkr;
+            font-size: 2.2vh;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.38;
+            letter-spacing: -0.96px;
+            text-align: left;
+            color: #161616;
+
+            .phrases-2-2 {
+                display: flex;
+
+                .phrases-red {
+                    color: #fb3e1d;
+                }
+            }
+        }
+
+        .arrow {
+            background-image: url(../../../static/images/red-arrow.png);
+            background-size: cover;
+            width: 24.4vw;
+            height: 1.85vh;
+            position: relative;
+            top: 13.8vh;
+            left: 5.5vw;
+        }
+    }
+
+    .country-list {
+        width: fit-content;
+        height: 100vh;
+        position: absolute;
+        overflow-x: hidden;
+        right: 8.75vw;
+        overflow: scroll;
+        padding-top: 24.8vh;
+        // 스크롤바 삭제
+        // -ms-overflow-style: none;
+        // &::-webkit-scrollbar { 
+        // display: none !important;
+        // }
+    }
+}
+
+@keyframes country-picture {
+    0% {
+        transform: translateX(0vw);
+    }
+    3% {
+        transform: translateX(0vw);
+    }
+    97% {
+        transform: translateX(5vw);
+    }
+    100% {
+        transform: translateX(5vw);
+    }
+}
