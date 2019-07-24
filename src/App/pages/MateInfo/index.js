@@ -227,12 +227,8 @@ class MateInfo extends Component{
     console.log(window.scrollY);
     return (
       <Fragment>
-<<<<<<< HEAD
-        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
-=======
         <MenuBtn barColor = { this.state.barColor }/>
         <SideMenu />
->>>>>>> yongseong
         <div className={cx("back_circle")}>
           <div className={cx("cir", "cir1")}></div>
           <div className={cx("cir", "cir2")}></div>

@@ -738,12 +738,8 @@ class MateList extends Component{
 
     return(
       <Fragment>
-<<<<<<< HEAD
-        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
-=======
         <MenuBtn barColor = { this.state.barColor }/>
         <SideMenu />
->>>>>>> yongseong
         <div className={cx('list_wrap')}>
           <h1>친구 추천 리스트</h1>
           <TicketList ticketList = {ticketList} callIndexParent={this.myCallIndex}/>

@@ -4,12 +4,9 @@ import styles from './style.module.scss';
 import CountryList from '../../components/Bigdata/CountryList';
 import BeSearchedCityList from '../../components/Bigdata/BeSearchedCityList';
 import ListOfPeopleInTheCity from '../../components/Bigdata/ListOfPeopleInTheCity';
-<<<<<<< HEAD
 import MenuBtn from '../../components/MenuBtn';
-=======
 import SideMenu from '../../containers/SideMenu';
 import axios from 'axios';
->>>>>>> yongseong
 
 const cx = classnames.bind(styles);
 
@@ -214,44 +211,6 @@ class Bigdata extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div className={cx('bigdata')}>
-        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
-        {/* 검색 바 */}
-        <div className={cx('search-bar')}>
-          <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />
-          {this.state.isClickedInputButton
-            ? <div className={cx('drop-up-button')} onClick={this.offInputBox} />
-            : <div className={cx('drop-down-button')} onClick={this.onInputBox} />}
-          <div className={cx('input-box')}>
-            {this.state.allCountryName.map((x, i) => (
-              <BeSearchedCityList
-                name={x.name}
-                key={i}
-                input={this.state.inputValue}
-                isClickedInputButton={this.state.isClickedInputButton}
-                offInputBox={this.offInputBox}
-                handleClickInput={this.handleClickInput}
-              />
-            ))}
-          </div>
-        </div>
-        {this.state.isClickedCity
-          ? (
-            <div className={cx('country')}>
-              <div className={cx('country-name')}>{this.state.name}</div>
-              <div className={cx('second-line')}>
-                <div className={cx('number-of-people')}>
-                  {this.state.peopleCount}명
-                </div>
-                <div className={cx('text')}>의 스몰토커가</div>
-              </div>
-              <div className={cx('text-2')}>현재{' '}{this.state.name}에 있어요!</div>
-              <div className={cx('background')}>
-                <div className={cx('circle')} />
-                <div className={cx('country-picture')} />
-                <div className={cx('edge-circle')} />
-=======
       <Fragment>
         <SideMenu />
           <div className={cx('bigdata')}>
@@ -274,7 +233,6 @@ class Bigdata extends Component {
                     handleClickInput={this.handleClickInput}
                   />
                 ))}
->>>>>>> yongseong
               </div>
             </div>
             {this.state.isClickedCity
