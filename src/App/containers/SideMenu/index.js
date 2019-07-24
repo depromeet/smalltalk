@@ -67,17 +67,14 @@ class SideMenu extends Component {
 
   handleListClick = () => {
     this.setState({ currentState: 'ChatMateList' });
-    console.log('currentState : ChatMateList');
   }
 
   handleChatClick = () => {
     this.setState({ currentState: 'ChatRoomList' });
-    console.log('currentState : ChatRoomList');
   }
 
   handleChatRoomClick = () => {
     this.setState({ currentState: 'ChatRoom' });
-    console.log('currentState : ChatRoom');
   }
 
   handleName = (mateName) => {

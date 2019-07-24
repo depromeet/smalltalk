@@ -12,7 +12,7 @@ const cx = classnames.bind(styles);
 
 class Bigdata extends Component {
   componentDidMount() {
-    console.log('도시 목록 불러옵니다.');
+    // 도시 목록 불러오는 로직
     const token = 'Token ' + localStorage.getItem('token');
     const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/city';
     const config = { headers: { 'Authorization': token, 'Content-Type': 'multipart/form-data'} };
