@@ -6,35 +6,52 @@ const cx = classNames.bind(styles);
 
 class EachFriendsList extends Component {
   render() {
+    const picture = "https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg";
+
     const enterChatRoom = (e) => {
       this.props.handleName(e.target.outerText);
       this.props.handleChatRoomClick();
-      this.props.addFriendsListWithChat === undefined ? console.log(this.props.addFriendsListWithChat) : this.props.addFriendsListWithChat(this.props.picture, this.props.name, this.props.number)
+      this.props.handleID(this.props.id);
     };
-    return (
-      <div>
-        <div className={cx('friends-list')}>
-          <img src={this.props.picture} alt="profile" className={cx('profile-picture')} />
-          <div className={cx('name')} onClick={enterChatRoom}>{this.props.name}</div>
-          {this.props.number !== 0 && this.props.number < 100 && this.props.showRedCircle
-          && (
-          <div className={cx('unchecked-messages')}>
-            <div className={cx('circle')} />
-            <div className={cx('number')}>{this.props.number}</div>
+
+    if(this.props.currentState === "ChatMateList"){ 
+      return (
+        <div>
+          <div className={cx('friends-list')}>
+            <img src={picture} alt="profile" className={cx('profile-picture')} />
+            <div className={cx('name')} onClick={enterChatRoom}>{this.props.name}</div>
           </div>
-          )}
-          {/* 읽지 않은 메세지 수가 100개 이상이면 100+로 표시합니다. */}
-          {this.props.number >= 100 && this.props.showRedCircle
-          && (
-          <div className={cx('unchecked-messages-2')}>
-            <div className={cx('circle-2')} />
-            <div className={cx('number')}>100+</div>
-          </div>
-          )}
         </div>
-      </div>
-    );
-  }
+      )}
+      else if(this.props.currentState === "ChatRoomList" && this.props.isExistChatRoom){
+        return (
+          <div>
+            <div className={cx('friends-list')}>
+              <img src={picture} alt="profile" className={cx('profile-picture')} />
+              <div className={cx('name')} onClick={enterChatRoom}>{this.props.name}</div>
+              {this.props.number !== 0 && this.props.number < 100 && (
+              <div className={cx('unchecked-messages')}>
+                <div className={cx('circle')} />
+                <div className={cx('number')}>{this.props.number}</div>
+              </div>
+              )}
+              {/* 읽지 않은 메세지 수가 100개 이상이면 100+로 표시합니다. */}
+              {this.props.number >= 100 && (
+              <div className={cx('unchecked-messages-2')}>
+                <div className={cx('circle-2')} />
+                <div className={cx('number')}>100+</div>
+              </div>
+              )}
+            </div>
+          </div>
+        )
+      }
+      else{
+        return(
+          <div></div>
+        )
+      }
+    }
 }
 
 export default EachFriendsList;

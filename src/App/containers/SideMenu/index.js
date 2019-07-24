@@ -5,24 +5,17 @@ import ChatRoomList from '../../components/Chat/ChatRoomList';
 import ChatRoom from '../../components/Chat/ChatRoom';
 import axios from 'axios';
 
-const token = 'Token ' + localStorage.getItem('token');
-
-const friendsListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/?is_friends=true';
-const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-const FriendsList = axios.get(friendsListURL, config);
-
 class SideMenu extends Component {
   componentDidMount() {
+    const token = 'Token ' + localStorage.getItem('token');
+    const friendsListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/?is_friends=true';
+    const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+    const FriendsList = axios.get(friendsListURL, config);
     FriendsList.then( ( response ) => {
       this.setState({ 
-        FriendsListData: response.data
+        friendsListData: response.data
       });
-      console.log(response.data);
-      }).catch(err => console.log(err));
-  }
-
-  componentWillUnmount() {
-    console.log(this.state.FriendsListData);
+    }).catch(err => console.log(err));
   }
 
   constructor(props) {
@@ -31,7 +24,7 @@ class SideMenu extends Component {
     const testIcon = 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg';
 
     this.state = {
-      FriendsListData: [
+      friendsListData: [
         // { picture: 'http://mblogthumb3.phinf.naver.net/20160722_90/cool911016_1469169937457pEG2Q_JPEG/150519_%C7%C7%C4%AB%C3%F2%C6%E4%C0%CC%C6%DB%C5%E4%C0%CC_%B5%B5%BE%C8_004.jpg?type=w800', nickname: '피카츄', messages_cnt: 0 },
         // { picture: 'https://cdn1.iconfinder.com/data/icons/fruits-vegetables-16/512/1_Food_fruit_watermelon-512.png', nickname: '수박수박', messages_cnt: 1 },
         // { picture: testIcon, nickname: '홍길동', messages_cnt: 13 },
@@ -52,30 +45,26 @@ class SideMenu extends Component {
         { name: '필통' },
         { name: '머그컵' },
       ],
-      friendsListWithChat: [
-        { picture: 'http://mblogthumb3.phinf.naver.net/20160722_90/cool911016_1469169937457pEG2Q_JPEG/150519_%C7%C7%C4%AB%C3%F2%C6%E4%C0%CC%C6%DB%C5%E4%C0%CC_%B5%B5%BE%C8_004.jpg?type=w800', nickname: '피카츄', messages_cnt: 0 },
-      ],
       currentState: '',
       name: '',
+      id: null,
     };
   }
 
-  addFriendsListWithChat = (propsPicture, propsNickname, propsMessages_cnt) => {
-    this.setState({
-      friendsListWithChat: this.state.friendsListWithChat.concat( {picture: propsPicture, nickname: propsNickname, messages_cnt: propsMessages_cnt} )
-    })
-  };
-
   // 친구 수락
   addMateList = (key, obj) => {
-    const newState = this.state.FriendsListData.concat({ picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', name: obj, number: '0' });
-    this.setState({ FriendsListData: newState });
+    const newState = this.state.friendsListData.concat({ picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', name: obj, number: '0' });
+    this.setState({ friendsListData: newState });
     this.setState({ ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] }) });
   }
 
   // 친구 거절
   denyMateRequest = (key) => {
     this.setState({ ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] }) });
+  }
+
+  handleID = (ID) => {
+    this.setState({ id: ID });
   }
 
   handleListClick = () => {
@@ -103,7 +92,7 @@ class SideMenu extends Component {
   }
 
   render() {
-    const FriendsListDataLength = this.state.FriendsListData.length;
+    const friendsListDataLength = this.state.friendsListData.length;
 
     switch (this.state.currentState) {
       case 'ChatMateList':
@@ -111,26 +100,28 @@ class SideMenu extends Component {
           <ChatMateList
             handleChatClick={this.handleChatClick}
             ApplyListData={this.state.ApplyListData}
-            FriendsListDataLength={FriendsListDataLength}
-            FriendsListData={this.state.FriendsListData}
+            friendsListDataLength={friendsListDataLength}
+            friendsListData={this.state.friendsListData}
             handleAllClose={this.handleAllClose}
             handleChatRoomClick={this.handleChatRoomClick}
             handleName={this.handleName}
             addMateList={this.addMateList}
             denyMateRequest={this.denyMateRequest}
-            addFriendsListWithChat={this.addFriendsListWithChat}
+            currentState={this.state.currentState}
+            handleID={this.handleID}
           />
         );
       case 'ChatRoomList':
         return (
           <ChatRoomList
-            FriendsListData={this.state.FriendsListData}
+            friendsListData={this.state.friendsListData}
             handleListClick={this.handleListClick}
             handleChatClick={this.handleChatClick}
             handleAllClose={this.handleAllClose}
             handleChatRoomClick={this.handleChatRoomClick}
             handleName={this.handleName}
-            friendsListWithChat={this.state.friendsListWithChat}
+            currentState={this.state.currentState}
+            handleID={this.handleID}
           />
         );
       case 'ChatRoom':
@@ -139,11 +130,11 @@ class SideMenu extends Component {
             handleAllClose={this.handleAllClose}
             handleListClick={this.handleListClick}
             name={this.state.name}
-            id={this.state.FriendsListData.id}
+            id={this.state.id}
           />
         );
       default: 
-        return(
+        return (
           // 친구 리스트, 채팅 버튼
           <div className="buttons">
             <div className="list-button" onClick={this.handleListClick}></div>

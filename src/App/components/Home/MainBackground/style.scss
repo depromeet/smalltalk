@@ -64,8 +64,8 @@
     }
 
     #picture-circle-2 {
-        background-image: url(../../../../static/images/oval_img2.png);
-        background-size: cover;
+        // background-image: url(../../../../static/images/turkey.jpg);
+        // background-size: cover;
         top: 54.53vh;
         left: 26.86vw;
         animation: pictureCircle 3s infinite alternate ease-in-out;
@@ -242,6 +242,7 @@
     position: absolute;
     top: 40.92vh;
     right: 0.57vw;
+    z-index: 999;
 
     .list-button {
         width: 4.53vw;

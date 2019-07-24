@@ -6,6 +6,7 @@ import MenuBtn from '../../components/MenuBtn';
 
 import classnames from 'classnames/bind';
 import styles from './Schedule.module.scss';
+import SideMenu from '../../containers/SideMenu';
 
 const cx = classnames.bind(styles);
 
@@ -296,7 +297,12 @@ class Schedule extends Component{
 
     return(
       <Fragment>
+<<<<<<< HEAD
         <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
+=======
+        <MenuBtn barColor = { this.state.barColor }/>
+        <SideMenu />
+>>>>>>> yongseong
         <div className={cx("schedule_top")} style={this.resizeHeight(talker.boxList[listIndex].ticketList.length)}>
           <div className={cx("s_left")}>
             <div className={cx("s_titlebox")}>
