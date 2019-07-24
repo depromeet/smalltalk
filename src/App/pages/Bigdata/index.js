@@ -212,10 +212,9 @@ class Bigdata extends Component {
   render() {
     return (
       <Fragment>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <SideMenu />
           <div className={cx('bigdata')}>
-            {/* 스몰토크 로고 */}
-            <div className="logo" />
             {/* 검색 바 */}
             <div className={cx('search-bar')}>
               <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />

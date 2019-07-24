@@ -1,7 +1,15 @@
 import React, {Component, Fragment} from 'react';
 import TicketList from '../../components/TicketList';
 import MateListTable from '../../components/MateListTable';
-import MenuBtn from '../../components/MenuBtn';
+import MenuBtn from '../../components/MenuBtn'
+
+import brazil from 'static/images/ticketImg/brazil.jpg';
+import czech from 'static/images/ticketImg/czech.jpg';
+import denmark from 'static/images/ticketImg/denmark.jpg';
+import greece from 'static/images/ticketImg/greece.jpg';
+import mongolia from 'static/images/ticketImg/mongolia.jpg';
+import russia from 'static/images/ticketImg/russia.jpg';
+import turkey from 'static/images/ticketImg/turkey.jpg';
 
 import classnames from 'classnames/bind';
 import styles from './MateList.module.scss';
@@ -19,7 +27,7 @@ class MateList extends Component{
           ticketSubTitle: 'Tokyo',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : brazil,
           friends: [
             { 
               id: 0,
@@ -78,7 +86,7 @@ class MateList extends Component{
           ticketSubTitle: 'Paris',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : czech,
           friends: [
             { 
               id: 0,
@@ -137,7 +145,7 @@ class MateList extends Component{
           ticketSubTitle: 'LA',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : denmark,
           friends: [
             { 
               id: 0,
@@ -196,7 +204,7 @@ class MateList extends Component{
           ticketSubTitle: 'Singapore',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : greece,
           friends: [
             { 
               id: 0,
@@ -255,7 +263,7 @@ class MateList extends Component{
           ticketSubTitle: 'Tokyo',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : russia,
           friends: [
             { 
               id: 0,
@@ -314,7 +322,7 @@ class MateList extends Component{
             ticketSubTitle: 'Paris',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png',
+            ticketImage : turkey,
             friends: [
               { 
                 id: 0,
@@ -384,7 +392,7 @@ class MateList extends Component{
 
     return(
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <SideMenu />
         <div className={cx('list_wrap')}>
           <h1>친구 추천 리스트</h1>

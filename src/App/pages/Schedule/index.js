@@ -4,6 +4,14 @@ import TicketLength from '../../components/TicketLength';
 import BigTicket from '../../components/BigTicket';
 import MenuBtn from '../../components/MenuBtn';
 
+import brazil from 'static/images/ticketImg/brazil.jpg';
+import czech from 'static/images/ticketImg/czech.jpg';
+import denmark from 'static/images/ticketImg/denmark.jpg';
+import greece from 'static/images/ticketImg/greece.jpg';
+import mongolia from 'static/images/ticketImg/mongolia.jpg';
+import russia from 'static/images/ticketImg/russia.jpg';
+import turkey from 'static/images/ticketImg/turkey.jpg';
+
 import classnames from 'classnames/bind';
 import styles from './Schedule.module.scss';
 import SideMenu from '../../containers/SideMenu';
@@ -26,7 +34,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : brazil
               },
               {
                 id: "1",
@@ -34,7 +42,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : czech
               },
               {
                 id: "2",
@@ -42,7 +50,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'LA',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : denmark
               },
               {
                 id: "3",
@@ -50,7 +58,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : greece
               },
               {
                 id: "4",
@@ -58,7 +66,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : mongolia
               },
               {
                 id: "5",
@@ -66,7 +74,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : russia
               },
               {
                 id: "6",
@@ -74,7 +82,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : turkey
               },
               {
                 id: "7",
@@ -82,7 +90,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : russia
               },
               {
                 id: "8",
@@ -90,7 +98,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : turkey
               },
               {
                 id: "9",
@@ -98,7 +106,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : russia
               },
               {
                 id: "10",
@@ -106,7 +114,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : turkey
               }
             ]
           },
@@ -120,7 +128,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : brazil
               },
               {
                 id: "1",
@@ -128,7 +136,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : czech
               },
               {
                 id: "2",
@@ -136,7 +144,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'LA',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : denmark
               },
               {
                 id: "3",
@@ -144,7 +152,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : greece
               }
             ]
           },
@@ -158,7 +166,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : brazil
               },
               {
                 id: "1",
@@ -166,7 +174,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : czech
               },
               {
                 id: "2",
@@ -174,7 +182,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'LA',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : denmark
               },
               {
                 id: "3",
@@ -182,7 +190,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : greece
               }
             ]
           },
@@ -196,7 +204,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : brazil
               },
               {
                 id: "1",
@@ -204,45 +212,7 @@ class Schedule extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
-              },
-              {
-                id: "2",
-                ticketTitle: '로스엔젤리스',
-                ticketSubTitle: 'LA',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
-              },
-              {
-                id: "3",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
-              }
-            ]
-          },
-          {
-            id: "4",
-            title: '함께 여행!', 
-            ticketList: [
-              {
-                id: "0",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
-              },
-              {
-                id: "1",
-                ticketTitle: '파리',
-                ticketSubTitle: 'Paris',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : '../../static/images/ticket_img.png'
+                ticketImage : czech
               }
             ]
           }
@@ -298,7 +268,7 @@ class Schedule extends Component{
 
     return(
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <SideMenu />
         <div className={cx("schedule_top")} style={this.resizeHeight(talker.boxList[listIndex].ticketList.length)}>
           <div className={cx("s_left")}>
