@@ -7,6 +7,7 @@ import * as UserInfo from '../../containers/UserInfo/UserTicketInfo';
 
 import classnames from 'classnames/bind';
 import styles from './MateInfo.module.scss';
+import SideMenu from '../../containers/SideMenu';
 const cx = classnames.bind(styles);
 
 class StyleInfo extends Component{
@@ -228,6 +229,7 @@ class MateInfo extends Component{
     return (
       <Fragment>
         <MenuBtn barColor = { this.state.barColor }/>
+        <SideMenu />
         <div className={cx("back_circle")}>
           <div className={cx("cir", "cir1")}></div>
           <div className={cx("cir", "cir2")}></div>

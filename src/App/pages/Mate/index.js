@@ -6,6 +6,7 @@ import MenuBtn from '../../components/MenuBtn';
 
 import classnames from 'classnames/bind';
 import styles from './Mate.module.scss';
+import SideMenu from '../../containers/SideMenu';
 
 const cx = classnames.bind(styles);
 
@@ -128,6 +129,7 @@ class Mate extends Component{
     return(
       <Fragment>
         <MenuBtn/>
+        <SideMenu />
         <div className={cx('mate_wrap')}>
           <div className={cx('mate_title')}>
             <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>

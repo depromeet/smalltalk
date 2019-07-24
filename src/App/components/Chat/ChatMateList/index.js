@@ -32,23 +32,23 @@ class ChatMateList extends Component {
         <div className={cx('list')}>
           <div className={cx('header')}>
             현재<br />내 메이트{' '}
-            {this.props.FriendsListDataLength}명
+            {this.props.friendsListDataLength}명
           </div>
           <div className={cx('close-button')} onClick={this.props.handleAllClose} />
           {this.state.isClickedFoldButton
             ? (
               <div className={cx('collection-2')}>
-                {this.props.friendsListWithChat.map((list, i) => (
+                {this.props.friendsListData.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
                     name={list.nickname}
                     number={list.messages_cnt}
                     key={i}
                     handleChatClick={this.props.handleChatClick}
-                    showRedCircle={false}
                     handleChatRoomClick={this.props.handleChatRoomClick}
                     handleName={this.props.handleName}
                     addFriendsListWithChat={this.props.addFriendsListWithChat}
+                    currentState={this.props.currentState}
                   />
                 ))
             }
@@ -56,17 +56,17 @@ class ChatMateList extends Component {
             )
             : (
               <div className={cx('collection')}>
-                {this.props.FriendsListData.map((list, i) => (
+                {this.props.friendsListData.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
                     name={list.nickname}
                     number={list.messages_cnt}
                     key={i}
                     handleChatClick={this.props.handleChatClick}
-                    showRedCircle={false}
                     handleChatRoomClick={this.props.handleChatRoomClick}
                     handleName={this.props.handleName}
                     addFriendsListWithChat={this.props.addFriendsListWithChat}
+                    currentState={this.props.currentState}
                   />
                 ))}
               </div>
