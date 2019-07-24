@@ -15,6 +15,14 @@ class RegisterFormContainer extends Component{
         return true;
       }
     }
+
+    const isValid = (age) => {
+      if(age<= 14 || age >= 99){
+        return false;
+      }else{
+        return true;
+      }
+    }
     this.validator = new FormValidator([
       {
         field : 'email',
@@ -48,10 +56,9 @@ class RegisterFormContainer extends Component{
       },
       {
         field : 'age',
-        method: 'isInt',
-        args : [{max: 99}],
+        method: isValid,
         validWhen : true,
-        message : '나이는 99세 이하여야합니다.'
+        message : '나이는 14세 이상 99세 이하여야합니다.'
       },
       {
         field : 'age',

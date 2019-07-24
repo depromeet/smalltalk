@@ -10,6 +10,7 @@ class FormValidator{
     this.validationRules.forEach(rule => {
       if(!validation[rule.field].isInvalid){
       const field_value = state[rule.field].toString();
+      //const field_value = state[rule.field];
       const args = rule.args || [];
       const validation_method = 
         typeof rule.method === 'string'? 
