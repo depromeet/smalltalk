@@ -111,7 +111,6 @@ class RegisterStyles extends Component {
   }
 
   handleNextBtnClick = () => {
-    const { handleNextBtn } = this.props;
     const { pairs } = this.state;
     const selectedTags = [];
     pairs.forEach( pair => {

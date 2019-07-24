@@ -11,7 +11,6 @@ const cx = classnames.bind(styles);
 
 const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
   const { 
-  isWriting,
    values,
    resetClick,
    handleChange,

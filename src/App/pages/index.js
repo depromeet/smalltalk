@@ -7,4 +7,4 @@ export { default as Schedule} from './Schedule';
 export { default as Bigdata} from './Bigdata';
 export { default as MateInfo} from './MateInfo';
 export { default as Schedule2 } from './Schedule/Schedule2';
-
+export { default as Mypage } from './Mypage';
