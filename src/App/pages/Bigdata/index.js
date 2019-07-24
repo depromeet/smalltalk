@@ -213,94 +213,95 @@ class Bigdata extends Component {
     return (
       <Fragment>
         <SideMenu />
-          <div className={cx('bigdata')}>
-            {/* 스몰토크 로고 */}
-            <div className="logo" />
-            {/* 검색 바 */}
-            <div className={cx('search-bar')}>
-              <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />
-              {this.state.isClickedInputButton
-                ? <div className={cx('drop-up-button')} onClick={this.offInputBox} />
-                : <div className={cx('drop-down-button')} onClick={this.onInputBox} />}
-              <div className={cx('input-box')}>
-                {this.state.allCountryName.map((x, i) => (
-                  <BeSearchedCityList
-                    name={x.name}
+        <MenuBtn barColor = { "#000" } boxHidden = { "block" } />
+        <div className={cx('bigdata')}>
+          {/* 스몰토크 로고 */}
+          <div className="logo" />
+          {/* 검색 바 */}
+          <div className={cx('search-bar')}>
+            <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />
+            {this.state.isClickedInputButton
+              ? <div className={cx('drop-up-button')} onClick={this.offInputBox} />
+              : <div className={cx('drop-down-button')} onClick={this.onInputBox} />}
+            <div className={cx('input-box')}>
+              {this.state.allCountryName.map((x, i) => (
+                <BeSearchedCityList
+                  name={x.name}
+                  key={i}
+                  input={this.state.inputValue}
+                  isClickedInputButton={this.state.isClickedInputButton}
+                  offInputBox={this.offInputBox}
+                  handleClickInput={this.handleClickInput}
+                />
+              ))}
+            </div>
+          </div>
+          {this.state.isClickedCity
+            ? (
+              <div className={cx('country')}>
+                <div className={cx('country-name')}>{this.state.name}</div>
+                <div className={cx('second-line')}>
+                  <div className={cx('number-of-people')}>
+                    {this.state.peopleCount}명
+                  </div>
+                  <div className={cx('text')}>의 스몰토커가</div>
+                </div>
+                <div className={cx('text-2')}>현재{' '}{this.state.name}에 있어요!</div>
+                <div className={cx('background')}>
+                  <div className={cx('circle')} />
+                  <div className={cx('country-picture')} />
+                  <div className={cx('edge-circle')} />
+                </div>
+              </div>
+            )
+            : (
+              <div className={cx('default-value')}>
+                <div className={cx('phrases-1')}>나라/도시를<br />검색해주세요</div>
+                <div className={cx('phrases-2')}>
+                  <div className={cx('phrases-black')}>현재 가장 많은</div>
+                  <div className={cx('phrases-2-2')}>
+                    <div className={cx('phrases-red')}>토커</div>
+                    <div className={cx('phrases-black')}>가 있는 도시</div>
+                  </div>
+                </div>
+                <div className={cx('arrow')} />
+              </div>
+            )}
+          {/* 나라 리스트 */}
+          {this.state.isClickedCity
+            ? (
+              <div className={cx('country-list')}>
+                {this.state.listOfPeopleInTheCity.map((x, i) => (
+                  <ListOfPeopleInTheCity
+                    id={i}
                     key={i}
-                    input={this.state.inputValue}
-                    isClickedInputButton={this.state.isClickedInputButton}
-                    offInputBox={this.offInputBox}
-                    handleClickInput={this.handleClickInput}
+                    nickname={x.nickname}
+                    age={x.age}
+                    gender={x.gender}
+                    picture={x.picture}
+                    isClickedFriendRequest={x.isClickedFriendRequest}
+                    handleFriendRequest={this.handleFriendRequest}
                   />
                 ))}
               </div>
-            </div>
-            {this.state.isClickedCity
-              ? (
-                <div className={cx('country')}>
-                  <div className={cx('country-name')}>{this.state.name}</div>
-                  <div className={cx('second-line')}>
-                    <div className={cx('number-of-people')}>
-                      {this.state.peopleCount}명
-                    </div>
-                    <div className={cx('text')}>의 스몰토커가</div>
-                  </div>
-                  <div className={cx('text-2')}>현재{' '}{this.state.name}에 있어요!</div>
-                  <div className={cx('background')}>
-                    <div className={cx('circle')} />
-                    <div className={cx('country-picture')} />
-                    <div className={cx('edge-circle')} />
-                  </div>
-                </div>
-              )
-              : (
-                <div className={cx('default-value')}>
-                  <div className={cx('phrases-1')}>나라/도시를<br />검색해주세요</div>
-                  <div className={cx('phrases-2')}>
-                    <div className={cx('phrases-black')}>현재 가장 많은</div>
-                    <div className={cx('phrases-2-2')}>
-                      <div className={cx('phrases-red')}>토커</div>
-                      <div className={cx('phrases-black')}>가 있는 도시</div>
-                    </div>
-                  </div>
-                  <div className={cx('arrow')} />
-                </div>
-              )}
-            {/* 나라 리스트 */}
-            {this.state.isClickedCity
-              ? (
-                <div className={cx('country-list')}>
-                  {this.state.listOfPeopleInTheCity.map((x, i) => (
-                    <ListOfPeopleInTheCity
-                      id={i}
-                      key={i}
-                      nickname={x.nickname}
-                      age={x.age}
-                      gender={x.gender}
-                      picture={x.picture}
-                      isClickedFriendRequest={x.isClickedFriendRequest}
-                      handleFriendRequest={this.handleFriendRequest}
-                    />
-                  ))}
-                </div>
-              )
-              : (
-                <div className={cx('country-list')}>
-                  {this.state.countryData.map((x, i) => (
-                    <CountryList
-                      name={x.name}
-                      picture={x.picture}
-                      number={x.number}
-                      key={i}
-                      input={this.state.inputValue}
-                      handleName={this.handleName}
-                      handlePeopleCount={this.handlePeopleCount}
-                      showListOfPeopleInTheCity={this.showListOfPeopleInTheCity}
-                    />
-                  ))}
-                </div>
-              )}
-          </div>
+            )
+            : (
+              <div className={cx('country-list')}>
+                {this.state.countryData.map((x, i) => (
+                  <CountryList
+                    name={x.name}
+                    picture={x.picture}
+                    number={x.number}
+                    key={i}
+                    input={this.state.inputValue}
+                    handleName={this.handleName}
+                    handlePeopleCount={this.handlePeopleCount}
+                    showListOfPeopleInTheCity={this.showListOfPeopleInTheCity}
+                  />
+                ))}
+              </div>
+            )}
+        </div>
       </Fragment>
     );
   }
