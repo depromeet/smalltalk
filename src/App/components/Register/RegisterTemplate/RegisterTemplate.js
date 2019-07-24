@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RegisterStart } from '../RegisterStart';
-import  RegisterFormContainer  from 'App/containers/Register/RegisterFormContainer';
-import { RegisterStyles } from '../RegisterStyles';
+import RegisterFormContainer  from 'App/containers/Register/RegisterFormContainer';
+import RegisterStylesContainer from 'App/containers/Register/RegisterStylesContainer';
 import { RegisterEnd } from '../RegisterEnd';
 import classnames from 'classnames/bind';
 import styles from './RegisterTemplate.module.scss';
@@ -37,7 +37,7 @@ class RegisterTemplate extends Component {
             isMovedLeft={isMovedLeft}
             handleNextBtn={this.handleNextBtn}
           />
-          <RegisterStyles
+          <RegisterStylesContainer
             isMovedLeft={isMovedLeft}
             handleNextBtn={this.handleNextBtn}
           />

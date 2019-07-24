@@ -14,20 +14,6 @@ const LabelInput = ({ label, value, limit, required, disabled, error, ...rest })
       }
       <div className={cx('label')}>{label}</div>
       <input className={cx('input')} value={value} {...rest} disabled={disabled} />
-      {/* { disabled && (
-          <div className={cx('lock-wrapper')}>
-            <div className={cx('lock')}>
-             Locked
-            </div>
-          </div>
-        )
-      } */}
-      { limit && (
-        <div className={cx('limit')}>
-          { !value ? 0 : value.length } / {limit}
-        </div>
-      )
-      }
     </div>
   )
 

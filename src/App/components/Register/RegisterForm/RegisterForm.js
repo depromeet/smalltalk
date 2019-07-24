@@ -15,9 +15,13 @@ const RegisterForm = ({
   nickname,
   gender,
   age,
-  shortBio,
+  introduction,
   validation,
-  registerError
+  registerError,
+  dropBtnClick,
+  isOpen,
+  dropR,
+  genderClick
   }) => {
 
  let className = cx({
@@ -64,14 +68,19 @@ const RegisterForm = ({
                 error={validation.password.message}
               />
               <div className={cx('half')}>
-                <LabelInput
-                  value={gender}
-                  name="gender"
-                  required
-                  label="성별"
-                  onChange={onChange}
-                  error={validation.gender.message}
-                />
+                <div className={cx('gender-container')}>
+                <label> 성별 </label>
+                <div className={cx('gender')}>{gender}</div>
+                <ul className={cx('gender-dropbox')} style={{opacity: isOpen}}>
+                  <li onClick={genderClick} id='여성' >여성</li>
+                  <li onClick={genderClick} id='남성'>남성</li>
+                </ul>
+                  <div 
+                  className={cx('drop-down-button')}
+                  onClick={dropBtnClick}
+                  style={{transform: dropR}}
+                  > ▼ </div>
+                </div>
                 <LabelInput
                   value={age}
                   name="age"
@@ -85,8 +94,8 @@ const RegisterForm = ({
           </div>
           <div className={cx('third-row')}>
             <LabelInput
-              value={shortBio}
-              name="shortBio"
+              value={introduction}
+              name="introduction"
               required
               label="자기소개(최대50자)"
               onChange={onChange}

@@ -9,8 +9,9 @@ import styles from './LoginForm.module.scss';
 import * as authAction from 'App/store/modules/auth';
 const cx = classnames.bind(styles);
 
-const LoginForm = ({isAuthenticated,loginRequest}) => {
+const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
   const { 
+  isWriting,
    values,
    resetClick,
    handleChange,
@@ -18,8 +19,14 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
    errors
   } = useForm(login, validate); 
 
+//  let EmailclassName = cx({
+//    'login__input-label' : true,
+//   'login__input-label': isWriting === null,
+//   'login__input-label-red' : isWriting === 'email'
+//   });
+
   function login(){
-    console.log('validation 에러 없고 요청 고고');
+    // console.log('validation 에러 없고 요청 고고');
     loginRequest(values)
   }
   if(isAuthenticated){
@@ -35,8 +42,10 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
         </div>
         <form onSubmit={handleSubmit} className={cx('login__form')} noValidate>
           <div className={cx('login__input-container')}>
+          <div className={cx('input-container-header')}>
             <label className={cx('login__input-label')}> Email </label>
-            {errors.email && <p> {errors.email} </p>}
+              {errors.email && <p className={cx('error')}> {errors.email} </p>}
+          </div>
             <input
               className={cx('login__input')}
               type="text"
@@ -52,9 +61,9 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
             </button>
           </div>
           <div className={cx('login__input-container')}>
-            <label className={cx('login__input-label')}>Password</label>
-            <div> 
-              {errors.password && <p> {errors.password} </p>}
+            <div className={cx('input-container-header')}>
+              <label className={cx('login__input-label')}>Password</label>
+                {errors.password && <p className={cx('error')}> {errors.password} </p>}
             </div>
             <input
               className={cx('login__input')}
@@ -70,6 +79,7 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
              name="password"
              > x</div>
           </div>
+          { errorStatus === 2 ? <div className={cx('request-fail-error')}> 비밀번호와 이메일을 확인해주세요 </div>: null}
           <input
             className={cx('login__button', 'normal')}
             type="submit"
@@ -93,7 +103,8 @@ const LoginForm = ({isAuthenticated,loginRequest}) => {
   )
 }
 const mapStateToProps = state => ({
-  isAuthenticated : state.auth.isAuthenticated
+  isAuthenticated : state.auth.isAuthenticated,
+  errorStatus : state.auth.login.error
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -25,14 +25,14 @@ const StylePair = ({pair, handleStyleCircle}) => {
       <StyleCircle 
         pair={pair}
         position='0'
-        value={pair.value[0]}
+        value={pair.value[0][0]}
         pairId={pair.id}
         handleClick={handleStyleCircle}
       />
       <StyleCircle 
         pair={pair}
         position='1'
-        value={pair.value[1]}
+        value={pair.value[1][0]}
         pairId={pair.id}
         handleClick={handleStyleCircle}
       />

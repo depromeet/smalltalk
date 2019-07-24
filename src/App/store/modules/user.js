@@ -16,16 +16,28 @@ export function tagsFailure(){
   }
 }
 
-export const tagsSetRequset = tags => dispatch => {
-  return axios.post(`${API}/`, tags) 
-  .then( res => {
-    // 여행 스타일 태그 요청 성공했을 때 isTagsSet : false -> true
-    dispatch(tagsSuccess());
-  })
-  .catch(error => {
-    // 실패했을 때. 
-    dispatch(tagsFailure());
-  })
+export const tagsSetRequset = tags => (dispatch, getState) => { 
+  // 토큰이랑 같이 header 설정 후 보내기 
+  //(1) localStoarge에서 token 가져오기 
+  //const token = localStorage.getItem('token');
+  const token = getState().auth.token;
+  console.log(token);
+  const config = {
+    headers: {
+      "Content-Type": "application/json "
+    }
+  }
+  if(token){
+    config.headers["Authorization"]= `Token ${token}`
+    return axios.put(`${API}/auth/info/`, tags, config) 
+    .then( res => {
+      // 여행 스타일 태그 요청 성공했을 때 isTagsSet : false -> true
+      dispatch(tagsSuccess());
+    }).catch(error => {
+      // 실패했을 때. 
+      dispatch(tagsFailure());
+    })
+    }
 }
 
 const initialState = {
@@ -35,10 +47,16 @@ const initialState = {
 export default function user(state = initialState, action){
   switch (action.type) {
     case TAGS_REQUEST_SUCCESS:
-      
-      break;
-  
+      return {
+        ...state,
+        isTagsSet : true
+      }
+      case TAGS_REQUEST_SUCCESS:
+      return {
+        ...state,
+        isTagsSet : false
+      }
     default:
-      break;
+      return state;
   }
 }

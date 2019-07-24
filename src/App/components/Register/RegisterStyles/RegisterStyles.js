@@ -15,8 +15,8 @@ class RegisterStyles extends Component {
           0: true,
           1: false,
           value: {
-            0: '아침형',
-            1: '저녁형'
+            0: ['계획적', 1],
+            1: ['즉흥적', 2]
           }
         },
         {
@@ -24,8 +24,8 @@ class RegisterStyles extends Component {
           0: false,
           1: true,
           value: {
-            0: '욜로족',
-            1: '알뜰족'
+            0: ['아침형', 3],
+            1: ['저녁형', 4]
           }
         },
         {
@@ -33,8 +33,8 @@ class RegisterStyles extends Component {
           0: true,
           1: false,
           value: {
-            0: '계획적',
-            1: '즉흥적'
+            0: ['알뜰족', 5],
+            1: ['욜로족', 6]
           }
         },
         {
@@ -42,8 +42,8 @@ class RegisterStyles extends Component {
           0: true,
           1: false,
           value: {
-            0: '뚜벅이',
-            1: '택시파'
+            0: ['뚜벅이', 7],
+            1: ['택시파', 8]
           }
         },
         {
@@ -51,8 +51,8 @@ class RegisterStyles extends Component {
           0: false,
           1: true,
           value: {
-            0: '알콜파',
-            1: '논알콜파'
+            0: ['알콜파', 9],
+            1: ['논알콜파', 10]
           }
         },
         {
@@ -60,8 +60,8 @@ class RegisterStyles extends Component {
           0: true,
           1: false,
           value: {
-            0: '호텔파',
-            1: '게스트하우스파'
+            0: ['호텔파', 11],
+            1: ['게스트하우스파', 12]
           }
         },
         {
@@ -69,8 +69,8 @@ class RegisterStyles extends Component {
           0: true,
           1: false,
           value: {
-            0: '맛집투어',
-            1: '쇼핑투어'
+            0: ['맛집투어', 13],
+            1: ['쇼핑투어', 14]
           }
         },
         {
@@ -78,8 +78,8 @@ class RegisterStyles extends Component {
           0: false,
           1: true,
           value: {
-            0: '관광파',
-            1: '액티브파'
+            0: ['관광파', 15],
+            1: ['액티브파', 16]
           }
         },
         {
@@ -87,8 +87,8 @@ class RegisterStyles extends Component {
           0: true,
           1: false,
           value: {
-            0: '예술투어',
-            1: '휴양족'
+            0: ['예술투어', 17],
+            1: ['휴양족', 18]
           }
         }
       ]
@@ -112,13 +112,24 @@ class RegisterStyles extends Component {
 
   handleNextBtnClick = () => {
     const { handleNextBtn } = this.props;
-    handleNextBtn(2);
-    // 로그인에 성공하면 다음으로 넘김 (state가 redux store에 있음) 
-    // tagsSetRequset(현재 tags)
+    const { pairs } = this.state;
+    const selectedTags = [];
+    pairs.forEach( pair => {
+      let selectedKey = 0;
+      for(let key in pair){
+        //  console.log(key);
+        if(pair[key] === true){
+          selectedKey = key;
+        }
+      }
+      selectedTags.push(pair.value[selectedKey][1]);
+    })
+    //console.log(selectedTags);
+    return this.props.nextBtnClick({ tags : selectedTags});
   }
 
   render(){
-    const { isMovedLeft, handleNextBtn } = this.props;
+    const { isMovedLeft } = this.props;
     const { pairs } = this.state;
     let className= cx({
     'step-container': true,

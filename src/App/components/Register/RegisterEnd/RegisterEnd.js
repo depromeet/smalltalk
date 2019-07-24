@@ -20,7 +20,6 @@ const RegisterEnd = () => {
           <button> 
             <div className={cx('button-word')}>저장하고 시작하기 </div> 
             <div className={cx('button-tri')}> ► </div> 
-            
           </button>
           </Link>
         </div>

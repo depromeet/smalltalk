@@ -69,10 +69,12 @@ class RegisterFormContainer extends Component{
       email : '',
       password : '',
       nickname : '',
-      gender : '',
+      gender : '여성',
       age : 0,
-      shortBio : '',
-      validation : this.validator.makeValidResult()
+      introduction : '',
+      validation : this.validator.makeValidResult(),
+      isOpen : 0,
+      dropR : "rotate(0deg)"
     }
   }
   
@@ -82,31 +84,49 @@ class RegisterFormContainer extends Component{
   } 
 
   onFormSubmit = () => {
-    const { handleNextBtn, registerRequest, status }= this.props;
-    // handleNextBtn(1);
+    const { handleNextBtn, registerRequest }= this.props;
     const validation = this.validator.validate(this.state);
     this.setState({validation});
-    
+
     if(validation.isValid){
-      const { email, password, nickname, age, gender, shortBio } = this.state;
-      if(status === 'INIT'){
-        return registerRequest({email, password, nickname, age, gender, shortBio})
-        .then(() => {
-          if(this.props.status === 'SUCCESS'){
-            console.log('success');
-            handleNextBtn(1)
-            } else if(this.props.status === "FAILURE"){
-            console.log('fail')
-            }
+      const { email, password, nickname, age, introduction } = this.state;
+      let { gender } = this.state;
+      if(gender === '남성'){ gender = 'm'}
+      else{ gender = 'f'};
+
+      // if(status === 'INIT' || status === 'WAITING'){
+      return registerRequest({email, password, nickname, age, gender, introduction})
+      .then(() => {
+        if(this.props.status === 'SUCCESS'){
+          console.log('success');
+          handleNextBtn(1)
+          } else if(this.props.status === "FAILURE"){
+          console.log('fail')
           }
-        )
-      }
+        }
+      )
     }
+  }
+
+  handleDropBtn = () => {
+    // drop down 박스를 보여줘야함
+    const { isOpen } = this.state;
+    // console.log('drop the box!');
+    if(isOpen) {this.setState({ isOpen : 0, dropR : "rotate(0deg)" })}
+    else{ this.setState({isOpen : 1, dropR : 'rotate(180deg)'})}
+  }
+
+  genderClick = e => {
+    // console.log(e.target.id);
+    this.setState({ 
+      gender : e.target.id,
+      isOpen : 0
+    });
   }
 
   render(){
     const { isMovedLeft, registerError } = this.props; 
-    const { email, password, nickname, gender, age, shortBio, validation } = this.state;
+    const { email, password, nickname, gender, age, introduction, validation, isOpen, dropR} = this.state;
     return (
     <RegisterForm
       email={email}
@@ -114,12 +134,16 @@ class RegisterFormContainer extends Component{
       nickname={nickname}
       gender={gender}
       age={age}
-      shortBio={shortBio}
+      introduction={introduction}
       isMovedLeft={isMovedLeft}
       onChange={this.onChange}
       onFormSubmit={this.onFormSubmit}
       validation={validation}
       registerError={registerError}
+      dropBtnClick={this.handleDropBtn}
+      isOpen={isOpen}
+      dropR={dropR}
+      genderClick={this.genderClick}
     />
     )
   }
@@ -131,8 +155,8 @@ const mapStateToProps = state => ({
 }); 
 
 const mapDispatchToProps = dispatch => ({
-  registerRequest: ({ email, password, nickname, gender, age, shortBio }) => 
-  dispatch(authAction.registerRequest({ email, password, nickname, gender, age, shortBio })),
+  registerRequest: ({ email, password, nickname, gender, age, introduction }) => 
+  dispatch(authAction.registerRequest({ email, password, nickname, gender, age, introduction })),
 })
 
 export default connect(

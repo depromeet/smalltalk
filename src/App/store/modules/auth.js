@@ -32,9 +32,10 @@ export function register(){
   }
 } 
 
-export function registerSuccess(){
+export function registerSuccess(token){
   return {
-    type : AUTH_REGISTER_SUCCESS
+    type : AUTH_REGISTER_SUCCESS,
+    token
   }
 } 
 
@@ -60,16 +61,22 @@ export function tagsFailure(){
 export const registerRequest = values => {
   return (dispatch) => {
     dispatch(register()); 
+    console.log(values);
     return axios.post(`${API}/auth/register/`, values)
     .then(res => { 
-      console.log(res);
-      dispatch(registerSuccess());
+      console.log(res.data.token);
+      // ✔️ 해야하는거 !!! 성공하면 locatlStorage에 저장하기 
+      localStorage.setItem('token', res.data.token); 
+      // (1) 나중에 중간에 회원가입 하다가 실패했을 떄 대비해서..
+      // state에 token을 저장? 
+      dispatch(registerSuccess(res.data.token));
     })
     .catch(error => { 
       if(error.response.data.email){
         console.log('이미 존재하는 이메일');
         dispatch(registerFailure(1));
       }
+      console.log(error);
       // 비밀번호가 너무 일상적인 단어면 non_fields_error가 나옴 
       // dispatch(registerFailure(error.response.data));
     })
@@ -86,7 +93,7 @@ export const loadUser = () => (dispatch, getState) =>{
   }
   if(token){
     config.headers["Authorization"]= `Token ${token}`
-    axios.get(`${API}/auth/1/`, config)
+    axios.get(`${API}/auth/info/`, config)
     .then(res => {
       dispatch({ 
         type: USER_LOADED,
@@ -125,22 +132,10 @@ export const loginRequest = (values) => (dispatch) => {
     })
 }
 
-export const tagsSetRequset = tags => dispatch => {
-  return axios.post(`${API}/`, tags) 
-  .then( res => {
-    // 여행 스타일 태그 요청 성공했을 때 isTagsSet : false -> true
-    dispatch(tagsSuccess());
-  })
-  .catch(error => {
-    // 실패했을 때. 
-    dispatch(tagsFailure());
-  })
-}
-
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated : localStorage.getItem('token') ? true : false, // true로 바꾸면 됨
-  isTagsSet : false,
+  // isTagsSet : false,
   user: null,
   register : {
     step: 0,
@@ -177,7 +172,9 @@ export default function authentication(state = initialState, action){
           register : {
             ...state.register,
             status : 'SUCCESS'
-          }
+          },
+          token : action.token,
+          isAuthenticated : true
         };
       case AUTH_REGISTER_FAILURE: 
         return {
@@ -244,16 +241,6 @@ export default function authentication(state = initialState, action){
             status : "FAILURE",
             error : action.payload
           }
-        }
-      case TAGS_REQUEST_SUCCESS: 
-        return {
-          ...state,
-          isTagsSet: true
-        }
-      case TAGS_REQUEST_FAILURE: 
-        return {
-          ...state,
-          isTagsSet: false
         }
     default: 
       return state;

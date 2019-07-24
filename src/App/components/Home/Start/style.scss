@@ -19,6 +19,7 @@
     top: -10vh;
     left: 48vw;
     z-index: -1;
+    animation: neonCircle 2s infinite alternate ease-in-out;
   }
   .left-neon{
     background-color: $neon;
@@ -42,7 +43,7 @@
     z-index: 0;
   }
   .bottom-gra{
-    background-image: url(../../../../static/images/gra-circle-2.jpg);
+    background-image: url(../../../../static/images/gra-circle.png);
     background-size: cover;
     bottom:-11vh;
     left:65vw;
@@ -123,4 +124,10 @@
     }
   }
 
+}
+
+@keyframes neonCircle {
+  to {
+      transform: translateX(-3vw);
+  }
 }
