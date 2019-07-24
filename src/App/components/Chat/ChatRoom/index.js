@@ -31,6 +31,7 @@ class ChatRoom extends Component {
         // { type: 'mine', description: '우와' },
       ],
     };
+    console.log(this.props.id);
   }
   componentWillMount() {
     // axiosFunc();
@@ -39,7 +40,7 @@ class ChatRoom extends Component {
 
   componentDidMount() {
     // 채팅방이 열린 유저의 id를 oppositeID에 연결해야 함.
-    const oppositeID = 6;
+    const oppositeID = this.props.id;
 
     const token = 'Token ' + localStorage.getItem('token');
 
@@ -63,7 +64,7 @@ class ChatRoom extends Component {
     // 메세지에 내용이 있으면
     if(this.state.inputValue) {
       const token = 'Token ' + localStorage.getItem('token');
-      const oppositeID = 6;
+      const oppositeID = this.props.id;
       const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
       const sendMessageURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/send/`;
       const messagesContent = { description: this.state.inputValue, to_user: oppositeID };

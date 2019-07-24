@@ -10,20 +10,19 @@ import axios from 'axios';
 const cx = classnames.bind(styles);
 
 class Bigdata extends Component {
-  // componentDidMount() {
-  //   // CORS 에러 해결해야 함.
-  //   console.log('도시 목록 불러옵니다.');
-  //   const token = 'Token ' + localStorage.getItem('token');
-  //   const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/city';
-  //   const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-  //   const cityList = axios.get(cityListURL, config);
-  //   cityList.then(response => {
-  //     console.log(response);
-  //     this.setState({ 
-  //       allCountryName: response.data
-  //     });
-  //     }).catch(err => console.log(err));
-  //   }
+  componentDidMount() {
+    console.log('도시 목록 불러옵니다.');
+    const token = 'Token ' + localStorage.getItem('token');
+    const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/city';
+    const config = { headers: { 'Authorization': token, 'Content-Type': 'multipart/form-data'} };
+    const cityList = axios.get(cityListURL, config);
+    cityList.then(response => {
+      console.log(response);
+      this.setState({ 
+        allCountryName: response.data
+      });
+      }).catch(err => console.log(err));
+    }
 
   constructor(props) {
     super(props);

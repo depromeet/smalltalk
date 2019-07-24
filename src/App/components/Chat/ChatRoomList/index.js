@@ -22,12 +22,14 @@ class ChatRoomList extends Component {
             <EachFriendsList
               picture={list.picture}
               name={list.nickname}
-              number={list.messages_cnt}
+              number={list.messages.message_cnt}
               key={i}
               handleChatRoomClick={this.props.handleChatRoomClick}
               handleName={this.props.handleName}
               isExistChatRoom = {list.messages.is_chat}
               currentState={this.props.currentState}
+              handleID={this.props.handleID}
+              id={list.id}
             />
           ))}
         </div>

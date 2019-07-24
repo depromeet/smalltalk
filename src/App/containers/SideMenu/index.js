@@ -47,6 +47,7 @@ class SideMenu extends Component {
       ],
       currentState: '',
       name: '',
+      id: null,
     };
   }
 
@@ -60,6 +61,10 @@ class SideMenu extends Component {
   // 친구 거절
   denyMateRequest = (key) => {
     this.setState({ ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] }) });
+  }
+
+  handleID = (ID) => {
+    this.setState({ id: ID });
   }
 
   handleListClick = () => {
@@ -103,6 +108,7 @@ class SideMenu extends Component {
             addMateList={this.addMateList}
             denyMateRequest={this.denyMateRequest}
             currentState={this.state.currentState}
+            handleID={this.handleID}
           />
         );
       case 'ChatRoomList':
@@ -115,6 +121,7 @@ class SideMenu extends Component {
             handleChatRoomClick={this.handleChatRoomClick}
             handleName={this.handleName}
             currentState={this.state.currentState}
+            handleID={this.handleID}
           />
         );
       case 'ChatRoom':
@@ -123,11 +130,11 @@ class SideMenu extends Component {
             handleAllClose={this.handleAllClose}
             handleListClick={this.handleListClick}
             name={this.state.name}
-            id={this.state.friendsListData.id}
+            id={this.state.id}
           />
         );
       default: 
-        return(
+        return (
           // 친구 리스트, 채팅 버튼
           <div className="buttons">
             <div className="list-button" onClick={this.handleListClick}></div>
