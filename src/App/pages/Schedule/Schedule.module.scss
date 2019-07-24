@@ -41,8 +41,11 @@
             overflow-x: hidden;
             // border: 1px solid #eaeaea;
             box-shadow: #eaeaea;
-            z-index: 999;
+            z-index: 1;
             transition: 0.3s ease-in-out;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: 1px solid #eaeaea;
 
             > li{
               width: 100%;
@@ -51,27 +54,19 @@
               padding-left: 20px;
               font-size: 18px;
               background-color: #fff;
-              border: 1px solid #eaeaea;
+              border-top: 1px solid #eaeaea;
               margin-top: -1px;
               transition: 0.5s;
               cursor: pointer;
             }
             > li:first-child{
               margin-top: 0;
+              border-top: none;
             }
             > li:hover{
               background: #efefef;
               transition: 0.5s;
             }
-          }
-          ::-webkit-scrollbar{ width:7px; height:8px; }
-          ::-webkit-scrollbar-track-piece{
-            background-color:rgb(252, 252, 252);
-          }
-          ::-webkit-scrollbar-thumb:vertical{
-            width:60px;
-            background-color:#eaeaea;
-            -webkit-border-radius:8px;
           }
         }
         .length_box{

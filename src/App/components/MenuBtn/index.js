@@ -1,5 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import brazil from 'static/images/ticketImg/brazil.jpg';
+import czech from 'static/images/ticketImg/czech.jpg';
+import denmark from 'static/images/ticketImg/denmark.jpg';
+import greece from 'static/images/ticketImg/greece.jpg';
 
 import classnames from 'classnames/bind';
 import styles from './MenuBtn.module.scss';
@@ -22,7 +26,8 @@ class MenuBtn extends Component{
       isToggleOn : false,
       num : 0,
       num2: 1,
-      isOn: "none"
+      isOn: "none",
+      backImg: brazil
     };
   }
   
@@ -83,6 +88,16 @@ class MenuBtn extends Component{
       return { "left" : 0 }
     }
   }
+  randomImg = () => {
+    let imgArray = [brazil, czech, denmark, greece];
+    let imgNum = Math.floor(Math.random()*3);
+
+    console.log(imgArray);
+
+    this.setState({
+      backImg: imgArray[imgNum]
+    })
+  }
   
   render(){
     console.log(this.state.isToggleOn);
@@ -92,7 +107,7 @@ class MenuBtn extends Component{
         <div className={cx("show_box")} style={{display: this.props.boxHidden}}>
           <div className={cx("navi_box")} style={this.toggleMenu(this.state.isToggleOn)}>
             <div className={cx("random_img")}>
-              <img src="/" alt=""/>
+              <img src={this.state.backImg} alt=""/>
             </div>
             <div className={cx("menu_box")}>
               <span>Talk<br/>Anywhere</span>

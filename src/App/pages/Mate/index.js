@@ -249,6 +249,7 @@ class Mate extends Component{
       },
       vWidth: 150,
       isOn: 0,
+      isShow: "none",
       listIndex: 0,
       dropR: "rotate(0deg)"
     }
@@ -257,16 +258,16 @@ class Mate extends Component{
   makeList = ( boxList ) => { 
     return boxList.map( (bTitle, i) => {
       // console.log(ticket);
-      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)"})}>
+      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
       {bTitle.title}</li>
     })
   }
 
   toggleDrop = () => {
     if(this.state.isOn === 1){
-      this.setState({isOn: 0, dropR: "rotate(0deg)"})
+      this.setState({isOn: 0, dropR: "rotate(0deg)", isShow: "none"})
     }else{
-      this.setState({isOn: 1, dropR: "rotate(180deg)"})
+      this.setState({isOn: 1, dropR: "rotate(180deg)", isShow: "block"})
     }
   }
 
@@ -290,7 +291,7 @@ class Mate extends Component{
             <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
             <div className={cx("s_titlebox")}>
               <h2>{this.state.talker.boxList[listIndex].title}<span onClick={this.toggleDrop} style={{transform: this.state.dropR}}>▼</span></h2>
-              <ul className={cx("title_drop")} style={{opacity: this.state.isOn}}>
+              <ul className={cx("title_drop")} style={{opacity: this.state.isOn, display: this.state.isShow}}>
                 {this.makeList(talker.boxList)}
               </ul>
             </div>
