@@ -17,19 +17,21 @@ class MainBackground extends Component {
       opacitiy2: 0,
       opacitiy3: 0,
       opacitiy4: 0,
-      circleURL: null,
+      circleURL: '/static/media/oval_img2.35d8c249.png',
     };
   }
 
   // 이미지를 랜덤으로 선택하는 함수
   randomCircleURL = () => {
-    const randomCircleArray = ['/static/media/oval_img2.35d8c249.png', '/static/media/brazil.f2f352b6.jpg', '/static/media/czech.0aeb8bc2.jpg', '/static/media/denmark.7e8380e8.jpg', '/static/media/egypt.81a33742.jpg', '/static/media/greece.06f9163b.jpg', '/static/media/india.3287f6f8.jpg', '/static/media/mexico.99e2fb47.jpg', '/static/media/mongolia.721c5580.jpg', '/static/media/netherlands.a03a6e7a.jpg', '/static/media/newzealand.48196f0b.jpg', '/static/media/russia.aeda3a3c.jpg', '/static/media/switzerland.641206f7.jpg', '/static/media/turkey_2.ec294a09.jpg', '/static/media/turkey.89bfca97.jpg'];
+    const randomCircleArray = ['/static/media/oval_img2.35d8c249.png'
+    // , '/static/media/brazil.f2f352b6.jpg', '/static/media/czech.0aeb8bc2.jpg', '/static/media/denmark.7e8380e8.jpg', '/static/media/egypt.81a33742.jpg', '/static/media/greece.06f9163b.jpg', '/static/media/india.3287f6f8.jpg', '/static/media/mexico.99e2fb47.jpg', '/static/media/mongolia.721c5580.jpg', '/static/media/netherlands.a03a6e7a.jpg', '/static/media/newzealand.48196f0b.jpg', '/static/media/russia.aeda3a3c.jpg', '/static/media/switzerland.641206f7.jpg', '/static/media/turkey_2.ec294a09.jpg', '/static/media/turkey.89bfca97.jpg'
+  ];
     const i = Math.round(Math.random() * (randomCircleArray.length-1));
     this.setState({circleURL: randomCircleArray[i]})
   }
 
   componentWillMount() {
-    this.randomCircleURL();
+    // this.randomCircleURL();
   }
 
   // 메뉴 마우스 오버시 나타나는 애니메이션 함수들
@@ -76,7 +78,8 @@ class MainBackground extends Component {
           <div className="circle" id="green-circle-1"></div>
           <div className="circle" id="green-circle-2"></div>
           <div className="circle" id="picture-circle-1"></div>
-          <div className="circle" id="picture-circle-2" style={{backgroundImage: `url( ${this.state.circleURL} )` }}
+          <div className="circle" id="picture-circle-2" 
+          // style={{backgroundImage: `url(${this.state.circleURL})` }}
           ></div>
           <div className="circle" id="edge-circle-2"></div>
           <div className="circle" id="gradation-circle"></div>

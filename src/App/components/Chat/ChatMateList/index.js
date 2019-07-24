@@ -47,7 +47,6 @@ class ChatMateList extends Component {
                     handleChatClick={this.props.handleChatClick}
                     handleChatRoomClick={this.props.handleChatRoomClick}
                     handleName={this.props.handleName}
-                    addFriendsListWithChat={this.props.addFriendsListWithChat}
                     currentState={this.props.currentState}
                     handleID={this.props.handleID}
                     id={list.id}
@@ -67,7 +66,6 @@ class ChatMateList extends Component {
                     handleChatClick={this.props.handleChatClick}
                     handleChatRoomClick={this.props.handleChatRoomClick}
                     handleName={this.props.handleName}
-                    addFriendsListWithChat={this.props.addFriendsListWithChat}
                     currentState={this.props.currentState}
                     handleID={this.props.handleID}
                     id={list.id}
