@@ -73,10 +73,16 @@ export const registerRequest = values => {
     })
     .catch(error => { 
       if(error.response.data.email){
-        console.log('이미 존재하는 이메일');
+        //console.log('이미 존재하는 이메일');
         dispatch(registerFailure(1));
       }
-      console.log(error);
+      if(error.response.data.non_field_errors){
+        let word = error.response.data.non_field_errors[0].slice(0,4);
+        if(word==='비밀번호'){
+          dispatch(registerFailure(2))
+        }
+        // console.log(error.response.data.non_field_errors[0].slice(0,3))
+      }
       // 비밀번호가 너무 일상적인 단어면 non_fields_error가 나옴 
       // dispatch(registerFailure(error.response.data));
     })

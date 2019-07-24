@@ -34,12 +34,4 @@ class FormValidator{
   }
 }
 
-// validation = {
-//   isValid: true,
-//   email : {
-//     isInvalid : false,
-//     message : ''
-//   }
-// }
-
 export default FormValidator;

@@ -12,8 +12,18 @@
   width: -webkit-calc(100% - 60px);
   width:     -moz-calc(100% - 60px);
   width:         calc(100% - 60px);
-  .exist-email-error{
-    position: absolute;
+
+  .after-request-error{
+    position: relative;
+    width: max-content;
+    top: 23px;
+    /* position: absolute; */
+    /* top: 299px; */
+    border: 1px solid #fb3e1d;
+    border-radius: 16px;
+    padding: 3px 7px;
+    color: #fb3e1d;
+    font-size: 8px;
   }
   .contents{
     display: flex;
@@ -23,6 +33,9 @@
     width: 1090px;
     .form-contents{
       width: 700px;
+      .contents-header{
+        position: relative;
+      }
       .title{
         font-size: 30px;
         font-weight: bold;

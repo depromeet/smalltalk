@@ -8,6 +8,13 @@ import FormValidator from './FormValidator';
 class RegisterFormContainer extends Component{
   constructor(){
     super();
+    const isPassword = (pw)=> {
+      if(pw.length <8){
+        return false;
+      }else{
+        return true;
+      }
+    }
     this.validator = new FormValidator([
       {
         field : 'email',
@@ -27,12 +34,12 @@ class RegisterFormContainer extends Component{
         validWhen : false,
         message : '비밀번호는 필수항목 입니다.'
       },
-      // {
-      //   field : 'password',
-      //   method: 'isPassword',
-      //   validWhen : true,
-      //   message : '비밀번호는 8자리 이상의 문자,숫자 조합이여야 합니다.'
-      // },
+      {
+        field : 'password',
+        method: isPassword,
+        validWhen : true,
+        message : '비밀번호는 8자리 이상의 문자,숫자 조합이여야 합니다.'
+      },
       {
         field : 'nickname',
         method: 'isEmpty',
