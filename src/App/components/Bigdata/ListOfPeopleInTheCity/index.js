@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames/bind';
 import styles from './style.module.scss';
+import { Link } from 'react-router-dom';
 
 const cx = classnames.bind(styles);
 
@@ -28,7 +29,9 @@ class ListOfPeopleInTheCity extends Component {
       <div className={cx('box')}>
         <img src={this.props.picture} className={cx('picture')} alt="profile" />
         <div className={cx('left-row')}>
-          <div className={cx('nickname')}>{this.props.nickname}</div>
+          <Link to="/mateinfo">
+            <div className={cx('nickname')}>{this.props.nickname}</div>
+          </Link>
           <div className={cx('content')}>
             <div className={cx('age')}>{this.props.age}</div>
             <div className={cx('gender')}>{this.props.gender}</div>

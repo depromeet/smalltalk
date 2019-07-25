@@ -126,7 +126,7 @@ class SideMenu extends Component {
       case 'ChatRoom':
         return (
           <ChatRoom
-            handleAllClose={this.handleAllClose}
+            handleAllClose={this.handleChatClick}
             handleListClick={this.handleListClick}
             name={this.state.name}
             id={this.state.id}

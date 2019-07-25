@@ -14,13 +14,12 @@ class Bigdata extends Component {
   componentDidMount() {
     // 도시 목록 불러오는 로직
     const token = 'Token ' + localStorage.getItem('token');
-    const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/ticket/';
+    const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/city/';
     const config = { headers: { 'Authorization': token, 'Content-Type': 'application/json'} };
     const cityList = axios.get(cityListURL, config);
     cityList.then(response => {
-      console.log(response.data.map(x => x.city));
       this.setState({ 
-        allCountryName: response.data.map(x => x.city)
+        allCountryName: response.data
       });
       }).catch(err => console.log(err));
     }
@@ -41,96 +40,18 @@ class Bigdata extends Component {
         { name: '상파울루', picture: 'http://cdn.onlinewebfonts.com/svg/img_169110.png', number: '5' },
       ],
       allCountryName: [
-          {
-              "id": 1,
-              "name": "박타푸르",
-              "description": "",
-              "country": 3
-          },
-          {
-              "id": 2,
-              "name": "치트완",
-              "description": "",
-              "country": 3
-          },
-          {
-              "id": 3,
-              "name": "카트만두",
-              "description": "",
-              "country": 3
-          },
-          {
-              "id": 4,
-              "name": "파탄(랄릿푸르)",
-              "description": "",
-              "country": 3
-          },
-          {
-              "id": 5,
-              "name": "포카라",
-              "description": "",
-              "country": 3
-          },
-          {
-              "id": 6,
-              "name": "가오슝",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 7,
-              "name": "난터우",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 8,
-              "name": "이란",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 9,
-              "name": "타이난",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 10,
-              "name": "타이둥",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 11,
-              "name": "타이베이",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 12,
-              "name": "타이중",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 13,
-              "name": "핑둥",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 14,
-              "name": "화롄",
-              "description": "",
-              "country": 4
-          },
-          {
-              "id": 15,
-              "name": "서울",
-              "description": "",
-              "country": 5
-          },
+          // {
+          //     "id": 1,
+          //     "name": "박타푸르",
+          //     "description": "",
+          //     "country": 3
+          // },
+          // {
+          //     "id": 2,
+          //     "name": "치트완",
+          //     "description": "",
+          //     "country": 3
+          // },
       ],
       listOfPeopleInTheCity: [
         {

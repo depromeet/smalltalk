@@ -35,9 +35,17 @@ class ChatMateList extends Component {
             {this.props.friendsListDataLength}명
           </div>
           <div className={cx('close-button')} onClick={this.props.handleAllClose} />
+          {/* 접기 버튼이 눌렸으면 */}
           {this.state.isClickedFoldButton
             ? (
               <div className={cx('collection-2')}>
+                {this.props.friendsListDataLength === 0 
+                ? (
+                  <div className={cx('header-2')}>
+                    <div className={cx('title')}>아직 친구가 없어요 :(</div>
+                    <div className={cx('contents')}>여행 메이트를 추천받아<br/>같이 즐거운 여행을 떠나보세요!</div>
+                  </div>
+                ) : <div></div>}
                 {this.props.friendsListData.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
@@ -55,8 +63,16 @@ class ChatMateList extends Component {
             }
               </div>
             )
+            // 접기 버튼이 눌리지 않았으면
             : (
               <div className={cx('collection')}>
+                {this.props.friendsListDataLength === 0 
+                ? (
+                  <div className={cx('header-2')}>
+                    <div className={cx('title')}>아직 친구가 없어요 :(</div>
+                    <div className={cx('contents')}>여행 메이트를 추천받아<br/>같이 즐거운 여행을 떠나보세요!</div>
+                  </div>
+                ) : <div></div>}
                 {this.props.friendsListData.map((list, i) => (
                   <EachFriendsList
                     picture={list.picture}
@@ -73,14 +89,17 @@ class ChatMateList extends Component {
                 ))}
               </div>
             )
-              }
+        }
         </div>
         {this.state.isClickedFoldButton
+          // 접기 버튼이 눌렸으면
           ? (
             <div className={cx('apply-friend-2')}>
+              <div className={cx('text')}>친구 신청 알림</div>
               <div className={cx('rotated-fold-button')} onClick={this.handleMoreButton} />
             </div>
           )
+          // 접기 버튼이 눌리지 않았으면
           : (
             <div className={cx('apply-friend')}>
               <div className={cx('fold-button')} onClick={this.handleFoldButton} />
