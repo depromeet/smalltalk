@@ -29,7 +29,7 @@ class ListOfPeopleInTheCity extends Component {
       <div className={cx('box')}>
         <img src={this.props.picture} className={cx('picture')} alt="profile" />
         <div className={cx('left-row')}>
-          <Link to="/mateinfo">
+          <Link to={`/mateinfo/${this.props.id}`}>
             <div className={cx('nickname')}>{this.props.nickname}</div>
           </Link>
           <div className={cx('content')}>
