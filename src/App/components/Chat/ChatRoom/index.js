@@ -6,14 +6,6 @@ import axios from 'axios';
 
 const cx = classNames.bind(styles);
 
-// const axiosFunc = () => {
-//   loadMessageList.then( ( response ) => {
-//   this.setState({ 
-//     chatData: response.data.map( x => x.to_user === oppositeID ? { type: 'mine', description: x.description } : { type: 'opposite', description: x.description } )
-//   });
-//   }).catch(err => console.log(err));
-// }
-
 class ChatRoom extends Component {
   constructor(props) {
     super(props);
@@ -22,13 +14,8 @@ class ChatRoom extends Component {
       inputValue: '',
       thePosition: 0,
       chatData: [
-        // { type: 'opposite', description: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. ' },
-        // { type: 'mine', description: '네 반가워요.' },
-        // { type: 'mine', description: '우와' },
-        // { type: 'opposite', description: 'ㅎㅎㅎ' },
-        // { type: 'opposite', description: 'ㅎㅎㅎ' },
-        // { type: 'opposite', description: 'ㅎㅎㅎ' },
-        // { type: 'mine', description: '우와' },
+        // { type: 'opposite', description: '' },
+        // { type: 'mine', description: '' },
       ],
     };
     console.log(this.props.id);
@@ -39,22 +26,23 @@ class ChatRoom extends Component {
   }
 
   componentDidMount() {
-    // 채팅방이 열린 유저의 id를 oppositeID에 연결해야 함.
+    // 5초 간격으로 GET 메세지 List 반복
+    this.interval = setInterval( () => {
     const oppositeID = this.props.id;
-
     const token = 'Token ' + localStorage.getItem('token');
-
     const messageListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/?from_user='+oppositeID;
     const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
     const loadMessageList = axios.get(messageListURL, config);
     loadMessageList.then( response => {
       this.setState({ chatData: response.data.map( x => x.to_user === oppositeID ? { type: 'mine', description: x.description } : { type: 'opposite', description: x.description } )} );
-    });
+    })
+    }, 5000)
   }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
+  componentWillUnmount() {
+    // Remove interval when component is unmounted.
+    clearInterval(this.interval);
+  }
 
   handleInputValueChange = (e) => {
     this.setState({ inputValue: e.target.value });
