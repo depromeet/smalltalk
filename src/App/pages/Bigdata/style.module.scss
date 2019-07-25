@@ -1,4 +1,25 @@
 .bigdata {
+    ::-webkit-scrollbar{
+        width:5px;
+    }
+    ::-webkit-scrollbar-button:start:decrement, 
+    ::-webkit-scrollbar-button:end:increment{ 
+        display:block;
+        height:0;
+        background-color:transparent;
+    }
+    ::-webkit-scrollbar-track-piece{
+        background-color:rgba(255,255,255,0.2);
+        -webkit-border-top-right-radius:8px;
+        -webkit-border-top-left-radius:8px;
+        -webkit-border-bottom-right-radius:8px;
+        -webkit-border-bottom-left-radius:8px;
+    }
+    ::-webkit-scrollbar-thumb:vertical{
+        height:60px;
+        background-color: gray;
+        -webkit-border-radius:8px;
+    }
 
     .search-bar {
         width: 39.8vw;
@@ -222,6 +243,7 @@
         overflow-x: hidden;
         right: 8.75vw;
         overflow: scroll;
+        overflow-x: hidden;
         padding-top: 24.8vh;
         // 스크롤바 삭제
         // -ms-overflow-style: none;
