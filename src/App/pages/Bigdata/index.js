@@ -5,7 +5,7 @@ import CountryList from '../../components/Bigdata/CountryList';
 import BeSearchedCityList from '../../components/Bigdata/BeSearchedCityList';
 import ListOfPeopleInTheCity from '../../components/Bigdata/ListOfPeopleInTheCity';
 import MenuBtn from '../../components/MenuBtn';
-import SideMenu from '../../containers/SideMenu';
+import SideMenu from './../../components/Chat/SideMenu';
 import axios from 'axios';
 
 const cx = classnames.bind(styles);

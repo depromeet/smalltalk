@@ -6,7 +6,7 @@ import MenuBtn from '../../components/MenuBtn';
 
 import classnames from 'classnames/bind';
 import styles from './Mate.module.scss';
-import SideMenu from '../../containers/SideMenu';
+import SideMenu from './../../components/Chat/SideMenu';
 
 const cx = classnames.bind(styles);
 

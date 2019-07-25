@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import MainHomeBackground from '../../components/Home/MainBackground';
-import SideMenu from '../SideMenu';
+import SideMenu from './../../components/Chat/SideMenu'
 
 class MainContainer extends Component {
   render() {

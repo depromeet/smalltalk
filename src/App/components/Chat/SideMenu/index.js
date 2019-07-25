@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import ChatMateList from '../../components/Chat/ChatMateList';
-import ChatRoomList from '../../components/Chat/ChatRoomList';
-import ChatRoom from '../../components/Chat/ChatRoom';
+import ChatMateList from '../ChatMateList';
+import ChatRoomList from '../ChatRoomList';
+import ChatRoom from '../ChatRoom';
+import classNames from 'classnames/bind';
+import styles from './style.module.scss';
 import axios from 'axios';
+
+const cx = classNames.bind(styles);
 
 class SideMenu extends Component {
   componentDidMount() {
@@ -131,9 +135,9 @@ class SideMenu extends Component {
       default: 
         return (
           // 친구 리스트, 채팅 버튼
-          <div className="buttons">
-            <div className="list-button" onClick={this.handleListClick}></div>
-            <div className="chat-button" onClick={this.handleChatClick}></div>
+          <div className={cx("buttons")}>
+            <div className={cx("list-button")} onClick={this.handleListClick}></div>
+            <div className={cx("chat-button")} onClick={this.handleChatClick}></div>
           </div>
         );
     }
