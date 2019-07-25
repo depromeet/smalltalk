@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './style.scss';
+import classNames from 'classnames/bind';
+import styles from './style.module.scss';
 import { Link } from 'react-router-dom';
-// import SideMenu from 'App/components/SideMenu';
+
+const cx = classNames.bind(styles);
 
 class MainBackground extends Component {
   constructor(props) {
@@ -83,62 +85,59 @@ class MainBackground extends Component {
 
   render() {
     return(
-      <div className="main-home-background">
-        <div className="logo"></div>
+      <div className={cx("main-home-background")}>
+        <div className={cx("logo")}></div>
         {/* 뒤 배경 원들 */}
-        <div className="background-circles">
-          <div className="circle" id="red-circle-1"></div>
-          <div className="circle" id="edge-circle-1"></div>
-          <div className="circle" id="green-circle-1"></div>
-          <div className="circle" id="green-circle-2"></div>
-          <div className="circle" id="picture-circle-1"></div>
-          <div className="circle" id="picture-circle-2" 
-          style={{backgroundImage: `url(${this.state.circleURL})` }}
-          ></div>
-          <div className="circle" id="edge-circle-2"></div>
-          <div className="circle" id="gradation-circle"></div>
-          <div className="circle" id="red-circle-2"></div>
+        <div className={cx("background-circles")}>
+          <div className={cx("circle")} id={cx("red-circle-1")}></div>
+          <div className={cx("circle")} id={cx("edge-circle-1")}></div>
+          <div className={cx("circle")} id={cx("green-circle-1")}></div>
+          <div className={cx("circle")} id={cx("green-circle-2")}></div>
+          <div className={cx("circle")} id={cx("picture-circle-1")}></div>
+          <div className={cx("circle")} id={cx("picture-circle-2")} style={{backgroundImage: `url(${this.state.circleURL})` }}></div>
+          <div className={cx("circle")} id={cx("edge-circle-2")}></div>
+          <div className={cx("circle")} id={cx("gradation-circle")}></div>
+          <div className={cx("circle")} id={cx("red-circle-2")}></div>
         </div>
         {/* 메뉴 */}
-        <div className="menu">
-          <Link to="/mypage" className="menu-list" onMouseOver={this.handleMouseOver1} onMouseOut={this.handleMouseOut1}>
-          MYPAGE<div className="menu-box" style={{left: this.state.left1, opacity: this.state.opacitiy1}}></div>
+        <div className={cx("menu")}>
+          <Link to="/mypage" className={cx("menu-list")} onMouseOver={this.handleMouseOver1} onMouseOut={this.handleMouseOut1}>
+          MYPAGE<div className={cx("menu-box")} style={{left: this.state.left1, opacity: this.state.opacitiy1}}></div>
           </Link>
-          <Link to="/schedule" className="menu-list" onMouseOver={this.handleMouseOver2} onMouseOut={this.handleMouseOut2}>
-          SCHEDULE<div className="menu-box" style={{left: this.state.left2, opacity: this.state.opacitiy2}}></div>
+          <Link to="/schedule" className={cx("menu-list")} onMouseOver={this.handleMouseOver2} onMouseOut={this.handleMouseOut2}>
+          SCHEDULE<div className={cx("menu-box")} style={{left: this.state.left2, opacity: this.state.opacitiy2}}></div>
           </Link>
-          <Link to="/mate" className="menu-list" onMouseOver={this.handleMouseOver3} onMouseOut={this.handleMouseOut3}>
-            MATE<div className="menu-box" style={{left: this.state.left3, opacity: this.state.opacitiy3}}></div>
+          <Link to="/mate" className={cx("menu-list")} onMouseOver={this.handleMouseOver3} onMouseOut={this.handleMouseOut3}>
+            MATE<div className={cx("menu-box")} style={{left: this.state.left3, opacity: this.state.opacitiy3}}></div>
           </Link>
-          <Link to="/bigdata" className="menu-list" onMouseOver={this.handleMouseOver4} onMouseOut={this.handleMouseOut4}>
-          BIGDATA<div className="menu-box" style={{left: this.state.left4, opacity: this.state.opacitiy4}}></div>
+          <Link to="/bigdata" className={cx("menu-list")} onMouseOver={this.handleMouseOver4} onMouseOut={this.handleMouseOut4}>
+          BIGDATA<div className={cx("menu-box")} style={{left: this.state.left4, opacity: this.state.opacitiy4}}></div>
           </Link>
-          <div className="menu-box"></div>
         </div>
         {/* 화살표 1 */}
-        <div className="lines-1">
-          <div className="dashed-arrow"></div>
-          <div className="triangles">
-            <div className="red-triangle" id="red-triangle-1"></div>
-            <div className="red-triangle" id="red-triangle-2"></div>
+        <div className={cx("lines-1")}>
+          <div className={cx("dashed-arrow")}></div>
+          <div className={cx("triangles")}>
+            <div className={cx("red-triangle")} id={cx("red-triangle-1")}></div>
+            <div className={cx("red-triangle")} id={cx("red-triangle-2")}></div>
           </div>
-          <div className="introduction">
+          <div className={cx("introduction")}>
           전 세계의 친구들을 만날 수
     있는 기회를 잡아보세요!
           </div>
-          <div className="line-arrow">
-            <div className="red-triangle" id="red-triangle-3"></div>
-            <div className="red-triangle" id="red-triangle-4"></div>
-            <div className="red-line"></div>
+          <div className={cx("line-arrow")}>
+            <div className={cx("red-triangle")} id={cx("red-triangle-3")}></div>
+            <div className={cx("red-triangle")} id={cx("red-triangle-4")}></div>
+            <div className={cx("red-line")}></div>
           </div>
         </div>
         {/* 화살표 2 */}
-        <div className="lines-2">
-          <div className="dashed-line"></div>
-          <div className="red-line"></div>
-          <div className="white-arrow"></div>
+        <div className={cx("lines-2")}>
+          <div className={cx("dashed-line")}></div>
+          <div className={cx("red-line")}></div>
+          <div className={cx("white-arrow")}></div>
         </div>
-        <div className="main-home__phrases"></div>
+        <div className={cx("main-home__phrases")}></div>
       </div>
       )  
   }
