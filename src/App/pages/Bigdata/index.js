@@ -14,13 +14,13 @@ class Bigdata extends Component {
   componentDidMount() {
     // 도시 목록 불러오는 로직
     const token = 'Token ' + localStorage.getItem('token');
-    const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/city';
-    const config = { headers: { 'Authorization': token, 'Content-Type': 'multipart/form-data'} };
+    const cityListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/ticket/';
+    const config = { headers: { 'Authorization': token, 'Content-Type': 'application/json'} };
     const cityList = axios.get(cityListURL, config);
     cityList.then(response => {
-      console.log(response);
+      console.log(response.data.map(x => x.city));
       this.setState({ 
-        allCountryName: response.data
+        allCountryName: response.data.map(x => x.city)
       });
       }).catch(err => console.log(err));
     }
