@@ -61,14 +61,9 @@ export function tagsFailure(){
 export const registerRequest = values => {
   return (dispatch) => {
     dispatch(register()); 
-    console.log(values);
     return axios.post(`${API}/auth/register/`, values)
     .then(res => { 
-      console.log(res.data.token);
-      // ✔️ 해야하는거 !!! 성공하면 locatlStorage에 저장하기 
       localStorage.setItem('token', res.data.token); 
-      // (1) 나중에 중간에 회원가입 하다가 실패했을 떄 대비해서..
-      // state에 token을 저장? 
       dispatch(registerSuccess(res.data.token));
     })
     .catch(error => { 
@@ -101,6 +96,7 @@ export const loadUser = () => (dispatch, getState) =>{
     config.headers["Authorization"]= `Token ${token}`
     axios.get(`${API}/auth/info/`, config)
     .then(res => {
+      //console.log('user-loaded', res.data);
       dispatch({ 
         type: USER_LOADED,
         payload : res.data
@@ -122,7 +118,7 @@ export const loginRequest = (values) => (dispatch) => {
   return axios.post(`${API}/auth/login/`, {email, password})
     .then((res) => {
       localStorage.setItem('token', res.data.token); 
-      dispatch({ type: AUTH_LOGIN_SUCCESS })
+      dispatch({ type: AUTH_LOGIN_SUCCESS, user: res.data.user })
     }).catch( err => { 
       const err_msg = err.response.data;
       if(err_msg){
@@ -142,7 +138,7 @@ const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated : localStorage.getItem('token') ? true : false, // true로 바꾸면 됨
   // isTagsSet : false,
-  user: null,
+  user: {},
   register : {
     step: 0,
     status : 'INIT',
@@ -238,7 +234,8 @@ export default function authentication(state = initialState, action){
           // token..? 
           login: {
             status: 'SUCCESS',
-          }
+          },
+          user : action.user
         }
       case AUTH_LOGIN_FAILURE: 
         return {
