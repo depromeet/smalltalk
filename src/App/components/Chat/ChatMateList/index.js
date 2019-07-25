@@ -108,9 +108,10 @@ class ChatMateList extends Component {
                   <ChatMateRequest
                     name={list.name}
                     key={i}
-                    id={i}
+                    id={list.id}
                     addMateList={this.props.addMateList}
                     denyMateRequest={this.props.denyMateRequest}
+                    index={i}
                   />
                 ))}
               </div>

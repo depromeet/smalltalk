@@ -42,10 +42,10 @@ class SideMenu extends Component {
         // { picture: testIcon, nickname: '이고잉', messages_cnt: 2 },
       ],
       ApplyListData: [
-        { name: '색연필' },
-        { name: '핸드폰' },
-        { name: '필통' },
-        { name: '머그컵' },
+        { id: 11, name: '색연필' },
+        { id: 21, name: '핸드폰' },
+        { id: 31, name: '필통' },
+        { id: 41, name: '머그컵' },
       ],
       currentState: '',
       name: '',
@@ -55,7 +55,7 @@ class SideMenu extends Component {
 
   // 친구 수락
   addMateList = (key, obj) => {
-    const newState = this.state.friendsListData.concat({ picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', name: obj, number: '0' });
+    const newState = this.state.friendsListData.concat({ picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', nickname: obj, messages: { message_cnt: 0 } } );
     this.setState({ friendsListData: newState });
     this.setState({ ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] }) });
   }
