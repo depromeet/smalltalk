@@ -5,6 +5,25 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
+const randomCircleArray = [
+  'http://5b0988e595225.cdn.sohucs.com/images/20181215/ff0a549dfbee4acf8e73e65da83532d4.jpeg', 
+  'https://constantinnautics.ru/wp-content/uploads/2019/05/photo-1527910444160-b1d75c05d593.jpeg', 
+  'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ', 
+  'https://scontent-lhr3-1.cdninstagram.com/vp/bb68e1a811f8b1b5318137a064e5b069/5D7E7DCD/t51.2885-15/e35/56744736_557166404774285_2235216315258908791_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=7&ig_cache_key=MjAzODU1NDkxMzIxOTA0OTc4OA%3D%3D.2',
+  'http://freedomlab.org/wp-content/uploads/2019/05/raphael-nogueira-519766-unsplash-1024x642.jpg',
+  'https://scontent-atl3-1.cdninstagram.com/vp/bf9d074c985a8bf8a6c5ae84c60bb467/5DC6BF99/t51.2885-15/e35/61539030_609570929555367_3975801932052361307_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com',
+  'https://s3.amazonaws.com/churchplantmedia-cms/heartcry_missionary_society_radford_va/pakistan_stock_2.jpg',
+  'https://cafebiz.cafebizcdn.vn/2019/6/12/photo-4-1560334321948931912724.jpg',
+  'https://s3.amazonaws.com/iwaria/prod/small-thumbs/1503586914222.95.jpeg',
+  'https://images.unsplash.com/photo-1484208700296-c827c9112860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+  'https://composeclick.com/wp-content/uploads/2018/04/marco-meyer-598648-unsplash-1024x683.jpg',
+  'https://pbs.twimg.com/media/D3pGL6LXoAA4qr3.jpg',
+  'https://images.unsplash.com/photo-1510253687831-0f982d7862fc?ixlib=rb-1.2.1&w=1000&q=80',
+  'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/322C0BE6-66B1-4BFA-8347-967D04DEFA0A.png',
+  // '/static/media/czech.0aeb8bc2.jpg',
+];
+const randomNumber = Math.round(Math.random() * (randomCircleArray.length-1));
+
 class MainBackground extends Component {
   constructor(props) {
     super(props);
@@ -19,35 +38,16 @@ class MainBackground extends Component {
       opacitiy2: 0,
       opacitiy3: 0,
       opacitiy4: 0,
-      circleURL: '/static/media/oval_img2.35d8c249.png',
+      circleURL: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/322C0BE6-66B1-4BFA-8347-967D04DEFA0A.png',
     };
   }
 
   // 이미지를 랜덤으로 선택하는 함수
-  randomCircleURL = () => {
-    const randomCircleArray = [
-      'http://5b0988e595225.cdn.sohucs.com/images/20181215/ff0a549dfbee4acf8e73e65da83532d4.jpeg', 
-      'https://constantinnautics.ru/wp-content/uploads/2019/05/photo-1527910444160-b1d75c05d593.jpeg', 
-      'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ', 
-      'https://scontent-lhr3-1.cdninstagram.com/vp/bb68e1a811f8b1b5318137a064e5b069/5D7E7DCD/t51.2885-15/e35/56744736_557166404774285_2235216315258908791_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=7&ig_cache_key=MjAzODU1NDkxMzIxOTA0OTc4OA%3D%3D.2',
-      'http://freedomlab.org/wp-content/uploads/2019/05/raphael-nogueira-519766-unsplash-1024x642.jpg',
-      'https://scontent-atl3-1.cdninstagram.com/vp/bf9d074c985a8bf8a6c5ae84c60bb467/5DC6BF99/t51.2885-15/e35/61539030_609570929555367_3975801932052361307_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com',
-      'https://s3.amazonaws.com/churchplantmedia-cms/heartcry_missionary_society_radford_va/pakistan_stock_2.jpg',
-      'https://cafebiz.cafebizcdn.vn/2019/6/12/photo-4-1560334321948931912724.jpg',
-      'https://s3.amazonaws.com/iwaria/prod/small-thumbs/1503586914222.95.jpeg',
-      'https://images.unsplash.com/photo-1484208700296-c827c9112860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      'https://composeclick.com/wp-content/uploads/2018/04/marco-meyer-598648-unsplash-1024x683.jpg',
-      'https://pbs.twimg.com/media/D3pGL6LXoAA4qr3.jpg',
-      'https://images.unsplash.com/photo-1510253687831-0f982d7862fc?ixlib=rb-1.2.1&w=1000&q=80',
-      'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/322C0BE6-66B1-4BFA-8347-967D04DEFA0A.png',
-      // '/static/media/czech.0aeb8bc2.jpg',
-  ];
-    const i = Math.round(Math.random() * (randomCircleArray.length-1));
-    this.setState({circleURL: randomCircleArray[i]})
-  }
+  // randomCircleURL = () => {
+  // }
 
   componentWillMount() {
-    this.randomCircleURL();
+    this.setState({circleURL: randomCircleArray[randomNumber]})
   }
 
   // 메뉴 마우스 오버시 나타나는 애니메이션 함수들

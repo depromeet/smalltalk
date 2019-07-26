@@ -11,14 +11,35 @@ const cx = classNames.bind(styles);
 
 class SideMenu extends Component {
   componentDidMount() {
+    // GET User List
     const token = 'Token ' + localStorage.getItem('token');
     const friendsListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/?is_friends=true';
     const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-    const FriendsList = axios.get(friendsListURL, config);
-    FriendsList.then( ( response ) => {
+    const getUserList = axios.get(friendsListURL, config);
+    getUserList.then( ( response ) => {
       this.setState({ 
         friendsListData: response.data
       });
+    }).catch(err => console.log(err));
+
+    const friendsRequestOnListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/friends/';
+    const getFriendRequestList = axios.get(friendsRequestOnListURL, config);
+    getFriendRequestList.then( ( response ) => {
+      const oppositeIDArray = response.data.map(x => x.from_user);
+
+      for(let oppositeID of oppositeIDArray){ 
+        const token = 'Token ' + localStorage.getItem('token');
+        const userInfoURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/${oppositeID}/`;
+        const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+        const getUserInfo = axios.get(userInfoURL, config);
+        getUserInfo.then( ( response ) => {
+          this.setState({ 
+            ApplyListData: this.state.ApplyListData.concat(response.data)
+          });
+        }).catch(err => console.log(err));
+      }
+
+
     }).catch(err => console.log(err));
   }
 
@@ -42,10 +63,6 @@ class SideMenu extends Component {
         // { picture: testIcon, nickname: '이고잉', messages_cnt: 2 },
       ],
       ApplyListData: [
-        { name: '색연필' },
-        { name: '핸드폰' },
-        { name: '필통' },
-        { name: '머그컵' },
       ],
       currentState: '',
       name: '',
@@ -55,7 +72,7 @@ class SideMenu extends Component {
 
   // 친구 수락
   addMateList = (key, obj) => {
-    const newState = this.state.friendsListData.concat({ picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', name: obj, number: '0' });
+    const newState = this.state.friendsListData.concat({ picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', nickname: obj, messages: { message_cnt: 0 } } );
     this.setState({ friendsListData: newState });
     this.setState({ ApplyListData: update(this.state.ApplyListData, { $splice: [[key, 1]] }) });
   }
@@ -87,7 +104,6 @@ class SideMenu extends Component {
 
   handleAllClose = () => {
     this.setState({ currentState: '' });
-    console.log('currentState : none');
   }
 
   render() {
@@ -126,7 +142,7 @@ class SideMenu extends Component {
       case 'ChatRoom':
         return (
           <ChatRoom
-            handleAllClose={this.handleAllClose}
+            handleAllClose={this.handleChatClick}
             handleListClick={this.handleListClick}
             name={this.state.name}
             id={this.state.id}

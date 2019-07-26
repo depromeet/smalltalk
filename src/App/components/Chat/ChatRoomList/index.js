@@ -18,6 +18,13 @@ class ChatRoomList extends Component {
           <div className={cx('close-button')} onClick={this.props.handleAllClose} />
         </div>
         <div className={cx('collection')}>
+          {this.props.friendsListData.length === 0
+            ? (
+              <div className={cx('header-2')}>
+                <div className={cx('title')}>아직 채팅이 없어요 :(</div>
+                <div className={cx('contents')}>여행 메이트를 추천받아<br/>같이 즐거운 여행을 떠나보세요!</div>
+              </div>
+            ) : <div></div>}
           {this.props.friendsListData.map((list, i) => (
             <EachFriendsList
               picture={list.picture}

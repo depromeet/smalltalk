@@ -17,7 +17,7 @@
     }
     ::-webkit-scrollbar-thumb:vertical{
         height:60px;
-        background-color: gray;
+        background-color: rgb(230, 230, 230);
         -webkit-border-radius:8px;
     }
 
@@ -70,31 +70,19 @@
 
         
         .input-box {
-            // backdrop-filter: blur(30px);
-            // -webkit-backdrop-filter: blur(30px);
+            border-bottom: solid 2px #eaeaea;
             opacity: 0.9;
             position: relative;
             top: 0.46vh;
             background-color: white;
             z-index: 1;
-            max-height: 35.6vh;
+            max-height: 38.6vh;
             overflow: scroll;
             -ms-overflow-style: none;
             &::-webkit-scrollbar { 
             display: none !important; 
             }
         }
-
-        // .input-box::after {
-        //     content: '';
-        //     background: url('../../../static/images/backdrop-filter.png') 0 / cover;
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     filter: blur(30px);
-        // }
     }
 
     .country {
@@ -161,6 +149,7 @@
                 width: 40.3vh;
                 height: 40.3vh;
                 border-radius: 50%;
+                size: cover;
                 background-image: url("https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/F5101CA8-4DD6-44C1-AE9C-CDDCCC1B8BBE.png");
                 background-size: cover;
                 position: absolute;
@@ -237,7 +226,7 @@
     }
 
     .country-list {
-        width: fit-content;
+        width: 27vw;
         height: 100vh;
         position: absolute;
         overflow-x: hidden;

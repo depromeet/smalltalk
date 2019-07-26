@@ -88,6 +88,11 @@ class ScheduleInfo extends Component{
 }
 
 class MateInfo extends Component{
+  componentWillMount() {
+    console.log("T_T")
+    console.log(this.props.match.params.id)
+    console.log("T_T")
+  }
   constructor(){
     super();
     this.state = {
