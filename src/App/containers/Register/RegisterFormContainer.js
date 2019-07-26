@@ -58,7 +58,7 @@ class RegisterFormContainer extends Component{
         field : 'age',
         method: isValid,
         validWhen : true,
-        message : '나이는 14세 이상 99세 이하여야합니다.'
+        message : '14세 이상 99세 이하여야합니다.'
       },
       {
         field : 'age',
@@ -102,26 +102,26 @@ class RegisterFormContainer extends Component{
     const validation = this.validator.validate(this.state);
     this.setState({validation});
     
-    handleNextBtn(1);
+    //handleNextBtn(1);
     /* 화면 전환 UI 체크할 때 아래 if문 주석처리 */
-    // if(validation.isValid){
-    //   const { email, password, nickname, age, introduction } = this.state;
-    //   let { gender } = this.state;
-    //   if(gender === '남성'){ gender = 'm'}
-    //   else{ gender = 'f'};
+    if(validation.isValid){
+      const { email, password, nickname, age, introduction } = this.state;
+      let { gender } = this.state;
+      if(gender === '남성'){ gender = 'm'}
+      else{ gender = 'f'};
 
-    //   // if(status === 'INIT' || status === 'WAITING'){
-    //   return registerRequest({email, password, nickname, age, gender, introduction})
-    //   .then(() => {
-    //     if(this.props.status === 'SUCCESS'){
-    //       console.log('success');
-    //       handleNextBtn(1)
-    //       } else if(this.props.status === "FAILURE"){
-    //       console.log('fail')
-    //       }
-    //     }
-    //   )
-    // }
+      // if(status === 'INIT' || status === 'WAITING'){
+      return registerRequest({email, password, nickname, age, gender, introduction})
+      .then(() => {
+        if(this.props.status === 'SUCCESS'){
+          console.log('success');
+          handleNextBtn(1)
+          } else if(this.props.status === "FAILURE"){
+          console.log('fail')
+          }
+        }
+      )
+    }
   }
 
   handleDropBtn = () => {

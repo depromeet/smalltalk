@@ -30,7 +30,13 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 150px;
-    width: 1090px;
+    width: 1200px;
+    .prevBtn{
+      cursor: pointer;
+      margin-right: 50px;
+      position: relative;
+      left: -10px;
+    }
     .form-contents{
       width: 700px;
       .contents-header{
@@ -88,6 +94,7 @@
         padding-left: 5px;
         padding-top: 12px;
         font-size: 14px;
+        margin-right: 20px;
       }
       .gender-dropbox{
         z-index: 4;

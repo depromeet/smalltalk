@@ -13,7 +13,7 @@ const Mypage = ({
   onChange,
   pairs,
   handleStyleCircle}) => {
-    console.log(pairs);
+    // console.log(pairs);
   return (
     <div className={cx('wrapper')}>
     <div className={cx('first-content')}>
