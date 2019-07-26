@@ -238,15 +238,15 @@ class Schedule extends Component{
       isOn: 0,
       isShow: "none",
       listIndex: 0,
-      dropR: "rotate(0deg)",
-      btest: [{id: 0, title: "가"},{id: 1, title: "가"},{id: 2, title: "가"},{id: 3, title: "가"}]
+      dropR: "rotate(0deg)"
+      // btest: [{id: 0, title: "가"},{id: 1, title: "가"},{id: 2, title: "가"},{id: 3, title: "가"}]
     }
   }
 
   makeList = ( boxList ) => { 
     return boxList.map( (bTitle, i) => {
       // console.log(this.state.listIndex);
-      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: bTitle.id, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
+      return <li key={`scheduleList-${i}`} className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
       {bTitle.title}</li>
     })
   }
@@ -254,20 +254,35 @@ class Schedule extends Component{
   makeTicketList = ( boxList ) => { 
     return boxList[this.state.listIndex].ticketList.map( (ticket, i) => {
       // console.log(ticket);
-      return <li className={cx("t_item")}>
+      return <li key={`schedule-${i}`} className={cx("t_item")}>
       <BigTicket listLen={this.state.boxList[this.state.listIndex].ticketList.length} ticket={ticket}/></li>
     })
   }
 
   reList = () => {
-    // const {boxList} = this.state;
-    // const {listIndex} = this.state;
-    // console.log(listIndex);
-    // const copied = boxList.filter(num => num.id !== Number(listIndex))
-    // this.setState({
-    //   boxList: copied,
-    //   listIndex: 0
-    // })
+    const {boxList} = this.state;
+    const {listIndex} = this.state;
+    
+    const copied = [...boxList.filter( (num, i) => { if(boxList.length < 2){return boxList}else{return i !== Number(listIndex)} })]
+    
+    this.setState({
+      boxList: copied,
+      listIndex: 0
+    })
+  }
+
+  delHeight = (len) => {
+    let delHeight = 0;
+    if(len === 3){
+      delHeight = 180;
+    }else if(len === 2){
+      delHeight = 120;
+    }else if(len === 1){
+      delHeight = 60;
+    }else{
+      delHeight = 237;
+    }
+    return {"opacity": this.state.isOn, "display": this.state.isShow, "height" : delHeight + "px"}
   }
 
   resizeHeight = (length) => {
@@ -299,6 +314,7 @@ class Schedule extends Component{
     const { boxList } = this.state;
     const { listIndex } = this.state;
     // console.log(boxList);
+    // console.log(boxList.length);
     // console.log(this.state.btest);
 
     return(
@@ -310,7 +326,7 @@ class Schedule extends Component{
             <div className={cx("s_titlebox")}>
               <h2>{this.state.boxList[listIndex].title}<span onClick={this.toggleDrop} style={{transform: this.state.dropR}}>▼</span></h2>
               <p>화살표를 클릭하세요!<br/>이전 일정들도 확인할 수 있습니다.</p>
-              <ul className={cx("title_drop")} style={{opacity: this.state.isOn, display: this.state.isShow}}>
+              <ul className={cx("title_drop")} style={this.delHeight(boxList.length)}>
                 {this.makeList(boxList)}
               </ul>
             </div>
