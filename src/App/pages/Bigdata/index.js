@@ -105,7 +105,8 @@ class Bigdata extends Component {
           }
         }
       }
-      this.setState({ allCountryName: response.data });
+      // GET 도시 리스트에서 중복된 데이터 제거
+      this.setState({ allCountryName: response.data.splice(0, 746) });
       }).catch(err => console.log(err));
     }
 

@@ -106,7 +106,7 @@ class ChatMateList extends Component {
               <div className={cx('collection')}>
                 {this.props.ApplyListData.map((list, i) => (
                   <ChatMateRequest
-                    name={list.name}
+                    name={list.nickname}
                     key={i}
                     id={list.id}
                     addMateList={this.props.addMateList}

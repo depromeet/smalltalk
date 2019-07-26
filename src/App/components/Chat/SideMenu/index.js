@@ -21,6 +21,27 @@ class SideMenu extends Component {
         friendsListData: response.data
       });
     }).catch(err => console.log(err));
+
+    const friendsRequestOnListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/friends/';
+    const getFriendRequestList = axios.get(friendsRequestOnListURL, config);
+    getFriendRequestList.then( ( response ) => {
+      const oppositeIDArray = response.data.map(x => x.from_user);
+
+      for(let oppositeID of oppositeIDArray){ 
+        const token = 'Token ' + localStorage.getItem('token');
+        const userInfoURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/${oppositeID}/`;
+        const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+        const getUserInfo = axios.get(userInfoURL, config);
+        getUserInfo.then( ( response ) => {
+          this.setState({ 
+            ApplyListData: this.state.ApplyListData.concat(response.data)
+          });
+          console.log(response.data)
+        }).catch(err => console.log(err));
+      }
+
+
+    }).catch(err => console.log(err));
   }
 
   constructor(props) {
@@ -43,10 +64,6 @@ class SideMenu extends Component {
         // { picture: testIcon, nickname: '이고잉', messages_cnt: 2 },
       ],
       ApplyListData: [
-        { id: 29, name: '색연필' },
-        { id: 41, name: '핸드폰' },
-        { id: 51, name: '필통' },
-        { id: 61, name: '머그컵' },
       ],
       currentState: '',
       name: '',
