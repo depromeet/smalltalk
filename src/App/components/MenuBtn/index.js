@@ -4,6 +4,9 @@ import brazil from 'static/images/ticketImg/brazil.jpg';
 import czech from 'static/images/ticketImg/czech.jpg';
 import denmark from 'static/images/ticketImg/denmark.jpg';
 import greece from 'static/images/ticketImg/greece.jpg';
+import mongolia from 'static/images/ticketImg/mongolia.jpg';
+import russia from 'static/images/ticketImg/russia.jpg';
+import turkey from 'static/images/ticketImg/turkey.jpg';
 
 import classnames from 'classnames/bind';
 import styles from './MenuBtn.module.scss';
@@ -27,7 +30,9 @@ class MenuBtn extends Component{
       num : 0,
       num2: 1,
       isOn: "none",
-      backImg: brazil
+      backArray: [brazil, czech, denmark, greece, mongolia, russia, turkey],
+      backImg: brazil,
+      count: 0
     };
   }
   
@@ -88,19 +93,17 @@ class MenuBtn extends Component{
       return { "left" : 0 }
     }
   }
-  randomImg = () => {
-    let imgArray = [brazil, czech, denmark, greece];
-    let imgNum = Math.floor(Math.random()*3);
-
-    console.log(imgArray);
-
-    this.setState({
-      backImg: imgArray[imgNum]
-    })
+  componentDidMount() {
+    setInterval(() => {
+      // console.log("바뀜!");
+      this.setState({
+        backImg: this.state.backArray[Math.floor(Math.random()*this.state.backArray.length)]
+      })
+    }, 1500)
   }
   
   render(){
-    console.log(this.state.isToggleOn);
+    // console.log(this.state.isToggleOn);
     return(
       <Fragment>
         <Link to="/"><div className={cx("logo")}></div></Link>
@@ -126,6 +129,7 @@ class MenuBtn extends Component{
                 </Link>
                 <div className={cx("menu-box")}></div>
               </div>
+              <button className={cx("logout_btn")}>LOGOUT</button>
             </div>
             <button onClick={() => this.toggleBtn(this.state.isToggleOn)} className={cx("navi_btn")}>
               <div className={cx("m_close")} style={{opacity: this.state.num2}}>

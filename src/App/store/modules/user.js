@@ -21,7 +21,6 @@ export const tagsSetRequset = tags => (dispatch, getState) => {
   //(1) localStoarge에서 token 가져오기 
   //const token = localStorage.getItem('token');
   const token = getState().auth.token;
-  console.log(token);
   const config = {
     headers: {
       "Content-Type": "application/json "
@@ -51,7 +50,7 @@ export default function user(state = initialState, action){
         ...state,
         isTagsSet : true
       }
-      case TAGS_REQUEST_SUCCESS:
+      case TAGS_REQUEST_FAILURE:
       return {
         ...state,
         isTagsSet : false

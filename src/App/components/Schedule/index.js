@@ -1,24 +1,16 @@
 import React, {Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
-import TicketLength from '../../components/TicketLength';
-import TicketBox from '../../components/TicketBox';
-import MenuBtn from '../../components/MenuBtn';
-
-import brazil from 'static/images/ticketImg/brazil.jpg';
-import czech from 'static/images/ticketImg/czech.jpg';
-import denmark from 'static/images/ticketImg/denmark.jpg';
-import greece from 'static/images/ticketImg/greece.jpg';
-import mongolia from 'static/images/ticketImg/mongolia.jpg';
-import russia from 'static/images/ticketImg/russia.jpg';
-import turkey from 'static/images/ticketImg/turkey.jpg';
+import TicketLength from 'App/components/TicketLength';
+import BigTicket from 'App/components/BigTicket';
+import MenuBtn from 'App/components/MenuBtn';
 
 import classnames from 'classnames/bind';
-import styles from './Mate.module.scss';
-import SideMenu from './../../components/Chat/SideMenu';
+import styles from './Schedule.module.scss';
+import SideMenu from 'App/components/Chat/SideMenu';
 
 const cx = classnames.bind(styles);
 
-class Mate extends Component{
+class Schedule extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -34,7 +26,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : brazil
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "1",
@@ -42,7 +34,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : czech
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "2",
@@ -50,15 +42,15 @@ class Mate extends Component{
                 ticketSubTitle: 'LA',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : denmark
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "3",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
+                ticketTitle: '도쿄',
+                ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : greece
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "4",
@@ -66,7 +58,55 @@ class Mate extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : mongolia
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "5",
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "6",
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "7",
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "8",
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "9",
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "10",
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
               }
             ]
           },
@@ -80,7 +120,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : brazil
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "1",
@@ -88,7 +128,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : czech
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "2",
@@ -96,7 +136,7 @@ class Mate extends Component{
                 ticketSubTitle: 'LA',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : denmark
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "3",
@@ -104,63 +144,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : greece
-              },
-              {
-                id: "3",
-                ticketTitle: '러시아',
-                ticketSubTitle: 'Russia',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : greece
-              },
-              {
-                id: "5",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : russia
-              },
-              {
-                id: "6",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : turkey
-              },
-              {
-                id: "7",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : russia
-              },
-              {
-                id: "8",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : turkey
-              },
-              {
-                id: "9",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : russia
-              },
-              {
-                id: "10",
-                ticketTitle: '싱가포르',
-                ticketSubTitle: 'Singapore',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : turkey
+                ticketImage : '../../static/images/ticket_img.png'
               }
             ]
           },
@@ -174,7 +158,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : brazil
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "1",
@@ -182,7 +166,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : czech
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "2",
@@ -190,7 +174,7 @@ class Mate extends Component{
                 ticketSubTitle: 'LA',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : denmark
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "3",
@@ -198,16 +182,8 @@ class Mate extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : greece
-              },
-              {
-                id: "4",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : greece
-              },
+                ticketImage : '../../static/images/ticket_img.png'
+              }
             ]
           },
           {
@@ -220,7 +196,7 @@ class Mate extends Component{
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : brazil
+                ticketImage : '../../static/images/ticket_img.png'
               },
               {
                 id: "1",
@@ -228,13 +204,51 @@ class Mate extends Component{
                 ticketSubTitle: 'Paris',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
-                ticketImage : czech
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "2",
+                ticketTitle: '로스엔젤리스',
+                ticketSubTitle: 'LA',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "3",
+                ticketTitle: '도쿄',
+                ticketSubTitle: 'Tokyo',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              }
+            ]
+          },
+          {
+            id: "4",
+            title: '함께 여행!', 
+            ticketList: [
+              {
+                id: "0",
+                ticketTitle: '도쿄',
+                ticketSubTitle: 'Tokyo',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
+              },
+              {
+                id: "1",
+                ticketTitle: '파리',
+                ticketSubTitle: 'Paris',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : '../../static/images/ticket_img.png'
               }
             ]
           }
         ]
       },
-      vWidth: 150,
+      vWidth: 130,
       isOn: 0,
       isShow: "none",
       listIndex: 0,
@@ -245,11 +259,31 @@ class Mate extends Component{
   makeList = ( boxList ) => { 
     return boxList.map( (bTitle, i) => {
       // console.log(ticket);
-      return <li key={`schedule-${i}`} className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
+      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
       {bTitle.title}</li>
     })
   }
 
+  makeTicketList = ( boxList ) => { 
+    return boxList[this.state.listIndex].ticketList.map( (ticket, i) => {
+      // console.log(ticket);
+      return <li className={cx("t_item")}>
+      <BigTicket listLen={this.state.talker.boxList[this.state.listIndex].ticketList.length} ticket={ticket}/></li>
+    })
+  }
+
+  resizeHeight = (length) => {
+    if(length > 8) return { "height": "37vh"};
+    else return {"height" : "29vh"};
+  }
+
+  resetWidth = (length) => {
+    /* resize */
+    const _vWidth = 436;
+    let resetWidth = (_vWidth * length) + 'px';
+    return { "width" : resetWidth}
+  }
+  
   toggleDrop = () => {
     if(this.state.isOn === 1){
       this.setState({isOn: 0, dropR: "rotate(0deg)", isShow: "none"})
@@ -258,41 +292,40 @@ class Mate extends Component{
     }
   }
 
-  resizeHeight = (length) => {
-    if(length > 8) return { "top": "59%"};
-  }
-
   render(){
     const { talker } = this.state;
     const { listIndex } = this.state;
 
     return(
       <Fragment>
-        <MenuBtn/>
+        <MenuBtn barColor = { this.state.barColor }/>
         <SideMenu />
-        <div className={cx('mate_wrap')}>
-          <div className={cx('mate_title')}>
-            <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
+        <div className={cx("schedule_top")} style={this.resizeHeight(talker.boxList[listIndex].ticketList.length)}>
+          <div className={cx("s_left")}>
             <div className={cx("s_titlebox")}>
               <h2>{this.state.talker.boxList[listIndex].title}<span onClick={this.toggleDrop} style={{transform: this.state.dropR}}>▼</span></h2>
               <ul className={cx("title_drop")} style={{opacity: this.state.isOn, display: this.state.isShow}}>
                 {this.makeList(talker.boxList)}
               </ul>
             </div>
+            <div className={cx("length_box")}>
+              <TicketLength ticketList = {talker.boxList[listIndex].ticketList} vWidth = { this.state.vWidth }/>
+            </div>
           </div>
-          <div className={cx('mate_btn')}>
-            <button className={cx('matelink_btn')}><Link to='/mateList'>선택한 지역으로 친구 추천 &nbsp; ▶</Link></button>
+          <div className={cx("s_right")}>
+            <button><Link to='/schedule1'>새 루트 만들기</Link></button>
+            <button><Link to='/schedule1'>루트 수정하기</Link></button>
           </div>
-          <div className={cx('length_box')}>
-            <TicketLength ticketList = {talker.boxList[listIndex].ticketList} vWidth = { this.state.vWidth }/>
-          </div>
-          <div className={cx('t_box')} style={this.resizeHeight(talker.boxList[listIndex].ticketList.length)}>
-            <TicketBox ticketList = {talker.boxList[listIndex].ticketList}/>
+        </div>
+        <div className={cx("schedule_bottom")}>
+          <div className={cx('t_box')}>
+            <ul className={cx('call_t')} style={this.resetWidth(talker.boxList[listIndex].ticketList.length)}>
+              {this.makeTicketList(talker.boxList)}
+            </ul>
           </div>
         </div>
       </Fragment>
-      )
+    )
   }
 }
-
-export default Mate;
+export default Schedule;

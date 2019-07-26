@@ -18,7 +18,7 @@ class TicketList extends Component{
 
   activeTicket = (i) => {
     this.setState({isToggleOn: i});
-    console.log("클릭" + i);
+    // console.log("클릭" + i);
 
     this.props.callIndexParent(i);
   }
@@ -72,7 +72,7 @@ class TicketList extends Component{
   
   render(){
     const { ticketList } = this.props;
-    console.log(this.state.btnIndex);
+    // console.log(this.state.btnIndex);
 
     return(
       <div className={cx('arrow_list')}>

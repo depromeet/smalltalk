@@ -4,6 +4,15 @@ import BigTicket from '../../components/BigTicket';
 import MenuBtn from '../../components/MenuBtn';
 
 import * as UserInfo from '../../containers/UserInfo/FriendInfo';
+import brazil from 'static/images/ticketImg/brazil.jpg';
+import czech from 'static/images/ticketImg/czech.jpg';
+import denmark from 'static/images/ticketImg/denmark.jpg';
+import greece from 'static/images/ticketImg/greece.jpg';
+import mongolia from 'static/images/ticketImg/mongolia.jpg';
+import russia from 'static/images/ticketImg/russia.jpg';
+import turkey from 'static/images/ticketImg/turkey.jpg';
+
+import pro1 from 'static/images/profile/p1.png';
 
 import classnames from 'classnames/bind';
 import styles from './MateInfo.module.scss';
@@ -88,12 +97,12 @@ class MateInfo extends Component{
     super();
     this.state = {
       friend : {
-        talker: "투머치토커",
+        talker: "ㄱi염둥이",
         introduction: "안녕 나는 오늘 캄보디아를 가! 매우매우 설레는 여행이야. 가서 소매치기 당하지는 않겠지? 나는 잘 다녀올 거라고 믿어. 하하 올 때 꼭 선물 사올게. 다시 또 만나!",
-        age: "27",
+        age: "24",
         gender: "남성",
-        profileImg : '../../static/images/ticket_img.png',
-        tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형'],
+        profileImg : pro1,
+        tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#귀염상'],
         ticketList: [
           {
             id: "0",
@@ -101,7 +110,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Tokyo',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : brazil
           },
           {
             id: "1",
@@ -109,7 +118,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Paris',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : czech
           },
           {
             id: "2",
@@ -117,7 +126,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'LA',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : denmark
           },
           {
             id: "3",
@@ -125,7 +134,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Tokyo',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : greece
           },
           {
             id: "4",
@@ -133,7 +142,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Paris',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : mongolia
           },
           {
             id: "5",
@@ -141,7 +150,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : russia
           },
           {
             id: "6",
@@ -149,7 +158,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : turkey
           },
           {
             id: "7",
@@ -157,7 +166,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : russia
           },
           {
             id: "8",
@@ -165,7 +174,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : turkey
           },
           {
             id: "9",
@@ -173,7 +182,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : mongolia
           },
           {
             id: "10",
@@ -181,7 +190,7 @@ class MateInfo extends Component{
             ticketSubTitle: 'Singapore',
             startDate: '2019.06.08',
             endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png'
+            ticketImage : turkey
           }
         ]
       }
@@ -205,7 +214,7 @@ class MateInfo extends Component{
       const response = await UserInfo.getAPOD(date);
       // 비구조화 할당 + 새로운 이름 
       const { country: city } = response.data[1];
-      console.log(city.name);
+      // console.log(city.name);
 
       if(!this.state.maxDate) {
         // 만약에 coutry 가 없으면 지금 받은 date 로 지정
@@ -215,7 +224,7 @@ class MateInfo extends Component{
       }
     } catch (e) {
       // 오류가 났을 경우
-      console.log(e);
+      // console.log(e);
     }
 
     // 로딩 상태 종료
@@ -229,10 +238,10 @@ class MateInfo extends Component{
 
   render(){
     const { friend } = this.state;
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     return (
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <SideMenu />
         <div className={cx("back_circle")}>
           <div className={cx("cir", "cir1")}></div>

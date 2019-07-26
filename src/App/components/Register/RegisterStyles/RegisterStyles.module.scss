@@ -20,6 +20,9 @@
     justify-content: space-between;
     align-items: center;
     width: 1090px;
+    .prev-btn{
+      cursor: pointer;
+    }
   };
   .title {
     font-size: 35px;
@@ -55,9 +58,9 @@
       border: 0.5px dashed $red;
       height: 330px;
     }
-    // .next-btn{
-    //   margin-left: 30px;
-    //   margin-top: 50px;
-    // }
+    
   }
+}
+.next-btn{
+  cursor: pointer;
 }

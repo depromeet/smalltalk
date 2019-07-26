@@ -231,20 +231,18 @@ class Bigdata extends Component {
   render() {
     return (
       <Fragment>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <SideMenu />
-        <MenuBtn barColor = { "#000" } boxHidden = { "block" } />
-        <div className={cx('bigdata')}>
-          {/* 스몰토크 로고 */}
-          <div className="logo" />
-          {/* 검색 바 */}
-          <div className={cx('search-bar')}>
-            <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />
-            {this.state.isClickedInputButton
-              ? <div className={cx('drop-up-button')} onClick={this.offInputBox} />
-              : <div className={cx('drop-down-button')} onClick={this.onInputBox} />}
-            <div className={cx('input-box')}>
-              {this.state.allCountryName.map((x, i) => (
-                <BeSearchedCityList
+          <div className={cx('bigdata')}>
+            {/* 검색 바 */}
+            <div className={cx('search-bar')}>
+              <input className={cx('input')} onChange={this.handleChange} value={this.state.inputValue} placeholder="나라 / 도시 검색" />
+              {this.state.isClickedInputButton
+                ? <div className={cx('drop-up-button')} onClick={this.offInputBox} />
+                : <div className={cx('drop-down-button')} onClick={this.onInputBox} />}
+              <div className={cx('input-box')}>
+                {this.state.allCountryName.map((x, i) => (
+                  <BeSearchedCityList
                   name={x.name}
                   key={i}
                   input={this.state.inputValue}

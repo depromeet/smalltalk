@@ -1,5 +1,6 @@
 import React from 'react';
 import { LabelInput } from 'App/components/LabelInput';
+import iconBack from 'static/images/icon-back.svg';
 import iconNext from 'images/icon-next.svg';
 import classnames from 'classnames/bind';
 import styles from './RegisterForm.module.scss';
@@ -21,7 +22,8 @@ const RegisterForm = ({
   dropBtnClick,
   isOpen,
   dropR,
-  genderClick
+  genderClick,
+  handlePrevBtn
   }) => {
 
  let className = cx({
@@ -37,6 +39,9 @@ const RegisterForm = ({
   return(
     <div className={className}> 
       <div className={cx('contents')}>
+        <div onClick={() => handlePrevBtn(0)} className={cx('prevBtn')}>
+          <img src={iconBack} alt='icon-back'/>
+        </div>
         <div className={cx('form-contents')}>
           <div className={cx('contents-header')}>
             <h1 className={cx('title')}>개인정보입력</h1>
@@ -102,6 +107,7 @@ const RegisterForm = ({
                   label="나이"
                   onChange={onChange}
                   error={validation.age.message}
+                  isAge
                 />
               </div>
             </div>
