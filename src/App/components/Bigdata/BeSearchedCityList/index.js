@@ -4,15 +4,15 @@ import styles from './style.module.scss';
 
 const cx = classnames.bind(styles);
 
-const CountryList = ( {name, input, isClickedInputButton, handleClickInput, offInputBox, country} ) => {
+const CountryList = ( {name, input, isClickedInputButton, handleClickInput, offInputBox, countryName} ) => {
   const beClickedValueToInputBox = () => {
     handleClickInput(name);
     offInputBox();
   }
   // 드롭다운 버튼이 클릭되었고 검색창이 비어있지 않아?
   if (isClickedInputButton === true && input !== '') {
-    // 검색값이 DB의 country와 같아?
-    if (Number(input) === country) {
+    //
+    if (countryName.indexOf(input) === 0) {
       return (
       <div className={cx('name-background')} onClick={beClickedValueToInputBox}>
         <div className={cx("city-name")}>{name}</div>

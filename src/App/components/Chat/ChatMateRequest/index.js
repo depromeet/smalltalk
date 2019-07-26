@@ -28,7 +28,7 @@ const cx = classNames.bind(styles);
 //   .catch(err => console.log(err));
 // }
 
-const ChatMateRequest = ( {id, addMateList, name, denyMateRequest, key, index} ) => {
+const ChatMateRequest = ( {addMateList, name, denyMateRequest, index} ) => {
   const friendRequestAccept = () => {
     addMateList(index, name);
     // postFriendsRequest(id);

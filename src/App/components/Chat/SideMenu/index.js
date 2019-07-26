@@ -11,11 +11,12 @@ const cx = classNames.bind(styles);
 
 class SideMenu extends Component {
   componentDidMount() {
+    // GET User List
     const token = 'Token ' + localStorage.getItem('token');
     const friendsListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/?is_friends=true';
     const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-    const FriendsList = axios.get(friendsListURL, config);
-    FriendsList.then( ( response ) => {
+    const getUserList = axios.get(friendsListURL, config);
+    getUserList.then( ( response ) => {
       this.setState({ 
         friendsListData: response.data
       });

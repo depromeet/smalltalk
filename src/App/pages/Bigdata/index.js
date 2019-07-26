@@ -10,6 +10,84 @@ import axios from 'axios';
 
 const cx = classnames.bind(styles);
 
+const countryNames = [
+  {id: 3, country: '네팔'},
+  {id: 4, country: '대만'},
+  {id: 5, country: '대한민국'},
+  {id: 6, country: '라오스'},
+  {id: 7, country: '쿠바'},
+  {id: 8, country: '말레이시아'},
+  {id: 9, country: '몰디브'},
+  {id: 10, country: '미얀마'},
+  {id: 11, country: '베트남'},
+  {id: 12, country: '스리랑카'},
+  {id: 13, country: '싱가포르'},
+  {id: 14, country: '아랍에미리트'},
+  {id: 15, country: '인도'},
+  {id: 16, country: '인도네시아'},
+  {id: 17, country: '일본'},
+  {id: 18, country: '중국'},
+  {id: 19, country: '캄보디아'},
+  {id: 20, country: '태국'},
+  {id: 21, country: '필리핀'},
+  {id: 22, country: '홍콩'},
+  {id: 23, country: '그리스'},
+  {id: 24, country: '네덜란드'},
+  {id: 25, country: '노르웨이'},
+  {id: 26, country: '덴마크'},
+  {id: 27, country: '독일'},
+  {id: 28, country: '러시아'},
+  {id: 29, country: '루마니아'},
+  {id: 30, country: '룩셈부르크'},
+  {id: 31, country: '모나코'},
+  {id: 32, country: '벨기에'},
+  {id: 33, country: '보스니아 헤르체고비나'},
+  {id: 34, country: '불가리아'},
+  {id: 35, country: '스웨덴'},
+  {id: 36, country: '스위스'},
+  {id: 37, country: '스페인'},
+  {id: 38, country: '슬로베니아'},
+  {id: 39, country: '아이슬란드'},
+  {id: 40, country: '아일랜드'},
+  {id: 41, country: '영국'},
+  {id: 42, country: '이스라엘'},
+  {id: 43, country: '이탈리아'},
+  {id: 44, country: '체코'},
+  {id: 45, country: '크로아티아'},
+  {id: 46, country: '터키'},
+  {id: 47, country: '포르투갈'},
+  {id: 48, country: '폴란드'},
+  {id: 49, country: '프랑스'},
+  {id: 50, country: '핀란드'},
+  {id: 51, country: '헝가리'},
+  {id: 52, country: '미국'},
+  {id: 53, country: '뉴질랜드'},
+  {id: 54, country: '뉴칼레도니아'},
+  {id: 55, country: '미국'},
+  {id: 56, country: '호주'},
+  {id: 57, country: '타히티'},
+  {id: 58, country: '피지'},
+  {id: 59, country: '미국'},
+  {id: 60, country: '캐나다'},
+  {id: 61, country: '멕시코'},
+  {id: 62, country: '미국'},
+  {id: 63, country: '산타크루즈'},
+  {id: 64, country: '브라질'},
+  {id: 65, country: '아르헨티나'},
+  {id: 66, country: '에콰도르'},
+  {id: 67, country: '자메이카'},
+  {id: 68, country: '스페인'},
+  {id: 69, country: '콜롬비아'},
+  {id: 70, country: '쿠바'},
+  {id: 71, country: '페루'},
+  {id: 72, country: '네팔'},
+  {id: 73, country: '네팔'},
+  {id: 74, country: '네팔'},
+  {id: 75, country: '대만'},
+  {id: 76, country: '대한민국'},
+  {id: 77, country: '라오스'},
+]
+
 class Bigdata extends Component {
   componentDidMount() {
     // GET 도시 리스트
@@ -18,11 +96,19 @@ class Bigdata extends Component {
     const config = { headers: { 'Authorization': token, 'Content-Type': 'application/json'} };
     const cityList = axios.get(cityListURL, config);
     cityList.then(response => {
-      this.setState({ 
-        allCountryName: response.data
-      });
+      // GET 받은 도시 리스트에 나라 이름 추가
+      let objArray = response.data;
+      for(let obj of objArray) {
+        for (let obj2 of countryNames) {
+          if(obj2.id === obj.country){
+            obj.countryName = obj2.country
+          }
+        }
+      }
+      this.setState({ allCountryName: response.data });
       }).catch(err => console.log(err));
     }
+
 
   constructor(props) {
     super(props);
@@ -153,7 +239,8 @@ class Bigdata extends Component {
                   isClickedInputButton={this.state.isClickedInputButton}
                   offInputBox={this.offInputBox}
                   handleClickInput={this.handleClickInput}
-                  country={x.country}
+                  countryNumber={x.country}
+                  countryName={x.countryName}
                 />
               ))}
             </div>
