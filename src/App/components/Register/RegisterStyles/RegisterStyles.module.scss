@@ -1,14 +1,15 @@
 @import 'variables.scss';
 
 .move-left{
-  margin-left: -100%;
+  right: calc(100% - 178px) !important;
 }
 
 .step-container{
   @extend %step-container; 
-  transition: margin 1s ease;
+  transition: all 1s ease;
   z-index: -2;
   position: absolute;
+  right: 0;
   width: 100%;
   // left: 120px;
   // width: -webkit-calc(100% - 60px);
@@ -20,7 +21,10 @@
     justify-content: space-between;
     align-items: center;
     width: 1090px;
+    margin-left: 50px;
     .prev-btn{
+      position: relative;
+      left: -40px;
       cursor: pointer;
     }
   };
@@ -28,14 +32,22 @@
     font-size: 35px;
     color: #161616;
     font-weight: bold;
+    letter-spacing: -1px;
+    padding-left: 10px;
   }
   p {
-    font-size: 6px;
-    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 50px;
+    padding-left: 10px;
+
+    > span{
+      color: $red;
+    }
   }
   .guide{
-    margin: 20px 0;
-    margin-top: 30px;
+    margin: 22px 0;
+    // margin-top: 30px;
   }
   .bar{
     @extend %bar; 
@@ -62,5 +74,7 @@
   }
 }
 .next-btn{
+  position: relative;
+  left: 30px;
   cursor: pointer;
 }

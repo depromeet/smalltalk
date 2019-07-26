@@ -4,7 +4,8 @@
   @extend %step-container; 
   z-index: 1;
   position: absolute;
-  // left: 60px;
+  right: 120px;
+  // margin-left: 100%;
   transition: all 1s ease;
   .contents{
     // transition: all 1s ease;
@@ -106,7 +107,7 @@
 }
 
   .move-left{
-    margin-left: -100%;
+    right: calc(100% - 58px);
     // display: none;
   }
 
