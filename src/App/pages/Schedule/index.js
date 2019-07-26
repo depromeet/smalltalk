@@ -260,9 +260,9 @@ class Schedule extends Component{
   }
 
   reList = () => {
-    const {boxList} = this.state;
-    const {listIndex} = this.state;
-    console.log(listIndex);
+    // const {boxList} = this.state;
+    // const {listIndex} = this.state;
+    // console.log(listIndex);
     // const copied = boxList.filter(num => num.id !== Number(listIndex))
     // this.setState({
     //   boxList: copied,
@@ -298,7 +298,7 @@ class Schedule extends Component{
   render(){
     const { boxList } = this.state;
     const { listIndex } = this.state;
-    console.log(boxList);
+    // console.log(boxList);
     // console.log(this.state.btest);
 
     return(
