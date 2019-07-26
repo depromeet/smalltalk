@@ -1,5 +1,5 @@
 .box {
-    width: 26.3vw;
+    width: 25.3vw;
     height: 11.5vh;
     background-image: url(../../../../static/images/bigdata-list-background.png);
     background-size: cover;
@@ -57,7 +57,7 @@
 
     .right-row {
         position: absolute;
-        right: 0;
+        left: 19vw;
         width: 6.3vw;
         height: 11.5vh;
         justify-content: center;
@@ -101,7 +101,7 @@
 
     .right-row-2 {
         position: absolute;
-        right: 0;
+        left: 19vw;
         width: 6.3vw;
         height: 10.5vh;
         justify-content: center;
