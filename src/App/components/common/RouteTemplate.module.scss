@@ -48,19 +48,25 @@
     }
   }
   .route-container{
-    height: 31%;
+    display: flex;
+    height: 34%;
     background-color: #efefef;
     padding-left: 13%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     .new-ticket{
+      // background-image: url('../../../static/images/newticket.svg');
+      background-size: cover;
       position: relative;
-      width: 380px; 
+      bottom: 12px;
+      width: 428px; 
       padding: 13px;
       cursor: pointer;
       .guide{
         position: absolute; 
         text-align: center;
-        top: 95px;
-        left: 135px;
+        top: 114px;
+        left: 166px;
         .plus {
           font-size: 30px;
         }
@@ -69,7 +75,8 @@
         }
       }
       img {
-        width: 100%;
+        width: 428px;
+        height: 258px;
       }
     }
   }

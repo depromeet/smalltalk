@@ -18,16 +18,15 @@ class ScheduleSettingTicket extends Component {
   constructor(props, context){
     super(props, context);
 
+    // 수정시 초기값은 user가 설정한 일정의 제일 첫번쨰 일정 
     this.state = {
       value: null,
-      // value: moment.range(today.clone().subtract(3, "days"), today.clone()),
-      country: '서울',
+      ticketTitle: '서울',
       startDate: '',
       endDate : '',
       diffDays : '?'
     }
   }
-  // this.state.value.diff('days')
   onSelect = value => {
     const daterange = value.toString().split('/');
     let startDate = this.changeToString(daterange[0]);
@@ -46,11 +45,11 @@ class ScheduleSettingTicket extends Component {
     return date.slice(2,10).split('-').join('.');
   }
   setSpots = () => {
-    const { country, startDate, endDate } = this.state;
-    // props로 받은 함수에 이걸 보냄 
-    return this.props.addTravelSpot({country, startDate, endDate});
+    const { ticketTitle, startDate, endDate } = this.state;
+    this.props.addTravelSpot({ticketTitle, startDate, endDate});
     // this.setState({
-    //   value : null,
+    //    value: null,
+    //   ticketTitle: '서울',
     //   startDate: '',
     //   endDate : '',
     //   diffDays : '?'
@@ -71,7 +70,7 @@ class ScheduleSettingTicket extends Component {
           <div className={cx('country')}>
             <label> 여행지 설정 </label>
             <div>
-              <input onChange={this.handleInput} value={this.state.country} />
+              <input onChange={this.handleInput} value={this.state.ticketTitle} />
             </div>
             <span className={cx('tri')}>▼</span>
           </div>

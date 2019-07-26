@@ -1,4 +1,5 @@
 import React, { Fragment }  from 'react';  
+import BigTicket from 'App/components/BigTicket';
 import { connect } from 'react-redux';
 import ScheduleSettingTicket from 'App/components/Schedule/ScheduleSettingTicket';
 import styles from './RouteTemplate.module.scss';
@@ -19,16 +20,14 @@ const RouteTemplate = ({travelList}) => {
           <input placeholder="루트 이름을 입력해주세요"/>
           <button>루트 완성하기</button>
         </header>
-        <div className={cx('route-container')}>
-        {
-          travelList.map(spot => {
-            return <div>
-              <span>{spot.country}</span> 
-              <span>{spot.startDate}</span>
-              <span>{spot.endDate}</span>
-              </div>
-          })
-        }
+        <ul className={cx('route-container')}>
+          {
+            travelList.map((ticket, i) => {
+              return <li >
+                <BigTicket ticket={ticket}/>
+                </li>
+            })
+          }
           <div className={cx('new-ticket')}>
             <div className={cx('guide')}>
               <p className={cx('plus')}>+</p>
@@ -36,7 +35,7 @@ const RouteTemplate = ({travelList}) => {
             </div>
             <img src={newTicket} alt='newTicket'/>
           </div>
-        </div>
+        </ul>
         <div className={cx('ticket-container')}> 
         <ScheduleSettingTicket />
         </div>
