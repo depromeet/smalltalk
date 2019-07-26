@@ -17,7 +17,6 @@ const RegisterStart = ({ isMovedLeft, handleNextBtn }) => {
   //   'bar': true,
   //   'bar-left': isMovedLeft[0]
   // })
-
   return(
     <Fragment>
       <div className={className}> 

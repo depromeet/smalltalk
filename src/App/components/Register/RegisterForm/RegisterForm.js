@@ -21,7 +21,8 @@ const RegisterForm = ({
   dropBtnClick,
   isOpen,
   dropR,
-  genderClick
+  genderClick,
+  handlePrevBtn
   }) => {
 
  let className = cx({
@@ -37,6 +38,7 @@ const RegisterForm = ({
   return(
     <div className={className}> 
       <div className={cx('contents')}>
+        <div onClick={() => handlePrevBtn(0)} className={cx('prevBtn')}>이전 단계</div>
         <div className={cx('form-contents')}>
           <div className={cx('contents-header')}>
             <h1 className={cx('title')}>개인정보입력</h1>

@@ -17,11 +17,12 @@ class RegisterStylesContainer extends Component{
   }
 
   render(){
-    const { isMovedLeft } = this.props; 
+    const { isMovedLeft, handlePrevBtn } = this.props; 
     return (
     <RegisterStyles
       isMovedLeft = {isMovedLeft}
       nextBtnClick = {this.nextBtnClick}
+      handlePrevBtn={handlePrevBtn}
     />
     )
   }
