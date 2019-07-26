@@ -117,21 +117,20 @@ class Bigdata extends Component {
     //   }).catch(err => console.log(err));
     }
 
-
   constructor(props) {
     super(props);
 
     this.state = {
       countryData: [
-        { name: '리스본', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/90CD9AE9-4B90-4787-89C4-0629DDE52E9F.png', number: '50' },
-        { name: '파리', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/8444F46F-F2CD-495C-8DCB-516568EB0188.png', number: '40' },
-        { name: '베니스', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/06E7EF4E-1633-484D-846B-19838F216869.png', number: '38' },
-        { name: '바르셀로나', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8BDA0FD-70F2-4262-8EB1-E4FCDA933F72.png', number: '16' },
-        { name: '도쿄', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/4E8FC029-FF06-455F-8C24-B069DDFFDF62.png', number: '13' },
-        { name: '뉴욕', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/58B7BA7B-1D57-45BC-85B4-0DA5543742AE.png', number: '11' },
-        { name: '카이로', picture: 'http://cdn.onlinewebfonts.com/svg/img_169110.png', number: '10' },
-        { name: '이스탄불', picture: 'http://cdn.onlinewebfonts.com/svg/img_169110.png', number: '8' },
-        { name: '상파울루', picture: 'http://cdn.onlinewebfonts.com/svg/img_169110.png', number: '5' },
+        { name: '코펜하겐', picture: 'http://5b0988e595225.cdn.sohucs.com/images/20181215/ff0a549dfbee4acf8e73e65da83532d4.jpeg', number: '50' },
+        { name: '카이로', picture: 'https://constantinnautics.ru/wp-content/uploads/2019/05/photo-1527910444160-b1d75c05d593.jpeg', number: '40' },
+        { name: '멕시코시티', picture: 'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ', number: '38' },
+        { name: '울란바토르', picture: 'https://scontent-lhr3-1.cdninstagram.com/vp/bb68e1a811f8b1b5318137a064e5b069/5D7E7DCD/t51.2885-15/e35/56744736_557166404774285_2235216315258908791_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&se=7&ig_cache_key=MjAzODU1NDkxMzIxOTA0OTc4OA%3D%3D.2', number: '16' },
+        { name: '리우데자네이루', picture: 'http://freedomlab.org/wp-content/uploads/2019/05/raphael-nogueira-519766-unsplash-1024x642.jpg', number: '13' },
+        { name: '아테네', picture: 'https://scontent-atl3-1.cdninstagram.com/vp/bf9d074c985a8bf8a6c5ae84c60bb467/5DC6BF99/t51.2885-15/e35/61539030_609570929555367_3975801932052361307_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com', number: '11' },
+        { name: '뉴델리', picture: 'https://s3.amazonaws.com/churchplantmedia-cms/heartcry_missionary_society_radford_va/pakistan_stock_2.jpg', number: '10' },
+        { name: '암스테르담', picture: 'https://cafebiz.cafebizcdn.vn/2019/6/12/photo-4-1560334321948931912724.jpg', number: '8' },
+        { name: '웰링턴', picture: 'https://s3.amazonaws.com/iwaria/prod/small-thumbs/1503586914222.95.jpeg', number: '5' },
       ],
       allCountryName: [
           // {
