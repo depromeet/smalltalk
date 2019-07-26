@@ -149,34 +149,34 @@ class Bigdata extends Component {
       ],
       listOfPeopleInTheCity: [
         {
-          nickname: '우와아', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: 'ㄱi염둥이', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/1009136F-893C-45FB-86DC-73A21B027E73.png', isClickedFriendRequest: false,
         },
         {
-          nickname: '여행가고싶다', age: '30대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '같이 여행해용', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/93A16D9E-921E-488A-A134-B9A949C4D4F1.png', isClickedFriendRequest: false,
         },
         {
-          nickname: '어디로갈까', age: '40대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '반지하', age: '20대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
         },
         {
-          nickname: '닉네임', age: '30대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '큼큼..설레내요 ㅋ', age: '40대', gender: '여성', picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiedvpmN8P3m0oNWcHypwDpJgB2ksBfZl-Fmc8ItNVDaE5_szWRg', isClickedFriendRequest: false,
         },
         {
-          nickname: '핸드폰', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '체코 프라하', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E2680D7C-C8A9-44E4-B32A-62CF826B4418.png', isClickedFriendRequest: false,
         },
         {
-          nickname: '우와아', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '누나', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/150B0293-45E0-4000-B492-4CF0A7381CEE.png', isClickedFriendRequest: false,
         },
         {
-          nickname: '여행가고싶다', age: '30대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '파자마 파티', age: '30대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
         },
         {
-          nickname: '어디로갈까', age: '40대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '피카츄', age: '10대', gender: '남성', picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBPs04xhwD31CNxlxg8VuJb2uhVBr8Z7FD40tlslfVwQ3pQNEW', isClickedFriendRequest: false,
         },
         {
-          nickname: '닉네임', age: '30대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '파이리', age: '30대', gender: '여성', picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYBeQpRlB5lF_IB1qxyolCeZSEblmPlSnprLKrI000aneZsYiL7w', isClickedFriendRequest: false,
         },
         {
-          nickname: '핸드폰', age: '20대', gender: '남성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
+          nickname: '꼬부기', age: '20대', gender: '남성', picture: 'https://pbs.twimg.com/profile_images/866241914504269825/Ys3lgbC4.jpg', isClickedFriendRequest: false,
         },
         {
           nickname: '빈츠', age: '10대', gender: '여성', picture: 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg', isClickedFriendRequest: false,
