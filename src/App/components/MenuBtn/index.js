@@ -95,7 +95,7 @@ class MenuBtn extends Component{
   }
   componentDidMount() {
     setInterval(() => {
-      console.log("바뀜!");
+      // console.log("바뀜!");
       this.setState({
         backImg: this.state.backArray[Math.floor(Math.random()*this.state.backArray.length)]
       })
@@ -129,6 +129,7 @@ class MenuBtn extends Component{
                 </Link>
                 <div className={cx("menu-box")}></div>
               </div>
+              <button className={cx("logout_btn")}>LOGOUT</button>
             </div>
             <button onClick={() => this.toggleBtn(this.state.isToggleOn)} className={cx("navi_btn")}>
               <div className={cx("m_close")} style={{opacity: this.state.num2}}>

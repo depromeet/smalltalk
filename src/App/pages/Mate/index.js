@@ -54,8 +54,8 @@ class Mate extends Component{
               },
               {
                 id: "3",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
+                ticketTitle: '싱가포르',
+                ticketSubTitle: 'Singapore',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
                 ticketImage : greece
@@ -67,6 +67,52 @@ class Mate extends Component{
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
                 ticketImage : mongolia
+              }
+            ]
+          },
+          {
+            id: "2",
+            title: '재현 황희와 ♥', 
+            ticketList: [
+              {
+                id: "0",
+                ticketTitle: '도쿄',
+                ticketSubTitle: 'Tokyo',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : brazil
+              },
+              {
+                id: "1",
+                ticketTitle: '파리',
+                ticketSubTitle: 'Paris',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : czech
+              },
+              {
+                id: "2",
+                ticketTitle: '로스엔젤리스',
+                ticketSubTitle: 'LA',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : denmark
+              },
+              {
+                id: "3",
+                ticketTitle: '도쿄',
+                ticketSubTitle: 'Tokyo',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : greece
+              },
+              {
+                id: "3",
+                ticketTitle: '러시아',
+                ticketSubTitle: 'Russia',
+                startDate: '2019.06.08',
+                endDate: '2019.06.15',
+                ticketImage : greece
               },
               {
                 id: "5",
@@ -119,44 +165,6 @@ class Mate extends Component{
             ]
           },
           {
-            id: "2",
-            title: '재현 황희와 ♥', 
-            ticketList: [
-              {
-                id: "0",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : brazil
-              },
-              {
-                id: "1",
-                ticketTitle: '파리',
-                ticketSubTitle: 'Paris',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : czech
-              },
-              {
-                id: "2",
-                ticketTitle: '로스엔젤리스',
-                ticketSubTitle: 'LA',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : denmark
-              },
-              {
-                id: "3",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : greece
-              }
-            ]
-          },
-          {
             id: "1",
             title: '25살, 마지막 여행', 
             ticketList: [
@@ -191,50 +199,20 @@ class Mate extends Component{
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
                 ticketImage : greece
-              }
-            ]
-          },
-          {
-            id: "3",
-            title: '혼자 여행!', 
-            ticketList: [
-              {
-                id: "0",
-                ticketTitle: '도쿄',
-                ticketSubTitle: 'Tokyo',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : brazil
               },
               {
-                id: "1",
-                ticketTitle: '파리',
-                ticketSubTitle: 'Paris',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : czech
-              },
-              {
-                id: "2",
-                ticketTitle: '로스엔젤리스',
-                ticketSubTitle: 'LA',
-                startDate: '2019.06.08',
-                endDate: '2019.06.15',
-                ticketImage : denmark
-              },
-              {
-                id: "3",
+                id: "4",
                 ticketTitle: '도쿄',
                 ticketSubTitle: 'Tokyo',
                 startDate: '2019.06.08',
                 endDate: '2019.06.15',
                 ticketImage : greece
-              }
+              },
             ]
           },
           {
-            id: "4",
-            title: '함께 여행!', 
+            id: "3",
+            title: '혼자 여행!', 
             ticketList: [
               {
                 id: "0",
@@ -267,7 +245,7 @@ class Mate extends Component{
   makeList = ( boxList ) => { 
     return boxList.map( (bTitle, i) => {
       // console.log(ticket);
-      return <li className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
+      return <li key={`schedule-${i}`} className={cx("t_list")} onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
       {bTitle.title}</li>
     })
   }
@@ -281,11 +259,7 @@ class Mate extends Component{
   }
 
   resizeHeight = (length) => {
-    if(length > 8) return { "top": "57%"};
-  }
-
-  MatelistLink = () => {
-    console.log("link");
+    if(length > 8) return { "top": "59%"};
   }
 
   render(){
@@ -307,7 +281,7 @@ class Mate extends Component{
             </div>
           </div>
           <div className={cx('mate_btn')}>
-            <button className={cx('matelink_btn')} onClick={this.MatelistLink}><Link to='/mateList'>선택한 지역으로 친구 추천 ▶</Link></button>
+            <button className={cx('matelink_btn')}><Link to='/mateList'>선택한 지역으로 친구 추천 &nbsp; ▶</Link></button>
           </div>
           <div className={cx('length_box')}>
             <TicketLength ticketList = {talker.boxList[listIndex].ticketList} vWidth = { this.state.vWidth }/>

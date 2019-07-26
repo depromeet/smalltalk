@@ -15,20 +15,20 @@ class TicketBox extends Component{
     };
   
     handleClick = id => {
-      console.log(id);
+      // console.log(id);
       const { clickedTicket } = this.state;
       const index = clickedTicket.findIndex(x => x === id);
   
-      console.log(index);
+      // console.log(index);
       if(index === -1){
         const copied = [...clickedTicket, id];
-        console.log(copied);
+        // console.log(copied);
         this.setState({
           clickedTicket: copied
         })
       }else{
         const copied = [...clickedTicket.filter(num => num !== id)];
-        console.log(copied);
+        // console.log(copied);
         this.setState({
           clickedTicket: copied
         })
@@ -38,7 +38,7 @@ class TicketBox extends Component{
     makeList = ( ticketList ) => { 
       return ticketList.map( (ticket, i) => {
         // console.log(ticket);
-        return <li className={cx("t_item", (this.state.clickedTicket.findIndex(x => x === ticket.id) === -1? 'none' : 'active'))} onClick={() => this.handleClick(ticket.id)}>
+        return <li  key={`ticket-${i}`} className={cx("t_item", (this.state.clickedTicket.findIndex(x => x === ticket.id) === -1? 'none' : 'active'))} onClick={() => this.handleClick(ticket.id)}>
         <BigTicket listLen={ticketList.length} ticket={ticket}/></li>
       })
     }

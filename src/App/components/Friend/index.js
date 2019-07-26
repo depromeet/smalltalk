@@ -19,7 +19,8 @@ class Friend extends Component{
     return(
       <div className={cx('list_mymate')}>
         <ul className={cx("talker_info")}>
-          <li>{this.props.id + 1}</li><li>
+          <li>{this.props.id + 1}</li>
+          <li>
           <Link to='/mateInfo'><img src={this.props.src} alt=""/></Link></li><li>
           <Link to='/mateInfo'>{this.props.talker}</Link></li><li className={cx("sub_info")}>{this.props.info}
           </li>
