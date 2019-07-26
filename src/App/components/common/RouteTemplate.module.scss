@@ -2,6 +2,13 @@
 
 .container{
   @extend %back-image-container;
+  a ,a:visited{
+    color: white;
+    text-decoration: none;
+  }
+  button{
+    background-color: white;
+  }
   .header{
     position: relative;
     display: flex;
@@ -50,6 +57,7 @@
   .route-container{
     display: flex;
     height: 34%;
+    overflow-x: scroll;
     background-color: #efefef;
     padding-left: 13%;
     padding-top: 10px;
@@ -89,3 +97,23 @@
     height: 54%;
   }
 }
+
+::-webkit-scrollbar-button:start:decrement, 
+  ::-webkit-scrollbar-button:end:increment{ 
+    display:block;
+    height:0;
+    background-color:transparent;
+  }
+  ::-webkit-scrollbar{ width:6px; height:8px; }
+  ::-webkit-scrollbar-track-piece{
+    background-color:#c0c0c0;
+    -webkit-border-top-right-radius:8px;
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-bottom-right-radius:8px;
+    -webkit-border-bottom-left-radius:8px;
+  }
+  ::-webkit-scrollbar-thumb:horizontal{
+    width:40px;
+    background-color:#fb3e1d;
+    -webkit-border-radius:8px;
+  }

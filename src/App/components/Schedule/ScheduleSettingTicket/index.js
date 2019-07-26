@@ -11,6 +11,8 @@ import './ScheduleSettingTicket.module.scss';
 import './calender.scss';
 import arrow from '../../../../static/images/half-arrow-right.png';
 import check from '../../../../static/images/icon-check.svg';
+import greece from 'static/images/ticketImg/greece.jpg';
+
 const cx = classnames.bind(styles);
 // const moment = extendMoment(originalMoment);
 
@@ -46,7 +48,7 @@ class ScheduleSettingTicket extends Component {
   }
   setSpots = () => {
     const { ticketTitle, startDate, endDate } = this.state;
-    this.props.addTravelSpot({ticketTitle, startDate, endDate});
+    this.props.addTravelSpot({ticketTitle, startDate, endDate, ticketImage : greece});
     // this.setState({
     //    value: null,
     //   ticketTitle: '서울',

@@ -1,4 +1,5 @@
 import React, { Fragment }  from 'react';  
+import { Link } from 'react-router-dom';
 import BigTicket from 'App/components/BigTicket';
 import { connect } from 'react-redux';
 import ScheduleSettingTicket from 'App/components/Schedule/ScheduleSettingTicket';
@@ -18,7 +19,8 @@ const RouteTemplate = ({travelList}) => {
     <div className={cx('container')}>
         <header className={cx('header')}> 
           <input placeholder="루트 이름을 입력해주세요"/>
-          <button>루트 완성하기</button>
+          {/* 🌟 루트 생성 서버에 요청해야함 */}
+          <button><Link to='/schedule'> 루트 완성하기</Link></button>
         </header>
         <ul className={cx('route-container')}>
           {
@@ -28,14 +30,22 @@ const RouteTemplate = ({travelList}) => {
                 </li>
             })
           }
-          <div className={cx('new-ticket')}>
-            <div className={cx('guide')}>
-              <p className={cx('plus')}>+</p>
-              <p>여행지 추가하기</p>
+          {
+            travelList.length === 0 ?
+             <div className={cx('new-ticket')}>
+              <div className={cx('guide')}>
+                <p className={cx('plus')}>+</p>
+                <p>여행지 추가하기</p>
+              </div>
+              <img src={newTicket} alt='newTicket'/>
             </div>
-            <img src={newTicket} alt='newTicket'/>
-          </div>
+            :
+           null
+          }
         </ul>
+
+
+        
         <div className={cx('ticket-container')}> 
         <ScheduleSettingTicket />
         </div>
