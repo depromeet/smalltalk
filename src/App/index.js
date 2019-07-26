@@ -27,7 +27,7 @@ function App() {
         <Route exact path="/mate" component={Mate} />
         <Route exact path="/mateList" component={MateList} />
         <Route exact path="/bigdata" component={Bigdata} />
-        <Route exact path="/mateInfo" component={MateInfo} />
+        <Route exact path="/mateInfo/:id" component={MateInfo} />
         <Route exact path="/schedule" component={Schedule} />
         <Route path="/schedule1" component={Schedule2} /> 
       </Switch>
