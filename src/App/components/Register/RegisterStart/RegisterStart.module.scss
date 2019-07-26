@@ -46,11 +46,13 @@
           }
         }
         .facebook{
+          cursor: pointer;
           background-color:#4a6ef4;
           color: white;
           font-weight: 500;
         }
         .google {
+          cursor: pointer;
           border: solid 1px #c7c7c7;
         }
       }
@@ -89,6 +91,7 @@
         .next-btn{
           position: relative;
           left: 30px;
+          cursor: pointer;
         }
       }
     }
@@ -103,7 +106,7 @@
 }
 
   .move-left{
-    margin-left: -86.7%;
+    margin-left: -100%;
     // display: none;
   }
 

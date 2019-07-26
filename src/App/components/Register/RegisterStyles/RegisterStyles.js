@@ -128,7 +128,7 @@ class RegisterStyles extends Component {
   }
 
   render(){
-    const { isMovedLeft } = this.props;
+    const { isMovedLeft, handlePrevBtn } = this.props;
     const { pairs } = this.state;
     let className= cx({
     'step-container': true,
@@ -137,6 +137,7 @@ class RegisterStyles extends Component {
     return (
     <div className={className}>
       <div className={cx('contents')}>
+        {/* <div onClick={() =>handlePrevBtn(1)} className={cx('prev-btn')}>이전 단계</div> */}
         <div>
           <h1 className={cx('title')}> 내 여행 스타일 선택</h1>
           <div className={cx('guide')}>

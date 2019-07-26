@@ -25,6 +25,15 @@ class RegisterTemplate extends Component {
     })
   };
 
+  handlePrevBtn = currentStep => {
+    this.setState({
+      isMovedLeft : {
+        ...this.state.isMovedLeft,
+        [currentStep] : false
+      }
+    })
+  }
+
   render(){
     const { isMovedLeft } = this.state;
     return(
@@ -36,10 +45,12 @@ class RegisterTemplate extends Component {
           <RegisterFormContainer
             isMovedLeft={isMovedLeft}
             handleNextBtn={this.handleNextBtn}
+            handlePrevBtn={this.handlePrevBtn}
           />
           <RegisterStylesContainer
             isMovedLeft={isMovedLeft}
             handleNextBtn={this.handleNextBtn}
+            handlePrevBtn={this.handlePrevBtn}
           />
           <RegisterEnd/>
       </div>

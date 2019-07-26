@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .move-left{
-  margin-left: -87.7vw;
+  margin-left:-100%;
 }
 .step-container{
   @extend %step-container; 
@@ -29,8 +29,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 200px;
-    width: 1090px;
+    padding-left: 150px;
+    width: 1200px;
+    .prevBtn{
+      cursor: pointer;
+      margin-right: 50px;
+      position: relative;
+      left: -10px;
+    }
     .form-contents{
       width: 700px;
       .contents-header{
@@ -67,6 +73,10 @@
       }
     }
 
+    .nextBtn{
+      cursor: pointer;
+    }
+
     .gender-container{
       position: relative;
       label {
@@ -84,6 +94,7 @@
         padding-left: 5px;
         padding-top: 12px;
         font-size: 14px;
+        margin-right: 20px;
       }
       .gender-dropbox{
         z-index: 4;

@@ -4,6 +4,7 @@ import ScheduleSettingTicket from 'App/components/Schedule/ScheduleSettingTicket
 import styles from './RouteTemplate.module.scss';
 import classnames from 'classnames/bind';
 import newTicket from 'static/images/newticket.svg';
+import SideMenu from 'App/components/Chat/SideMenu';
 import MenuBtn from '../MenuBtn';
 const cx = classnames.bind(styles);
 
@@ -11,6 +12,7 @@ const RouteTemplate = ({travelList}) => {
   console.log(travelList);
  return (
    <Fragment>
+    <SideMenu />
     <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
     <div className={cx('container')}>
         <header className={cx('header')}> 

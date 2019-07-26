@@ -10,6 +10,8 @@ const AUTH_LOGIN = 'auth/AUTH_LOGIN';
 const AUTH_LOGIN_SUCCESS = 'auth/AUTH_LOGIN_SUCCESS';
 const AUTH_LOGIN_FAILURE = 'auth/AUTH_LOGIN_FAILURE';
 
+const AUTH_LOGOUT = 'auth/AUTH_LOGOUT';
+
 const USER_LOADING = 'auth/USER_LOADING'; 
 const USER_LOADED = 'auth/USER_LOAED'; 
 const AUTH_ERROR = 'auth/AUTH_ERROR'; 
@@ -32,10 +34,10 @@ export function register(){
   }
 } 
 
-export function registerSuccess(token){
+export function registerSuccess(payload){
   return {
     type : AUTH_REGISTER_SUCCESS,
-    token
+    payload
   }
 } 
 
@@ -45,6 +47,12 @@ export function registerFailure(error){
     error
   }
 } 
+
+export function logOut(){
+  return {
+    type : AUTH_LOGOUT
+  }
+}
 
 export function tagsSuccess(){
   return {
@@ -64,7 +72,7 @@ export const registerRequest = values => {
     return axios.post(`${API}/auth/register/`, values)
     .then(res => { 
       localStorage.setItem('token', res.data.token); 
-      dispatch(registerSuccess(res.data.token));
+      dispatch(registerSuccess(res.data));
     })
     .catch(error => { 
       if(error.response.data.email){
@@ -175,7 +183,8 @@ export default function authentication(state = initialState, action){
             ...state.register,
             status : 'SUCCESS'
           },
-          token : action.token,
+          token : action.payload.token,
+          user: action.payload.user,
           isAuthenticated : true
         };
       case AUTH_REGISTER_FAILURE: 
@@ -244,6 +253,13 @@ export default function authentication(state = initialState, action){
             status : "FAILURE",
             error : action.payload
           }
+        }
+      case AUTH_LOGOUT:
+        return {
+          ...state,
+          user: {},
+          isAuthenticated: false,
+          token: ''
         }
     default: 
       return state;
