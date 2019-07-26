@@ -10,7 +10,8 @@ import {
   MateInfo,
   Schedule,
   Bigdata,
-  Schedule2
+  Schedule2,
+  Mypage
 } from './pages';
 import './styles.scss';
 
@@ -19,6 +20,7 @@ function App() {
     <Fragment>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path='/mypage' component={Mypage}/>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/user" component={Home} />

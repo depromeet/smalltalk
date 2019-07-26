@@ -14,7 +14,7 @@ import turkey from 'static/images/ticketImg/turkey.jpg';
 
 import classnames from 'classnames/bind';
 import styles from './MateInfo.module.scss';
-import SideMenu from '../../containers/SideMenu';
+import SideMenu from './../../components/Chat/SideMenu';
 const cx = classnames.bind(styles);
 
 class StyleInfo extends Component{

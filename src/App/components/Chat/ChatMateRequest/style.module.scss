@@ -4,6 +4,7 @@
     border-radius: 48px;
     background-color: #ffffff;
     margin-bottom: 0.55vh;
+    background-position: center;
 
     .text {
         display: flex;
@@ -40,9 +41,10 @@
 
         .accept {
             width: 4.05vw;
-            height: 2.31vh;            
+            height: 2.51vh;            
             background-image: url(../../../../static/images/add_friend.png);
             background-size: cover;
+            background-position: center;
             position: relative;
             bottom: 0.23vh;
             cursor: pointer;
@@ -50,9 +52,10 @@
 
         .refuse {
             width: 4.05vw;
-            height: 2.31vh;            
+            height: 2.51vh;
             background-image: url(../../../../static/images/refuse_friend.png);
             background-size: cover;
+            background-position: center;
             position: relative;
             top: 0.23vh;
             cursor: pointer;

@@ -7,6 +7,27 @@
     z-index: 3;
     position: absolute;
     right: 0;
+    ::-webkit-scrollbar{
+        width:5px;
+    }
+    ::-webkit-scrollbar-button:start:decrement, 
+    ::-webkit-scrollbar-button:end:increment{ 
+        display:block;
+        height:0;
+        background-color:transparent;
+    }
+    ::-webkit-scrollbar-track-piece{
+        background-color:rgba(255,255,255,0.2);
+        -webkit-border-top-right-radius:8px;
+        -webkit-border-top-left-radius:8px;
+        -webkit-border-bottom-right-radius:8px;
+        -webkit-border-bottom-left-radius:8px;
+    }
+    ::-webkit-scrollbar-thumb:vertical{
+        height:60px;
+        background-color: gray;
+        -webkit-border-radius:8px;
+    }
 
     // 채팅, 친구 리스트 버튼
     .buttons {
@@ -83,6 +104,7 @@
         padding-left: 1.14vw;
         padding-right: 1.14vw;
         overflow: scroll;
+        overflow-x: hidden;
     }
     
     // 채팅창 하단

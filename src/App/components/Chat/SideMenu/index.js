@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import ChatMateList from '../../components/Chat/ChatMateList';
-import ChatRoomList from '../../components/Chat/ChatRoomList';
-import ChatRoom from '../../components/Chat/ChatRoom';
+import ChatMateList from '../ChatMateList';
+import ChatRoomList from '../ChatRoomList';
+import ChatRoom from '../ChatRoom';
+import classNames from 'classnames/bind';
+import styles from './style.module.scss';
 import axios from 'axios';
+
+const cx = classNames.bind(styles);
 
 class SideMenu extends Component {
   componentDidMount() {
@@ -20,9 +24,7 @@ class SideMenu extends Component {
 
   constructor(props) {
     super(props);
-
-    const testIcon = 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg';
-
+    // const testIcon = 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg';
     this.state = {
       friendsListData: [
         // { picture: 'http://mblogthumb3.phinf.naver.net/20160722_90/cool911016_1469169937457pEG2Q_JPEG/150519_%C7%C7%C4%AB%C3%F2%C6%E4%C0%CC%C6%DB%C5%E4%C0%CC_%B5%B5%BE%C8_004.jpg?type=w800', nickname: '피카츄', messages_cnt: 0 },
@@ -69,17 +71,14 @@ class SideMenu extends Component {
 
   handleListClick = () => {
     this.setState({ currentState: 'ChatMateList' });
-    console.log('currentState : ChatMateList');
   }
 
   handleChatClick = () => {
     this.setState({ currentState: 'ChatRoomList' });
-    console.log('currentState : ChatRoomList');
   }
 
   handleChatRoomClick = () => {
     this.setState({ currentState: 'ChatRoom' });
-    console.log('currentState : ChatRoom');
   }
 
   handleName = (mateName) => {
@@ -136,9 +135,9 @@ class SideMenu extends Component {
       default: 
         return (
           // 친구 리스트, 채팅 버튼
-          <div className="buttons">
-            <div className="list-button" onClick={this.handleListClick}></div>
-            <div className="chat-button" onClick={this.handleChatClick}></div>
+          <div className={cx("buttons")}>
+            <div className={cx("list-button")} onClick={this.handleListClick}></div>
+            <div className={cx("chat-button")} onClick={this.handleChatClick}></div>
           </div>
         );
     }

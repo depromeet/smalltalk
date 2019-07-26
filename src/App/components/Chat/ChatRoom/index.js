@@ -67,7 +67,9 @@ class ChatRoom extends Component {
       const oppositeID = this.props.id;
       const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
       const sendMessageURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/send/`;
-      const messagesContent = { description: this.state.inputValue, to_user: oppositeID };
+      const messagesContent = { description: this.state.inputValue
+        // .replace(/(?:\r\n|\r|\n)/g, '<br />')
+        , to_user: oppositeID };
       
       // 메세지를 서버에 post 방식으로 보냅니다.
       axios.post(sendMessageURL, messagesContent, config)
@@ -75,7 +77,7 @@ class ChatRoom extends Component {
       .catch( err => console.log(err));
   
       // 작성한 내용을 로컬 state에 추가합니다.
-      const newState = this.state.chatData.concat({ type: 'mine', description: this.state.inputValue });
+      const newState = this.state.chatData.concat({ type: 'mine', description: this.state.inputValue});
       this.setState({ chatData: newState });
       this.setState({ inputValue: '' });
       console.log('로컬 state에 추가합니다.');
