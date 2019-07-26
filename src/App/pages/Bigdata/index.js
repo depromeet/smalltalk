@@ -187,7 +187,12 @@ class Bigdata extends Component {
       peopleCount: 0,
       isClickedInputButton: false,
       isClickedCity: false,
+      picture: '',
     };
+  }
+
+  handlePicture = (pictureURL) => {
+    this.setState({ picture: pictureURL })
   }
 
   handleChange = (e) => {
@@ -266,7 +271,7 @@ class Bigdata extends Component {
                 <div className={cx('text-2')}>현재{' '}{this.state.name}에 있어요!</div>
                 <div className={cx('background')}>
                   <div className={cx('circle')} />
-                  <div className={cx('country-picture')} />
+                  <div className={cx('country-picture')} style={{ backgroundImage: `url(${this.state.picture})` }} />
                   <div className={cx('edge-circle')} />
                 </div>
               </div>
@@ -314,6 +319,7 @@ class Bigdata extends Component {
                     handleName={this.handleName}
                     handlePeopleCount={this.handlePeopleCount}
                     showListOfPeopleInTheCity={this.showListOfPeopleInTheCity}
+                    handlePicture={this.handlePicture}
                   />
                 ))}
               </div>

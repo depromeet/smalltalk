@@ -23,6 +23,7 @@ class CountryList extends Component {
   }
 
   showUserList = () => {
+    this.props.handlePicture(this.props.picture);
     this.props.handleName(this.props.name);
     this.props.handlePeopleCount(this.props.number);
     this.props.showListOfPeopleInTheCity();
@@ -32,7 +33,6 @@ class CountryList extends Component {
 
     return (
       <div className={cx('box')}>
-
         <img src={this.props.picture} className={cx('picture')} alt="country" />
         <div className={cx('left-row')}>
           <div className={cx('country-name')}>{this.props.name}</div>
