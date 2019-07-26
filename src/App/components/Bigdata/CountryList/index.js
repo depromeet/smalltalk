@@ -23,7 +23,6 @@ class CountryList extends Component {
   }
 
   showUserList = () => {
-    // console.log(e.target);
     this.props.handleName(this.props.name);
     this.props.handlePeopleCount(this.props.number);
     this.props.showListOfPeopleInTheCity();

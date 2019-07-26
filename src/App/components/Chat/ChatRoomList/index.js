@@ -7,8 +7,6 @@ const cx = classNames.bind(styles);
 
 class ChatRoomList extends Component {
   render() {
-    console.log("friendsListData입니다.");
-    console.log(this.props.friendsListData);
     return (
       <div className={cx('chat-list')}>
         <div className={cx('buttons')}>

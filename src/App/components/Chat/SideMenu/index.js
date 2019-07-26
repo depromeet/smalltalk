@@ -36,7 +36,6 @@ class SideMenu extends Component {
           this.setState({ 
             ApplyListData: this.state.ApplyListData.concat(response.data)
           });
-          console.log(response.data)
         }).catch(err => console.log(err));
       }
 
@@ -105,7 +104,6 @@ class SideMenu extends Component {
 
   handleAllClose = () => {
     this.setState({ currentState: '' });
-    console.log('currentState : none');
   }
 
   render() {

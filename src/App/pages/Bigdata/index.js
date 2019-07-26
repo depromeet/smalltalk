@@ -108,6 +108,13 @@ class Bigdata extends Component {
       // GET 도시 리스트에서 중복된 데이터 제거
       this.setState({ allCountryName: response.data.splice(0, 746) });
       }).catch(err => console.log(err));
+
+    // GET 여행중인 사람이 포함 된 도시 리스트 
+    // const beSearchedCityListURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/travelinfo/city?is_recommended=true/`;
+    // const beSearchedCityList = axios.get(beSearchedCityListURL, config);
+    // beSearchedCityList.then(response => {
+    //   this.setState({ countryData: response.data.splice(0, 746) });
+    //   }).catch(err => console.log(err));
     }
 
 
