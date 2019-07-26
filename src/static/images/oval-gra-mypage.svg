@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="436.095" height="436.095" viewBox="0 0 436.095 436.095">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}
+        </style>
+        <linearGradient id="linear-gradient" x1=".877" x2="-.078" y1=".713" y2="-.05" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fb3e1d"/>
+            <stop offset=".702" stop-color="#e2fb02"/>
+            <stop offset="1" stop-color="#e1ff01"/>
+        </linearGradient>
+    </defs>
+    <ellipse id="oval_gra" cx="218.048" cy="218.047" class="cls-1" rx="218.048" ry="218.047"/>
+</svg>

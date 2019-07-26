@@ -51,7 +51,7 @@ export default function user(state = initialState, action){
         ...state,
         isTagsSet : true
       }
-      case TAGS_REQUEST_SUCCESS:
+      case TAGS_REQUEST_FAILURE:
       return {
         ...state,
         isTagsSet : false
