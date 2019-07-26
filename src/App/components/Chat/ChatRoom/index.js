@@ -46,6 +46,19 @@ class ChatRoom extends Component {
     }, 5000)
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    if(nextState.chatData.length !== this.state.chatData.length){
+      setTimeout( () => {document.body.getElementsByClassName('style_content__3I-DU')[0].scrollTop = document.body.getElementsByClassName('style_content__3I-DU')[0].scrollHeight}, 10);
+      return true;
+    }
+    else if(nextState.inputValue !== this.state.inputValue){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   componentWillUnmount() {
     // 컴포넌트가 언마운트 될 때 인터벌 함수를 제거합니다.
     clearInterval(this.interval);
@@ -75,9 +88,6 @@ class ChatRoom extends Component {
       const newState = this.state.chatData.concat({ type: 'mine', description: this.state.inputValue});
       this.setState({ chatData: newState });
       this.setState({ inputValue: '' });
-  
-      // 스크롤을 가장 아래로 내립니다.
-      document.body.getElementsByClassName('style_content__3I-DU')[0].scrollTop = document.body.getElementsByClassName('style_content__3I-DU')[0].scrollHeight;
     }
     // 메세지에 내용이 없으면
     console.log('메세지를 입력해주세요.')
