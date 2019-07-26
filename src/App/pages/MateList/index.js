@@ -1,7 +1,21 @@
 import React, {Component, Fragment} from 'react';
 import TicketList from '../../components/TicketList';
 import MateListTable from '../../components/MateListTable';
-import MenuBtn from '../../components/MenuBtn';
+import MenuBtn from '../../components/MenuBtn'
+
+import brazil from 'static/images/ticketImg/brazil.jpg';
+import czech from 'static/images/ticketImg/czech.jpg';
+import denmark from 'static/images/ticketImg/denmark.jpg';
+import greece from 'static/images/ticketImg/greece.jpg';
+import mongolia from 'static/images/ticketImg/mongolia.jpg';
+
+import pro1 from 'static/images/profile/p1.png';
+import pro2 from 'static/images/profile/p2.png';
+import pro3 from 'static/images/profile/p3.png';
+import pro4 from 'static/images/profile/p4.png';
+import pro5 from 'static/images/profile/p5.png';
+import pro6 from 'static/images/profile/p6.png';
+import pro7 from 'static/images/profile/p7.png';
 
 import classnames from 'classnames/bind';
 import styles from './MateList.module.scss';
@@ -19,53 +33,53 @@ class MateList extends Component{
           ticketSubTitle: 'Tokyo',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : brazil,
           friends: [
             { 
               id: 0,
-              src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이0',
+              src: pro1,
+              talker: 'ㄱi염둥이',
               info: '20대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
             { 
               id: 1,
-              src: '../../static/images/talker.png',
+              src: pro2,
               talker: '같이 여행해용',
               info: '20대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
             },
             { 
               id: 2,
-              src: '../../static/images/talker.png',
+              src: pro3,
               talker: '반지하',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
             },
             { 
               id: 3,
-              src: '../../static/images/talker.png',
+              src: pro4,
               talker: '재현공주',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
               id: 4,
-              src: '../../static/images/talker.png',
+              src: pro5,
               talker: '황희공주',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
               id: 5,
-              src: '../../static/images/talker.png',
+              src: pro6,
               talker: '몸짱남',
               info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
               id: 6,
-              src: '../../static/images/talker.png',
+              src: pro7,
               talker: '웅엥웅',
               info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
@@ -78,53 +92,53 @@ class MateList extends Component{
           ticketSubTitle: 'Paris',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : czech,
           friends: [
             { 
-              id: 0,
-              src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이1',
-              info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
-            },
-            { 
-              id: 1,
-              src: '../../static/images/talker.png',
-              talker: '같이 여행해용',
-              info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
-            },
-            { 
               id: 2,
-              src: '../../static/images/talker.png',
+              src: pro3,
               talker: '반지하',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
             },
             { 
-              id: 3,
-              src: '../../static/images/talker.png',
-              talker: '재현공주',
-              info: '20대 여성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+              id: 0,
+              src: pro1,
+              talker: 'ㄱi염둥이',
+              info: '20대 남성', 
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
+            },
+            { 
+              id: 1,
+              src: pro2,
+              talker: '같이 여행해용',
+              info: '20대 남성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
             },
             { 
               id: 4,
-              src: '../../static/images/talker.png',
+              src: pro5,
               talker: '황희공주',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
+              id: 3,
+              src: pro4,
+              talker: '재현공주',
+              info: '20대 여성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+            { 
               id: 5,
-              src: '../../static/images/talker.png',
+              src: pro6,
               talker: '몸짱남',
               info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
               id: 6,
-              src: '../../static/images/talker.png',
+              src: pro7,
               talker: '웅엥웅',
               info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
@@ -137,55 +151,55 @@ class MateList extends Component{
           ticketSubTitle: 'LA',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : denmark,
           friends: [
             { 
-              id: 0,
-              src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이2',
-              info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
-            },
-            { 
               id: 1,
-              src: '../../static/images/talker.png',
+              src: pro2,
               talker: '같이 여행해용',
               info: '20대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
             },
             { 
               id: 2,
-              src: '../../static/images/talker.png',
+              src: pro3,
               talker: '반지하',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
             },
             { 
-              id: 3,
-              src: '../../static/images/talker.png',
-              talker: '재현공주',
-              info: '20대 여성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-            },
-            { 
-              id: 4,
-              src: '../../static/images/talker.png',
-              talker: '황희공주',
-              info: '20대 여성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+              id: 0,
+              src: pro1,
+              talker: 'ㄱi염둥이',
+              info: '20대 남성', 
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
             { 
               id: 5,
-              src: '../../static/images/talker.png',
+              src: pro6,
               talker: '몸짱남',
               info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
+              id: 4,
+              src: pro5,
+              talker: '황희공주',
+              info: '20대 여성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+            { 
               id: 6,
-              src: '../../static/images/talker.png',
+              src: pro7,
               talker: '웅엥웅',
               info: '30대 남성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+            { 
+              id: 3,
+              src: pro4,
+              talker: '재현공주',
+              info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             }
           ]
@@ -196,177 +210,118 @@ class MateList extends Component{
           ticketSubTitle: 'Singapore',
           startDate: '2019.06.08',
           endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
+          ticketImage : greece,
           friends: [
             { 
-              id: 0,
-              src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이3',
-              info: '20대 남성', 
-              tag: ['#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
-            },
-            { 
-              id: 1,
-              src: '../../static/images/talker.png',
-              talker: '같이 여행해용',
-              info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
-            },
-            { 
-              id: 2,
-              src: '../../static/images/talker.png',
-              talker: '반지하',
-              info: '20대 여성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
-            },
-            { 
-              id: 3,
-              src: '../../static/images/talker.png',
-              talker: '재현공주',
-              info: '20대 여성', 
+              id: 6,
+              src: pro7,
+              talker: '웅엥웅',
+              info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
               id: 4,
-              src: '../../static/images/talker.png',
+              src: pro5,
               talker: '황희공주',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
-              id: 5,
-              src: '../../static/images/talker.png',
-              talker: '몸짱남',
-              info: '30대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-            },
-            { 
-              id: 6,
-              src: '../../static/images/talker.png',
-              talker: '웅엥웅',
-              info: '30대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-            }
-          ]
-        },
-        {
-          id: "4",
-          ticketTitle: '도쿄',
-          ticketSubTitle: 'Tokyo',
-          startDate: '2019.06.08',
-          endDate: '2019.06.15',
-          ticketImage : '../../static/images/ticket_img.png',
-          friends: [
-            { 
-              id: 0,
-              src: '../../static/images/talker.png',
-              talker: 'ㄱi염둥이4',
-              info: '20대 남성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
-            },
-            { 
               id: 1,
-              src: '../../static/images/talker.png',
+              src: pro2,
               talker: '같이 여행해용',
               info: '20대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
             },
             { 
               id: 2,
-              src: '../../static/images/talker.png',
+              src: pro3,
               talker: '반지하',
               info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
             },
             { 
-              id: 3,
-              src: '../../static/images/talker.png',
-              talker: '재현공주',
-              info: '20대 여성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-            },
-            { 
-              id: 4,
-              src: '../../static/images/talker.png',
-              talker: '황희공주',
-              info: '20대 여성', 
-              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+              id: 0,
+              src: pro1,
+              talker: 'ㄱi염둥이',
+              info: '20대 남성', 
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
             },
             { 
               id: 5,
-              src: '../../static/images/talker.png',
+              src: pro6,
               talker: '몸짱남',
               info: '30대 남성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             },
             { 
-              id: 6,
-              src: '../../static/images/talker.png',
-              talker: '웅엥웅',
-              info: '30대 남성', 
+              id: 3,
+              src: pro4,
+              talker: '재현공주',
+              info: '20대 여성', 
               tag: ['#즉흥적', '#저녁형', '#알뜰족']  
             }
           ]
-          },
-          {
-            id: "5",
-            ticketTitle: '파리',
-            ticketSubTitle: 'Paris',
-            startDate: '2019.06.08',
-            endDate: '2019.06.15',
-            ticketImage : '../../static/images/ticket_img.png',
-            friends: [
-              { 
-                id: 0,
-                src: '../../static/images/talker.png',
-                talker: 'ㄱi염둥이5',
-                info: '20대 남성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
-              },
-              { 
-                id: 1,
-                src: '../../static/images/talker.png',
-                talker: '같이 여행해용',
-                info: '20대 남성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
-              },
-              { 
-                id: 2,
-                src: '../../static/images/talker.png',
-                talker: '반지하',
-                info: '20대 여성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
-              },
-              { 
-                id: 3,
-                src: '../../static/images/talker.png',
-                talker: '재현공주',
-                info: '20대 여성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-              },
-              { 
-                id: 4,
-                src: '../../static/images/talker.png',
-                talker: '황희공주',
-                info: '20대 여성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-              },
-              { 
-                id: 5,
-                src: '../../static/images/talker.png',
-                talker: '몸짱남',
-                info: '30대 남성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-              },
-              { 
-                id: 6,
-                src: '../../static/images/talker.png',
-                talker: '웅엥웅',
-                info: '30대 남성', 
-                tag: ['#즉흥적', '#저녁형', '#알뜰족']  
-              }
-            ]
-          }
+        },
+        {
+          id: "4",
+          ticketTitle: '파리',
+          ticketSubTitle: 'Paris',
+          startDate: '2019.06.08',
+          endDate: '2019.06.15',
+          ticketImage : mongolia,
+          friends: [
+            { 
+              id: 3,
+              src: pro4,
+              talker: '재현공주',
+              info: '20대 여성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+            { 
+              id: 0,
+              src: pro1,
+              talker: 'ㄱi염둥이',
+              info: '20대 남성', 
+              tag: ['#즉흥적', '#저녁형','#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어', '#핵인싸', '#즉흥적', '#저녁형']  
+            },
+            { 
+              id: 6,
+              src: pro7,
+              talker: '웅엥웅',
+              info: '30대 남성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+            { 
+              id: 4,
+              src: pro5,
+              talker: '황희공주',
+              info: '20대 여성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+            { 
+              id: 1,
+              src: pro2,
+              talker: '같이 여행해용',
+              info: '20대 남성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파', '#예술투어']  
+            },
+            { 
+              id: 2,
+              src: pro3,
+              talker: '반지하',
+              info: '20대 여성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족', '#알콜파']  
+            },
+            { 
+              id: 5,
+              src: pro6,
+              talker: '몸짱남',
+              info: '30대 남성', 
+              tag: ['#즉흥적', '#저녁형', '#알뜰족']  
+            },
+          ]
+        }
       ],
       callToIndex: 0
     }
@@ -380,11 +335,11 @@ class MateList extends Component{
 
   render(){
     const { ticketList } = this.state;
-    console.log(this.state.callToIndex);
+    // console.log(this.state.callToIndex);
 
     return(
       <Fragment>
-        <MenuBtn barColor = { this.state.barColor }/>
+        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
         <SideMenu />
         <div className={cx('list_wrap')}>
           <h1>친구 추천 리스트</h1>

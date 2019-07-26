@@ -102,7 +102,7 @@ class RegisterFormContainer extends Component{
     const validation = this.validator.validate(this.state);
     this.setState({validation});
     
-    //handleNextBtn(1);
+    // handleNextBtn(1);
     /* 화면 전환 UI 체크할 때 아래 if문 주석처리 */
     if(validation.isValid){
       const { email, password, nickname, age, introduction } = this.state;

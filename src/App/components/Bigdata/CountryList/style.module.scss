@@ -1,5 +1,5 @@
 .box {
-    width: 26.3vw;
+    width: 25.3vw;
     height: 11.5vh;
     background-image: url(../../../../static/images/bigdata-list-background.png);
     background-size: cover;
@@ -11,6 +11,7 @@
     .picture {
         width: 3.64vw;
         height: 3.64vw;
+        border-radius: 50%;
     }
 
     .left-row {
@@ -50,7 +51,7 @@
 
     .right-row {
         position: absolute;
-        right: 0;
+        left: 19vw;
         width: 6.3vw;
         height: 11.5vh;
         justify-content: center;
@@ -82,7 +83,7 @@
         .text {
             align-self: center;
             display: flex;
-            width: 3vw;
+            width: fit-content;
             font-family: NotoSansCJKkr;
             font-size: 1.5vh;
             line-height: 1.63;

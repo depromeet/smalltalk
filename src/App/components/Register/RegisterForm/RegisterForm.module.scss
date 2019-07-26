@@ -1,17 +1,14 @@
 @import 'variables.scss';
 
-.move-left{
-  margin-left: -100%;
-}
 .step-container{
   @extend %step-container; 
-  transition: margin 1s ease;
   z-index: -1;
   position: absolute;
-  // left: 60px;
+  right: 60px;
   width: -webkit-calc(100% - 60px);
   width:     -moz-calc(100% - 60px);
   width:         calc(100% - 60px);
+  transition: all 1s ease;
 
   .after-request-error{
     position: relative;
@@ -29,13 +26,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 150px;
-    width: 1200px;
+    padding-left: 130px;
+    width: 1250px;
     .prevBtn{
       cursor: pointer;
       margin-right: 50px;
       position: relative;
-      left: -10px;
+      left: 10px;
     }
     .form-contents{
       width: 700px;
@@ -43,7 +40,7 @@
         position: relative;
       }
       .title{
-        font-size: 30px;
+        font-size: 35px;
         font-weight: bold;
         color: #161616;
         line-height: 1.29;
@@ -52,9 +49,11 @@
       }
       .guide{
         font-size: 10px;
+        margin: 22px 0;
       }
       input{
         width: 100%;
+        margin-top: 8px;
       }
       .first-second-row{
         display: flex;
@@ -74,6 +73,7 @@
     }
 
     .nextBtn{
+      left: 10px !important;
       cursor: pointer;
     }
 
@@ -95,6 +95,7 @@
         padding-top: 12px;
         font-size: 14px;
         margin-right: 20px;
+        margin-top: 8px;
       }
       .gender-dropbox{
         z-index: 4;
@@ -117,18 +118,25 @@
       }
       .drop-down-button {
         position: absolute;
-        right: 15px;
-        top: 32px;
+        right: 25px;
+        top: 40px;
         color: #d3d3d3;
         font-size: 7px;
         cursor: pointer;
         // padding-left: 100px;
       }
     }
+    .nextBtn{
+      position: relative;
+      left: 180px;
+    }
+  }
+}
 
-  }
-  .bar{
-    @extend %bar; 
-    color: $red;
-  }
+.bar{
+  @extend %bar; 
+  color: $red;
+}
+.move-left{
+  right: calc(100% - 118px);
 }

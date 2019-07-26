@@ -9,9 +9,9 @@ class MateListTable extends Component{
   
     makeList = ( ticketList ) => { 
       // console.log(ticketList.friends); 
-      return ticketList.friends.map(friend => {
+      return ticketList.friends.map( (friend, i) => {
         return (
-          <Friend id={friend.id} src={friend.src} talker={friend.talker} info={friend.info} tag={friend.tag} />
+          <Friend id={i} src={friend.src} talker={friend.talker} info={friend.info} tag={friend.tag} />
         );
       })     
     }

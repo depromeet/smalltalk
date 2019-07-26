@@ -80,6 +80,7 @@
       width: 27vw;
       height: 100%;
       background-color: skyblue;
+      z-index: 1;
 
       > img{
         width: 400%;
@@ -91,6 +92,7 @@
     .menu_box{
       position: relative;
       left: 0;
+      overflow: hidden;
       width: 33vw;
       height: 100%;
       background-color: #fff;
@@ -109,18 +111,18 @@
         width: 22.08vw;
         height: 52.4vh;
         left: 3vw;
-        bottom: 13vh;
+        bottom: 14vh;
         display: flex;
         flex-direction: column;
 
         .menu-box {
             width: 100%;
-            height: 3.9vh;
+            height: 3vh;
             background-color: red;
             z-index: -1;
             position: relative;
-            bottom: 8.2vh;
-            left: 60vw;
+            bottom: 6.5vh;
+            left: 30vw;
             opacity: 0.5;
             transition: 1s;
         }
@@ -134,15 +136,25 @@
             width: fit-content;
             height: fit-content;
             max-height: 11vh;
-            font-family: OpenSans;
+            font-family: 'Open Sans', sans-serif;
             font-size: 4.68vw;
-            font-weight: bold;
+            font-weight: 700;
             line-height: 1.22;
-            letter-spacing: -5.4px;
+            letter-spacing: -0.5vh;
             margin-bottom: 2.4vh;
             cursor: pointer;
             z-index: 1;
         }
+      }
+      .logout_btn{
+        position: absolute;
+        bottom: 8vh;
+        left: 3vw;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: -0.5px;
+        cursor: pointer;
       }
     }
   }

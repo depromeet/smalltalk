@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import StylePair from './StylePair';
+import iconBack from 'static/images/icon-back.svg';
 import iconNext from 'images/icon-next.svg';
 import classnames from 'classnames/bind';
 import styles from './RegisterStyles.module.scss';
@@ -137,12 +138,14 @@ class RegisterStyles extends Component {
     return (
     <div className={className}>
       <div className={cx('contents')}>
-        {/* <div onClick={() =>handlePrevBtn(1)} className={cx('prev-btn')}>이전 단계</div> */}
+        <div onClick={() =>handlePrevBtn(1)} className={cx('prev-btn')}>
+          <img src={iconBack} alt='icon-back'/>
+        </div>
         <div>
           <h1 className={cx('title')}> 내 여행 스타일 선택</h1>
           <div className={cx('guide')}>
-            <p>나와 취향이 맞는 친구들을 찾기 위해</p>
-            <p>당신의 여행 스타일을 선택해주세요 :)</p>
+            <p>나와 취향이 맞는 친구들을 찾기 위해<br/>
+            <span>당신의 여행 스타일</span>을 선택해주세요 :)</p>
           </div>
           <div className={cx('style-container')}>
             <div className={cx('style-column')}>

@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,800&display=swap');
+
+
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+button{
+  border:none;
+  background: transparent;
+}
+
 .mate_wrap{
   position: relative;
   overflow: hidden;
@@ -57,7 +69,7 @@
       width: 200px;
       height: 100%;
       position: relative;
-      top: 3vh;
+      top: 3.5vh;
 
       > h2{
         font-size: 20px;
@@ -68,7 +80,7 @@
           color: #fff;
           position: absolute;
           top: 0.5vh;
-          right: 20%;
+          right: 10%;
           cursor: pointer;
           transform: rotate(0deg)
         }
@@ -118,12 +130,12 @@
   }
   .length_box{
     position: absolute;
-    top: 36vh;
-    left: 11vw;
+    top: 37vh;
+    left: 10vw;
   }
   .t_box{
     position: absolute;
-    top: 50%;
+    top: 51%;
     left: 10vw;
     width: 91vw;
     height: 300px;
@@ -145,7 +157,7 @@
       border: none;
       padding: 10px 20px;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: -0.96px;
       cursor: pointer;
       transition-duration: 0.5s;

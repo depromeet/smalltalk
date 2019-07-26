@@ -7,7 +7,7 @@ class TicketLength extends Component{
 
   makeList = ( ticketList ) => { 
     return ticketList.map( (ticklen, index) => {
-      return <li><div className={cx('num_box')}>
+      return <li key={`ticketTitle-${index}`}><div className={cx('num_box')}>
       {
         (function() {
           if (index === 0) return (<p>in</p>);
@@ -24,15 +24,15 @@ class TicketLength extends Component{
     const _vWidth = this.props.vWidth;
     const _vHeight = 73;
     let resetWidth = (_vWidth * length) + 'px';
-    const lmtWidth = (_vWidth * 8) + 'px';
+    const lmtWidth = (_vWidth * 7) + 'px';
 
-    if (length > 8) return {"width" : lmtWidth, "height" : _vHeight * 2 + "px"};
+    if (length > 7) return {"width" : lmtWidth, "height" : _vHeight * 2 + "px"};
     else return { "width" : resetWidth, "height" : _vHeight + "px" };
   }
 
   render(){
     const { ticketList } = this.props;
-    console.log(ticketList);
+    // console.log(ticketList);
     return(
       <ul className={cx('length_box')} style={this.resizeWidth(ticketList.length)}>
         {this.makeList(ticketList)}

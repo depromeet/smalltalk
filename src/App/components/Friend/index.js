@@ -19,9 +19,10 @@ class Friend extends Component{
     return(
       <div className={cx('list_mymate')}>
         <ul className={cx("talker_info")}>
-          <li>{this.props.id + 1}</li><li>
-          <Link to='/mateInfo'><img src={this.props.src} alt=""/></Link></li><li>
-          <Link to='/mateInfo'>{this.props.talker}</Link></li><li className={cx("sub_info")}>{this.props.info}
+          <li>{this.props.id + 1}</li>
+          <li>
+          <Link to='/mateInfo/0'><img src={this.props.src} alt=""/></Link></li><li>
+          <Link to='/mateInfo/0'>{this.props.talker}</Link></li><li className={cx("sub_info")}>{this.props.info}
           </li>
         </ul>
         <ul className={cx("list_tag")}>{this.tagList(this.props.tag)}<li>{this.props.tag.length > 5 && (<p>+{this.props.tag.length-5}</p>)}</li></ul>

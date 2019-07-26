@@ -84,6 +84,33 @@
         position: relative;
         top: 16.85vh;
         height: 45.37vh;
+
+        .header-2 {
+            width: 100%;
+            text-align: center;
+            height: fit-content;
+            margin-top: 3vh;
+        }
+
+        .title {
+            text-align: center;
+            font-family: NotoSansCJKkr;
+            font-size: 2.22vh;
+            font-weight: 500;
+            line-height: 1.38;
+            letter-spacing: -0.96px;
+            text-align: center;
+            margin-bottom: 2.1vh;
+        }
+
+        .contents {
+            text-align: center;
+            font-family: NotoSansCJKkr;
+            font-size: 1.5vh;
+            line-height: 1.63;
+            letter-spacing: -0.64px;
+            color: #707070;
+        }
     }
 
     .collection-2 {
@@ -92,6 +119,33 @@
         position: relative;
         top: 16.85vh;
         height: 80vh;
+
+        .header-2 {
+            width: 100%;
+            text-align: center;
+            height: fit-content;
+            margin-top: 3vh;
+        }
+
+        .title {
+            text-align: center;
+            font-family: NotoSansCJKkr;
+            font-size: 2.22vh;
+            font-weight: 500;
+            line-height: 1.38;
+            letter-spacing: -0.96px;
+            text-align: center;
+            margin-bottom: 2.1vh;
+        }
+
+        .contents {
+            text-align: center;
+            font-family: NotoSansCJKkr;
+            font-size: 1.5vh;
+            line-height: 1.63;
+            letter-spacing: -0.64px;
+            color: #707070;
+        }
     }
 }
 
@@ -104,11 +158,11 @@
     padding: 0.57vw;
 
     .fold-button {
-        width: 20px;
-        border-top: 10px solid #b7b7b7;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid transparent;
+        width: 1vw;
+        border-top: 0.5vw solid #b7b7b7;
+        border-right: 0.5vw solid transparent;
+        border-bottom: 0.5vw solid transparent;
+        border-left: 0.5vw solid transparent;
         position: relative;
         left: 20.5vw;
         top: 1vh;
@@ -126,22 +180,36 @@
 
 .apply-friend-2 {
     width: 100%;
-    height: 5vh;
+    height: 7.9vh;
     background-color: #f4f4f4;
     position: absolute;
     bottom: 0;
-    padding: 0.57vw;
+    padding: 2.7vh 1.7vw 2.7vh 2vw;
+    display: flex;
+    justify-content: space-between;
+
+    .text {
+        width: fit-content;
+        height: fit-content;
+        font-family: NotoSansCJKkr;
+        font-size: 1.4vh;
+        font-weight: 500;
+        line-height: 1.63;
+        letter-spacing: -0.64px;
+        text-align: center;
+        color: #959494;
+    }
 
     .rotated-fold-button {
-        width: 20px;
-        border-top: 10px solid #b7b7b7;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 10px solid transparent;
-        position: relative;
-        left: 20.5vw;
-        bottom: 0.7vh;
+        width: 1vw;
+        height: fit-content;
+        border-top: 0.5vw solid #b7b7b7;
+        border-right: 0.5vw solid transparent;
+        border-bottom: 0.5vw solid transparent;
+        border-left: 0.5vw solid transparent;
         cursor: pointer;
         transform: rotate(180deg);
+        position: relative;
+        bottom: 0px;
     }
 }
