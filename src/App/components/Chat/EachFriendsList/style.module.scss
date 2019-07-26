@@ -13,9 +13,8 @@
 }
 
 .name {
-    width: 6.87vw;
+    width: fit-content;
     height: 3.33vh;
-    font-family: NotoSansCJKkr;
     font-size: 1.25vw;
     font-weight: 500;
     line-height: 1.38;
@@ -28,13 +27,13 @@
 
 .unchecked-messages {
     position: relative;
-    left: 10.5vw;
+    left: 13.5vw;
     top: 3.4vh;
 }
 
 .unchecked-messages-2 {
     position: relative;
-    left: 10vw;
+    left: 13vw;
     top: 3.4vh;
 }
 
@@ -56,7 +55,6 @@
     position: relative;
     bottom: 1.9vh;
     height: 18px;
-    font-family: NotoSansCJKkr;
     font-size: 0.62vw;
     font-weight: 300;
     line-height: 1.5;
