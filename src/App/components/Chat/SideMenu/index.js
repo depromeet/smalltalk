@@ -63,6 +63,11 @@ class SideMenu extends Component {
         // { picture: testIcon, nickname: '이고잉', messages_cnt: 2 },
       ],
       ApplyListData: [
+        // {id: 0, picture: '', name: '1'},
+        // {id: 1, picture: '', name: '2'},
+        // {id: 2, picture: '', name: '3'},
+        // {id: 3, picture: '', name: '4'},
+        // {id: 4, picture: '', name: '5'},
       ],
       currentState: '',
       name: '',
