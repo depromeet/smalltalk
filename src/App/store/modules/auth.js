@@ -34,10 +34,10 @@ export function register(){
   }
 } 
 
-export function registerSuccess(token){
+export function registerSuccess(payload){
   return {
     type : AUTH_REGISTER_SUCCESS,
-    token
+    payload
   }
 } 
 
@@ -72,7 +72,7 @@ export const registerRequest = values => {
     return axios.post(`${API}/auth/register/`, values)
     .then(res => { 
       localStorage.setItem('token', res.data.token); 
-      dispatch(registerSuccess(res.data.token));
+      dispatch(registerSuccess(res.data));
     })
     .catch(error => { 
       if(error.response.data.email){
@@ -183,7 +183,8 @@ export default function authentication(state = initialState, action){
             ...state.register,
             status : 'SUCCESS'
           },
-          token : action.token,
+          token : action.payload.token,
+          user: action.payload.user,
           isAuthenticated : true
         };
       case AUTH_REGISTER_FAILURE: 

@@ -100,7 +100,7 @@ class MenuBtn extends Component{
   }
   
   render(){
-    console.log(this.state.isToggleOn);
+    // console.log(this.state.isToggleOn);
     return(
       <Fragment>
         <Link to="/"><div className={cx("logo")}></div></Link>
