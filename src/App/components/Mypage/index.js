@@ -7,7 +7,12 @@ import classnames from 'classnames/bind';
 import styles from './Mypage.module.scss'; 
 const cx = classnames.bind(styles);
 
-const Mypage = ({user, onChange, pairs, handleStyleCircle}) => {
+const Mypage = ({
+  handleLogout,
+  user,
+  onChange,
+  pairs,
+  handleStyleCircle}) => {
     console.log(pairs);
   return (
     <div className={cx('wrapper')}>
@@ -20,7 +25,7 @@ const Mypage = ({user, onChange, pairs, handleStyleCircle}) => {
         <div className={cx('form-content')}>
           <div className={cx('column')}>
             <div className={cx('profile-pic')}></div>
-            <div className={cx('logout-btn')}>LOGOUT</div>
+            <div onClick={handleLogout} className={cx('logout-btn')}>LOGOUT</div>
           </div>
           <div className={cx('column')}>
             <LabelInput

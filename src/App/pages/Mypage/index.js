@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import * as authAction from 'App/store/modules/auth';
 import Mypage from 'App/components/Mypage';
 import MenuBtn from '../../components/MenuBtn';
 import SideMenu from './../../components/Chat/SideMenu';
@@ -124,6 +125,15 @@ class MypageContainer extends Component {
      this.setState({ pairs : copied })
   }
 
+  handleLogout = (e) => {
+    e.preventDefault();
+    console.log('..?');
+    localStorage.removeItem('token')
+    this.props.logOut();
+    this.props.history.push('/')
+    //console.log('logout');
+  }
+
   render(){
   const { user, pairs } = this.state;
   // console.log('pages 안', user);
@@ -132,6 +142,7 @@ class MypageContainer extends Component {
       <SideMenu />
       <MenuBtn barColor = { "#000" } boxHidden = { "block" } />
       <Mypage 
+        handleLogout={this.handleLogout}
         user={user}
         onChange={this.handleChange}
         pairs={pairs}
@@ -146,7 +157,11 @@ const mapStateToProps = state => ({
   user : state.auth.user
 }); 
 
+const mapDispatchToProps = dispatch => ({
+  logOut : () => dispatch(authAction.logOut())
+})
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(MypageContainer)

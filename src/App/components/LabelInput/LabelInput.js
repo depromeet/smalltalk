@@ -13,7 +13,7 @@ const LabelInput = ({ label, value, limit, required, disabled, error, ...rest })
         <div className={cx('error')}>{error}</div>
       }
       <div className={cx('label')}>{label}</div>
-      <input className={cx('input')} value={value} {...rest} disabled={disabled} />
+      <input className={cx('input')} value={value} {...rest} disabled={disabled}/>
     </div>
   )
 

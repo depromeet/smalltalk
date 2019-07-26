@@ -10,6 +10,8 @@ const AUTH_LOGIN = 'auth/AUTH_LOGIN';
 const AUTH_LOGIN_SUCCESS = 'auth/AUTH_LOGIN_SUCCESS';
 const AUTH_LOGIN_FAILURE = 'auth/AUTH_LOGIN_FAILURE';
 
+const AUTH_LOGOUT = 'auth/AUTH_LOGOUT';
+
 const USER_LOADING = 'auth/USER_LOADING'; 
 const USER_LOADED = 'auth/USER_LOAED'; 
 const AUTH_ERROR = 'auth/AUTH_ERROR'; 
@@ -45,6 +47,12 @@ export function registerFailure(error){
     error
   }
 } 
+
+export function logOut(){
+  return {
+    type : AUTH_LOGOUT
+  }
+}
 
 export function tagsSuccess(){
   return {
@@ -244,6 +252,13 @@ export default function authentication(state = initialState, action){
             status : "FAILURE",
             error : action.payload
           }
+        }
+      case AUTH_LOGOUT:
+        return {
+          ...state,
+          user: {},
+          isAuthenticated: false,
+          token: ''
         }
     default: 
       return state;
