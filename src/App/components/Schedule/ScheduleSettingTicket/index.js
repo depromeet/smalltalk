@@ -42,7 +42,7 @@ class ScheduleSettingTicket extends Component {
       });
   }
 
-  handleInput = e => this.setState({country : e.target.value});
+  handleInput = e => this.setState({ticketTitle : e.target.value});
   changeToString = date => {
     return date.slice(2,10).split('-').join('.');
   }
