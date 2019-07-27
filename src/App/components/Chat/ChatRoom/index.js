@@ -93,6 +93,29 @@ class ChatRoom extends Component {
     console.log('메세지를 입력해주세요.')
   };
 
+  // pressEnterToChat = (e) => {
+  //   // 메세지에 내용이 있고 엔터키가 눌렸으면
+  //   if(this.state.inputValue && e.key === 'Enter') {
+  //     const token = 'Token ' + localStorage.getItem('token');
+  //     const oppositeID = this.props.id;
+  //     const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+  //     const sendMessageURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/messages/send/`;
+  //     const messagesContent = { description: this.state.inputValue
+  //       // .replace(/(?:\r\n|\r|\n)/g, '<br />')
+  //       , to_user: oppositeID };
+      
+  //     // 메세지를 서버에 post 방식으로 보냅니다.
+  //     axios.post(sendMessageURL, messagesContent, config)
+  //     .then( response => console.log(response) )
+  //     .catch( err => console.log(err) );
+  
+  //     // 작성한 내용을 로컬 state에 추가합니다.
+  //     const newState = this.state.chatData.concat({ type: 'mine', description: this.state.inputValue});
+  //     this.setState({ chatData: newState });
+  //     this.setState({ inputValue: '' });
+  //   }
+  // }
+
   render() {
     return (
       <div className={cx('chat')}>
