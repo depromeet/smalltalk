@@ -9,12 +9,12 @@ class RegisterStylesContainer extends Component{
     // tags 받아서 redux에 있는 setTagsRequest 요청하고 
     // 성공하면 this.props.handleNextBtn(2)
     const { handleNextBtn, tagsSetRequest } = this.props;
-    // return tagsSetRequest(tags)
-    // .then(() => {
-    //   console.log('성공쓰')
-    //   handleNextBtn(2)
-    // })
-    handleNextBtn(2);
+    return tagsSetRequest(tags)
+    .then(() => {
+      console.log('성공쓰')
+      handleNextBtn(2)
+    })
+    //handleNextBtn(2);
   }
 
   render(){

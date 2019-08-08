@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute path="/user" component={Home} />
-        <PrivateRoute exact path="/mate" component={Mate} />
+        <Route exact path="/mate" component={Mate} />
         <PrivateRoute exact path="/mateList" component={MateList} />
         <PrivateRoute exact path="/bigdata" component={Bigdata} />
         <PrivateRoute exact path="/mateInfo/:id" component={MateInfo} />

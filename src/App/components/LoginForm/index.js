@@ -18,12 +18,6 @@ const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
    errors
   } = useForm(login, validate); 
 
-//  let EmailclassName = cx({
-//    'login__input-label' : true,
-//   'login__input-label': isWriting === null,
-//   'login__input-label-red' : isWriting === 'email'
-//   });
-
   function login(){
     // console.log('validation 에러 없고 요청 고고');
     loginRequest(values)
@@ -31,7 +25,6 @@ const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
   if(isAuthenticated){
     return <Redirect to="/" />;
   }
-
   return(
       <div className={cx('login__container')}>
         <div className={cx('login__header')}>

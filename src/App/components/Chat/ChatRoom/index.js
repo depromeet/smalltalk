@@ -48,7 +48,9 @@ class ChatRoom extends Component {
 
   shouldComponentUpdate(nextProps, nextState){
     if(nextState.chatData.length !== this.state.chatData.length){
-      setTimeout( () => {document.body.getElementsByClassName('style_content__3I-DU')[0].scrollTop = document.body.getElementsByClassName('style_content__3I-DU')[0].scrollHeight}, 10);
+      setTimeout( () => 
+      {document.body.getElementsByClassName('style_content__3I-DU')[0].scrollTop 
+      = document.body.getElementsByClassName('style_content__3I-DU')[0].scrollHeight}, 10);
       return true;
     }
     else if(nextState.inputValue !== this.state.inputValue){
