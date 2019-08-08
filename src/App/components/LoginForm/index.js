@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react'; 
 import useForm from './useForm';
 import validate from './LoginFormValidationRules';
 import { Redirect } from 'react-router-dom';
@@ -9,19 +10,19 @@ import styles from './LoginForm.module.scss';
 import * as authAction from 'App/store/modules/auth';
 const cx = classnames.bind(styles);
 
-const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
+const LoginForm = ({isAuthenticated, loginRequest, errorStatus}) => {
+  const email = useInput('');
+  const password = useInput('');
   const { 
-   values,
    resetClick,
    handleChange,
    handleSubmit,
    errors
-  } = useForm(login, validate); 
-
-  function login(){
-    // console.log('validation 에러 없고 요청 고고');
-    loginRequest(values)
-  }
+  } = useForm(null, validate); 
+  // function login(){
+  //   // console.log('validation 에러 없고 요청 고고');
+  //   loginRequest(values)
+  // }
   if(isAuthenticated){
     return <Redirect to="/" />;
   }
@@ -41,15 +42,15 @@ const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
             <input
               className={cx('login__input')}
               type="text"
-              name="email"
-              value={values.email || ''}
-              onChange={handleChange}
+              // name="email"
+              {...email}
               required
             />
             <button
               className={cx('login__input-x')}
               onClick={resetClick}
-              name="email">x
+              // name="email"
+              >x
             </button>
           </div>
           <div className={cx('login__input-container')}>
@@ -60,15 +61,13 @@ const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
             <input
               className={cx('login__input')}
               type="password"
-              name="password"
-              value={values.password || ''}
-              onChange={handleChange}
+              {...password}
               required
             />
             <div
              className={cx('login__input-x')}
             //  onClick={this.resetInputClick}
-             name="password"
+            //  name="password"
              > x</div>
           </div>
           { errorStatus === 2 ? <div className={cx('request-fail-error')}> 비밀번호와 이메일을 확인해주세요 </div>: null}
@@ -107,3 +106,15 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(LoginForm);
+
+function useInput(initialValue){
+  const [value, setValues] = useState(initialValue);
+
+  function handleInputChange(e){
+    setValues(e.target.value);
+  }
+  return {
+    value,
+    onChange : handleInputChange
+  }
+}

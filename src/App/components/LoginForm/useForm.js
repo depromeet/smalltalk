@@ -5,7 +5,6 @@ const useForm = (callback, validate) => {
   const [values, setValues] = useState({}); // 현재 값
   const [errors, setErrors] = useState({}); // 여기에 현재 error 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isWriting, setIsWriting] = useState(null);
   
   useEffect(() => {
     if(Object.keys(errors).length === 0 && isSubmitting){ 
@@ -22,7 +21,6 @@ const useForm = (callback, validate) => {
   }
   const handleChange = event => {
     event.persist(); // why ? 
-    setIsWriting(event.target.name);
     setValues(values => ({
       ...values, [event.target.name] : event.target.value
       })
@@ -30,14 +28,12 @@ const useForm = (callback, validate) => {
   }
   const resetClick = event => {
     event.persist();
-    console.log(event.target.name);
     setValues(values => ({
       ...values, [event.target.name] : ''
       })
     )
   }
   return {
-    isWriting,
     resetClick,
     handleChange,
     handleSubmit,
