@@ -14,8 +14,8 @@ class ChatRoom extends Component {
       inputValue: '',
       thePosition: 0,
       chatData: [
-        // { type: 'opposite', description: '' },
-        // { type: 'mine', description: '' },
+        // { type: 'opposite', description: 'as' },
+        // { type: 'mine', description: 'ds' },
       ],
     };
   }
