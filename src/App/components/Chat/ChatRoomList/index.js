@@ -27,16 +27,20 @@ class ChatRoomList extends Component {
             ) : <div></div>}
           {this.props.friendsListData.map((list, i) => (
             <EachFriendsList
+              // UI
+              currentState={this.props.currentState}
+              handleChatRoomClick={this.props.handleChatRoomClick}              
+            
               picture={list.picture}
               name={list.nickname}
               number={list.messages.message_cnt}
-              key={i}
-              handleChatRoomClick={this.props.handleChatRoomClick}
-              handleName={this.props.handleName}
               isExistChatRoom = {list.messages.is_chat}
-              currentState={this.props.currentState}
-              handleID={this.props.handleID}
               id={list.id}
+              
+              handleName={this.props.handleName}
+              handleID={this.props.handleID}
+              
+              key={i}
             />
           ))}
         </div>

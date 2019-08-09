@@ -4,8 +4,8 @@ import styles from './style.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ChatContent = ( {lastType = '', type, text} ) => {
-  let lastChatType = lastType.type;
+const ChatContent = ({ lastType = '', type, text }) => {
+  const lastChatType = lastType.type;
   return (
     <div>
       {/* 상대방 채팅일 경우 */}
@@ -32,6 +32,6 @@ const ChatContent = ( {lastType = '', type, text} ) => {
         )}
     </div>
   );
-}
+};
 
 export default ChatContent;
