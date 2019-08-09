@@ -10,50 +10,50 @@ import axios from 'axios';
 const cx = classNames.bind(styles);
 
 class SideMenu extends Component {
-  componentDidMount() {
-    // GET User List, 친구 목록
-    const token = 'Token ' + localStorage.getItem('token');
-    const friendsListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/?is_friends=true';
-    const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-    const getUserList = axios.get(friendsListURL, config);
-    getUserList.then( ( response ) => {
-      this.setState({ 
-        friendsListData: response.data
-      });
-    }).catch(err => console.log(err));
+  // componentDidMount() {
+  //   // GET User List, 친구 목록
+  //   const token = 'Token ' + localStorage.getItem('token');
+  //   const friendsListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/?is_friends=true';
+  //   const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+  //   const getUserList = axios.get(friendsListURL, config);
+  //   getUserList.then( ( response ) => {
+  //     this.setState({ 
+  //       friendsListData: response.data
+  //     });
+  //   }).catch(err => console.log(err));
 
-    const friendsRequestOnListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/friends/';
-    const getFriendRequestList = axios.get(friendsRequestOnListURL, config);
-    getFriendRequestList.then( ( response ) => {
-      const oppositeIDArray = response.data.map(x => x.from_user);
+  //   const friendsRequestOnListURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/friends/';
+  //   const getFriendRequestList = axios.get(friendsRequestOnListURL, config);
+  //   getFriendRequestList.then( ( response ) => {
+  //     const oppositeIDArray = response.data.map(x => x.from_user);
 
-      for(let oppositeID of oppositeIDArray){ 
-        const token = 'Token ' + localStorage.getItem('token');
-        const userInfoURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/${oppositeID}/`;
-        const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
-        const getUserInfo = axios.get(userInfoURL, config);
-        getUserInfo.then( ( response ) => {
-          this.setState({ 
-            ApplyListData: this.state.ApplyListData.concat(response.data)
-          });
-        }).catch(err => console.log(err));
-      }
+  //     for(let oppositeID of oppositeIDArray){ 
+  //       const token = 'Token ' + localStorage.getItem('token');
+  //       const userInfoURL = `http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/${oppositeID}/`;
+  //       const config = { headers: { 'Authorization': token, 'Content-Type': `application/json`} };
+  //       const getUserInfo = axios.get(userInfoURL, config);
+  //       getUserInfo.then( ( response ) => {
+  //         this.setState({ 
+  //           ApplyListData: this.state.ApplyListData.concat(response.data)
+  //         });
+  //       }).catch(err => console.log(err));
+  //     }
 
 
-    }).catch(err => console.log(err));
-  }
+  //   }).catch(err => console.log(err));
+  // }
 
   constructor(props) {
     super(props);
     // const testIcon = 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg';
     this.state = {
       friendsListData: [
-        // { picture: '', nickname: '피카츄', messages_cnt: 0 },
-        // { picture: '', nickname: '수박수박', messages_cnt: 1 },
+        { picture: '', nickname: '피카츄', messages_cnt: 0, is_chat: true },
+        { picture: '', nickname: '수박수박', messages_cnt: 1, is_chat: true },
       ],
       ApplyListData: [
-        // {id: 0, picture: '', name: '1'},
-        // {id: 1, picture: '', name: '2'},
+        {id: 0, picture: '', name: '1'},
+        {id: 1, picture: '', name: '2'},
       ],
       currentState: '',
       name: '',
