@@ -33,7 +33,7 @@ class ChatRoomList extends Component {
             
               picture={list.picture}
               name={list.nickname}
-              number={list.message_cnt}
+              number={list.messages_cnt}
               // number={list.messages.message_cnt} API 연동될 때와 JSON 구조가 달라서 임시로 주석처리
               isExistChatRoom = {list.is_chat}
               // isExistChatRoom = {list.messages.is_chat}

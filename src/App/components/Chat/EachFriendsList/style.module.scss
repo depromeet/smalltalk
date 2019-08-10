@@ -25,16 +25,14 @@
     cursor: pointer;
 }
 
-.unchecked-messages {
-    position: relative;
-    left: 13.5vw;
-    top: 3.4vh;
+.less-than-100-messages {
+    position: absolute;
+    right: 0;
 }
 
-.unchecked-messages-2 {
-    position: relative;
-    left: 13vw;
-    top: 3.4vh;
+.more-than-100-messages {
+    position: absolute;
+    right: 0;
 }
 
 .circle {
@@ -42,18 +40,23 @@
     height: 1.3vw;
     background-color: #fb3e1d;
     border-radius: 50%;
+    position: relative;
+    top: 3.5vh;
+    right: 1.1vw;
 }
 
-.circle-2 {
+.oval {
     width: 2vw;
     height: 1.3vw;
     background-color: #fb3e1d;
     border-radius: 100px;
+    position: relative;
+    top: 3.5vh;
+    right: 1.1vw;
 }
 
 .number {
     position: relative;
-    bottom: 1.9vh;
     height: 18px;
     font-size: 0.62vw;
     font-weight: 300;
@@ -61,4 +64,7 @@
     letter-spacing: -0.48px;
     color: #ffffff;
     text-align: center;
+    position: relative;
+    top: 1.6vh;
+    right: 1.1vw;
 }

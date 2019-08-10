@@ -48,8 +48,10 @@ class SideMenu extends Component {
     // const testIcon = 'https://cdn.zeplin.io/5cfc3a08cb970515fca66b80/assets/E8E313C7-76E7-4C7A-B02B-66C95FD000FE.svg';
     this.state = {
       friendsListData: [
-        { picture: '', nickname: '피카츄', messages_cnt: 0, is_chat: true },
+        { picture: '', nickname: '피카츄', messages_cnt: 102, is_chat: true },
         { picture: '', nickname: '수박수박', messages_cnt: 1, is_chat: true },
+        { picture: '', nickname: '수박수박수', messages_cnt: 102, is_chat: true },
+        { picture: '', nickname: '가나다라마바사', messages_cnt: 5, is_chat: true },
       ],
       ApplyListData: [
         {id: 0, picture: '', name: '1'},

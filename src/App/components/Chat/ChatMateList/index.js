@@ -10,7 +10,6 @@ class ChatMateList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // UI
       isClickedFoldButton: false,
     };
   }
@@ -33,32 +32,21 @@ class ChatMateList extends Component {
         </div>
         <div className={cx('list')}>
           <div className={cx('header')}>
-            현재
-            <br />
-내 메이트
-            {' '}
-            {this.props.friendsListData.length}
-명
+            현재<br />내 메이트{' '}{this.props.friendsListData.length}명
           </div>
           <div className={cx('close-button')} onClick={this.props.handleAllClose} />
-          <div className={
-              this.state.isClickedFoldButton ? cx('unfolded-collection') : cx('collection')}
-          >
+          <div className={this.state.isClickedFoldButton ? cx('unfolded-collection') : cx('collection')}>
             {this.props.friendsListData.length === 0
               ? (
                 <div className={cx('header-2')}>
                   <div className={cx('title')}>아직 친구가 없어요 :(</div>
-                  <div className={cx('contents')}>
-여행 메이트를 추천받아
-                    <br />
-같이 즐거운 여행을 떠나보세요!
-                  </div>
+                  <div className={cx('contents')}>여행 메이트를 추천받아<br />같이 즐거운 여행을 떠나보세요!</div>
                 </div>
               )
               : <div />}
             {this.props.friendsListData.map((list, i) => (
               <EachFriendsList
-                  // UI
+                // UI
                 currentState={this.props.currentState}
                 handleChatClick={this.props.handleChatClick}
                 handleChatRoomClick={this.props.handleChatRoomClick}
@@ -75,8 +63,6 @@ class ChatMateList extends Component {
               />
             ))}
           </div>
-          )
-        }
         </div>
         {this.state.isClickedFoldButton
           // 접기 버튼이 눌렸으면 나에게 온 친구요청 숨김

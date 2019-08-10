@@ -16,12 +16,11 @@ class EachFriendsList extends Component {
     return (
       <div>
         <div className={cx('friends-list')}>
-          <img src={picture} alt="profile" className={cx('profile-picture')} />
+          <img src={picture} alt="user-profile" className={cx('profile-picture')} />
           <div className={cx('name')} onClick={enterChatRoom}>{this.props.name}</div>
-          {this.props.number !== 0 && this.props.number < 100 && 
-          this.props.currentState === "ChatRoomList" && this.props.isExistChatRoom && (
-          <div className={this.props.number >= 100 ? cx('unchecked-messages-2') : cx('unchecked-messages')}>
-            <div className={this.props.number >= 100 ? cx('circle-2') : cx('circle')} />
+          {this.props.number !== 0 && this.props.currentState === "ChatRoomList" && this.props.isExistChatRoom && (
+          <div className={this.props.number >= 100 ? cx('more-than-100-messages') : cx('less-than-100-messages')}>
+            <div className={this.props.number >= 100 ? cx('oval') : cx('circle')} />
             <div className={cx('number')}>{this.props.number >= 100 ? '100+' : this.props.number}</div>
           </div>
           )}
