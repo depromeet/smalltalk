@@ -23,13 +23,13 @@ function App() {
         <Route path='/mypage' component={Mypage}/>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <PrivateRoute path="/user" component={Home} />
-        <PrivateRoute exact path="/mate" component={Mate} />
-        <PrivateRoute exact path="/mateList" component={MateList} />
-        <PrivateRoute exact path="/bigdata" component={Bigdata} />
-        <PrivateRoute exact path="/mateInfo/:id" component={MateInfo} />
-        <PrivateRoute exact path="/schedule" component={Schedule} />
-        <PrivateRoute path="/schedule1" component={Schedule2} /> 
+        <Route path="/user" component={Home} />
+        <Route exact path="/mate" component={Mate} />
+        <Route exact path="/mateList" component={MateList} />
+        <Route exact path="/bigdata" component={Bigdata} />
+        <Route exact path="/mateInfo/:id" component={MateInfo} />
+        <Route exact path="/schedule" component={Schedule} />
+        <Route path="/schedule1" component={Schedule2} /> 
       </Switch>
     </Fragment>
   );

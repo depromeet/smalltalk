@@ -1,7 +1,10 @@
 import React, {Component, Fragment} from 'react';
-import TicketList from '../../components/TicketList';
-import MateListTable from '../../components/MateListTable';
+import SmallTicketBox from '../../components/Ticket/SmallTicketBox';
+import FriendList from '../../components/MateList/FriendList';
 import MenuBtn from '../../components/MenuBtn'
+import SideMenu from './../../components/Chat/SideMenu';
+import classnames from 'classnames/bind';
+import styles from './MateList.module.scss';
 
 import brazil from 'static/images/ticketImg/brazil.jpg';
 import czech from 'static/images/ticketImg/czech.jpg';
@@ -17,9 +20,6 @@ import pro5 from 'static/images/profile/p5.png';
 import pro6 from 'static/images/profile/p6.png';
 import pro7 from 'static/images/profile/p7.png';
 
-import classnames from 'classnames/bind';
-import styles from './MateList.module.scss';
-import SideMenu from './../../components/Chat/SideMenu';
 const cx = classnames.bind(styles);
 
 class MateList extends Component{
@@ -327,10 +327,10 @@ class MateList extends Component{
     }
   };
 
-  myCallIndex = (callFromIndex) => {
+  myCallIndex = ( callFromIndex ) => {
     this.setState({
       callToIndex: callFromIndex
-    })
+    });
   }
 
   render(){
@@ -339,12 +339,21 @@ class MateList extends Component{
 
     return(
       <Fragment>
-        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
+        <MenuBtn 
+          barColor = { "#000" }  
+          boxHidden = { "block" }
+        />
         <SideMenu />
         <div className={cx('list_wrap')}>
           <h1>친구 추천 리스트</h1>
-          <TicketList ticketList = {ticketList} callIndexParent={this.myCallIndex}/>
-          <MateListTable ticketList = {ticketList} ticketIndex = {this.state.callToIndex}/>
+          <SmallTicketBox 
+            ticketList = { ticketList } 
+            callIndexParent = { this.myCallIndex }
+          />
+          <FriendList 
+            ticketList = { ticketList } 
+            ticketIndex = { this.state.callToIndex }
+          />
         </div>
       </Fragment>
     )
