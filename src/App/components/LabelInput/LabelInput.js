@@ -4,9 +4,6 @@ import styles from './LabelInput.module.scss';
 const cx = classnames.bind(styles); 
 
 const LabelInput = ({ label, value, limit, required, disabled, error, isAge, ...rest }) => { 
-  // if(isAge){
-  //   console.log(isAge);
-  // }
   let errorStyle = cx({
     'error' : true,
     'age' : isAge

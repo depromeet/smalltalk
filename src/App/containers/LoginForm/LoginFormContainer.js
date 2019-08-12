@@ -19,7 +19,7 @@ const LoginFormContainer = ({history}) => {
 
     try {
       await onLogin(form);
-      history.push('/');
+      // history.push('/');
     } catch (e) {
       if(e.response.status === 409){
         setErrors({common : '이미 존재하는 이메일 입니다. !'});

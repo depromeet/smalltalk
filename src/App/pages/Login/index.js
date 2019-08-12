@@ -13,7 +13,7 @@ const cx = classnames.bind(styles);
 const Login = () => {
   return(
     <Fragment>
-      <MenuBtn barColor = { "#000" } boxHidden = { "none" }/>
+      {/* <MenuBtn barColor = { "#000" } boxHidden = { "none" }/> */}
       <div className={cx('backImage')}>
         <div className={cx('back-column')}>
           <div className={cx('line-down')}><img src={lineDown} alt="line"/></div>
