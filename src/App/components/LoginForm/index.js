@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LabelInput from './LabelInput';
+import RoundBtn from '../RoundBtn';
 import google from 'images/google.png';
 import classnames from 'classnames/bind';
 import styles from './LoginForm.module.scss'; 
@@ -32,21 +33,19 @@ const LoginForm = ({ onSubmit, errors }) => {
             error={errors && errors.password ? errors.password : null}
             resetInput={password.resetInput}
           />
-          {/* { errorStatus === 2 ? <div className={cx('request-fail-error')}> 비밀번호와 이메일을 확인해주세요 </div>: null} */}
-          <div
-            className={cx('login__button', 'normal')}
+          <RoundBtn
+            width= '100%'
+            value='로그인하기'
+            backImage= 'linear-gradient(279deg, #fb3e1d, #e1ff01)'
             onClick={() => onSubmit({email : email.value, password : password.value})}
-          >
-            로그인하기
-          </div>
-          <button className={cx('button__container')}>
-            <div className={cx('column')}>
-              <img className={cx('google-img')} src={google} alt="google"/>
-            </div>
-            <div> 구글로 시작하기</div>
-          </button>
+          />
+          <RoundBtn
+            width='100%'
+            value='구글로 시작하기'
+            backColor ='#4a6ef4'
+            src={google}
+          />
         </form>
-        {/* {errors && errors.common ? <p>{errors.common}</p> : null} */}
       </div>
   )
 }

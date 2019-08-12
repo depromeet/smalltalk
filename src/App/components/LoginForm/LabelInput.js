@@ -21,12 +21,12 @@ const Label = styled.div`
 `;
 
 const Error = styled.div`
-  color: $red;
+  color: red;
   font-size: 8px;
   margin-left: 10px;
   padding: 4px 10px;
   margin-bottom: 10px;
-  border: 1px solid $red;
+  border: 1px solid red;
   border-radius: 24px;
 `;
 
