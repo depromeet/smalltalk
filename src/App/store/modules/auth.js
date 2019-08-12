@@ -21,6 +21,8 @@ const TAGS_REQUEST_FAILURE = 'user/TAGS_REQUEST_FAILURE';
 
 const API = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com'
 
+// const actionCreatorNames = createAction(TYPE, payloadCreator)
+
 export function moveToNext(nextNum){
   return {
     type: MOVE_TO_NEXT,

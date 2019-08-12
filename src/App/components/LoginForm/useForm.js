@@ -19,13 +19,6 @@ const useForm = (callback, validate) => {
       setErrors(validate(values));
       setIsSubmitting(true);
   }
-  const handleChange = event => {
-    event.persist(); // why ? 
-    setValues(values => ({
-      ...values, [event.target.name] : event.target.value
-      })
-    )
-  }
   const resetClick = event => {
     event.persist();
     setValues(values => ({
@@ -35,7 +28,6 @@ const useForm = (callback, validate) => {
   }
   return {
     resetClick,
-    handleChange,
     handleSubmit,
     values,
     errors
