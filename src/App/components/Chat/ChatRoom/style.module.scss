@@ -18,15 +18,15 @@
     }
     ::-webkit-scrollbar-track-piece{
         background-color:rgba(255,255,255,0.2);
-        -webkit-border-top-right-radius:8px;
-        -webkit-border-top-left-radius:8px;
-        -webkit-border-bottom-right-radius:8px;
-        -webkit-border-bottom-left-radius:8px;
+        // -webkit-border-top-right-radius:8px;
+        // -webkit-border-top-left-radius:8px;
+        // -webkit-border-bottom-right-radius:8px;
+        // -webkit-border-bottom-left-radius:8px;
     }
     ::-webkit-scrollbar-thumb:vertical{
         height:60px;
         background-color: gray;
-        -webkit-border-radius:8px;
+        // -webkit-border-radius:8px;
     }
 
     // 채팅, 친구 리스트 버튼
@@ -120,6 +120,7 @@
             border: solid 1px transparent;
             resize: none;
             font-size: 16px;
+            font-family: NotoSansCJKkr;
         }
 
         // 메세지 보내는 버튼
