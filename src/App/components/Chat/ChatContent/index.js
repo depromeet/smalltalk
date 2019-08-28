@@ -22,3 +22,17 @@ const ChatContent = ({ lastType = '', type, text }) => {
 };
 
 export default ChatContent;
+
+// let messageStyles = cx({
+//   'opposite' : type === 'opposite',
+//   'mine' : true
+// })
+
+//   <div className={messageStyles}>
+//     lastChatType === 'opposite' ? <div className={cx('space')} /> : <div className={cx('profile-picture')} />}
+//     <div className={cx('talk-list')}>
+//               <div className={cx('background')}>
+//                 <div className={cx('sentence')}>{text}</div>
+//               </div>
+//     </div>
+//   </div>
