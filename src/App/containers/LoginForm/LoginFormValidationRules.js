@@ -10,5 +10,5 @@ export default function validate(values){
   }else if(values.password.length < 8){
     errors.password = '비밀번호는 최소 8자, 숫자 문자 조합입니다.'
   }
-  return errors;
+  return Object.keys(errors).length > 0 ? errors : null;
 }

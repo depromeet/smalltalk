@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import LoginForm from 'App/components/LoginForm';
+import LoginFormContainer from '../../containers/LoginForm/LoginFormContainer';
 import lineDown from 'images/line-down.svg';
 import friends from 'images/friends.png';
 import vene from 'images/vene.png';
@@ -13,7 +13,7 @@ const cx = classnames.bind(styles);
 const Login = () => {
   return(
     <Fragment>
-      <MenuBtn barColor = { "#000" } boxHidden = { "none" }/>
+      {/* <MenuBtn barColor = { "#000" } boxHidden = { "none" }/> */}
       <div className={cx('backImage')}>
         <div className={cx('back-column')}>
           <div className={cx('line-down')}><img src={lineDown} alt="line"/></div>
@@ -21,7 +21,7 @@ const Login = () => {
           <div className={cx('circle', 'left-gradation')}><img src={gradation} alt="gra"/></div>
         </div>
         <div className={cx('back-column')}>
-          <LoginForm />
+          <LoginFormContainer />
         </div>
         <div className={cx('back-column')}>
           <div className={cx('circle', 'right-none')}></div>

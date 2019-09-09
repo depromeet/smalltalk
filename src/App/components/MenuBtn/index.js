@@ -87,14 +87,14 @@ class MenuBtn extends Component{
       return { "left" : 0 }
     }
   }
-  // componentDidMount() {
-  //   setInterval( () => {
-  //     // console.log("바뀜!");
-  //     this.setState({
-  //       backImg: this.state.backArray[Math.floor(Math.random()*this.state.backArray.length)]
-  //     });
-  //   }, 1500)
-  // }
+  componentDidMount() {
+    setInterval( () => {
+      // console.log("바뀜!");
+      this.setState({
+        backImg: this.state.backArray[Math.floor(Math.random()*this.state.backArray.length)]
+      });
+    }, 1500)
+  }
   
   render(){
     // console.log(this.state.isToggleOn);

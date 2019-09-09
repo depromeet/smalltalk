@@ -11,19 +11,19 @@ const postFriendsRequest = (oppositeIDNumber) => {
   const friendsAddURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/friends/add/';
   const config = { headers: { 'Authorization': token, 'Content-Type': 'application/json'} };
   const oppositeID = { to_user: oppositeIDNumber };
-  const cityList = axios.post(friendsAddURL, oppositeID, config);
-  cityList.then(response => {console.log(response)})
+  const postFriendRequest = axios.post(friendsAddURL, oppositeID, config);
+  postFriendRequest.then(response => {console.log(response)})
   .catch(err => console.log(err));
 }
 
 // PUT 친구 요청 거절
-const postFriendsRequestDeny = (oppositeIDNumber) => {
+const putFriendsRequestDeny = (oppositeIDNumber) => {
   const token = 'Token ' + localStorage.getItem('token');
   const friendsAddURL = 'http://travel-dev.ap-northeast-2.elasticbeanstalk.com/auth/friends/reject/';
   const config = { headers: { 'Authorization': token, 'Content-Type': 'application/json'} };
   const oppositeID = { from_user: oppositeIDNumber };
-  const cityList = axios.put(friendsAddURL, oppositeID, config);
-  cityList.then(response => {console.log(response)})
+  const friendRequestDeny = axios.put(friendsAddURL, oppositeID, config);
+  friendRequestDeny.then(response => {console.log(response)})
   .catch(err => console.log(err));
 }
 
@@ -34,7 +34,7 @@ const ChatMateRequest = ( {id, addMateList, name, denyMateRequest, index} ) => {
   }
   const friendRequestDeny = () => {
     denyMateRequest(index);
-    postFriendsRequestDeny(id);
+    putFriendsRequestDeny(id);
   }
   return (
     <div className={cx('list')}>

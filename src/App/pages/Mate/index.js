@@ -15,6 +15,7 @@ import turkey from 'static/images/ticketImg/turkey.jpg';
 import classnames from 'classnames/bind';
 import styles from './Mate.module.scss';
 import SideMenu from './../../components/Chat/SideMenu';
+import DropBox from '../../components/DropBox';
 
 const cx = classnames.bind(styles);
 
@@ -233,43 +234,18 @@ class Mate extends Component{
         }
       ],
       vWidth: 150,
-      isOn: 0,
-      isShow: "none",
-      listIndex: 0,
-      dropR: "rotate(0deg)"
-    }
-  }
-
-  makeDropMList = ( boxList ) => { 
-    return boxList.map(( bTitle, i ) => {
-      // console.log(ticket);
-      return (
-        <li key={`schedule-${i}`} className={cx("t_list")} 
-        onClick={() => this.setState({listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none"})}>
-          {bTitle.title}
-        </li>
-      );
-    })
-  }
-
-  toggleDrop = () => {
-    if(this.state.isOn === 1) {
-      this.setState({
-        isOn: 0, 
-        dropR: "rotate(0deg)", 
-        isShow: "none"
-      });
-    } else {
-      this.setState({
-        isOn: 1, 
-        dropR: "rotate(180deg)", 
-        isShow: "block"
-      });
+      listIndex: 0
     }
   }
 
   resizeHeight = ( length ) => {
     if(length > 8) return { "top": "59%" };
+  }
+
+  reListIndex = ( setIndex ) => {
+    this.setState({
+      listIndex: setIndex
+    });
   }
 
   render(){
@@ -283,19 +259,11 @@ class Mate extends Component{
         <div className={cx('mate_wrap')}>
           <div className={cx('mate_title')}>
             <h1>친구를 추천받을<br/>지역을 선택해주세요</h1>
-            <div className={cx("s_titlebox")}>
-              <h2>
-                {boxList[listIndex].title}
-                <span onClick={this.toggleDrop} 
-                style={{ transform: this.state.dropR }}>
-                  ▼
-                </span>
-              </h2>
-              <ul className={cx("title_drop")} 
-              style={{ opacity: this.state.isOn, display: this.state.isShow }}>
-                { this.makeDropMList(boxList) }
-              </ul>
-            </div>
+            <DropBox
+              boxList = { this.state.boxList }
+              callListIndex = { this.reListIndex }
+              dropStyle = "mate-dropBox"
+            />
           </div>
           <div className={cx('mate_btn')}>
             <button className={cx('matelink_btn')}>

@@ -1,37 +1,14 @@
-import React from 'react';
-import useForm from './useForm';
-import validate from './LoginFormValidationRules';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
+import LabelInput from './LabelInput';
+import RoundBtn from '../RoundBtn';
 import google from 'images/google.png';
 import classnames from 'classnames/bind';
 import styles from './LoginForm.module.scss'; 
-import * as authAction from 'App/store/modules/auth';
 const cx = classnames.bind(styles);
 
-const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
-  const { 
-   values,
-   resetClick,
-   handleChange,
-   handleSubmit,
-   errors
-  } = useForm(login, validate); 
-
-//  let EmailclassName = cx({
-//    'login__input-label' : true,
-//   'login__input-label': isWriting === null,
-//   'login__input-label-red' : isWriting === 'email'
-//   });
-
-  function login(){
-    // console.log('validation 에러 없고 요청 고고');
-    loginRequest(values)
-  }
-  if(isAuthenticated){
-    return <Redirect to="/" />;
-  }
-
+const LoginForm = ({ onSubmit, errors }) => {
+  const email = useInput('');
+  const password = useInput('');
   return(
       <div className={cx('login__container')}>
         <div className={cx('login__header')}>
@@ -39,78 +16,54 @@ const LoginForm = ({isAuthenticated,loginRequest, errorStatus}) => {
           <p className={cx('login__info')}> 아직 스몰토크의 친구가 아니신가요? </p>
           <p className={cx('login__info')}> 세계인의 친구가 되어보세요! </p>
         </div>
-        <form onSubmit={handleSubmit} className={cx('login__form')} noValidate>
-          <div className={cx('login__input-container')}>
-          <div className={cx('input-container-header')}>
-            <label className={cx('login__input-label')}> Email </label>
-              {errors.email && <p className={cx('error')}> {errors.email} </p>}
-          </div>
-            <input
-              className={cx('login__input')}
-              type="text"
-              name="email"
-              value={values.email || ''}
-              onChange={handleChange}
-              required
-            />
-            <button
-              className={cx('login__input-x')}
-              onClick={resetClick}
-              name="email">x
-            </button>
-          </div>
-          <div className={cx('login__input-container')}>
-            <div className={cx('input-container-header')}>
-              <label className={cx('login__input-label')}>Password</label>
-                {errors.password && <p className={cx('error')}> {errors.password} </p>}
-            </div>
-            <input
-              className={cx('login__input')}
-              type="password"
-              name="password"
-              value={values.password || ''}
-              onChange={handleChange}
-              required
-            />
-            <div
-             className={cx('login__input-x')}
-            //  onClick={this.resetInputClick}
-             name="password"
-             > x</div>
-          </div>
-          { errorStatus === 2 ? <div className={cx('request-fail-error')}> 비밀번호와 이메일을 확인해주세요 </div>: null}
-          <input
-            className={cx('login__button', 'normal')}
-            type="submit"
-            value="로그인하기"
-            // onSubmit={handleSubmit}
+        <form className={cx('login__form')} noValidate>
+          <LabelInput 
+            label='Email'
+            value={email.value}
+            onChange={email.onChange}
+            type='text'
+            error={errors && errors.email ? errors.email : null}
+            resetInput={email.resetInput}
           />
-          <button className={cx('button__container')}>
-            <div className={cx('column')}>
-              <img className={cx('google-img')} src={google} alt="google"/>
-            </div>
-            <div> 구글로 시작하기</div>
-              {/* <input
-                className={cx('login__button','google')}
-                type="submit"
-                value="구글로 시작하기"
-                // onSubmit={this.handleSubmit}
-              /> */}
-          </button>
+          <LabelInput
+            label='Password'
+            value={password.value}
+            onChange={password.onChange}
+            type='password'
+            error={errors && errors.password ? errors.password : null}
+            resetInput={password.resetInput}
+          />
+          <RoundBtn
+            width= '100%'
+            value='로그인하기'
+            backImage= 'linear-gradient(279deg, #fb3e1d, #e1ff01)'
+            onClick={() => onSubmit({email : email.value, password : password.value})}
+          />
+          <RoundBtn
+            width='100%'
+            value='구글로 시작하기'
+            backColor ='#4a6ef4'
+            src={google}
+          />
         </form>
       </div>
   )
 }
-const mapStateToProps = state => ({
-  isAuthenticated : state.auth.isAuthenticated,
-  errorStatus : state.auth.login.error
-})
 
-const mapDispatchToProps = dispatch => ({
-  loginRequest : ( value ) => dispatch(authAction.loginRequest(value))
-})
+export default LoginForm;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginForm);
+function useInput(initialValue){
+  const [value, setValues] = useState(initialValue);
+
+  function handleInputChange(e){
+    setValues(e.target.value);
+  }
+  function resetInput(e){
+    setValues('');
+  }
+  return {
+    value,
+    onChange : handleInputChange,
+    resetInput
+  }
+}

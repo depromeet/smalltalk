@@ -4,6 +4,7 @@ import TicketLength from '../../components/Ticket/TicketLength';
 import BigTicket from '../../components/Ticket/BigTicket';
 import MenuBtn from '../../components/MenuBtn';
 import SideMenu from './../../components/Chat/SideMenu';
+import DropBox from '../../components/DropBox';
 import classnames from 'classnames/bind';
 import styles from './Schedule.module.scss';
 
@@ -233,24 +234,9 @@ class Schedule extends Component{
           }
         ],
       vWidth: 130,
-      isOn: 0,
-      isShow: "none",
-      listIndex: 0,
-      dropR: "rotate(0deg)"
+      listIndex: 0
       // btest: [{id: 0, title: "가"},{id: 1, title: "가"},{id: 2, title: "가"},{id: 3, title: "가"}]
     }
-  }
-
-  makeList = ( boxList ) => { 
-    return boxList.map(( bTitle, i ) => {
-      // console.log(this.state.listIndex);
-      return ( 
-        <li key={`scheduleList-${i}`} className={cx("t_list")} 
-        onClick={() => this.setState({ listIndex: i, isOn: 0, dropR: "rotate(0deg)", isShow: "none" })}>
-          { bTitle.title }
-        </li>
-      );
-    })
   }
 
   makeTicketList = ( boxList ) => { 
@@ -283,25 +269,6 @@ class Schedule extends Component{
     });
   }
 
-  delHeight = (len) => {
-    let delHeight = 0;
-    if(len === 3){
-      delHeight = 180;
-    }else if(len === 2){
-      delHeight = 120;
-    }else if(len === 1){
-      delHeight = 60;
-    }else{
-      delHeight = 237;
-    }
-
-    return { 
-      "opacity": this.state.isOn, 
-      "display": this.state.isShow, 
-      "height" : delHeight + "px" 
-    }
-  }
-
   resizeHeight = ( length ) => {
     if(length > 8) return { "height": "36vh" };
     else return { "height" : "29vh" };
@@ -318,21 +285,11 @@ class Schedule extends Component{
     let resetWidth = (_vWidth * length) + 'px';
     return { "width" : resetWidth }
   }
-  
-  toggleDrop = () => {
-    if(this.state.isOn === 1){
-      this.setState({
-        isOn: 0, 
-        dropR: "rotate(0deg)", 
-        isShow: "none"
-      });
-    }else{
-      this.setState({
-        isOn: 1, 
-        dropR: "rotate(180deg)", 
-        isShow: "block"
-      });
-    }
+
+  reListIndex = ( setIndex ) => {
+    this.setState({
+      listIndex: setIndex
+    });
   }
 
   render(){
@@ -351,19 +308,11 @@ class Schedule extends Component{
         <SideMenu />
         <div className={cx("schedule_top")} style={ this.resizeHeight(boxList[listIndex].ticketList.length) }>
           <div className={cx("s_left")}>
-            <div className={cx("s_titlebox")}>
-              <h2>
-                { this.state.boxList[listIndex].title }
-                <span onClick={this.toggleDrop} 
-                style={{ transform: this.state.dropR }}>
-                  ▼
-                </span>
-              </h2>
-              <p>화살표를 클릭하세요!<br/>이전 일정들도 확인할 수 있습니다.</p>
-              <ul className={cx("title_drop")} style={ this.delHeight(boxList.length) }>
-                { this.makeList(boxList) }
-              </ul>
-            </div>
+            <DropBox
+              boxList = { this.state.boxList }
+              callListIndex = { this.reListIndex }
+              dropStyle = "schedule-dropBox"
+            />
             <div className={cx("length_box")} 
             style={this.setHeight(boxList[listIndex].ticketList.length)}>
               <TicketLength 

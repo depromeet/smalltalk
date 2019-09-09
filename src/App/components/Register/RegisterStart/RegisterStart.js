@@ -6,21 +6,15 @@ import click from 'images/click.svg';
 import MenuBtn from '../../MenuBtn';
 import classnames from 'classnames/bind';
 import styles from './RegisterStart.module.scss';
-const cx = classnames.bind(styles); 
+const cx = classnames.bind(styles);  
 
 const RegisterStart = ({ isMovedLeft, handleNextBtn }) => {
   let className = cx({
   'step-container': true,
   'move-left': isMovedLeft[0]
   });
-
-  // let styles = cx({
-  //   'bar': true,
-  //   'bar-left': isMovedLeft[0]
-  // })
   return(
     <Fragment>
-      
       <div className={className}> 
       <MenuBtn barColor = { "#000" }  boxHidden = { "none" }/>
         <div className={cx('contents')}>
