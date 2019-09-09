@@ -23,6 +23,7 @@ function App() {
         <Route path='/mypage' component={Mypage}/>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+
         <PrivateRoute path="/user" component={Home} />
         <Route exact path="/mate" component={Mate} />
         <PrivateRoute exact path="/mateList" component={MateList} />

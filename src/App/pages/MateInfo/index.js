@@ -1,9 +1,13 @@
 import React, {Component, Fragment} from 'react';
-import TicketLength from '../../components/TicketLength';
-import BigTicket from '../../components/BigTicket';
+import TicketLength from '../../components/Ticket/TicketLength';
+import BigTicket from '../../components/Ticket/BigTicket';
 import MenuBtn from '../../components/MenuBtn';
+import SideMenu from './../../components/Chat/SideMenu';
+import classnames from 'classnames/bind';
+import styles from './MateInfo.module.scss';
 
 import * as UserInfo from '../../containers/UserInfo/FriendInfo';
+
 import brazil from 'static/images/ticketImg/brazil.jpg';
 import czech from 'static/images/ticketImg/czech.jpg';
 import denmark from 'static/images/ticketImg/denmark.jpg';
@@ -11,20 +15,16 @@ import greece from 'static/images/ticketImg/greece.jpg';
 import mongolia from 'static/images/ticketImg/mongolia.jpg';
 import russia from 'static/images/ticketImg/russia.jpg';
 import turkey from 'static/images/ticketImg/turkey.jpg';
-
 import pro1 from 'static/images/profile/p1.png';
 
-import classnames from 'classnames/bind';
-import styles from './MateInfo.module.scss';
-import SideMenu from './../../components/Chat/SideMenu';
 const cx = classnames.bind(styles);
 
 class StyleInfo extends Component{
 
-  makeList = ( friend ) => { 
-    return friend.tag.map( tag => {
+  styleList = ( friend ) => { 
+    return friend.tag.map(( tag, i ) => {
         return (
-            <li>{tag.substring(1)}</li>
+            <li key={`Style-${i}`}>{ tag.substring(1) }</li>
         )
     })     
   }
@@ -35,7 +35,7 @@ class StyleInfo extends Component{
       <div className={cx("user_style")}>
         <h2>STYLE</h2>
         <ul className={cx("user_tag")}>
-          {this.makeList(friend)}
+          { this.styleList(friend) }
         </ul>
       </div>
     );
@@ -49,10 +49,10 @@ class ScheduleInfo extends Component{
     else return {"height" : "60vh"};
   }
 
-  makeList = ( ticketList ) => { 
+  scheduleList = ( ticketList ) => { 
     return this.props.friend.ticketList.map( (ticket, i) => {
       // console.log(ticket);
-      return <li className={cx("t_item")}>
+      return <li key={`Schedule-${i}`} className={cx("t_item")}>
       <BigTicket listLen={ticketList.length} ticket={ticket}/></li>
     })
   }
@@ -72,14 +72,17 @@ class ScheduleInfo extends Component{
   render(){
     const { friend } = this.props;
     return(
-      <div className={cx("user_schedule")} style={this.resizeHeight(friend.ticketList.length)}>
+      <div className={cx("user_schedule")} style={ this.resizeHeight(friend.ticketList.length) }>
         <h2>SCHEDULE</h2>
         <div className={cx("length_box")}>
-          <TicketLength ticketList = {friend.ticketList} vWidth = { 150 }/>
+          <TicketLength 
+            ticketList = {friend.ticketList} 
+            vWidth = { 150 }
+          />
         </div>
-        <div className={cx('t_box')} style={this.resetHeight(friend.ticketList.length)}>
-          <ul className={cx('call_t')} style={this.resetWidth(friend.ticketList.length)}>
-            {this.makeList(friend.ticketList)}
+        <div className={cx('t_box')} style={ this.resetHeight(friend.ticketList.length) }>
+          <ul className={cx('call_t')} style={ this.resetWidth(friend.ticketList.length) }>
+            { this.scheduleList(friend.ticketList) }
           </ul>
         </div> 
       </div>
@@ -241,7 +244,10 @@ class MateInfo extends Component{
     // console.log(window.scrollY);
     return (
       <Fragment>
-        <MenuBtn barColor = { "#000" }  boxHidden = { "block" }/>
+        <MenuBtn 
+          barColor = { "#000" }  
+          boxHidden = { "block" }
+        />
         <SideMenu />
         <div className={cx("back_circle")}>
           <div className={cx("cir", "cir1")}></div>
@@ -262,18 +268,22 @@ class MateInfo extends Component{
             </div>
           </div>
           <div className={cx("user_profile")}>
-            <div class={cx("profile_img")}>
-            <img src={friend.profileImg} alt=""/></div>
-            <div class={cx("profile_info")}>
+            <div className={cx("profile_img")}>
+            <img src={ friend.profileImg } alt=""/></div>
+            <div className={cx("profile_info")}>
               <h2>USER NAME</h2>
-              <h3>{friend.talker}</h3>
-              <p>{friend.introduction}</p>
+              <h3>{ friend.talker }</h3>
+              <p>{ friend.introduction }</p>
               <h2>AGE / GENDER</h2>
-              <h3>{friend.age}/{friend.gender}</h3>
+              <h3>{ friend.age }/{ friend.gender }</h3>
             </div>
           </div>
-          <StyleInfo friend = {friend}/>
-          <ScheduleInfo friend = {friend}/>
+          <StyleInfo 
+            friend = { friend }
+          />
+          <ScheduleInfo 
+            friend = { friend }
+          />
         </div>
       </Fragment>
     );

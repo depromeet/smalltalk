@@ -1,6 +1,6 @@
 import React, { Fragment }  from 'react';  
 import { Link } from 'react-router-dom';
-import BigTicket from 'App/components/BigTicket';
+import BigTicket from 'App/components/Ticket/BigTicket';
 import { connect } from 'react-redux';
 import ScheduleSettingTicket from 'App/components/Schedule/ScheduleSettingTicket';
 import styles from './RouteTemplate.module.scss';
